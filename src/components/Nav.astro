@@ -1,0 +1,122 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import TransBtn from "./button/TransBtn.astro";
+
+const menuList = [
+		{ name : "Home", url : "/", ariaLabel: "home page" },
+		{ name : "Services", url : "services", ariaLabel : "services page"}, 
+		{ name : "Public Sector", url : "public-sector", ariaLabel : "public sector page"},
+		{ name : "Products", url : "products", ariaLabel : "products"},
+		{ name : "About", url : "about-us", ariaLabel : "about us" },
+		{ name : "Careers", url : "careers", ariaLabel : "careers" } 
+];
+---
+
+<nav class="lg:px-20 px-8 flex flex-row items-center justify-between bg-white z-[50] relative border border-b-[1.5px]">
+	<div class="flex-1 flex items-center ">
+		<div>
+			<a href="/">
+				<img src="/spi.webp" width="121px" height="32.39px" />
+			</a>
+		</div>
+		<div class="internal-links ps-5 lg:block hidden">
+			<div class="inline-block px-4 border-s-2 leading-[10px]"><HeaderLink href={menuList[0]["url"]} aria-label={menuList[0]["ariaLabel"]}>{menuList[0]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[1]["url"]} aria-label={menuList[1]["ariaLabel"]}>{menuList[1]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[2]["url"]} aria-label={menuList[2]["ariaLabel"]}>{menuList[2]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[3]["url"]} aria-label={menuList[3]["ariaLabel"]}>{menuList[3]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[4]["url"]} aria-label={menuList[4]["ariaLabel"]}>{menuList[4]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[5]["url"]} aria-label={menuList[5]["ariaLabel"]}>{menuList[5]["name"]}</HeaderLink></div>
+		</div>
+	</div>
+	<div class="social-links lg:block hidden">
+        <a href="#"><img src="/logos/women_owned.webp" height="26.19" width="62.38" alt="women owned logo"/></a>
+        <a href="#"><img src="/logos/mbe.webp" height="44.6" width="48.15" alt="women owned logo"/></a>
+		<a href="contact-us"><TransBtn text="Contact Us" /></a>
+	</div>
+	<div class="flex-1 h-full md:hidden block">
+		<label for="sideopen_D" class="flex items-end items-center justify-end text-white flex  w-full text-2xl float-end">
+			<img  width="30" height="30" src="/assets/icons/menu.png" alt="menu icon" />
+		</label>
+		<input type="checkbox" id="sideopen_D" />
+		<div class="sidebox_D" id="sidebar_D">
+			<div class="sidebar_dropdown">
+				{
+					menuList.map((nav, navIndex) => (
+						<div class="navlistItem mblist"><a href={nav.url} aria-label={nav.ariaLabel}>{nav.name}</a></div>
+					))
+				}
+				<!-- <div class="navlistItem mblist"><a href="#" aria-label="process Re-Engineering">Process Re-Engineering</a></div>
+				<div class="navlistItem mblist"><a href="#" aria-label="Technology transformation">Technology Transfromations</a></div>
+				<div class="navlistItem mblist"><a href="quality-assurance" aria-label="quality assureance">Quality Assurance</a></div>
+				<div class="navlistItem mblist"><a href="app-development" aria-label="process Re-Engineering">App Development</a></div>
+				<div class="navlistItem mblist"><a href="augment-tech-team" aria-label="augment tech team">Augment Tech Team</a></div>
+				<div class="navlistItem mblist"><a href="about-us" aria-label="about us page">About Us</a></div> -->
+			</div>
+		</div>
+	</div>
+</nav>
+<style>
+	
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+        align-items:center;
+	}
+	/* navbar */
+    #sideopen_D{
+        position:absolute;
+        visibility: hidden;
+        cursor: pointer;
+    }
+    .sidebox_D{
+        display: none;
+        position:static;
+        transition: all 2s ease-in-out;
+        z-index:1;
+    }
+    #sideopen_D:checked ~ .sidebox_D{
+        display: block;
+        position: absolute;
+        left:0;
+        top: 100px;
+        width:100%;
+    }
+    .sidebar_dropdown{
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: black;
+        margin: 1rem;
+        box-shadow: 1px 1px 5px gray;
+        background-color:white;
+    }
+    .mblist{
+        padding: 1rem;
+    }
+    .mblist:hover{
+        border-bottom: 1px solid #0DC195;
+    }
+	@media (max-width: 600px) {
+		.social-links {
+			display: none;
+		}
+		h1{
+			font-size: 36px;
+			line-height: 50px;
+		}
+		.site-title-layer::after {
+			right:-122.5%;
+		}
+	}
+</style>
+
+  

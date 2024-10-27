@@ -1,0 +1,23 @@
+---
+ interface Props {
+    text: string;
+    classname: string;
+ }
+
+ const { text, classname } = Astro.props;
+---
+
+<button class=`trans-btn rounded-lg px-5 py-3 inline-flex items-center text-[#2A437D] group-hover:text-white bg-white group-hover:bg-[#2A437D] ${classname}`>
+    {text} 
+</button>
+
+<style>
+    .trans-btn{
+        font-family: Atkinson Hyperlegible;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.84px;
+        text-align: left;
+        border: 1px solid #2A437D;
+    }
+</style>
