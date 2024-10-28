@@ -1,37 +1,55 @@
 ---
-import header from "@layouts/Layout.astro"
-import Nav from "@components/Nav.astro"
-
-
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
 ---
 
-<header >
-
+<Header title="home page">
 	<style>
-		.customers-content,.customers-description,.scroll_btn,.usb-content,.usb-description,h1{text-align:left;font-family:Atkinson Hyperlegible}header{margin:0;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%);background-image:linear-gradient(to bottom,#dae5ff,#f3f3f6)}h1{font-size:47px;font-weight:700;line-height:58px;color:#001d64}h2{margin:0;font-size:1em}h2 a,h2 a.active{text-decoration:none}.site-title-layer::before{content:"";position:absolute;width:783.14px;height:393.39px;background-image:url("/assets/banner_web.webp");background-size:contain;right:-14.9%;top:-27.6%}.scroll_btn{font-size:18px;font-weight:400;line-height:22.32px;color:#000}.customers-content{font-size:38px;font-weight:700;line-height:49.6px;color:var(--naviblue)}.customers-description{font-size:20px;font-weight:400;line-height:30px;color:rgba(0,0,0,.8)}.usb-content{font-size:46px;font-weight:700;line-height:62px;color:var(--text)}.usb-description{font-size:19px;font-weight:400;line-height:30px;color:var(--textColor70)}.clients-say{background-image:linear-gradient(to bottom,#011435,#002667)}.clients-title{font-family:Atkinson Hyperlegible;font-size:40px;font-weight:700;line-height:49.6px;text-align:center;color:var(--white)}.client-review,.client_position{text-align:left;font-family:Atkinson Hyperlegible}.client-review{font-size:19px;font-weight:100;line-height:23.8px;color:var(--white)}.client_position{font-size:20px;font-weight:400;line-height:27px;color:rgb(255 255 254 / 50%)}.what-we-do-title{font-family:Atkinson Hyperlegible;font-size:32px;font-weight:700;line-height:38.4px;text-align:left;color:#fff}.learn-m-btn,.what-we-do-description{font-family:Atkinson Hyperlegible;font-weight:400;text-align:left}.what-we-do-description{font-size:14px;line-height:21px;color:rgba(255,255,255,.8)}.learn-m-btn{font-size:16px;line-height:19.84px;color:#fff}@media (max-width:600px){h1{font-size:32px;line-height:39.68px}.usb-content{font-size:56px}.video-section:nth-child(2){line-height:28px}.client-review{line-height:32px}.what-we-do-title{text-align:left;font-size:24px;}.what-we-do-cardbox > div > img{max-width: 60%;}.site-title-layer::before{background-repeat:no-repeat;width:652.14px;right:-78.9%;top:-33.6%}.scroll_btn{width:100%}}
-		.client-testimonial-content{
-			font-family: Atkinson Hyperlegible;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 24.8px;
+		.site-title-layer {
+			background-image: url("/banners/home_banner.webp");
+			height: 609px;
+			background-size: cover;
+		}
+		.header_buttons{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 19.52px;
+			text-align: left;
+			color: #B5DB00;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 28.8px;
 			text-align: left;
 			color: #FFFFFF;
 		}
 	</style>
 	<header class="">
 		<Nav />
-		<div class="px-8 lg:px-12 lg:py-20 py-12 site-title-layer overflow-hidden relative">
-			<h1 class="site_title lg:w-[60%]">Transforming <span class="text-[#0072E0] lg:inline block">Trade-Finance</span> Operations Through Expertise in Process and Technology</h1>
-			<div class="scroll_btn lg:absolute lg:mt-0 mt-12 right-0 mr-20 bottom-24 z-[10] lg:block hidden">
-				<a href="#hightlights">
-					<div class="flex block items-center">
-						Scroll down to learn  more
-						<svg class="ms-4" width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6.75 1.25C6.75 0.835786 6.41421 0.5 6 0.5C5.58579 0.5 5.25 0.835786 5.25 1.25H6.75ZM5.46967 17.2803C5.76256 17.5732 6.23744 17.5732 6.53033 17.2803L11.3033 12.5074C11.5962 12.2145 11.5962 11.7396 11.3033 11.4467C11.0104 11.1538 10.5355 11.1538 10.2426 11.4467L6 15.6893L1.75736 11.4467C1.46447 11.1538 0.989593 11.1538 0.696699 11.4467C0.403806 11.7396 0.403806 12.2145 0.696699 12.5074L5.46967 17.2803ZM5.25 1.25V16.75H6.75V1.25H5.25Z" fill="black"/>
-						</svg>
+		<div class="px-8 lg:px-12 lg:py-12 py-12 site-title-layer overflow-hidden relative flex items-end" >
+			<div class="">
+				<h1 class="home_title">
+					Transforming Business with AI<br> and Data-Driven Solutions
+				</h1>
+				<div class="flex flex-1 items-center mt-6">
+					<h6 class="home_description flex-none w-[70%]">
+						Software Professionals, Inc. is an IT services and custom software development firm specializing in transforming business processes using AI and data analytics to drive business value.
+					</h6>
+					<div class="flex flex-1 justify-end">
+						<a class="header_buttons pr-3 border-r border-[#B5DB00]" href="explore-products">Explore Products</a>
+						<a class="header_buttons ps-3" href="explore-services">Explore Services</a>
 					</div>
-				</a>
+				</div>
 			</div>
 		</div>
+		<section>
+			r
+		</section>
 	</header>
-</BaseHead>
+	<main>
+
+	</main>
+</Header>

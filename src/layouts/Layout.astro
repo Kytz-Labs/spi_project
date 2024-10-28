@@ -15,36 +15,35 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+	* {
+		font-family: "Instrument Sans", sans-serif;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+	h1{
+		font-family: Instrument Sans;
+		font-size: 44px;
+		font-weight: 600;
+		line-height: 52.8px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #FFFFFF;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	.h6 {
+		font-family: Instrument Sans;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 28.8px;
+		text-align: left;
+		color: #FFFFFF;
 	}
 </style>

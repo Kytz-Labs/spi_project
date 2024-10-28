@@ -16,7 +16,7 @@ const menuList = [
 	<div class="flex-1 flex items-center ">
 		<div>
 			<a href="/">
-				<img src="/spi.webp" width="121px" height="32.39px" />
+				<img src="/logos/spi.webp" width="121px" height="32.39px" />
 			</a>
 		</div>
 		<div class="internal-links ps-5 lg:block hidden">
@@ -29,8 +29,8 @@ const menuList = [
 		</div>
 	</div>
 	<div class="social-links lg:block hidden">
-        <a href="#"><img src="/logos/women_owned.webp" height="26.19" width="62.38" alt="women owned logo"/></a>
-        <a href="#"><img src="/logos/mbe.webp" height="44.6" width="48.15" alt="women owned logo"/></a>
+        <a class="pr-6 border-r-2" href="#"><img src="/logos/women_owned.webp" height="26.19" width="62.38" alt="women owned logo"/></a>
+        <a class="px-6" href="#"><img src="/logos/mbe.webp" height="44.6" width="48.15" alt="women owned logo"/></a>
 		<a href="contact-us"><TransBtn text="Contact Us" /></a>
 	</div>
 	<div class="flex-1 h-full md:hidden block">
@@ -58,10 +58,11 @@ const menuList = [
 <style>
 	
 	nav a {
-		padding: 1em 0.5em;
+		/* padding: 1em 0.5em; */
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		font-family: Instrument Sans;
 	}
 	nav a.active {
 		text-decoration: none;
