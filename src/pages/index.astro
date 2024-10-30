@@ -1,6 +1,21 @@
 ---
 import Header from "@layouts/Layout.astro";
 import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import "../form.css"
+
+const services_data = [
+	{ title: "Application<br> Management", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image1.webp"},
+	{ title: "IT<br> Staffing", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
+	{ title: "Digital<br> Transformation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image5.webp"},
+]
+
+const social_feeds = [
+	{ title: "Software Professionals1, Inc.", url: "/social/social_feed1.webp"},
+	{ title: "Software Professionals2, Inc2.", url: "/social/social_feed2.webp"},
+	{ title: "Software Professionals3, Inc3.", url: "/social/social_feed3.webp"},
+]
+
 ---
 
 <Header title="home page">
@@ -26,6 +41,174 @@ import Nav from "@components/Nav.astro";
 			text-align: left;
 			color: #FFFFFF;
 		}
+		.transform-bussiness{
+			font-family: Instrument Sans;
+			font-size: 39px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #D9D9D9;
+		}
+		.about-company{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 700;
+			line-height: 18.2px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.about-description {
+			font-family: Instrument Sans;
+			font-size: 17px;
+			font-weight: 500;
+			line-height: 28.8px;
+			text-align: left;
+			color: #FFFFFF99;
+		}
+
+		/* services section */
+		.services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+			color: #000000;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+		/* awards & achievements */
+		.award-title{
+			font-family: Instrument Sans;
+			font-size: 70px;
+			font-weight: 600;
+			line-height: 84px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: white;
+		}
+		.award-description{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 28.8px;
+			text-align: left;
+			color: #FFFFFF99;
+		}
+		.empower-title{
+			font-family: Instrument Sans;
+			font-size: 44px;
+			font-weight: 600;
+			line-height: 52.8px;
+			letter-spacing: -0.03em;
+			text-align: left;	
+			color:white;
+		}
+
+		/* products */
+		.product-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 28.8px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: white;
+		}
+		.product_section{
+			height: 680px;
+			background-image: url("/products.webp");
+			background-size: cover;
+		}
+		.check{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.product_description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+			color: #00000099;
+		}
+		.modules > li {
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+			color: #00000099;
+		}
+		.card-title{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.card-description{
+			font-family: Instrument Sans;
+			font-size: 17px;
+			font-weight: 500;
+			line-height: 18px;
+			text-align: left;
+			color: #FFFFFF99;
+		}
+		.card-banner{
+			background-image: url("/banners/card_banner.webp");
+			background-size: cover;
+			height: 100%;
+			width: 100%;
+		}
+		.social-wall{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48.8px;
+			letter-spacing: -0.03em;
+			text-align: center;
+			color: black;
+		}
+
+		/* social feeds */
+		.social_feed_title{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.like_share{
+			font-size: 12px;
+			color:gray;
+		}
 	</style>
 	<header class="">
 		<Nav />
@@ -46,7 +229,289 @@ import Nav from "@components/Nav.astro";
 			</div>
 		</div>
 		<section>
-			r
+			<div class="lg:px-12 lg:py-24 bg-[#202020]">
+				<div class="inner-layer flex lg:flex-row flex-col">
+					<div class="flex-1">
+						<div class="transform-bussiness">
+							<span class="text-[#B5DB00] lg:block inline">We Are a Service and Product Innovator,</span> Delivering Solutions that Transform Businesses
+						</div>
+						<div class="flex lg:flex-row flex-col mt-20 gap-6">
+							<div>
+								<div class="about-company pb-5">ABOUT COMPANY</div>
+								<div class="about-description lg:w-[80%]">
+									SPI is a leading IT solutions, consulting and implementation company. SPI is known for its delivery and service excellence, which hasn't changed since 1992.
+								</div>
+							</div>
+							<div>
+								<div class="about-company pb-5">MISSION</div>
+								<div class="about-description lg:w-[80%]">
+									To be an integrated partner with our customers by leveraging technology, velocity, flexibility and quality that enables them to seamlessly service their end customers
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="self-end">
+						<Cbtn colorbtnText="Konw more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+					</div>
+				</div>
+			</div>
+			<div class="lg:pl-12 lg:pb-28 lg:pr-40">
+				<div class="inner-layer flex lg:flex-row flex-col lg:pb-0 pb-8 gap-12">
+					<div class="recent-blog-title flex-none lg:sticky lg:h-screen top-0 lg:w-[22%] flex-none pt-28">
+						<div class="services">Services</div>
+					</div>
+					<div class="flex-1 flex lg:flex-row flex-col gap-10 flex-1 pt-28">
+						<div class="flex-1">
+							{
+								services_data.map((data, dataIndex) => (
+									<div class="border-[1.2px] border-b-4 px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5">
+										{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
+										<div class="services-title z-[20] z-[20]">{data.title}</div>
+										<div class="services-description z-[20] z-[20] text-black ">
+											{ data.description }
+										</div>
+										<div class="absolute inset-x-0 w-full z-[10] h-[2%] group-hover:h-[100%] transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+										</div>
+									</div>
+								))
+							}
+						</div>
+						<div class="flex-1 mt-16">
+							<div class="border-[1.5px] border-b-4 px-8 py-12 min-h-[400px] flex flex-col justify-between relative group  mb-12">
+								<div class="services-title z-[20]">Enterprise<br> Infrastructure</div>
+								<div class="services-description z-[20]">
+									SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.
+								</div>
+								<div class="absolute inset-x-0 w-full z-[10] h-[2%] group-hover:h-[100%] transition ease-in-out delay-150 duration-300 bottom-0" style="background-image: url('/services/services_image2.webp'); width: 100%; background-size: cover;">
+								</div>
+							</div>
+							<div class="border-[1.5px] border-b-4 px-8 py-12 min-h-[400px] flex flex-col justify-between relative group  mb-12">
+								<div class="services-title z-[20]">Business Intelligence / Analysis</div>
+								<div class="services-description z-[20]">
+									SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.
+								</div>
+								<div class="absolute inset-x-0 w-full z-[10] h-[2%] group-hover:h-[100%] transition ease-in-out delay-150 duration-300 bottom-0" style="background-image: url('/services/services_image4.webp'); width: 100%; background-size: cover;">
+								</div>
+							</div>
+							<div class="border-[1.5px] border-b-4 px-8 py-12 min-h-[400px] flex flex-col justify-between relative group">
+								<div class="services-title z-[20]">Professional<br> Services</div>
+								<div class="services-description z-[20]">
+									SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.
+								</div>
+								<div class="absolute inset-x-0 w-full z-[10] h-[2%] group-hover:h-[100%] transition ease-in-out delay-150 duration-300 bottom-0" style="background-image: url('/services/services_image6.webp'); width: 100%; background-size: cover;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lg:px-12 lg:py-24 bg-[#141414]">
+				<div class="inner-layer">
+					<div class="flex lg:flex-row flex-col justify-between items-center">
+						<div class="award-title">Awards &<br> Achievements</div>
+						<div class="lg:w-[38%]">
+							<div class="award-description pb-8">SPI has won a number of regional and national awards for rapid-growth and quality.</div>
+							<Cbtn colorbtnText="Konw more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+						</div>
+					</div>
+					<div class="flex lg:flex-row flex-col gap-5 mt-16">
+						<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
+							<img src="/awards/awards1.webp" height="50" width="101">
+						</div>
+						<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
+							<img src="/awards/awards2.webp" height="97" width="88">
+						</div>
+						<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
+							<img src="/awards/awards3.webp" height="75" width="70">
+						</div>
+						<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
+							<img src="/awards/awards4.webp" height="75" width="90">
+						</div>
+						<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
+							<img src="/awards/awards5.webp" height="75" width="70">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lg:py-24 bg-[#141414]">
+				<div class="inner-layer">
+					<div class="lg:px-12">
+						<div class="empower-title">Empowering Businesses with <span class="text-[#B5DB00]">Smart, Reliable Solutions</span> for a Safer Environment Friendly Tomorrow</div>
+					</div>
+					<div class="flex lg:flex-row flex-col mt-16">
+						<div class="flex-1 product_section relative border-r-[1.5px] border-black">
+							<div class="product-title p-12">Products</div>
+							<div class="absolute bottom-20 check left-12">
+								<a href="#" class="underline">Check all Products</a>
+							</div>
+						</div>
+						<div class="flex-1 min-h-[140px] bg-white p-8 border-r-[1.5px] border-black">
+							<div class="border-b-[1.6px] pb-5">
+								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" >
+							</div>
+							<div class="product_description my-6">
+								A safety app that engages employees to improve safety practices, aiming for zero incidents.
+							</div>
+							<div class="font-[700] text-[16px] leading-[19.2px] pb-5">
+								Modules
+							</div>
+							<div>
+								<ol class="list-decimal pl-5 modules">
+									<li>Observation and Intervention (O&I)</li>
+									<li>Job Safety Analysis (JSA)</li>
+									<li>Risk Assessment</li>
+									<li>Safety Walkthrough</li>
+									<li>Personal Safety Plan (PSP)</li>
+									<li>Incident Notification</li>
+								</ol>
+							</div>
+							<div class="mt-5">
+								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+							</div>
+						</div>
+						<div class="flex-1 min-h-[140px] bg-white p-8 border-r-[1.5px] border-black">
+							<div class="border-b-[1.6px] pb-5">
+								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" >
+							</div>
+							<div class="product_description my-6">
+								A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.
+							</div>
+							<div class="font-[700] text-[16px] leading-[19.2px] pb-5">
+								BENEFITS
+							</div>
+							<div>
+								<ol class="list-decimal pl-5 modules">
+									<li>A Useful and Accessible Asset</li>
+									<li>Field Tested and Approved</li>
+								</ol>
+							</div>
+							<div class="mt-5">
+								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+							</div>
+						</div>
+						<div class="flex-1 min-h-[140px] bg-white p-8">
+							<div class="border-b-[1.6px] pb-5">
+								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" >
+							</div>
+							<div class="product_description my-6">
+								A software for managing the entire permit process, from application to occupancy. 
+							</div>
+							<div class="font-[700] text-[16px] leading-[19.2px] pb-5">
+								Modules
+							</div>
+							<div>
+								<ol class="list-decimal pl-6 modules">
+									<li>Permit management</li>
+									<li>Compliance tracking</li>
+									<li>Plant management</li>
+									<li>Easy to navigate</li>
+									<li>Inspection tracking</li>
+									<li>GIS tracking</li>
+									<li>Digital data</li>
+									<li>Time saver</li>
+								</ol>
+							</div>
+							<div class="mt-5">
+								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lg:px-16 py-16">
+				<div class="inner-layer flex lg:flex-row flex-col card-banner px-8 py-16 items-center">
+					<div class="">
+						<div class="card-title">Currrent Opennings</div>
+						<div class="card-description mt-6">SPI experience staffing for a variety of roles, including Contract, permanent, Contract to hire positions.</div>
+					</div>
+					<div class="flex-1 flex justify-end">
+						<Cbtn colorbtnText="Explore openeings" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+					</div>
+				</div>
+			</div>
+			<div class="lg:px-16 py-16">
+				<div class="inner-layer">
+					<div class="">
+						<div class="social-wall">Social Wall</div>
+					</div>
+					<div class="flex lg:flex-row flex-col gap-6 mt-8">
+						{
+							social_feeds.map((data, index) => (
+								<div class="flex-1 p-4 border-[1.5px] rounded-lg">
+									<div class="flex items-center mb-4">
+										<img src="/logos/small_logo.webp" class="mr-4" width="45px" height="45px" />
+										<div class="social_feed_title">{data.title}</div>
+									</div>
+									<div>
+										<img src={ data.url } width="100%" />
+									</div>
+									<div class="py-2 border-b-[1.5px] border-[#64676B]">
+										<img src="/like_share.webp" width="33" height="16.5" />
+									</div>
+									<div class="flex justify-around like_share mt-2">
+										<div>
+											like
+										</div>
+										<div>
+											Comment
+										</div>
+									</div>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+			<!-- contact form -->
+			<div class="bg-black lg:px-16 py-24">
+				<div class="contact-form-section flex-1 py-8 px-24 bg-[#141414]">
+					<!-- contact form -->
+					<div class="enquire_contact_form" id="enquire_popup_form">
+						<div class="form_section">
+							<div class="contact_heading pb-6 text-center border-b-[1.5px] border-[#FFFFFF0A] mb-12">Get in touch with us</div>
+							<form id="w3form" method="POST">
+								<!-- Replace with your Access Key --> 
+								<input type="hidden" name="access_key" value="37b9a42b-8539-41df-8a36-67e1e37c274c">
+								<!-- <input type="hidden" name="replyto" value="shelton@venzotechnologies.com" /> -->
+								<input type="hidden" name="from_name" value="Kytz Enquiry">
+
+								<!-- hello@kytz.com <input type="hidden" name="access_key" value="37b9a42b-8539-41df-8a36-67e1e37c274c"> -->
+								<!-- venzo@gmail.com <input type="hidden" name="access_key" value="5a696bab-69df-44a8-8dad-39e7c0e07877"> -->
+								<!-- shelton -->
+								<!-- <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0"> -->
+								<div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
+									<div class="line flex-none w-[48%]">
+										<input type="text" class="line_field" id="Kname" name="name" maxlength="255" placeholder="Enter full name" required>
+										<span class="error" id="username_err"> </span>
+									</div>
+									<div class="line flex-none w-[48%]">
+										<input type="text" class="line_field" id="Kcompany" maxlength="40" name="company name" placeholder="Enter bussiness email">
+										<span class="error" id="username_err"> </span>
+									</div>
+									<div class="line flex-1">
+										<input type="email" maxlength="255" name="Email" class="line_field" id="Kemail" placeholder="Enter organization name*" required>
+										<span class="error" id="email_err"> </span>
+									</div>
+									<div class="line flex-1">
+										<input type="text" name="phone" maxlength="18" id="Knumber" class="line_field" placeholder="Enter phone number" required>
+										<span class="error" id="mobile_err"> </span>
+									</div>
+									<div class="line w-full">
+										<textarea class="line_field" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about you need in detail"></textarea>
+										<span class="error" id="message_err"> </span>
+									</div>
+									<div class=""><button class="apply_now mt-2 px-12 py-2" id="submitbtn">submit</button></div>
+								</div>
+								<div id="message"></div>
+								<div class="terms_condition hidden">
+									By clicking send, you accept our <a href="">privacy policy</a> Prefer email? <a href="mailto:hello@kytz.in">hello@kytz.in</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</section>
 	</header>
 	<main>

@@ -4,29 +4,24 @@ interface Props {
     bgcolor: string;
     textColor: string;
     cursor: string;
-    fillcolor: string;
     display: string;
     classname: string;
 }
 
-const { colorbtnText, bgcolor, textColor, cursor, fillcolor, display, classname } = Astro.props;
+const { colorbtnText, bgcolor, textColor, cursor, display, classname } = Astro.props;
 ---
 
-<button class=`branding-stroke-button rounded-lg inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] ${classname}` style=`background-color: ${bgcolor}; color: ${textColor}; cursor: ${cursor};`>
-    { colorbtnText } 
-    <svg style=`display: ${display}` width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 5.75C0.585786 5.75 0.25 6.08579 0.25 6.5C0.25 6.91421 0.585786 7.25 1 7.25V5.75ZM17.0303 7.03033C17.3232 6.73744 17.3232 6.26256 17.0303 5.96967L12.2574 1.1967C11.9645 0.903806 11.4896 0.903806 11.1967 1.1967C10.9038 1.48959 10.9038 1.96447 11.1967 2.25736L15.4393 6.5L11.1967 10.7426C10.9038 11.0355 10.9038 11.5104 11.1967 11.8033C11.4896 12.0962 11.9645 12.0962 12.2574 11.8033L17.0303 7.03033ZM1 7.25L16.5 7.25V5.75L1 5.75V7.25Z" fill=`${fillcolor}`/>
-    </svg>
+<button class=`branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] ${classname}` style=`background-color: ${bgcolor}; color: ${textColor}; cursor: ${cursor};`>
+    { colorbtnText }
 </button>
 
 <style>
     .branding-stroke-button{
-        font-family: Atkinson Hyperlegible;
+        font-family: Instrument Sans;
         font-size: 15px;
-        font-weight: 500;
-        line-height: 18.15px;
-        text-align: center;
-        color: #FFFFFF;
+        font-weight: 600;
+        line-height: 18.52px;
+        text-align: left;
         padding: 15px 20px 15px 20px;
     }
 </style>

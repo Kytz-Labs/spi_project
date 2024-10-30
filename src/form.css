@@ -1,0 +1,186 @@
+
+    /* popupform */
+    #enquire_form{
+        z-index: 100;
+       }
+       .form_section{
+          padding: 2rem 3rem;
+       }
+       .contact_heading{
+            font-family: Instrument Sans;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 48px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            color: #FFFFFF;
+       }
+       .contact_content{
+          font-family: Instrument Sans;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30.6px;
+          text-align: left;
+          color: #1E1E1EEE;
+       }
+       .line_field{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            text-align: left;
+            color: #FFFFFF;   
+            opacity: .7;     
+            display: block;
+            width: 100%;
+            outline:none;
+            border:0;
+            padding: 14px 0px 20px 0px;
+            border-bottom: 1px solid #FFFFFF1F;
+            background: transparent;
+       }
+       .choose{
+         font-family: Instrument Sans;
+         font-size: 15px;
+         font-weight: 400;
+         line-height: 17.45px;
+         text-align: left;
+         color: white;
+         display: block;
+         width: 100%;
+       }
+       .apply_now{
+          font-family: Instrument Sans;
+          line-height: 17.45px;   
+          background-color: #C9F001;
+          border-radius: 8px;
+          padding: 13px 29px;
+          color: #282828;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          text-align: center;
+       }
+    
+       .success input {
+          border-color: green;
+          border-width: 2px;
+       }
+    
+       .success span {
+          color: green;
+       }
+    
+       .line > span {
+          color: red;
+          padding-top: .5rem;
+          display: inline-block;
+       }
+    
+       i {
+          font-weight: 900;
+          font-family: 'Font Awesome 5 Free';
+       }
+       #thank_show{
+          display: none;
+          box-shadow: 1px 1px 10px white;
+          font-size: 48px;
+          background: var(--gra-brown, linear-gradient(180deg, #754D2F 0%, #F9AB68 32.81%, #A77144 64.58%, #895B36 100%));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+       }
+    
+       .form_datas{
+          gap: 0 2rem;
+       }
+    
+       .enquire_thnkmss{
+          display:none;
+          border-radius: 10px;
+          box-shadow: 1px 1px 10px white;
+          padding: 2rem;
+       }
+    
+       .thnk_heading{
+          font-size: 70px;
+          text-align:center;
+          font-weight: 700;
+          line-height: 77px;
+          background: var(--gra-brown, linear-gradient(180deg, #754D2F 0%, #F9AB68 32.81%, #A77144 64.58%, #895B36 100%));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color:#6b6565;
+       }
+    
+       .thankh1{
+          font-size: 30px;
+          font-weight: 400;
+          line-height: 72px;
+          color:#6b6565;
+       }
+    
+       .thankh6{
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30.6px;
+          color:#6b6565;
+       }
+    
+       .how-we-help-radio{
+          position:absolute;
+          visibility: hidden;
+       }
+    
+       .how_label{
+          font-family: Instrument Sans;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24px;
+          text-align: left;
+          padding: 5px 10px;
+          border: 1px solid #FFFFFF;
+          border-radius: 6px;
+          color: #FFFFFF99;
+          display: block;
+          cursor: poInstrument Sans;
+          /* background-color:transparent; */
+       }
+    
+       #Checkbox_1:checked ~ .label-cover label:nth-child(1),
+       #Checkbox_2:checked ~ .label-cover label:nth-child(2),
+       #Checkbox_3:checked ~ .label-cover label:nth-child(3),
+       #Checkbox_4:checked ~ .label-cover label:nth-child(4)
+       {
+          background-color: #C9F001;
+          color: #282828;
+       }
+    
+       @media (max-width: 600px){
+          .line{
+             width: 100%;
+          }
+          .contact_content{
+             font-size: 15px;
+             line-height: 21.6px;
+          }
+          .contact_heading{
+             font-size: 23px;
+             line-height: 43px;
+          }
+          #enquire_main_form{
+             margin-top: 1.5rem;
+          }
+          .line_field{
+             padding: 10px 16px;
+             font-size: 12px;
+          }
+          .how_label{
+             font-size: 12px;
+          }
+          .form_section{
+             padding: 1.2rem;
+          }
+       }
+    

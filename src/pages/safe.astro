@@ -1,0 +1,99 @@
+<style>
+.slider-container {
+    color: white;
+    text-align: left;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #1c1c1c;
+}
+
+h2 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.prev {
+    background-color: #333;
+}
+
+.next {
+    background-color: #007acc;
+}
+
+</style>
+<div class="slider-container">
+    <h2>Client's Feedback</h2>
+    <div class="slider">
+        <div class="slide">
+            <h3>The Difference SafeConnect Made for Us!</h3>
+            <p>SafeConnect has revolutionized our workplace safety culture...</p>
+            <p><strong>Jeffry Jones</strong>, CEO, Neo Technologies</p>
+        </div>
+        <div class="slide">
+            <h3>Safe and Secure Product</h3>
+            <p>SafeConnect has revolutionized our workplace safety culture...</p>
+            <p><strong>Karthik</strong>, CEO, Kytz Labs</p>
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="prev" onclick="prevSlide()">←</button>
+        <button class="next" onclick="nextSlide()">→</button>
+    </div>
+</div>
+
+<script client:visible>
+  let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function updateSlidePosition() {
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+}
+
+// Initialize the slider position
+updateSlidePosition();
+
+
+</script>
