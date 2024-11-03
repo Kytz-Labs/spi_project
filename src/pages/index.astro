@@ -23,7 +23,35 @@ const services_data2 = [
 	{ title: "Professional<br> Services", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image6.webp"},
 ]
 
+const blogs = [
+    { 
+        title : "The Difference SafeConnect Made for Us!",
+        description : "SafeConnect has revolutionized our workplace safety culture. The app actively engages our employees in identifying risks and sharing best practices, leading to a noticeable decrease in incidents. Its focus on observation and intervention has made safety a habit for our team, creating a hazard-free environment that we can all feel proud of!",
+		name : "Jeffry Jones",
+		position: "CEO, Neo Technologies"
+    },
+    { 
+        title : "Safe and Secure Product",
+        description : "SafeConnect has revolutionized our workplace safety culture. The app actively engages our employees in identifying risks and sharing best practices, leading to a noticeable decrease in incidents. Its focus on observation and intervention has made safety a habit for our team, creating a hazard-free environment that we can all feel proud of!",
+		name : "Karthik",
+		position : "CEO, Kytz Labs"
+	},
+    { 
+        title : "The Difference SafeConnect Made for Us!",
+        description : "SafeConnect has revolutionized our workplace safety culture. The app actively engages our employees in identifying risks and sharing best practices, leading to a noticeable decrease in incidents. Its focus on observation and intervention has made safety a habit for our team, creating a hazard-free environment that we can all feel proud of!",
+		name : "Karthik",
+		position : "CEO, Kytz Labs"
+	},
+	{ 
+        title : "The Difference SafeConnect Made for Us!",
+        description : "SafeConnect has revolutionized our workplace safety culture. The app actively engages our employees in identifying risks and sharing best practices, leading to a noticeable decrease in incidents. Its focus on observation and intervention has made safety a habit for our team, creating a hazard-free environment that we can all feel proud of!",
+		name : "Karthik",
+		position : "CEO, Kytz Labs"
+	},
+]
+
 ---
+
 
 <Header title="home page">
 	<style>
@@ -169,7 +197,6 @@ const services_data2 = [
 			font-weight: 500;
 			line-height: 24px;
 			text-align: left;
-
 		}
 		.modules > li {
 			font-family: Instrument Sans;
@@ -225,6 +252,32 @@ const services_data2 = [
 			font-size: 12px;
 			color:gray;
 		}
+		/* clients feedback */
+		.clients-feedback{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 19.2px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.client-name{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.client-position{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 25.6px;
+			text-align: left;
+			color: #FFFFFF80;
+		}
 		@media (max-width: 600px) {
 			.site-title-layer {
 				background-position: center;
@@ -239,8 +292,69 @@ const services_data2 = [
 				line-height: 54px;
 				text-align:left;
 			}
-			.product-title{
+		}
+		.post{
+			flex-shrink: 0;
+			width: 70.3%;
+			transition: all 1s ease;
+			opacity: .5;
+			scale: .8;
+		}
+		.post:first-child{
+			opacity:1;
+			scale: 1;
+		}
+		.pre-post{
+			opacity:1;
+			scale: 1;
+		}
+		.post_title{
+			font-family: Atkinson Hyperlegible;font-size: 26px;font-weight: 700;line-height: 39.68px;text-align: left;
+		}
+		.post-inner-layer > img{
+			width:100%;
+		}
+		.small_desc{
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 22.4px;
+			text-align: left;
+			color: rgba(51, 51, 51, 1);
+		}
+		.blogs-title{
+			font-family: Atkinson Hyperlegible;font-size: 32px;font-weight: 700;line-height: 39.68px;text-align: left;color:rgba(0, 0, 0, 1);
+		}
+		.clients-title{
+			font-family: Instrument Sans;
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 38.4px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.clients-description{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 28.8px;
+			text-align: left;
+			color: #FFFFFF99;
+		}
 
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
 			}
 		}
 	</style>
@@ -378,18 +492,18 @@ const services_data2 = [
 								<a href="#" class="underline">Check all Products</a>
 							</div>
 						</div>
-						<div class="flex-1 min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
 								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
 							</div>
-							<div class="product_description text-[#00000099] group-hover:text-white relative my-4 z-[10]">
+							<div class="product_description lg:text-[#00000099] lg:group-hover:text-white text-white relative my-4 z-[10]">
 								A safety app that engages employees to improve safety practices, aiming for zero incidents.
 							</div>
-							<div class="font-[700] relative text-[16px] text-[#00000099] group-hover:text-white leading-[19.2px] pb-2 z-[10]">
+							<div class="font-[700] relative text-[16px] lg:text-[#00000099] lg:group-hover:text-white text-white leading-[19.2px] pb-2 z-[10]">
 								Modules
 							</div>
 							<div class="z-[10] relative">
-								<ol class="list-decimal text-[#00000099] group-hover:text-white pl-5 modules">
+								<ol class="list-decimal lg:text-[#00000099] lg:group-hover:text-white text-white pl-5 modules">
 									<li>Observation and Intervention (O&I)</li>
 									<li>Job Safety Analysis (JSA)</li>
 									<li>Risk Assessment</li>
@@ -398,17 +512,17 @@ const services_data2 = [
 									<li>Incident Notification</li>
 								</ol>
 							</div>
-							<div class="mt-5 relative z-[10] opacity-0 group-hover:opacity-[1] transition duration-500 delay-50 ease-in-out">
+							<div class="mt-5 relative z-[10] lg:opacity-0 lg:group-hover:opacity-[1] opacity-100 transition duration-500 delay-50 ease-in-out">
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 							</div>
-							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 absolute z-[10] transition duration-500 delay-50 ease-in-out" >
+							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out" >
 								<img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
 							</div>
-							<div class="absolute bottom-4 inset-0 inset-x-4 translate-y-3/4 group-hover:translate-y-0 group-hover:inset-x-0 group-hover:rounded-[0] group-hover:bottom-0 rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
+							<div class="absolute bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
 							</div>
 						</div>
-						<div class="flex-1 min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
 								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
 							</div>
@@ -434,7 +548,7 @@ const services_data2 = [
 								
 							</div>
 						</div>
-						<div class="flex-1 min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
 								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
 							</div>
@@ -466,6 +580,49 @@ const services_data2 = [
 								
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<!-- current openings -->
+			<div class="lg:px-16 px-8 lg:py-12 bg-[#141414] py-20">
+				<div class="inner-layer lg:px-8 py-16 lg:items-center">
+					<div class="clients-feedback border-b-[1.5px] pb-3 border-[#FFFFFF1F] w-full">
+						CLIENT’S  FEEDBACK
+					</div>
+					<div class="flex flex-row flex-1 overflow-hidden">
+						{
+							(blogs && blogs.map((blogCon) => (
+								<div class="post pr-12">
+									<div class="clients-title mt-16 mb-8">
+										{blogCon.title}
+									</div>
+									<div class="clients-description">
+										{blogCon.description}
+									</div>
+									<div class="client-name mt-8">
+										{blogCon.name}
+									</div>
+									<div class="client-position">
+										{blogCon.position}
+									</div>
+								</div>
+							)))
+						} 
+					</div>
+					<!-- forward backward buttons -->
+					<div class="lg:py-8 py-4 flex flex-row justify-start gap-4"> 
+						<!-- <button>backward</button> -->
+						<svg class="post-back-buttons" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="50" height="50" rx="25" transform="matrix(-1 0 0 1 50 0)" fill="white" fill-opacity="0.1"/>
+							<rect x="-0.5" y="0.5" width="49" height="49" rx="24.5" transform="matrix(-1 0 0 1 49 0)" stroke="white" stroke-opacity="0.12"/>
+							<path d="M32 25.9994H20.14L23.77 30.3594C23.9397 30.5636 24.0214 30.8269 23.997 31.0913C23.9726 31.3557 23.8442 31.5996 23.64 31.7694C23.4358 31.9391 23.1725 32.0208 22.9081 31.9964C22.6437 31.972 22.3997 31.8436 22.23 31.6394L17.23 25.6394C17.1957 25.5921 17.1656 25.5419 17.14 25.4894C17.14 25.4394 17.14 25.4094 17.07 25.3594C17.0247 25.2447 17.0009 25.1226 17 24.9994C17.0009 24.8761 17.0247 24.754 17.07 24.6394C17.07 24.5894 17.07 24.5594 17.14 24.5094C17.1656 24.4568 17.1957 24.4066 17.23 24.3594L22.23 18.3594C22.324 18.2465 22.4418 18.1557 22.5748 18.0935C22.7079 18.0313 22.8531 17.9991 23 17.9994C23.2337 17.9989 23.4601 18.0803 23.64 18.2294C23.7413 18.3133 23.825 18.4164 23.8863 18.5328C23.9477 18.6491 23.9855 18.7764 23.9975 18.9074C24.0096 19.0384 23.9957 19.1704 23.9567 19.296C23.9176 19.4216 23.8542 19.5383 23.77 19.6394L20.14 23.9994H32C32.2652 23.9994 32.5196 24.1047 32.7071 24.2923C32.8946 24.4798 33 24.7341 33 24.9994C33 25.2646 32.8946 25.5189 32.7071 25.7065C32.5196 25.894 32.2652 25.9994 32 25.9994Z" fill="white"/>
+						</svg>
+							
+						<svg class="post-forward-buttons" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="50" height="50" rx="25" fill="#006B9E"/>
+							<rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="white" stroke-opacity="0.12"/>
+							<path d="M18 25.9994H29.86L26.23 30.3594C26.0603 30.5636 25.9786 30.8269 26.003 31.0913C26.0274 31.3557 26.1558 31.5996 26.36 31.7694C26.5642 31.9391 26.8275 32.0208 27.0919 31.9964C27.3563 31.972 27.6003 31.8436 27.77 31.6394L32.77 25.6394C32.8043 25.5921 32.8344 25.5419 32.86 25.4894C32.86 25.4394 32.86 25.4094 32.93 25.3594C32.9753 25.2447 32.9991 25.1226 33 24.9994C32.9991 24.8761 32.9753 24.754 32.93 24.6394C32.93 24.5894 32.93 24.5594 32.86 24.5094C32.8344 24.4568 32.8043 24.4066 32.77 24.3594L27.77 18.3594C27.676 18.2465 27.5582 18.1557 27.4252 18.0935C27.2921 18.0313 27.1469 17.9991 27 17.9994C26.7663 17.9989 26.5399 18.0803 26.36 18.2294C26.2587 18.3133 26.175 18.4164 26.1137 18.5328C26.0523 18.6491 26.0145 18.7764 26.0025 18.9074C25.9904 19.0384 26.0043 19.1704 26.0433 19.296C26.0824 19.4216 26.1458 19.5383 26.23 19.6394L29.86 23.9994H18C17.7348 23.9994 17.4804 24.1047 17.2929 24.2923C17.1054 24.4798 17 24.7341 17 24.9994C17 25.2646 17.1054 25.5189 17.2929 25.7065C17.4804 25.894 17.7348 25.9994 18 25.9994Z" fill="white"/>
+						</svg>
 					</div>
 				</div>
 			</div>
@@ -576,14 +733,8 @@ const services_data2 = [
     var inner_layer = document.querySelector(".inner-layer-award").getBoundingClientRect().y;
     var inner_layer2 = document.querySelector(".inner-layer-innovator").getBoundingClientRect().y;
 	var innovator = document.querySelectorAll(".innovator-content");
-    // var demo2 = document.querySelector(".demo2").getBoundingClientRect().y;
-    // var demo3 = document.querySelector(".demo3").getBoundingClientRect().y;
-    // var demo4 = document.querySelector(".demo4").getBoundingClientRect().y;
     var first_number= Number(inner_layer2.toFixed());
     var second_number= Number(inner_layer.toFixed());
-    // var third_number= Number(demo3.toFixed());
-    // var fourth_number= Number(demo4.toFixed());
-	console.log("working");
 
 	window.onscroll = () => {
         var page_position = window.pageYOffset;
@@ -617,36 +768,90 @@ const services_data2 = [
 			document.querySelector(".logos").style.transition="all 1.5s";
 			document.querySelector(".logos").style.transform="translateY(100%)";
         }
-
-        // if(page_cutoff > (second_number)) {
-        //     document.querySelector(".Inpic2").style.transition="all 1s";
-        //     document.querySelector(".Inpic2").style.height="0px";
-        //     scroll_title.innerHTML=title_cotent[2];
-        //     scroll_description.innerHTML=title_description[2];
-        //     branding_stroke.innerHTML=btn_content[2];
-        //     rectElements.forEach((scg, scgindex) => {
-        //         scg.style.fillOpacity="0.2";
-        //     })
-        //     rectElements[2].style.fillOpacity="1";
-        // }else{
-        //     document.querySelector(".Inpic2").style.transition="all 1s";
-        //     document.querySelector(".Inpic2").style.height="100%";
-        // }
-
-        // if(page_cutoff > (third_number)) {
-        //     document.querySelector(".Inpic3").style.transition="all 1s";
-        //     document.querySelector(".Inpic3").style.height="0px";
-        //     scroll_title.innerHTML=title_cotent[3];
-        //     scroll_description.innerHTML=title_description[3];
-        //     branding_stroke.innerHTML=btn_content[3];
-        //     rectElements.forEach((scg, scgindex) => {
-        //         scg.style.fillOpacity="0.2";
-        //     })
-        //     rectElements[3].style.fillOpacity="1";
-        // }else{
-        //     document.querySelector(".Inpic3").style.transition="all 1s";
-        //     document.querySelector(".Inpic3").style.height="100%";
-        // }
-
      }
+	document.addEventListener("DOMContentLoaded", () => {
+		window.history.pushState({}, document.title, window.location.pathname);
+
+		var first = document.querySelector(".post:nth-child(1)");
+		var posts = document.querySelectorAll(".post").length;
+		var allposts=document.querySelectorAll(".post");
+		var hoverF = document.querySelector(".post-forward-buttons");
+		var hoverB = document.querySelector(".post-back-buttons");
+		var present_count = 0;
+		console.log(posts);
+		var cut_off = (posts / 1) - 1;
+		var cut_offmb = posts - 1;
+
+		// Get the width of a single post element dynamically
+		function getPostWidth() {
+			return document.querySelector(".post").offsetWidth;
+		}
+
+		if (window.innerWidth > 600) { 
+			hoverB.onclick = () => {
+				if (present_count > 0) {
+					present_count--;
+
+					hoverB.style.border="1px solid grey";
+					hoverB.style.borderRadius="5px";
+					hoverF.style.border="none";
+
+					allposts.forEach((single, singleI) => {
+						single.classList.remove("pre-post");
+					})
+
+					allposts[present_count].classList.add("pre-post");
+
+					// Adjust the marginLeft using the post width
+					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
+				}
+			};
+
+			hoverF.onclick = () => {
+				if (present_count < cut_off) {
+					present_count++;
+					
+					allposts.forEach((single, singleI) => {
+						single.classList.remove("pre-post");
+					})
+
+					allposts[present_count].classList.add("pre-post");
+
+					hoverF.style.border="1px solid grey";
+					hoverF.style.borderRadius="5px";
+					hoverB.style.border="none";
+
+
+					// Adjust the marginLeft using the post width
+					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
+				}
+			};
+		} else {
+			hoverB.onclick = () => {
+				if (present_count > 0) {
+					present_count--;
+
+					hoverB.style.border="1px solid grey";
+					hoverB.style.borderRadius="5px";
+					hoverF.style.border="none";
+
+					// Adjust the marginLeft using the post width
+					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
+				}
+			};
+
+			hoverF.onclick = () => {
+				if (present_count < cut_offmb) {
+					present_count++;
+
+					hoverF.style.border="1px solid grey";
+					hoverF.style.borderRadius="5px";
+					hoverB.style.border="none";
+
+					// Adjust the marginLeft using the post width
+					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
+				}
+			};
+		}
+	})
 </script>
