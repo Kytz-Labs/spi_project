@@ -1,0 +1,153 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+
+const services_data = [
+	{ title: "Airport Capabilities", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image1.webp"},
+	{ title: "Enterprise<br> Infrastructure", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp"},
+	{ title: "IT Staffing", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
+	{ title: "Business Intelligence / Analysis", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image4.webp"},
+	{ title: "Digital Transformation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image5.webp"},
+	{ title: "Professional Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Digitizing MWBE forms</li><li>Data Migration, Integration and Visualization a Cloud Solution</li><li>Employee Performance tracking  and Claims management System</li><li>Weather Monitoring and Reporting</li><li>GIS - Engineering Asset management and Change Management plan</li><li>Server Consolidation</li><li>Functional specifications documentation for migration to new technology</li></ul>", url: "/services/services_image6.webp"},
+]
+
+---
+
+
+<Header title="home page">
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 75px;
+            font-weight: 600;
+            line-height: 96px;
+            letter-spacing: -0.03em;
+            text-align: left;
+			color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 44px;
+                line-height:60.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 pt-20  site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-start justify-start lg:border-b-[1.5px] lg:pb-16 border-[#FFFFFF33]">
+                <h6 class="service_shrt text-start mb-5">
+                    SERVICES
+                </h6>
+				<h1 class="home_title text-start mb-5">
+					<span class="lg:block inline">Expert Services to </span><span class="text-[#B5DB00]">Drive Digital Transformation</span> and Business Success
+				</h1>
+				<h6 class="home_description flex-none text-start">
+					At SPI, we offer a comprehensive range of IT services designed to meet your business needs. From expert consulting to flexible staffing solutions, our team delivers the strategies and talent to optimize your operations.
+				</h6>
+			</div>
+		</div>
+		<section>
+			<!-- we are a service -->
+			<div class="lg:px-12 px-8 lg:pb-28 lg:pt-16 bg-[#000000]">
+				<div class="inner-layer-innovator grid lg:grid-cols-3 gap-8">
+                        {
+                            services_data.map((data, dataIndex) => (
+                                <div class="px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5 overflow-hidden bg-white">
+                                    {/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
+                                    <div class="z-[20] flex justify-between items-center pb-5">
+                                        <div class="services-title lg:group-hover:text-white lg:text-[#000000] text-white transition ease-in-out delay-150 duration-300 flex-1" set:html={data.title}></div>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 10.5C1.17157 10.5 0.5 11.1716 0.5 12C0.5 12.8284 1.17157 13.5 2 13.5L2 10.5ZM25.0607 13.0607C25.6464 12.4749 25.6464 11.5251 25.0607 10.9393L15.5147 1.3934C14.9289 0.807613 13.9792 0.807613 13.3934 1.3934C12.8076 1.97919 12.8076 2.92893 13.3934 3.51472L21.8787 12L13.3934 20.4853C12.8076 21.0711 12.8076 22.0208 13.3934 22.6066C13.9792 23.1924 14.9289 23.1924 15.5147 22.6066L25.0607 13.0607ZM2 13.5L24 13.5L24 10.5L2 10.5L2 13.5Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <div class="services-description z-[20] lg:text-black text-white lg:group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
+                                    </div>
+                                    <div class="absolute inset-x-0 w-full z-[10] h-[100%] lg:translate-y-[98%] lg:group-hover:translate-y-0 translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+                                    </div>
+                                </div>
+                            ))
+                        }
+				</div>
+			</div>
+			
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+

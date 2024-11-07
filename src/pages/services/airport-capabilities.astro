@@ -1,0 +1,314 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+import { array } from "astro:schema";
+
+const security = [
+	{ title: "Airside / Landside Systems", description: array["Veoci - Airfield Operations Field Inspection"]},
+	{ title: "Safety & Security Systems", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp"},
+	{ title: "Facilities Management Implementation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
+]
+
+const list= [
+	"Capital Request Valuation", "Program & Project Management – Sciforma", "Property Management (PropWorks) – property billing & invoicing", "Unifier – Construction Management", "Primavera P6 – Design Engineering Construction Scheduling", "Unifier – Construction Management", "Origami Risk – Accident Reporting", "Enterprise Content Management – Document & Content", "Oracle eBusiness – Financials", "Appian – Business Process Automation", "Appian – Business Process Automation", "Business Intelligence – MicroStrategy, Tableau, Power BI Integration – MuleSoft", "Infor – Enterprise Asset Management"
+]
+
+---
+
+
+<Header title="home page">
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 28.8px;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 75px;
+            font-weight: 600;
+            line-height: 96px;
+            letter-spacing: -0.03em;
+            text-align: left;
+			color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		/* image section */
+		.list_element{
+			font-family: Instrument Sans;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 32px;
+			text-align: left;
+			color: #000000;
+		}
+		.capabilities{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #006B9E;
+		}
+
+		/* services scroll section */
+		.differenciate{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 43.2px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+
+		.diff-description{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #FFFFFFCC;
+		}
+
+
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 44px;
+                line-height:60.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 py-12 site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-start justify-start lg:pb-16 border-[#FFFFFF33]">
+                <h6 class="service_shrt text-start mb-5">
+                    SERVICES
+                </h6>
+				<h1 class="home_title text-start mb-5">
+					Airport Capabilities
+				</h1>
+				<h6 class="home_description flex-none text-start">
+					Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience. Software Professionals, Inc. is an IT Consulting & Digital Solutions firm since 1992. Whether your requirement is for IT professionals, customer support specialists or project-based Statement of Work, our team of experts are equipped with the niche skill sets desired by all major airport.</br></br>
+                    Our powerful combination of consulting and product expertise provides clients with end-to-end technology driven enterprise‐wide business solutions. SPI is proud to be woman and minority certified.
+				</h6>
+			</div>
+		</div>
+		<section>
+            <div class="relative">
+                <img src="/services/airline.webp" width="100%" height="500px" alt="airline" />
+				<div class="absolute -bottom-20 capabilities bg-white right-12 p-8">
+					<div class="pb-5">Airport Capabilities</div>
+					<ul class="list_element list-disc pl-5">
+						<li>Software Development & Implementation</li>
+						<li>Staff Augmentation</li>
+					</ul>
+				</div>
+            </div>
+
+			<!-- services -->
+			<div class="lg:pl-12 pl-8 pr-8 lg:py-28 lg:pr-40 bg-black">
+				<div class="inner-layer flex lg:flex-row flex-col lg:pb-0 pb-8 gap-24">
+					<div class="recent-blog-title flex-none lg:sticky lg:h-screen top-0 lg:w-[55%] flex-none pl-10">
+						<div class="services">
+							<img src="/services/airline_image.webp" width="100%" height="600px">
+						</div>
+					</div>
+					<div class="lg:pt-28">
+						<div class="mb-12">
+							<div class="differenciate pb-10">Differentiator</div>
+							<div class="diff-description">SPI integrates people. Processes and products to deliver innovative results. Our promise: Quality, Flexibility, Responsiveness.</div>
+						</div>
+						<div class="mb-12">
+							<div class="differenciate pb-10">Business & Finance</div>
+							<div class="diff-description">
+								<ul>
+									{ 
+										list.map((list, index) => (
+											<li class="inline-flex items-center gap-2 pb-2">
+												<img src="/svg/list.svg" width="12" height="12" />
+												<div>{ list }</div>
+											</li>
+										))
+									}
+								</ul>
+							</div>
+						</div>
+						<div class="mb-12">
+							<div class="differenciate pb-10">Customers Experience</div>
+							<div class="diff-description">
+								<ul>
+									<li class="inline-flex items-center gap-3 pb-2">
+										<img src="/svg/list.svg" width="12" height="12" />
+										<div>Digital Signage – Wayfinding system</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2">
+										<img src="/svg/list.svg" width="12" height="12" />
+										<div>Digital Transformation</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2">
+										<img src="/svg/list.svg" width="12" height="12" />
+										<div>Skidata – Parking</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2">
+										<img src="/svg/list.svg" width="12" height="12" />
+										<div>AODB – Airport Operations Database</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2">
+										<img src="/svg/list.svg" width="12" height="12" />
+										<div>Passenger Processing</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2 pl-6">
+										-
+										<div> Common Use Passenger Processing</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2 pl-6">
+										-
+										<div> Mobile Passport Control – Automated Passport Control</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2 pl-6">
+										-
+										<div> Baggage Handling System</div>
+									</li>
+									<li class="inline-flex items-center gap-3 pb-2 pl-6">
+										-
+										<div> Automated Passport Control</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lg:px-16 px-8 py-20 bg-black">
+				<div class="inner-layer flex lg:flex-row flex-col">
+					<div class="airside flex-1">
+						<div class="differenciate">Airside / Landside Systems</div>
+						<div class="diff-description">
+							<ul>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>Veoci – Airfield Operations Field Inspection</div>
+								</li>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>
+										Integrated Vehicle Transportation and Announcement System (Rental Car and Terminal Link Bus Tracking)
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="airside flex-1">
+						<div class="differenciate">Airside / Landside Systems</div>
+						<div class="diff-description">
+							<ul>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>Veoci – Airfield Operations Field Inspection</div>
+								</li>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>
+										Integrated Vehicle Transportation and Announcement System (Rental Car and Terminal Link Bus Tracking)
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="airside flex-1">
+						<div class="differenciate">Airside / Landside Systems</div>
+						<div class="diff-description">
+							<ul>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>Veoci – Airfield Operations Field Inspection</div>
+								</li>
+								<li class="inline-flex items-center gap-3 pb-2">
+									<img src="/svg/list.svg" width="12" height="12" />
+									<div>
+										Integrated Vehicle Transportation and Announcement System (Rental Car and Terminal Link Bus Tracking)
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
