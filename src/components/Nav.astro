@@ -42,7 +42,9 @@ const menuList = [
 			<div class="sidebar_dropdown">
 				{
 					menuList.map((nav, navIndex) => (
-						<div class="navlistItem mblist"><a href={nav.url} aria-label={nav.ariaLabel}>{nav.name}</a></div>
+						<div class="navlistItem mblist">
+							<a href={nav.url} aria-label={nav.ariaLabel}>{nav.name}</a>
+						</div>
 					))
 				}
 			</div>
