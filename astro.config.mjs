@@ -8,7 +8,7 @@ export default defineConfig({
   output: "server",
 
   // Cloudflare Workers adapter
-  adapter: cloudflare(),
+  // adapter: cloudflare(),
 
   integrations: [tailwind()]
 });

@@ -1,0 +1,277 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+import { array } from "astro:schema";
+
+const security = [
+	{ title: "Airside / Landside Systems", description: ""},
+	{ title: "Safety & Security Systems", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp"},
+	{ title: "Facilities Management Implementation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
+]
+
+const list= [
+	"Capital Request Valuation", "Program & Project Management – Sciforma", "Property Management (PropWorks) – property billing & invoicing", "Unifier – Construction Management", "Primavera P6 – Design Engineering Construction Scheduling", "Unifier – Construction Management", "Origami Risk – Accident Reporting", "Enterprise Content Management – Document & Content", "Oracle eBusiness – Financials", "Appian – Business Process Automation", "Appian – Business Process Automation", "Business Intelligence – MicroStrategy, Tableau, Power BI Integration – MuleSoft", "Infor – Enterprise Asset Management"
+];
+
+---
+
+
+<Header title="home page">
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 28.8px;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 75px;
+            font-weight: 600;
+            line-height: 96px;
+            letter-spacing: -0.03em;
+            text-align: left;
+			color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		/* image section */
+		.list_element{
+			font-family: Instrument Sans;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 32px;
+			text-align: left;
+			color: #000000;
+		}
+		.capabilities{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #006B9E;
+		}
+
+		/* services scroll section */
+		.h2{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 43.2px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+
+		.diff-description{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #FFFFFFCC;
+		}
+
+
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 44px;
+                line-height:60.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 py-12 site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-start justify-start border-[#FFFFFF33]">
+                <h6 class="service_shrt text-start mb-5">
+                    SERVICES
+                </h6>
+				<h1 class="home_title text-start mb-5">
+					Application Management
+				</h1>
+			</div>
+		</div>
+		<section>
+			<!-- services -->
+			<div class="lg:pl-12 pl-8 pr-8 lg:pb-28 lg:pr-40 bg-black">
+				<div class="inner-layer lg:pb-0 pb-8 lg:gap-24">
+					<div class="">
+                        <div class="mb-12">
+                            <div class="h2 pb-10">
+                                <h2 class="h2 pb-8">We at SPI can help you with Custom Software Application Development</h2>
+                                <h6 class="home_description flex-none text-start">
+                                    We at SPI have developed thousands of custom application solutions since 1992. We have many years of experience helping businesses achieve their business goals through custom application solutions based on our deep understanding of agile software development methodology, understanding our client’s unique challenges, needs, and business objectives. Our custom software solutions have increased our client’s market share because of the incredible value it brings to their end-users.
+                                </h6>
+                            </div>
+                            <div class="diff-description">We integrate our processes with our clients to streamline efforts and meet project parameters. We provide seamless, end-to-end management across an enterprise. Our depth of experience in many industries combined with technical excellence makes SPI the right choice for your application management needs.</div>
+                        </div>
+					</div>
+                    <div class="mb-12">
+                        <div class="h2 pb-10">Our Application Management services include:</div>
+                        <div class="diff-description">
+                            <ul>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Business analysis and requirement documentation</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application design, architecture development, and implementation</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>User interface design and web development</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Software Product Development</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Software maintenance and support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2 pl-6">
+                                    -
+                                    <div>Re-engineering, migration, modernization, performance tuning</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="diff-description">
+                            <ul>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div> Application Development</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div> Software Product Development</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Artificial Intelligence</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application Migration</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2">
+                                    <img src="/svg/list.svg" width="12" height="12" />
+                                    <div>Application/Product Support</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2 pl-6">
+                                    -
+                                    <div></div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2 pl-6">
+                                    -
+                                    <div> Mobile App Development</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2 pl-6">
+                                    -
+                                    <div> Legacy System Modernization</div>
+                                </li>
+                                <li class="flex items-center gap-3 pb-2 pl-6">
+                                    -
+                                    <div> Application/Product Maintenance</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
