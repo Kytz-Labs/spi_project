@@ -1,0 +1,231 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+
+const services_data = [ "/product_logo/product_logo1.webp", "/product_logo/product_logo4.webp", "/product_logo/product_logo5.webp", "/product_logo/product_logo3.webp", "/product_logo/product_logo4.webp"];
+const services_list= [
+    { logo: "/product_logo/product_logo1.webp", description : "A safety app that engages employees to improve safety practices, aiming for zero incidents.", modules : "MODULES", value1 : ["Observation and Intervention (O&I)", "Job Safety Analysis (JSA)", "Risk Assessment"], value2 : ["Safety Walkthrough", "Personal Safety Plan (PSP)", "Incident Notification"] },
+    { logo: "/product_logo/product_logo2.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.", modules : "BENEFITS", value1 : ["A Useful and Accessible Asset", "Field Tested and Approved"] },
+    { logo: "/product_logo/product_logo3.webp", description : "A software for managing the entire permit process, from application to occupancy. ", modules : "BENEFITS", value1 : ["Permit management", "Compliance tracking", "Plant management", "Easy to navigate"], value2 : ["Inspection tracking", "GIS tracking", "Digital data", "Time saver"] },
+]
+---
+
+
+<Header title="home page">
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22.4px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 57.6px;
+            letter-spacing: -0.03em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+        /* products */
+		.product-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 28.8px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: white;
+		}
+		.product_section{
+			height: 680px;
+			background-image: url("/products.webp");
+			background-size: cover;
+		}
+		.check{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.product_description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+		.modules > li {
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 44px;
+                line-height:60.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 pt-20 site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-start justify-start lg:border-b-[1.5px] lg:pb-16 border-[#FFFFFF33]">
+                <h6 class="service_shrt mb-5 text-center w-full block">
+                    PRODUCTS
+                </h6>
+				<h1 class="home_title text-start">
+					<span class="lg:block inline">Empowering Businesses with </span><span class="text-[#B5DB00]">Smart, Reliable Solutions</span>  for a Safer Environment Friendly Tomorrow
+				</h1>
+			</div>
+		</div>
+		<section>
+			<!-- we are a service -->
+			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000]">
+				<div class="inner-layer-innovator grid lg:grid-cols-5 bg-white">
+                    {
+                        services_data.map((data, dataIndex) => (
+                            <div class="px-8 my-8 flex flex-row justify-between relative group overflow-hidden items-center">
+                                {/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
+                                <img src={ data } alt="" width="80%" height="100%" />
+                                {
+                                    (dataIndex == 4) ? "" : <div class="border-r-[1.5px] h-[28px]"></div>
+                                }
+                            </div>
+                        ))
+                    }
+				</div>
+			</div>
+
+            <!-- we are a service -->
+			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000]">
+				<div class="inner-layer-innovator">
+                    {
+                        services_list.map((data, dataIndex) => (
+                            <div class="px-8 flex lg:flex-row flex-col relative group items-center bg-white mb-10 py-2 overflow-hidden group">
+                               <div class="flex-1">
+                                    <div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+                                        <div class="border-b-[1.6px] relative pb-3 z-[10]">
+                                            <img src={ data.logo } width="20%" height="73px" />
+                                        </div>
+                                        <div class="product_description lg:text-[#00000099] relative my-4 z-[10]">
+                                             { data.description }
+                                        </div>
+                                        <div class="font-[700] relative text-[16px] lg:text-black leading-[19.2px] pb-2 z-[10]">
+                                            { data.modules}
+                                        </div>
+                                        <div class="z-[10] relative">
+                                            <ol class="list-decimal lg:text-[#00000099] pl-5 modules">
+                                                <li>Observation and Intervention (O&I)</li>
+                                                <li>Job Safety Analysis (JSA)</li>
+                                                <li>Risk Assessment</li>
+                                                <li>Safety Walkthrough</li>
+                                                <li>Personal Safety Plan (PSP)</li>
+                                                <li>Incident Notification</li>
+                                            </ol>
+                                        </div>
+                                        <div class="mt-5 relative z-[10] lg:opacity-0 lg:translate-y-16 lg:group-hover:opacity-[1] lg:group-hover:translate-y-0 opacity-100 transition duration-500 delay-50 ease-in-out">
+                                            <Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="flex-1 min-h-[100px] relative">
+                                    <div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out" >
+                                        <img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
+                                    </div>
+                                    <div class="absolute bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
+                                        
+                                    </div>
+                               </div>   
+                            </div>
+                        ))
+                    }
+				</div>
+			</div>
+			
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
