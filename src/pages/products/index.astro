@@ -7,9 +7,9 @@ import "../../form.css"
 
 const services_data = [ "/product_logo/product_logo1.webp", "/product_logo/product_logo4.webp", "/product_logo/product_logo5.webp", "/product_logo/product_logo3.webp", "/product_logo/product_logo4.webp"];
 const services_list= [
-    { logo: "/product_logo/product_logo1.webp", description : "A safety app that engages employees to improve safety practices, aiming for zero incidents.", modules : "MODULES", value1 : ["Observation and Intervention (O&I)", "Job Safety Analysis (JSA)", "Risk Assessment"], value2 : ["Safety Walkthrough", "Personal Safety Plan (PSP)", "Incident Notification"] },
-    { logo: "/product_logo/product_logo2.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.", modules : "BENEFITS", value1 : ["A Useful and Accessible Asset", "Field Tested and Approved"] },
-    { logo: "/product_logo/product_logo3.webp", description : "A software for managing the entire permit process, from application to occupancy. ", modules : "BENEFITS", value1 : ["Permit management", "Compliance tracking", "Plant management", "Easy to navigate"], value2 : ["Inspection tracking", "GIS tracking", "Digital data", "Time saver"] },
+    { logo: "/product_logo/product_logo1.webp", bgcolor: "#006B9E",  product_image: "/mobile.webp", description : "A safety app that engages employees to improve safety practices, aiming for zero incidents.", modules : "MODULES", value1 : ["Observation and Intervention (O&I)", "Job Safety Analysis (JSA)", "Risk Assessment"], value2 : ["Safety Walkthrough", "Personal Safety Plan (PSP)", "Incident Notification"] },
+    { logo: "/product_logo/product_logo2.webp", bgcolor: "#B5DB00", product_image: "/laptop.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.", modules : "BENEFITS", value1 : ["A Useful and Accessible Asset", "Field Tested and Approved"], value2 : [] },
+    { logo: "/product_logo/product_logo3.webp", bgcolor: "#006B9E", product_image: "/laptop2.webp", description : "A software for managing the entire permit process, from application to occupancy. ", modules : "BENEFITS", value1 : ["Permit management", "Compliance tracking", "Plant management", "Easy to navigate"], value2 : ["Inspection tracking", "GIS tracking", "Digital data", "Time saver"] },
 ]
 ---
 
@@ -140,14 +140,14 @@ const services_list= [
 				height: 435px;
 			}
             .home_title{
-                font-size: 44px;
-                line-height:60.8px;
+                font-size: 40px;
+                line-height:50.8px;
             }
 		}
 	</style>
 	<header class="">
 		<Nav />
-		<div class="px-8 lg:px-12 pt-20 site-title-layer overflow-hidden relative flex items-start" >
+		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start" >
 			<div class="header flex flex-col items-start justify-start lg:border-b-[1.5px] lg:pb-16 border-[#FFFFFF33]">
                 <h6 class="service_shrt mb-5 text-center w-full block">
                     PRODUCTS
@@ -159,7 +159,7 @@ const services_list= [
 		</div>
 		<section>
 			<!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000]">
+			<div class="lg:px-12 px-8 pb-28 lg:pt-0 pt-20 bg-[#000000]">
 				<div class="inner-layer-innovator grid lg:grid-cols-5 bg-white">
                     {
                         services_data.map((data, dataIndex) => (
@@ -176,15 +176,15 @@ const services_list= [
 			</div>
 
             <!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000]">
+			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
 				<div class="inner-layer-innovator">
                     {
                         services_list.map((data, dataIndex) => (
-                            <div class="px-8 flex lg:flex-row flex-col relative group items-center bg-white mb-10 py-2 overflow-hidden group">
-                               <div class="flex-1">
-                                    <div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+                            <div class="pl-2 flex lg:flex-row flex-col relative group items-strech bg-white mb-10 overflow-hidden group items-stretch lg:max-h-[350px]">
+                               <div class="flex-none lg:w-[60%] h-full lg:order-first order-last">
+                                    <div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 pt-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
                                         <div class="border-b-[1.6px] relative pb-3 z-[10]">
-                                            <img src={ data.logo } width="20%" height="73px" />
+                                            <img src={ data.logo } width="20%" height="73px" class="transition-width delay-150 duration-500 lg:w-[20%] lg:group-hover:w-[10%] w-[50%]" />
                                         </div>
                                         <div class="product_description lg:text-[#00000099] relative my-4 z-[10]">
                                              { data.description }
@@ -192,28 +192,34 @@ const services_list= [
                                         <div class="font-[700] relative text-[16px] lg:text-black leading-[19.2px] pb-2 z-[10]">
                                             { data.modules}
                                         </div>
-                                        <div class="z-[10] relative">
+                                        <div class="z-[10] relative flex lg:flex-row flex-col gap-12">
                                             <ol class="list-decimal lg:text-[#00000099] pl-5 modules">
-                                                <li>Observation and Intervention (O&I)</li>
-                                                <li>Job Safety Analysis (JSA)</li>
-                                                <li>Risk Assessment</li>
-                                                <li>Safety Walkthrough</li>
-                                                <li>Personal Safety Plan (PSP)</li>
-                                                <li>Incident Notification</li>
+												{
+													data.value1.map((value, valIndex) => (
+														<li>{ value }</li>
+													))
+												}
+                                            </ol>
+											<ol class="list-decimal lg:text-[#00000099] pl-5 modules">
+												{
+													data.value2.map((val, index) => (
+														<li>{ val }</li>
+													))
+												}
                                             </ol>
                                         </div>
-                                        <div class="mt-5 relative z-[10] lg:opacity-0 lg:translate-y-16 lg:group-hover:opacity-[1] lg:group-hover:translate-y-0 opacity-100 transition duration-500 delay-50 ease-in-out">
+                                        <div class="my-5 relative z-[10] lg:opacity-0 lg:translate-y-16 lg:group-hover:opacity-[1] lg:group-hover:translate-y-0 opacity-100 transition duration-500 delay-50 ease-in-out">
                                             <Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
                                         </div>
                                     </div>
                                </div>
-                               <div class="flex-1 min-h-[100px] relative">
-                                    <div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-                                        <img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
+                               <div class="flex-1 relative overflow-hidden">
+                                    <div class="overflow-hidden bottom-0 text-[#00000099] lg:absolute relative z-[10] transition duration-500 delay-150 ease-in-out overflow-hidden" >
+                                        <img src={data.product_image}  class="lg:translate-y-72 lg:group-hover:translate-y-52 translate-y-0 transition duration-500 delay-150" /> 
+										{/* group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300 */}
                                     </div>
-                                    <div class="absolute bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
-                                        
-                                    </div>
+									<div class="absolute inset-0 scale-[.94] group-hover:scale-[1] transition-width duration-100 delay-150 ease-in-out" style=`background-color: ${data.bgcolor}`>
+									</div>
                                </div>   
                             </div>
                         ))
