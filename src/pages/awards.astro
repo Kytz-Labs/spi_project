@@ -1,0 +1,196 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+
+
+const services_list= [
+    { logo: "/awards_page/award1.webp", width : "100%", description : "USPAAC – Women in Leadership Legacy Award", },
+    { logo: "/awards_page/award2.webp", width : "100%", description : "USPAAC  –  Fast 50 Asian American Business Excellence Award" },
+    { logo: "/awards_page/award3.webp", width : "100%", description : "USPAAC – Regional TOP-10 Business Growth Award." },
+    { logo: "/awards_page/award4.webp", width : "100%", description : "USPAAC – Outstanding Supplier Award in the South West region" },
+    { logo: "/awards_page/award5.webp", width : "44%", description : "Annual ranking of 500 Fastest Growing privately held U.S. companies" },
+    { logo: "/awards_page/award6.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region." },
+    { logo: "/awards_page/award7.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region" },
+    { logo: "/awards_page/award8.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region, over a 3-year period" },
+    { logo: "/awards_page/award9.webp", width : "44%", description : "Top 50 ranking of fastest growing Indo-American owned companies" },
+    { logo: "/awards_page/award10.webp", width : "44%", description : "Ranked 8th largest Indo-American woman-owned company in the U.S." },
+    { logo: "/awards_page/award11.webp", width : "44%", description : "DFW Airport - Champions of diversity award 2023" },
+]
+---
+
+
+<Header title="home page">
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22.4px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 57.6px;
+            letter-spacing: -0.03em;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+        /* products */
+		.product-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 28.8px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: white;
+		}
+		.product_section{
+			height: 680px;
+			background-image: url("/products.webp");
+			background-size: cover;
+		}
+		.check{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.product_description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+		}
+		.modules > li {
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 40px;
+                line-height:50.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-center justify-center lg:border-b-[1.5px] lg:pb-16 border-[#FFFFFF33]">
+				<h1 class="home_title text-center w-full block mb-5">
+					<span class="text-[#B5DB00]">Awards</span> & Achievements
+				</h1>
+                <h6 class="text-white lg:w-[80%] text-center">
+                    SPI has won a number of regional and national awards for rapid-growth and quality. These include the Inc. 500,Dallas 100, D/FW tech Titan Fast 50 and the Texas Crescent Technologies Award. In addition, SPI is ranked in the Top-50 Indo-American owned businesses by Indus Business Journal magazine, the top 100 minority owned companies in DiversityNews and in the annual “Top 200” by the Dallas Morning News-minority owned listing.
+                </h6>
+			</div>
+		</div>
+		<section>
+
+            <!-- we are a service -->
+			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
+				<div class="inner-layer-innovator grid lg:grid-cols-4 gap-5">
+                    {
+                        services_list.map((data, dataIndex) => (
+                            <div class="pl-2">
+                               <div class="lg:h-[280px] bg-white">
+                                    <div class="px-8 py-12">
+                                        <div class="pb-3 min-h-[100px] flex justify-center items-center flex-col">
+                                            <img src={ data.logo} width={ data.width } height="111px" alt="USPAACC" />
+                                        </div>
+                                        <div class="product_description lg:text-[#00000099] text-center my-4">
+                                             { data.description }
+                                        </div>
+                                    </div>
+                               </div> 
+                            </div>
+                        ))
+                    }
+				</div>
+			</div>
+			
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
