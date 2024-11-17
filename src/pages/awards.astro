@@ -115,9 +115,12 @@ const services_list= [
 		}
 		.product_description{
 			font-family: Instrument Sans;
-			font-size: 15px;
-			font-weight: 500;
-			line-height: 24px;
+            font-size: 14.8px;
+            font-weight: 500;
+            line-height: 24.6px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #444444;
 		}
 		.modules > li {
 			font-family: Instrument Sans;
@@ -153,7 +156,7 @@ const services_list= [
 	<header class="">
 		<Nav />
 		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start" >
-			<div class="header flex flex-col items-center justify-center lg:border-b-[1.5px] lg:pb-16 border-[#FFFFFF33]">
+			<div class="header flex flex-col items-center justify-center lg:pb-16">
 				<h1 class="home_title text-center w-full block mb-5">
 					<span class="text-[#B5DB00]">Awards</span> & Achievements
 				</h1>
@@ -170,8 +173,8 @@ const services_list= [
                     {
                         services_list.map((data, dataIndex) => (
                             <div class="pl-2">
-                               <div class="lg:h-[280px] bg-white">
-                                    <div class="px-8 py-12">
+                               <div class="lg:h-[290px] bg-white">
+                                    <div class="px-6 py-12">
                                         <div class="pb-3 min-h-[100px] flex justify-center items-center flex-col">
                                             <img src={ data.logo} width={ data.width } height="111px" alt="USPAACC" />
                                         </div>
