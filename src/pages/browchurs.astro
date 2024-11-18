@@ -6,17 +6,15 @@ import Footer from "@components/Footer.astro"
 
 
 const services_list= [
-    { logo: "/awards_page/award1.webp", width : "100%", description : "USPAAC – Women in Leadership Legacy Award", },
-    { logo: "/awards_page/award2.webp", width : "100%", description : "USPAAC  –  Fast 50 Asian American Business Excellence Award" },
-    { logo: "/awards_page/award3.webp", width : "100%", description : "USPAAC – Regional TOP-10 Business Growth Award." },
-    { logo: "/awards_page/award4.webp", width : "100%", description : "USPAAC – Outstanding Supplier Award in the South West region" },
-    { logo: "/awards_page/award5.webp", width : "44%", description : "Annual ranking of 500 Fastest Growing privately held U.S. companies" },
-    { logo: "/awards_page/award6.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region." },
-    { logo: "/awards_page/award7.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region" },
-    { logo: "/awards_page/award8.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region, over a 3-year period" },
-    { logo: "/awards_page/award9.webp", width : "44%", description : "Top 50 ranking of fastest growing Indo-American owned companies" },
-    { logo: "/awards_page/award10.webp", width : "44%", description : "Ranked 8th largest Indo-American woman-owned company in the U.S." },
-    { logo: "/awards_page/award11.webp", width : "44%", description : "DFW Airport - Champions of diversity award 2023" },
+    { title: "SPI Capabilities", description : "Our powerful combination of consulting and product expertise provides clients with end to end technology", },
+    { title: "Services Offerings", description : "Over the last few decades, advancements in computer and software technologies have reached an impressive level" },
+    { title: "SPI Airport Capabilities", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience." },
+    { title: "SPI Transportation Industry Capabilities", description : "The transportation sector consists of several industries including air freight and logistics, airlines, marine, road, rail, and transportation infrastructure." },
+	{ title: "SafeConnect", description : "Software Professionals, Inc. has developed a software tool for that is designed to incorporate an organization’s sustainable safety program " },
+    { title: "EnviroConnect", description : "EnviroConnect is a comprehensive solution for handling environmental data and generating reports." },
+    { title: "ELMS", description : "Lorem ipsum dolor sit amet consectetur. Nunc tortor lorem ultricies dui proin scelerisque amet urna in. Sit leo amet magna elit ultrices id et eu praesent. Sed turpis dui malesuada ultrices. Odio nunc sollicitudin sed ipsum." },
+    { title: "PermitConnect", description : "PermitConnect is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
+    { title: "SafeSchool", description : "SafeSchool is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
 ]
 ---
 
@@ -34,6 +32,17 @@ const services_list= [
             text-decoration-skip-ink: none;
             color: #FFFFFFCC;
         }
+		.site-title-layer::before{
+			content: "";
+			background-image: url("/svg/banner_bg.svg");
+			height: 435px;
+			width:100%;
+			position:absolute;
+			inset:0;
+			z-index:0;
+			top: -33%;
+			background-repeat: no-repeat;
+		}
 		.home_title{
 			font-family: Instrument Sans;
             font-size: 48px;
@@ -115,12 +124,13 @@ const services_list= [
 		}
 		.product_description{
 			font-family: Instrument Sans;
-            font-size: 14.8px;
-            font-weight: 500;
-            line-height: 24.6px;
-            text-underline-position: from-font;
-            text-decoration-skip-ink: none;
-            color: #444444;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+            color: #000000CC;
 		}
 		.modules > li {
 			font-family: Instrument Sans;
@@ -129,18 +139,16 @@ const services_list= [
 			line-height: 24px;
 			text-align: left;
 		}
-        .site-title-layer::before{
-			content: "";
-			background-image: url("/svg/banner_bg.svg");
-			height: 435px;
-			width:100%;
-			position:absolute;
-			inset:0;
-			z-index:0;
-			top: -33%;
-			background-repeat: no-repeat;
+		.browchurs_title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #000000;
 		}
-
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -169,10 +177,10 @@ const services_list= [
 		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start" >
 			<div class="header flex flex-col items-center justify-center lg:pb-16">
 				<h1 class="home_title text-center w-full block mb-5">
-					<span class="text-[#B5DB00]">Awards</span> & Achievements
+					Brochures
 				</h1>
                 <h6 class="text-white lg:w-[80%] text-center">
-                    SPI has won a number of regional and national awards for rapid-growth and quality. These include the Inc. 500,Dallas 100, D/FW tech Titan Fast 50 and the Texas Crescent Technologies Award. In addition, SPI is ranked in the Top-50 Indo-American owned businesses by Indus Business Journal magazine, the top 100 minority owned companies in DiversityNews and in the annual “Top 200” by the Dallas Morning News-minority owned listing.
+                    Explore our range of brochures to learn how Software Professionals, Inc. delivers value-driven digital solutions. From modernization to transformation, see how we empower businesses for growth.
                 </h6>
 			</div>
 		</div>
@@ -180,18 +188,21 @@ const services_list= [
 
             <!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
-				<div class="inner-layer-innovator grid lg:grid-cols-4 gap-5">
+				<div class="inner-layer-innovator grid lg:grid-cols-3 gap-5">
                     {
                         services_list.map((data, dataIndex) => (
                             <div class="pl-2">
-                               <div class="lg:h-[290px] bg-white">
-                                    <div class="px-6 py-12">
-                                        <div class="pb-3 min-h-[100px] flex justify-center items-center flex-col">
-                                            <img src={ data.logo} width={ data.width } height="111px" alt="USPAACC" />
-                                        </div>
-                                        <div class="product_description lg:text-[#00000099] text-center my-4">
-                                             { data.description }
-                                        </div>
+                               <div class="bg-white">
+                                    <div class="px-6 py-12 flex flex-col justify-between min-h-[360px]">
+										<div class="">
+											<div class="browchurs_title mb-5">{data.title}</div>
+											<div class="product_description lg:text-[#00000099] text-center my-4">
+												{ data.description }
+											</div>
+										</div>
+										<div>
+											<Cbtn colorbtnText="View Contract Details" classname="" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+										</div>
                                     </div>
                                </div> 
                             </div>

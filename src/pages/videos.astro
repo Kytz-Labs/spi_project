@@ -6,17 +6,14 @@ import Footer from "@components/Footer.astro"
 
 
 const services_list= [
-    { logo: "/awards_page/award1.webp", width : "100%", description : "USPAAC – Women in Leadership Legacy Award", },
-    { logo: "/awards_page/award2.webp", width : "100%", description : "USPAAC  –  Fast 50 Asian American Business Excellence Award" },
-    { logo: "/awards_page/award3.webp", width : "100%", description : "USPAAC – Regional TOP-10 Business Growth Award." },
-    { logo: "/awards_page/award4.webp", width : "100%", description : "USPAAC – Outstanding Supplier Award in the South West region" },
-    { logo: "/awards_page/award5.webp", width : "44%", description : "Annual ranking of 500 Fastest Growing privately held U.S. companies" },
-    { logo: "/awards_page/award6.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region." },
-    { logo: "/awards_page/award7.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region" },
-    { logo: "/awards_page/award8.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region, over a 3-year period" },
-    { logo: "/awards_page/award9.webp", width : "44%", description : "Top 50 ranking of fastest growing Indo-American owned companies" },
-    { logo: "/awards_page/award10.webp", width : "44%", description : "Ranked 8th largest Indo-American woman-owned company in the U.S." },
-    { logo: "/awards_page/award11.webp", width : "44%", description : "DFW Airport - Champions of diversity award 2023" },
+    { logo: "/awards_page/award1.webp", width : "100%", description : "Quality & Flexibility", },
+    { logo: "/awards_page/award2.webp", width : "100%", description : "Customer Experience" },
+    { logo: "/awards_page/award3.webp", width : "100%", description : "Interview with SPI CEO" },
+    { logo: "/awards_page/award5.webp", width : "44%", description : "Safe Connect" },
+    { logo: "/awards_page/award6.webp", width : "44%", description : "Transportation Industry" },
+    { logo: "/awards_page/award7.webp", width : "44%", description : "SPI celebrated 30 years in business at Circle R Ranch with colleagues and friends" },
+    { logo: "/awards_page/award9.webp", width : "44%", description : "SPI FUN!" },
+    { logo: "/awards_page/award10.webp", width : "44%", description : "SPI Promo" },
 ]
 ---
 
@@ -47,6 +44,17 @@ const services_list= [
 		.site-title-layer {
 			background-size: cover;
 			background-color: #000000;
+		}
+		.site-title-layer::before{
+			content: "";
+			background-image: url("/svg/banner_bg.svg");
+			height: 435px;
+			width:100%;
+			position:absolute;
+			inset:0;
+			z-index:0;
+			top: -33%;
+			background-repeat: no-repeat;
 		}
 		.home_description{
 			font-family: Instrument Sans;
@@ -115,12 +123,14 @@ const services_list= [
 		}
 		.product_description{
 			font-family: Instrument Sans;
-            font-size: 14.8px;
-            font-weight: 500;
-            line-height: 24.6px;
+            font-size: 17.72px;
+            font-weight: 600;
+            line-height: 25.69px;
+            letter-spacing: -0.01em;
+            text-align: left;
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
-            color: #444444;
+            color: white;
 		}
 		.modules > li {
 			font-family: Instrument Sans;
@@ -128,17 +138,6 @@ const services_list= [
 			font-weight: 500;
 			line-height: 24px;
 			text-align: left;
-		}
-        .site-title-layer::before{
-			content: "";
-			background-image: url("/svg/banner_bg.svg");
-			height: 435px;
-			width:100%;
-			position:absolute;
-			inset:0;
-			z-index:0;
-			top: -33%;
-			background-repeat: no-repeat;
 		}
 
 		@media (max-width: 600px) {
@@ -169,10 +168,10 @@ const services_list= [
 		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start" >
 			<div class="header flex flex-col items-center justify-center lg:pb-16">
 				<h1 class="home_title text-center w-full block mb-5">
-					<span class="text-[#B5DB00]">Awards</span> & Achievements
+					Videos
 				</h1>
                 <h6 class="text-white lg:w-[80%] text-center">
-                    SPI has won a number of regional and national awards for rapid-growth and quality. These include the Inc. 500,Dallas 100, D/FW tech Titan Fast 50 and the Texas Crescent Technologies Award. In addition, SPI is ranked in the Top-50 Indo-American owned businesses by Indus Business Journal magazine, the top 100 minority owned companies in DiversityNews and in the annual “Top 200” by the Dallas Morning News-minority owned listing.
+                    Discover how Software Professionals, Inc. leverages AI and data analytics to transform business processes. Explore our video collection to see innovation and digital transformation in action.
                 </h6>
 			</div>
 		</div>
@@ -180,15 +179,15 @@ const services_list= [
 
             <!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
-				<div class="inner-layer-innovator grid lg:grid-cols-4 gap-5">
+				<div class="inner-layer-innovator grid lg:grid-cols-3">
                     {
                         services_list.map((data, dataIndex) => (
                             <div class="pl-2">
-                               <div class="lg:h-[290px] bg-white">
-                                    <div class="px-6 py-12">
-                                        <div class="pb-3 min-h-[100px] flex justify-center items-center flex-col">
-                                            <img src={ data.logo} width={ data.width } height="111px" alt="USPAACC" />
-                                        </div>
+                               <div class="lg:h-[290px]">
+                                    <div class="px-2 py-12">
+                                        <video controls="" class="bg-black w-full firstv">
+                                            <source src="./assets/videos/secure_your_home.mp4" type="video/mp4">
+                                        </video>
                                         <div class="product_description lg:text-[#00000099] text-center my-4">
                                              { data.description }
                                         </div>
