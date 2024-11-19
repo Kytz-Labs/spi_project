@@ -1,0 +1,660 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import CareerForm from "../../components/Forms/Career.astro"
+---
+
+<Header title="home page">
+	<style>
+        h1{
+            font-family: Instrument Sans;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 38.4px;
+            letter-spacing: -0.03em;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .h6 {
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+        .home-title{
+            font-family: Instrument Sans;
+            font-size: 60px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            text-align: center;
+            color: white;
+            z-index:1;
+        }
+        .site-title-layer {
+            background-size: cover;
+            background-color: #000000;
+        }
+        .home_description{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            color: #FFFFFF;
+            z-index:1;
+        }
+        .site-title-layer::before{
+            content: "";
+            background-image: url("./public/svg/ellipse.svg");
+            height: 435px;
+            width:100%;
+            position:absolute;
+            inset:0;
+            z-index:0;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+        .contract{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+            color: #000000CC;
+        }
+        .branding-stroke-button{
+            font-family: Instrument Sans;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 18.52px;
+            text-align: left;
+            padding: 15px 20px 15px 20px;
+        }
+        .contact_number{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+            text-align: justify;
+        }   
+        .dir{
+            font-family: Instrument Sans;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 43.2px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+        .dir_soft{
+            font-family: Instrument Sans;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 31.2px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            color: hsla(0, 0%, 100%, 1);
+        }
+        .description{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: hsla(0, 0%, 100%, 1);
+        }
+        .software{
+            font-family: Instrument Sans;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 42.8px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: hsla(0, 0%, 100%, 1);
+        }
+        .tab_contents{
+            font-family: Instrument Sans;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 33.6px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color:white;
+        }
+        .tity_text{
+            font-family: Instrument Sans;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22.4px;
+            letter-spacing: -0.01em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: white;
+        } 
+        .tab-list{
+            border-radius: 2px;
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 18px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFB2;
+            transition: all .2s;
+        }
+        .tab-content{
+            display:none;
+        }
+        .active{
+            width:100%;
+            background-color: #B5DB00;
+            color: black;
+        }
+        .Acontent{
+            display:block;
+        }  
+        .trauma-care-title{
+            color: #0C2E8A;
+            font-family: Inter;
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 110%; /* 38.5px */
+            letter-spacing: -0.7px;
+        }
+        .trauma-care-description{
+            color: #545454;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 167%; /* 30.06px */
+        }
+        .branding-stroke-button{
+            font-family: Instrument Sans;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 18.52px;
+            text-align: left;
+            padding: 15px 20px 15px 20px;
+        }
+        .card-content{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: black;
+        }   
+
+        @media (max-width: 600px) {
+            h1{
+                font-size: 36px;
+                line-height: 50px;
+            }
+            .post{
+                width: 100%;
+            }
+            .post_title{
+                font-size: 24px;
+            }
+            .blogs-title{
+                font-size: 32px;
+            }
+            .blogMain{
+                background-color: #292d6b;
+                color: white;
+            }
+            .site-title-layer::before{
+                height: 435px;
+            }
+            .site-title-layer::before{
+                background-position: center;
+            }
+            .software{
+                font-size: 30px;
+            }
+        }
+    </style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 py-14 site-title-layer overflow-hidden relative flex items-center" >
+            <div class="header flex flex-col items-center justify-center">
+                <h1 class="home_title text-center my-12 lg:w-[75%]">
+                    The TXShare Cooperative Purchasing Program is the direct outcome of municipal governments partnering together to identify common needs for public entities across and beyond the State of Texas.
+                </h1>
+                <div class="flex justify-center gap-16">
+                    <div class="bg-white p-3">
+                        <img src="/logos/spi.webp" width="180.6px" height="137.59px" />
+                    </div>
+                    <div class="bg-white p-3">
+                        <img src="/svg/operative3.svg" width="180.44px" height="139.62px" />
+                    </div>
+                </div>
+                <!-- <img src="/svg/ellipse.svg"> -->
+            </div>
+        </div>
+        <section>
+            <!-- we are a service -->
+             <div class="lg:px-16 pb-16 px-8 bg-black">
+                <div class="inner-layer bg-[#141414] p-10">
+                    <div class="flex lg:flex-row flex-col lg:justify-between">
+                        <div class="flex-1 lg:pb-0 pb-8">
+                            <div class="contact_number text-[#B5DB00] pb-5">Software Professionals, Inc Contract number</div>
+                            <div class="dir pb-5 underline"><a href="https://dir.texas.gov/contracts/dir-cpo-5651" target="_blank">DIR-CPO-5651</a></div>
+                            <div class="dir_soft pb-5">Texas Department of Information Resources (DIR)</div>
+                             <div class="contact_number text-white opacity-50 text-justify">
+                                 Awarded a contract of IT Staffing Services to Software Professionals, Inc to provide
+temporary IT staffing augmentation services on a time (hourly) basis to over 6,500
+agencies, including state agencies, institutions of higher education, k-12, local
+governments, assistance organizations, and out-of-state customers.
+                             </div>
+                        </div>
+                        <div class="flex-1 flex lg:justify-end lg:pr-12">
+                            <div class="w-[55%]">
+                                <div class="flex items-center pb-2">
+                                    <div class="contact_number flex-none w-[80%] text-[#B5DB00]">Contract Number</div>
+                                    <div class="text-white"> : </div>
+                                    <div class="contact_number text-white ps-3"> 10/24/24</div>
+                                </div>
+                                <div class="flex items-center pb-2">
+                                    <div class="contact_number flex-none w-[80%] text-[#B5DB00]">Contract Term Date</div>
+                                    <div class="text-white"> : </div>
+                                    <div class="contact_number text-white ps-3"> 10/24/24</div>
+                                </div>
+                                <div class="flex items-center pb-2">
+                                    <div class="contact_number flex-none w-[80%] text-[#B5DB00]">Contract Expiration Date</div>
+                                    <div class="text-white"> : </div>
+                                    <div class="contact_number text-white ps-3"> 10/24/24</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description pt-5">
+                        <ol class="list-decimal pl-6">
+                             <li>Here is the link to the Texas <a href="https://dir.texas.gov/cooperative-contracts?id=41" class="underline" target="_blank">DIR Cooperative Contracts</a> </li>
+                            <li>Here is the link to DIR IT Staff Augmentation Contracts (ITSAC) <a href="https://dir.texas.gov/cooperative-contracts/it-staffing-services?id=13" class="underline" target="_blank">Program Overview</a></li>
+                        </ol>
+                    </div>
+                    <div class="flex lg:flex-row flex-col justify-between py-10 border-t-[1px] border-gray-800 mt-10">
+                        <div class="flex-1 lg:pb-0 pb-10">
+                            <div class="mb-5">
+                                <div class="contact_number text-[#B5DB00] pb-3">Vendor Information</div>
+                                <div class="dir_soft">Software Professionals<br> Incorporated</div>
+                            </div>
+                            <div class="">
+                                <div class="flex items-center">
+                                    <div class="contact_number text-white opacity-50">vendor ID</div>
+                                    <div class="text-white opacity-50"> : </div>
+                                    <div class="contact_number text-white opacity-50 ps-3">752443333</div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="contact_number text-white opacity-50">HUB Type </div>
+                                    <div class="text-white opacity-50"> : </div>
+                                    <div class="contact_number text-white opacity-50 ps-3"> Asian Pacific American</div>
+                                </div>
+                                <div class="contact_number text-white opacity-50">Female </div>
+                                <div class="flex items-center">
+                                    <div class="contact_number text-white opacity-50">RFO</div>
+                                    <div class="text-white opacity-50"> : </div>
+                                    <div class="contact_number text-white opacity-50 ps-3"> DIR-CPO_TMP-579</div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="contact_number text-white opacity-50">Contract Status</div>
+                                    <div class="text-white opacity-50"> : </div>
+                                    <div class="contact_number text-white opacity-50 ps-3"> Active</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 flex lg:flex-row flex-col justify-end lg:pr-12 lg:pb-0 pb-10">
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <div class="contact_number flex-none w-[80%] text-[#B5DB00] pb-3">Vendor Contact</div>
+                                    <a href="mailto:pavan@spius.net">
+                                        <div class="dir_soft underline flex gap-3 items-center">
+                                            Pavan Dayyala
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 5H8.2C7.08 5 6.52 5 6.092 5.218C5.71569 5.40974 5.40974 5.71569 5.218 6.092C5 6.52 5 7.08 5 8.2V15.8C5 16.92 5 17.48 5.218 17.908C5.40974 18.2843 5.71569 18.5903 6.092 18.782C6.519 19 7.079 19 8.197 19H15.803C16.921 19 17.48 19 17.907 18.782C18.284 18.59 18.59 18.284 18.782 17.908C19 17.48 19 16.921 19 15.803V14M20 9V4M20 4H15M20 4L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <div class="flex items-center">
+                                        <div class="contact_number text-white opacity-50">Phone</div>
+                                        <div class="text-white opacity-50"> : </div>
+                                        <div class="contact_number text-white opacity-50 ps-3">(214) 604-4220</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 flex justify-end lg:pr-12">
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <div class="contact_number flex-none w-[80%] text-[#B5DB00] pb-3">DIR Contact</div>
+                                    <a href="mailto:lesli.gonzalez@dir.texas.gov">
+                                        <div class="dir_soft underline flex gap-3 items-center">
+                                            Lesli Gonzalez-Parker
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 5H8.2C7.08 5 6.52 5 6.092 5.218C5.71569 5.40974 5.40974 5.71569 5.218 6.092C5 6.52 5 7.08 5 8.2V15.8C5 16.92 5 17.48 5.218 17.908C5.40974 18.2843 5.71569 18.5903 6.092 18.782C6.519 19 7.079 19 8.197 19H15.803C16.921 19 17.48 19 17.907 18.782C18.284 18.59 18.59 18.284 18.782 17.908C19 17.48 19 16.921 19 15.803V14M20 9V4M20 4H15M20 4L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <div class="flex items-center">
+                                        <div class="contact_number text-white opacity-50">Phone</div>
+                                        <div class="text-white opacity-50"> : </div>
+                                        <div class="contact_number text-white opacity-50 ps-3">(737) 270-2650</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+             <!-- we are a service -->
+             <div class="lg:px-16 pb-16 px-8 bg-black">
+                <div class="inner-layer">
+                    <div class="mb-16">
+                        <div class="software pb-4">
+                            Software Professionals Incorporated, works with state agencies, city and county governments, and university organizations across the state to help with information technology resources
+                        </div>
+                        <div class="description">
+                            We work quickly to place different IT staff with government experience across Texas. Contact us to let us know what you’re looking for and we’ll have someone ready to start immediately.
+                        </div>
+                    </div>
+
+                    <div class="mb-16">
+                        <div class="software pb-4">
+                            Instructions for Obtaining Quotes and Purchase Orders
+                        </div>
+                        <div class="description">
+                            We will work with you to develop a purchase order if needed. To purchase the order go through the <a href="https://dir.texas.gov/contracts/dir-cpo-5651" target="_blank" class="underline">DIR-CPO-5651</a>. Once that has been created, it will need to be submitted to Software Professionals Incorporated. – Pavan Dayyala, <a href="mailto:sales@spius.net" class="underline" target="_blank">sales@spius.net</a>
+                        </div>
+                    </div>
+
+                    <div class="mb-16">
+                        <div class="software pb-4">
+                            How to Obtain Quotes and Place Purchase Orders.(PO must contain DIR Contract Number: DIR-CPO-5651)
+                        </div>
+                        <div class="description">
+                            <ol class="list-decimal pl-6">
+                                <li>DIR Customer emails IT Staffing requirements to <a href="mailto:sales@spius.net" class="underline" target="_blank">sales@spius.net</a></li>
+                                <li>
+                                    <div>Customer must provide the following details in the email:</div>
+                                    <div>- Job Role</div>
+                                    <div>- Job Description and job duties</div>
+                                    <div>- Point-of-contact information</div>
+                                    <div>- Submittal Deadline</div>
+                                    <div>- Other required materials, skills or preferences</div>
+                                </li>
+                                <li>SPI Delivery Manager will prescreen and submit qualified candidates to Customer</li>
+                                <li>Customer reviews & intervews candidates</li>
+                                <li>Customer selects a candidate and notifies SPI Delivery Manage</li>
+                                <li>Customer emails PO to <a href="mailto:sales@spius.net" class="underline" target="_blank">sales@spius.net</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="description">
+                            If you have any questions about the process, please feel free to contact us. We’re happy to help. Software Professionals Incorporated is a part of the DIR Cooperative Contracts Program
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+              <!-- Services and Pricing -->
+              <div class="lg:px-16 pb-16 px-8 bg-black lg:pt-0 pt-12">
+                <div class="inner-layer flex lg:flex-row flex-col gap-12">
+                    <div class="lg:mb-16 mb-4">
+                        <div class="tab_contents pb-4">
+                            Services and Pricing                            
+                        </div>
+                        <div class="description">
+                            Software Professionals Incorporated has been awarded contract to provide support Customer information technology projects, acting by and through the Department of Information Resources (DIR).
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-5 items-center lg:w-9/12 justify-end">
+                        <a href="https://txdir.widen.net/view/pdf/elitdqqqlq/DIR-CPO-5651-Appendix-D-ITSAC-Job-Category-Title-Descriptions.pdf?t.download=true&u=tmwul0" target="_blank" class="flex-1">
+                          <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center gap-4">
+                                <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                <div class="tity_text">Job Descriptions</div>
+                          </div>  
+                        </a>
+                        <a href="https://txdir.widen.net/view/pdf/dihbe22m2c/DIR-CPO-5651-Appendix-C-Pricing-Index.pdf?t.download=true&u=tmwul0" target="_blank" class="flex-1">
+                          <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center gap-4">
+                                <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                <div class="tity_text">Pricing</div>
+                          </div>  
+                        </a> 
+                    </div>
+                </div>
+             </div>
+
+            <!-- contract details and ordering information -->
+            <div class="lg:px-16 pb-16 px-8 bg-black lg:pt-0 pt-12">
+                <div class="inner-layer">
+                    <div class="mb-2">
+                        <div class="tab_contents pb-4">
+                            Contract Details & Ordering Information                        
+                        </div>
+                    </div>
+                    <!-- Start Service Style-->
+                    <div class="tabed-section flex lg:flex-row flex-col items-start gap-10 pt-4">
+                        <div class="tab-section lg:w-[20%] relative lg:border-r-[1.2px] border-white pr-4 flex lg:flex-col flex-row flex-wrap">
+                            <div class="tab-list cursor-pointer lg:no-underline underline mb-2 px-2 py-2 active" id="tab-1">Products & Services</div>
+                            <div class="tab-list cursor-pointer lg:no-underline underline mb-2 px-2 py-2" id="tab-2">Commodity Codes</div>
+                            <div class="tab-list cursor-pointer lg:no-underline underline mb-2 px-2 py-2" id="tab-3">Brands</div>
+                            <div class="tab-list cursor-pointer lg:no-underline underline mb-2 px-2 py-2" id="tab-4">Contract Documents</div>
+                            <div class="tab-list cursor-pointer lg:no-underline underline mb-2 px-2 py-2" id="tab-5">How to Order</div>
+                            <div class="tab-list cursor-pointer lg:no-underline underline px-2 py-2" id="tab-6">Reseller</div>
+                        </div>
+                        <div class="flex-1 overflow-hidden">
+                            <!-- content-1 -->
+                            <div class="tab-content Acontent">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-1.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="tab_contents pb-4">
+                                        Products & Services       
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <p class="pb-3">This contract offers the following products and services. Please contact the Vendor for the latest information.</p>
+                                        <ul class="list-disc pl-5">
+                                            <li>IT Staffing Services</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content-2 -->
+                            <div class="tab-content">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-2.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="tab_contents pb-4">
+                                        Commodity Codes      
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <p class="pb-3">Commodity codes are standard classification codes for products and services. These codes come from the State of Texas NIGP Commodity book. Using these codes tells Procurement Services what kinds of items are purchased most, so we can build better contracts to serve your needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content-3 -->
+                            <div class="tab-content">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-3.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="software pb-4">
+                                        Brands
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <ul class="list-disc pl-5">
+                                            <li>IT Staffing Services</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content-4 -->
+                            <div class="tab-content">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-4.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="tab_contents pb-4">
+                                        Contract Documents for DIR-CPO-5651
+                                    </div>
+                                    <div class="description">
+                                        <p class="pb-12">Contract documents include all essential contract documents for your procurement file.</p>
+                                        <div class="grid lg:grid-cols-3 gap-12">
+                                            <a href="https://txdir.widen.net/view/pdf/tqafi0ph7z/DIR-CPO-5651-Contract.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">DIR-CPO-5651 Contract</div>
+                                                </div>  
+                                            </a>
+                                            <a href="https://txdir.widen.net/view/pdf/4ft8sr8vws/DIR-CPO-5651-Appendix-A-Terms-and-Conditions.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">	DIR-CPO-5651 Appendix A Terms and Conditions</div>
+                                                </div>  
+                                            </a>
+                                            <a href="https://txdir.widen.net/view/pdf/f60bx4wvhg/DIR-CPO-5651-Appendix-B-HUB-Subcontracting-Plan.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">	DIR-CPO-5651 Appendix B HUB Subcontracting Plan</div>
+                                                </div> 
+                                            </a>
+                                            <a href="https://txdir.widen.net/view/pdf/dihbe22m2c/DIR-CPO-5651-Appendix-C-Pricing-Index.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">DIR-CPO-5651 Appendix C Pricing Index</div>
+                                                </div> 
+                                            </a>
+                                            <a href="https://txdir.widen.net/view/pdf/elitdqqqlq/DIR-CPO-5651-Appendix-D-ITSAC-Job-Category-Title-Descriptions.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">DIR-CPO-5651 Appendix D ITSAC Job Category, Title Descriptions</div>
+                                                </div> 
+                                            </a>
+                                            <a href="https://txdir.widen.net/view/pdf/gdvdxiqjit/DIR-CPO-5651-RFO-DIR-CPO-TMP-579.pdf?t.download=true&u=tmwul0" target="_blank">
+                                                <div class="px-5 py-6 bg-[#FFFFFF14] flex flex-col items-center justify-center gap-4 lg:min-h-[200px]">
+                                                        <img src="/pdf.webp" alt="pdf file" width="56" height="56">
+                                                        <div class="tity_text">DIR-CPO-5651 RFO DIR-CPO-TMP-579</div>
+                                                </div> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content-5 -->
+                            <div class="tab-content">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-5.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="tab_contents pb-4">
+                                        Instructions for Obtaining Quotes and Purchase Orders
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <p class="pb-3">We will work with you to develop a purchase order if needed. To purchase the order go through the <a href="https://dir.texas.gov/contracts/dir-cpo-5651" target="_blank" class="underline">DIR-CPO-5651</a>. Once that has been created, it will need to be submitted to Software Professionals Incorporated. – Pavan Dayyala, <a href="mailto:sales@spius.net" target="_blank">sales@spius.net</a></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="tab_contents py-4">
+                                        How to Obtain Quotes and Place Purchase Orders
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <ol class="list-decimal pl-6">
+                                            <li>DIR Customer emails IT Staffing requirements to <a href="mailto:sales@spius.net" class="underline" target="_blank">sales@spius.net</a></li>
+                                            <li>
+                                                <div>Customer must provide the following details in the email:</div>
+                                                <div>- Job Role</div>
+                                                <div>- Job Description and job duties</div>
+                                                <div>- Point-of-contact information</div>
+                                                <div>- Submittal Deadline</div>
+                                                <div>- Other required materials, skills or preferences</div>
+                                            </li>
+                                            <li>SPI Delivery Manager will prescreen and submit qualified candidates to Customer</li>
+                                            <li>Customer reviews & intervews candidates</li>
+                                            <li>Customer selects a candidate and notifies SPI Delivery Manage</li>
+                                            <li>Customer emails PO to <a href="mailto:sales@spius.net" class="underline" target="_blank">sales@spius.net</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content-6 -->
+                            <div class="tab-content">
+                                <!-- <img width="100%" height="344" style="object-fit:cover; height:344px;" src="./assets/Images/Tabed/tab-6.webp" alt="Trauma Care"> -->
+                                <div>
+                                    <div class="tab_contents pb-4">
+                                        Reseller Vendor Contacts
+                                    </div>
+                                    <div class="description opacity-50">
+                                        <ul class="list-disc pl-5">
+                                            <li>No resellers available.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="lg:px-16 pb-16 px-8 bg-black lg:pt-0 pt-16">
+                <div class="inner-layer bg-white lg:px-16 px-8 py-12 flex lg:flex-row flex-col lg:justify-betweeen lg:items-center">
+                    <div class="flex-1">
+                        <div class="mb-6">
+                            <img src="/svg/operative3.svg" alt="Dir texas department of information resources logo" width="100px" height="">
+                        </div>
+                        <div class="card-content lg:pb-0 pb-5">
+                            Visit the DIR official website for comprehensive details on contracts,<br> services, and solutions to support your procurement needs.     
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://dir.texas.gov/contracts/dir-cpo-5651" target="_blank">
+                            <button class="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible]" style="background-color: #B5DB00; color: black; cursor: pointer;">
+                                View Contract Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <CareerForm />
+
+            <Footer />
+            
+        </section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
+<script>
+    var tablist= document.querySelectorAll(".tab-list");
+    var tabcontent = document.querySelectorAll(".tab-content");
+    var singlepost = document.querySelector(".tab-list");
+console.log('data');
+    function tabsection() {
+        tablist.forEach((data, index) => {
+            
+            data.onclick=function(e){
+                
+                for(var i=0; i < 6; i++){
+                    tablist[i].classList.remove("active");
+                    tabcontent[i].classList.remove("Acontent");
+                }
+                data.classList.add("active");
+                tabcontent[index].classList.add("Acontent");
+            }
+        })
+    }
+
+    tabsection();
+</script>

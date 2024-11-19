@@ -6,9 +6,9 @@ import Footer from "@components/Footer.astro"
 import "../form.css"
 
 const services_data = [
-	{ title: "Application<br> Management", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image1.webp"},
-	{ title: "IT<br> Staffing", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
-	{ title: "Digital<br> Transformation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image5.webp"},
+	{ title: "Application<br> Management", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image1.webp", link : "services/application-management" },
+	{ title: "IT<br> Staffing", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp", link: "services/it-staffing"},
+	{ title: "Digital<br> Transformation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image5.webp", link : "services/digital-transformation"},
 ]
 
 const social_feeds = [
@@ -18,9 +18,9 @@ const social_feeds = [
 ]
 
 const services_data2 = [
-	{ title: "Enterprise<br> Infrastructure", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp"},
-	{ title: "Business Intelligence / Analysis", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image4.webp"},
-	{ title: "Professional<br> Services", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image6.webp"},
+	{ title: "Enterprise<br> Infrastructure", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp", link : "services/enterprise-infrastructure"},
+	{ title: "Business Intelligence / Analysis", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br> SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image4.webp", link : "services/business-intelligence"},
+	{ title: "Professional<br> Services", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image6.webp", link : "services/transportation-capabilities" },
 ]
 
 const blogs = [
@@ -387,8 +387,8 @@ const blogs = [
 						Software Professionals, Inc. is an IT services and custom software development firm specializing in transforming business processes using AI and data analytics to drive business value.
 					</h6>
 					<div class="flex flex-1 lg:justify-end lg:mt-0 mt-6">
-						<a class="header_buttons pr-3 border-r border-[#B5DB00]" href="explore-products">Explore Products</a>
-						<a class="header_buttons ps-3" href="explore-services">Explore Services</a>
+						<a class="header_buttons pr-3 border-r border-[#B5DB00]" href="products">Explore Products</a>
+						<a class="header_buttons ps-3" href="services">Explore Services</a>
 					</div>
 				</div>
 			</div>
@@ -421,9 +421,11 @@ const blogs = [
 						</div>
 					</div>
 					<div class="lg:self-end self-start lg:mt-0 mt-6 overflow-hidden">
-						<div class="lg:min-h-[50px] innovator-content">
-							<Cbtn colorbtnText="Know more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
-						</div>
+						<a class="#">
+							<div class="lg:min-h-[50px] innovator-content">
+								<Cbtn colorbtnText="Know more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -437,13 +439,17 @@ const blogs = [
 						<div class="flex-1">
 							{
 								services_data.map((data, dataIndex) => (
-									<div class="border-[1.2px] px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5 overflow-hidden">
-										{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-										<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
-										<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
-										</div>
-										<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
-										</div>
+									<div>
+										<a href={ data.link }>
+											<div class="border-[1.2px] px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5 overflow-hidden">
+												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
+												<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
+												<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
+												</div>
+												<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+												</div>
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -451,13 +457,17 @@ const blogs = [
 						<div class="flex-1 lg:mt-16">
 							{
 								services_data2.map((data, dataIndex) => (
-									<div class="border-[1.2px] px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5 overflow-hidden">
-										{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-										<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
-										<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
-										</div>
-										<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
-										</div>
+									<div>
+										<a href={ data.link }>
+											<div class="border-[1.2px] px-8 py-12 min-h-[400px] flex flex-col justify-between relative group mb-5 overflow-hidden">
+												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
+												<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
+												<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
+												</div>
+												<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+												</div>
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -471,8 +481,10 @@ const blogs = [
 					<div class="flex lg:flex-row flex-col justify-between lg:items-center overflow-hidden">
 						<div class="award-title lg:mb-0 mb-5 lg:min-h-[160px]">Awards &<br> Achievements</div>
 						<div class="lg:w-[38%] lg:min-h-[160px] award-content-section">
-							<div class="award-description pb-8">SPI has won a number of regional and national awards for rapid-growth and quality.</div>
-							<Cbtn colorbtnText="Know more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+							<a href="awards">
+								<div class="award-description pb-8">SPI has won a number of regional and national awards for rapid-growth and quality.</div>
+								<Cbtn colorbtnText="Know more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+							</a>
 						</div>
 					</div>
 					<div class="overflow-hidden">
@@ -506,7 +518,7 @@ const blogs = [
 						<div class="flex-1 product_section relative border-r-[1.5px] border-black">
 							<div class="product-title p-12">Products</div>
 							<div class="absolute bottom-20 check left-12">
-								<a href="#" class="underline">Check all Products</a>
+								<a href="products" class="underline">Check all Products</a>
 							</div>
 						</div>
 						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">

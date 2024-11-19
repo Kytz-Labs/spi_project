@@ -1,0 +1,357 @@
+
+
+<!--jqeury-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+    .form_title{
+        font-family: Instrument Sans;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38.4px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: white;
+    }
+    .mainbox{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        height: 100%;
+    }
+    /* popupform */
+    .contact_heading{
+        color: #FFF;
+        font-family: Righteous;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 43.2px */
+    }
+    .contact_content{
+        color: rgba(255, 255, 255, 0.50);
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 170%; /* 27.2px */
+    }
+    /* .upload{
+        padding: 10px 0; 
+        width: 45%;
+    } */
+    .upload:last-child(1){
+        width:100% !important;
+    }
+    .upload_field{
+        background-color: transparent;
+        display: block;
+        width: 100%;
+        outline:none;
+        color:white;
+        border:0;
+        background-color:transparent;
+        border:none;
+        border-bottom: 1px solid #2C2C2C;
+        padding-bottom: 1rem;
+    }
+    .apply_now{
+        padding: 13px 29px;
+        color: #04030A;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-align:center;
+        border-radius: 11px;
+        background-color: #FFF !important;
+    }
+    .uploaderror input {
+        border-color: red;
+        border-width: 2px;
+    }
+    
+    .success input {
+        border-color: green;
+        border-width: 2px;
+    }
+    
+    .uploaderror span {
+        color: red;
+    }
+    
+    .success span {
+        color: green;
+    }
+    
+    span.uploaderror {
+        color: red;
+        padding-top: .5rem;
+        display: inline-block;
+    }
+    
+    i {
+        font-weight: 900;
+        font-family: 'Font Awesome 5 Free';
+    }
+    
+    #thank_show{
+        display: none;
+        box-shadow: 1px 1px 10px white;
+        font-size: 48px;
+        background: var(--gra-brown, linear-gradient(180deg, #754D2F 0%, #F9AB68 32.81%, #A77144 64.58%, #895B36 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .thnkmss{
+        display:none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px white;
+    }
+
+    .thnk_heading{
+        font-size: 70px;
+        text-align:center;
+        font-weight: 700;
+        line-height: 77px;
+        background: var(--gra-brown, linear-gradient(180deg, #754D2F 0%, #F9AB68 32.81%, #A77144 64.58%, #895B36 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .thankh1{
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 72px;
+        color:#FFFFFF;
+        font-family: 'Righteous', sans-serif;
+    }
+
+    .thankh6{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30.6px;
+        color:#FFFFFF;
+    }
+    .branding-stroke-button{
+        font-family: Instrument Sans;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 18.52px;
+        text-align: left;
+        padding: 13px 50px 13px 50px;
+    }
+
+    @media (max-width: 600px){
+        .line{
+            width: 100%;
+        }
+        .upload{
+            width:100% !important;
+        }
+    }
+</style>   
+
+ 
+ <!-- form -->
+ <div class="lg:px-16 px-8 pb-20 bg-black lg:pt-0 pt-12">
+    <div class="inner-layer bg-[#1B1B1B] flex lg:flex-row flex-col gap-12">
+        <div class="lg:flex hidden">
+            <div class="">
+                <img src="/career_image.webp" alt="IT Professional" width="189px" height="100%">
+            </div>
+        </div>
+        <div class="flex-1 px-8 lg:py-0 py-10">
+            <div class="form_title my-8">
+                Hiring Made Easy with <span class="text-[#B5DB00]">SPI</span>
+            </div>
+            <!-- contact form -->
+            <div class="self-center contact_form" id="upload_form">
+                <div class="form_section">
+                    <form class="apply_form" id="applyform" enctype="multipart/form-data" method="post">
+                        <div class="flex lg:flex-row flex-wrap flex-col gap-4">
+                            <div class="upload lg:w-[30%]">
+                                <input type="text" class="upload_field" id="uploadName" name="uploadName" placeholder="Enter Name">
+                                <span class="uploaderror" id="username_upload_err"> </span>
+                            </div>
+                            <div class="upload lg:w-[30%]">
+                                <input type="text" class="upload_field" id="uploadEmail" name="uploadEmail" placeholder="Enter Email">
+                                <span class="uploaderror" id="email_upload_err"> </span>
+                            </div>
+                            <div class="upload lg:w-[30%]">
+                                <input type="text" class="upload_field" id="uploadNumber" name="uploadNumber" placeholder="Enter Phone Number">
+                                <span class="uploaderror" id="mobile_upload_err"> </span>
+                            </div>
+                            <div class="upload lg:w-[60%]">
+                                <input type="text" class="upload_field" name="uploadMessage" id="uploadMessage" placeholder="Enter Job Title">
+                                <span class="uploaderror" id="message_upload_err"> </span>
+                            </div>
+                            <div class="upload lg:w-[35%]">
+                                <input type="file" class="upload_field" name="attachment" id="attachment" placeholder="Attach File">
+                                <span class="uploaderror" id="file_upload_err"> </span>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <button id="uploadbtn" type="button" class="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style="background-color: #B5DB00; color: black; cursor: pointer;">
+                            Submit
+                        </button>
+                    </div>
+                    <div id="message" class="text-white pt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+<script>
+    function uploadfunction() {
+        $("#uploadName").on("input", function() {
+            uploaduser();
+        })
+        $("#uploadEmail").on("input", function() {
+            uploademail();
+        })
+        $('#uploadNumber').on('input', function () {
+            uploadmobile();
+        });
+        $('#uploadMessage').on('input', function () {
+            uploadmessage();
+        });
+        $('#attachment').on('input', function () {
+            uploadfile();
+        });
+
+        $('#uploadbtn').click(function () {
+            if (!uploaduser() && !uploademail() && !uploadmobile() && !uploadfile() && !uploadmessage() ) {
+                $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
+            } else if (!uploaduser() || !uploademail() || !uploadmobile() || !uploadfile() || !uploadmessage() ) {
+                $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
+            } else{
+                var form = $('#applyform')[0];
+                var data = new FormData(form);
+
+                $.ajax({
+                    type: "post",
+                    url: "./phpmailer/submit.php",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    async: true,
+                    beforeSend: function() {
+                        $('#uploadbtn').html('<img class="animate-spin" src="../assets/Images/spinner.png">');
+                        $('#uploadbtn').attr("disabled", true);
+                    },
+                    success: function( data ) {
+                        console.log(data);
+                        $('#applyform').trigger("reset");
+                        $('#uploadbtn').html('Submit');
+                        $('#uploadbtn').attr("disabled", false);
+                        
+                        if(data == "upload pdf or word formate"){
+                            $("#file_upload_err").html(data);
+                        }else{
+                            $(".contact_form").css({display: "none"});
+                            $(".thnkmss").css({display: "block"});
+                            setTimeout(() => {
+                                location.reload();
+                            }, 5000);
+                        }
+                    }
+                })
+            }
+        })
+
+        function uploaduser() {
+            var pattern = /^[a-zA-Z\s]+$/;
+            var user = $('#uploadName').val();
+            var validuser = pattern.test(user);
+            if(!($("#uploadName").val())){
+                $("#username_upload_err").html("field required");
+                return false;
+            }
+            else if ($('#uploadName').val().length < 4) {
+                $('#username_upload_err').html('username length is too short');
+                return false;
+            } else if (!validuser) {
+                $('#username_upload_err').html('username should be a-z ,A-Z only');
+                return false;
+            } else {
+                $('#username_upload_err').html('');
+                return true;
+            }
+        }
+        function uploademail() {
+            var pattern1 = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $('#uploadEmail').val();
+            var validemail = pattern1.test(email);
+            if (email == "") {
+                $('#email_upload_err').html('required field');
+                return false;
+            } else if (!validemail) {
+                $('#email_upload_err').html('invalid email');
+                return false;
+            } else {
+                $('#email_upload_err').html('');
+                return true;
+            }
+        }
+        function uploadmobile() {
+            if(!($("#uploadNumber").val())){
+                $("#mobile_upload_err").html("field required");
+                return false;
+            }
+            if (!$.isNumeric($("#uploadNumber").val())) {
+                $("#mobile_upload_err").html("only number is allowed");
+                return false;
+            } else if ($("#uploadNumber").val().length != 10) {
+                $("#mobile_upload_err").html("10 digit required");
+                return false;
+            }
+            else {
+                $("#mobile_upload_err").html("");
+                return true;
+            }
+        }
+        function uploadfile() {
+
+            if(!($("#attachment").val())){
+                $("#file_upload_err").html("field required");
+                return false;
+            }else {
+                $("#file_upload_err").html("");
+                return true;
+            }
+        }
+        function uploadmessage() {
+            if(!($("#uploadMessage").val())){
+                $("#message_upload_err").html("field required");
+                return false;
+            }else {
+                $("#message_upload_err").html("");
+                return true;
+            }
+        }
+    }
+
+    $("#Dclose").click(() => {
+        $('#applyform').trigger("reset");
+        $("#username_upload_err").html("");
+        $("#email_upload_err").html("");
+        $("#mobile_upload_err").html("");
+        $("#message_upload_err").html("");
+        $("#file_upload_err").html("");
+        $("#message").html("");
+        $(".thnkmss").css({display:"none"});
+        $(".contact_form").css({display:"block"});
+    })
+
+    uploadfunction();
+</script>

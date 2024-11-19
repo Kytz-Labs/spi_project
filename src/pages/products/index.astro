@@ -10,6 +10,8 @@ const services_list= [
     { logo: "/product_logo/product_logo1.webp", bgcolor: "#006B9E",  product_image: "/mobile.webp", description : "A safety app that engages employees to improve safety practices, aiming for zero incidents.", modules : "MODULES", value1 : ["Observation and Intervention (O&I)", "Job Safety Analysis (JSA)", "Risk Assessment"], value2 : ["Safety Walkthrough", "Personal Safety Plan (PSP)", "Incident Notification"] },
     { logo: "/product_logo/product_logo2.webp", bgcolor: "#B5DB00", product_image: "/laptop.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.", modules : "BENEFITS", value1 : ["A Useful and Accessible Asset", "Field Tested and Approved"], value2 : [] },
     { logo: "/product_logo/product_logo3.webp", bgcolor: "#006B9E", product_image: "/laptop2.webp", description : "A software for managing the entire permit process, from application to occupancy. ", modules : "BENEFITS", value1 : ["Permit management", "Compliance tracking", "Plant management", "Easy to navigate"], value2 : ["Inspection tracking", "GIS tracking", "Digital data", "Time saver"] },
+    { logo: "/product_logo/product_logo6.webp", bgcolor: "#006B9E", product_image: "/laptop3.webp", description : " LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs.", modules : "BENEFITS", value1 : ["Cuts Cost", "Accessible Training Content", "Monitor & Assess Progress"], value2 : ["Reduce Learning Time", "Up-to- Date Compliance", " Flexibility"] },
+    { logo: "/product_logo/product_logo4.webp", bgcolor: "#006B9E", product_image: "/laptop4.webp", description : "Safe School is designed to implement a technology solution to address the issue of school violence and other suspicious activities in schools.", modules : "BENEFITS", value1 : ["Proactive Approach to School Safety", "Increased Student Awareness of Safety Expectations", "Instant Notifications"], value2 : ["Media Uploading", "Real-time Admin Reports", "Anonymous Reporting to Users"] },
 ]
 ---
 
@@ -215,7 +217,14 @@ const services_list= [
                                </div>
                                <div class="flex-1 relative overflow-hidden">
                                     <div class="overflow-hidden bottom-0 text-[#00000099] lg:absolute relative z-[10] transition duration-500 delay-150 ease-in-out overflow-hidden" >
-                                        <img src={data.product_image}  class="lg:translate-y-72 lg:group-hover:translate-y-52 translate-y-0 transition duration-500 delay-150" /> 
+                                        <img src={data.product_image}  
+										class= { (dataIndex == 0) ? "lg:translate-y-80 lg:group-hover:translate-y-64 translate-y-0 transition duration-500 delay-150" :
+											(dataIndex == 1 ) ? "lg:translate-y-64 lg:group-hover:translate-y-44 translate-y-0 transition duration-500 delay-150" :
+											(dataIndex == 2 ) ? "lg:translate-y-64 lg:group-hover:translate-y-44 translate-y-0 transition duration-500 delay-150" :
+											(dataIndex == 3 ) ? "lg:translate-y-24 lg:group-hover:translate-y-12 translate-y-0 transition duration-500 delay-150" :
+											"lg:translate-y-56 lg:group-hover:translate-y-32 translate-y-0 transition duration-500 delay-150"
+										}
+										 /> 
 										{/* group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300 */}
                                     </div>
 									<div class="absolute inset-0 scale-[.94] group-hover:scale-[1] transition-width duration-100 delay-150 ease-in-out" style=`background-color: ${data.bgcolor}`>
