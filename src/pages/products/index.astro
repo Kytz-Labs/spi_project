@@ -224,20 +224,20 @@ const services_list= [
                                             { data.modules}
                                         </div>
                                         <div class="z-[10] relative flex lg:flex-row flex-col gap-12">
-                                            <ol class="list-decimal lg:text-[#00000099] pl-5 modules">
+                                            <ul class="list-decimal lg:text-[#00000099] pl-5 modules">
 												{
 													data.value1.map((value, valIndex) => (
 														<li>{ value }</li>
 													))
 												}
-                                            </ol>
-											<ol class="list-decimal lg:text-[#00000099] pl-5 modules">
+                                            </ul>
+											<ul class="list-decimal lg:text-[#00000099] pl-5 modules">
 												{
 													data.value2.map((val, index) => (
 														<li>{ val }</li>
 													))
 												}
-                                            </ol>
+                                            </ul>
                                         </div>
                                         <div class="my-5 relative z-[10] lg:opacity-0 lg:translate-y-16 lg:group-hover:opacity-[1] lg:group-hover:translate-y-0 opacity-100 transition duration-500 delay-50 ease-in-out">
                                             <Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
