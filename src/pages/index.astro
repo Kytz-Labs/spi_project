@@ -9,14 +9,14 @@ const services_data = [
 	{ title: "Application<br> Management", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>We integrate our processes with our clients to streamline efforts and meet project parameters.</li><br><li>We provide seamless, end-to-end management across an enterprise.</li><br><li>Our depth of experience in many industries combined with technical excellence makes SPI the right choice for your application management needs.</li></ul>", url: "/services/services_image8.webp", link : "services/application-management" },
 	{ title: "IT<br> Staffing", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>SPI offers a flexible service to meet all your IT staffing requirements. Do you want help in a hurry?</li><br><br><li>One call to SPI and we come to your aid. With SPI’s Quick Start we supply qualified, certified, experienced resources within 48 hours.</li>", url: "/services/services_image3.webp", link: "services/it-staffing"},
 	{ title: "Digital<br> Transformation", description: "We at SPI can help you in your digitization journey and ensure that your organization embraces all the technology-enabled changes, unlock productivity gains, and put your business at the forefront of the digital disruption for a competitive advantage.", url: "/services/services_image5.webp", link : "services/digital-transformation"},
-	{ title: "Transportation<br> Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our technical expertise in the transportation vertical includes AI, Safety, Data, and Digital Services. We focus on tolling, roadway, trucking, airports, railways, and mobility.</li><br><li>We ensure that your organization keeps people—and the things people rely on moving.</li><br><li>SPI seamlessly integrates People, Processes, and Technology to deliver innovative results.</li></ul>", url: "/services/services_image7.webp", link : "services/digital-transformation"},
+	{ title: "Transportation<br> Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our technical expertise in the transportation vertical includes AI, Safety, Data, and Digital Services. We focus on tolling, roadway, trucking, airports, railways, and mobility.</li><br><li>We ensure that your organization keeps people—and the things people rely on moving.</li><br><li>SPI seamlessly integrates People, Processes, and Technology to deliver innovative results.</li></ul>", url: "/services/services_image7.webp", link : "services/transportation-capabilities"},
 ]
 
 const services_data2 = [
 	{ title: "Enterprise<br> Infrastructure", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our IT infrastructure consultants offer swift response, maximum efficiency, and assured accuracy.</li><br><br><li>As a project begins, we integrate processes with our clients to simplify efforts.</li></ul>", url: "/services/services_image2.webp", link : "services/enterprise-infrastructure"},
-	{ title: "Business Intelligence / Analysis", description: "Business Intelligence solutions are expected to accelerate business growth by enabling faster, more accurate decisions. It is supposed to reduce time-to-market. Organizations expect a culture of innovation through access to right information at the right time.", url: "/services/services_image4.webp", link : "services/business-intelligence"},
-	{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>We integrate our processes with our clients to streamline efforts and meet project parameters.</li><li>We provide seamless, end-to-end management across an enterprise.</li><li>Our depth of experience in many industries combined with technical excellence makes SPI the right choice for your application management needs.</li>", url: "/services/services_image6.webp", link : "services/transportation-capabilities" },
-	{ title: "Airport Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Whether your requirement is for IT professionals, customer support specialists or project-based Statement of Work, our team of experts are equipped with the niche skill sets desired by all major airport.</li><br><br> <li>Our powerful combination of consulting and product expertise provides clients with end-to-end technology driven enterprise‐wide business solutions.</li>", url: "/services/services_image1.webp", link : "services/transportation-capabilities" },
+	{ title: "Business Intelligence /<br> Analysis", description: "Business Intelligence solutions are expected to accelerate business growth by enabling faster, more accurate decisions. It is supposed to reduce time-to-market. Organizations expect a culture of innovation through access to right information at the right time.", url: "/services/services_image4.webp", link : "services/business-intelligence"},
+	{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>We integrate our processes with our clients to streamline efforts and meet project parameters.</li><br><li>We provide seamless, end-to-end management across an enterprise.</li><br><li>Our depth of experience in many industries combined with technical excellence makes SPI the right choice for your application management needs.</li>", url: "/services/services_image6.webp", link : "#" },
+	{ title: "Airport<br> Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Whether your requirement is for IT professionals, customer support specialists or project-based Statement of Work, our team of experts are equipped with the niche skill sets desired by all major airport.</li><br><br> <li>Our powerful combination of consulting and product expertise provides clients with end-to-end technology driven enterprise‐wide business solutions.</li>", url: "/services/services_image1.webp", link : "services/airport-capabilities" },
 ]
 
 const social_feeds = [
@@ -138,7 +138,6 @@ const blogs = [
 			font-weight: 500;
 			line-height: 38.4px;
 			text-align: left;
-			color: #000000;
 		}
 		.services-description{
 			font-family: Instrument Sans;
@@ -146,7 +145,6 @@ const blogs = [
 			font-weight: 500;
 			line-height: 24px;
 			text-align: left;
-			color: #000000CC;
 		}
 
 		/* awards & achievements */
@@ -445,10 +443,10 @@ const blogs = [
 										<a href={ data.link }>
 											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden">
 												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-												<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
-												<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
+												<div class="services-title z-[20] z-[20] lg:group-hover:text-white lg:text-black text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
+												<div class="services-description z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
 												</div>
-												<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+												<div class="absolute inset-x-0 w-full z-[10] h-[100%] lg:translate-y-[98%] lg:group-hover:translate-y-0 translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
 												</div>
 											</div>
 										</a>
@@ -463,10 +461,10 @@ const blogs = [
 										<a href={ data.link }>
 											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden">
 												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-												<div class="services-title z-[20] z-[20] group-hover:text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
-												<div class="services-description z-[20] z-[20] text-black group-hover:text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
+												<div class="services-title z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
+												<div class="services-description z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
 												</div>
-												<div class="absolute inset-x-0 w-full z-[10] h-[100%] translate-y-[98%] group-hover:translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
+												<div class="absolute inset-x-0 w-full z-[10] h-[100%] lg:translate-y-[98%] lg:group-hover:translate-y-0 translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
 												</div>
 											</div>
 										</a>
@@ -492,19 +490,19 @@ const blogs = [
 					<div class="overflow-hidden">
 						<div class="flex lg:flex-row flex-col gap-5 mt-16 lg:min-h-[140px] logos">
 							<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
-								<img src="/awards/awards1.webp" height="50" width="101">
+								<img src="/awards/awards1.webp" height="50" width="101" alt="award" >
 							</div>
 							<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
-								<img src="/awards/awards2.webp" height="97" width="88">
+								<img src="/awards/awards2.webp" height="97" width="88" alt="award">
 							</div>
 							<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
-								<img src="/awards/awards3.webp" height="75" width="70">
+								<img src="/awards/awards3.webp" height="75" width="70" alt="award">
 							</div>
 							<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
-								<img src="/awards/awards4.webp" height="75" width="90">
+								<img src="/awards/awards4.webp" height="75" width="90" alt="award">
 							</div>
 							<div class="flex-1 min-h-[140px] flex items-center justify-center bg-[#FFFFFF08]">
-								<img src="/awards/awards5.webp" height="75" width="70">
+								<img src="/awards/awards5.webp" height="75" width="70" alt="award">
 							</div>
 						</div>
 					</div>
@@ -525,7 +523,7 @@ const blogs = [
 						</div>
 						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
+								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo" >
 							</div>
 							<div class="product_description lg:text-[#00000099] lg:group-hover:text-white text-white relative my-4 z-[10]">
 								A safety app that engages employees to improve safety practices, aiming for zero incidents.
@@ -547,7 +545,7 @@ const blogs = [
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 							</div>
 							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
+								<img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300"  alt="mobile"/>
 							</div>
 							<div class="absolute bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
@@ -555,7 +553,7 @@ const blogs = [
 						</div>
 						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
+								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo">
 							</div>
 							<div class="product_description text-[#00000099] relative my-4 z-[10]">
 								A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.
@@ -577,7 +575,7 @@ const blogs = [
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
 							</div>
 							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/laptop.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
+								<img src="/laptop.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" alt="laptop"/>
 							</div>
 							<div class="absolute bottom-4 inset-0 inset-x-4 translate-y-3/4 group-hover:translate-y-0 group-hover:inset-x-0 group-hover:rounded-[0] group-hover:bottom-0 rounded-lg bg-[#B5DB00] transition duration-500 delay-50 ease-in-out">
 								
@@ -585,7 +583,7 @@ const blogs = [
 						</div>
 						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" >
+								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo" >
 							</div>
 							<div class="product_description text-[#00000099] group-hover:text-white relative my-4 z-[10]">
 								A software for managing the entire permit process, from application to occupancy. 
@@ -609,7 +607,7 @@ const blogs = [
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 							</div>
 							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/laptop2.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" />
+								<img src="/laptop2.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" alt="laptop" />
 							</div>
 							<div class="absolute bottom-4 inset-0 inset-x-4 translate-y-3/4 group-hover:translate-y-0 group-hover:inset-x-0 group-hover:rounded-[0] group-hover:bottom-0 rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
@@ -684,14 +682,14 @@ const blogs = [
 							social_feeds.map((data, index) => (
 								<div class="flex-1 p-4 border-[1.5px] rounded-lg">
 									<div class="flex items-center mb-4">
-										<img src="/logos/small_logo.webp" class="mr-4" width="45px" height="45px" />
+										<img src="/logos/small_logo.webp" class="mr-4" width="45px" height="45px" alt="spi logo" />
 										<div class="social_feed_title">{data.title}</div>
 									</div>
 									<div>
-										<img src={ data.url } width="100%" />
+										<img src={ data.url } width="100%" alt="spi post thumbnail" />
 									</div>
 									<div class="py-2 border-b-[1.5px] border-[#64676B]">
-										<img src="/like_share.webp" width="33" height="16.5" />
+										<img src="/like_share.webp" width="33" height="16.5" alt="like" />
 									</div>
 									<div class="flex justify-around like_share mt-2">
 										<div>
@@ -772,7 +770,7 @@ const blogs = [
     var second_number= Number(inner_layer.toFixed());
 
 	window.onscroll = () => {
-		
+
 		// nav menu functionality
 		console.log("navigation");
 		var nav = document.querySelector("nav");
