@@ -5,6 +5,7 @@ import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
 import { array } from "astro:schema";
+const currentUrl=Astro.request.url;
 
 const security = [
 	{ title: "Airside / Landside Systems", description: ""},
@@ -19,7 +20,7 @@ const list= [
 ---
 
 
-<Header title="home page">
+<Header title="airport capabilities" canonical={ currentUrl }>
 	<style>
         .service_shrt {
             font-family: Instrument Sans;

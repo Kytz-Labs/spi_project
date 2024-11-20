@@ -4,9 +4,10 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import CareerForm from "../../components/Forms/Career.astro"
+const currentUrl=Astro.request.url;
 ---
 
-<Header title="home page">
+<Header title="DIR-CPO-5651" canonical={currentUrl}>
 	<style>
         h1{
             font-family: Instrument Sans;

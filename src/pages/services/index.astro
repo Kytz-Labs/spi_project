@@ -4,6 +4,7 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
+const currentUrl=Astro.request.url;
 
 const services_data = [
 	{ title: "Airport<br> Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Whether your requirement is for IT professionals, customer support specialists or project-based Statement of Work, our team of experts are equipped with the niche skill sets desired by all major airport.</li><br><br> <li>Our powerful combination of consulting and product expertise provides clients with end-to-end technology driven enterprise‐wide business solutions.</li>", url: "/services/services_image1.webp", link : "/services/airport-capabilities"},
@@ -19,7 +20,7 @@ const services_data = [
 ---
 
 
-<Header title="home page">
+<Header title="Services" canonical={currentUrl} >
 	<style>
         .service_shrt {
             font-family: Instrument Sans;
