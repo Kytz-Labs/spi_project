@@ -26,7 +26,21 @@ const special_services = [
 	{ image: "/spl_services/spc6.webp", text : "Improve Governence Risk & Compliance" },
 ]
 
-const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards3.webp", "/awards/awards4.webp" ]
+// const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards3.webp", "/awards/awards4.webp" ]
+
+const awards = [
+	{ image: "/awards/awards6.webp", width: "90%" },
+	{ image: "/awards/awards4.webp", width : "70%" },
+	{ image: "/awards/awards7.webp", width : "68%"  },
+	{ image: "/awards/awards8.webp", width : "100%"  },
+]
+
+const certifications = [
+	{ image: "/certifications/certifications1.webp", width: "75%" },
+	{ image: "/certifications/certifications2.webp", width : "75%" },
+	{ image: "/certifications/certifications3.webp", width : "75%"  },
+]
+
 
 ---
 
@@ -208,7 +222,7 @@ const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards
 		<section>
             <div class="relative">
                 <img src="/services/flyover.webp" width="100%" height="500px" alt="airline" />
-				<div class="lg:absolute -bottom-20 capabilities bg-white right-12 p-8 lg:w-[40%]">
+				<div class="lg:absolute -bottom-20 capabilities bg-white right-12 lg:p-8 px-8 py-14 lg:w-[40%]">
 					<div class="pb-5">Our promise</div>
 					<ul class="list_element list-disc pl-5">
 						<li>Quality</li>
@@ -360,7 +374,7 @@ const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards
 				</div>
 			</div>
 
-			<div class="lg:px-16 px-8 lg:pt-0 lg:pb-36 pb-20 flex flex-col jusitfy-center items-center bg-black">
+			<div class="lg:px-16 px-8 lg:pt-0 lg:pb-36 pb-8 flex flex-col jusitfy-center items-center bg-black">
                 <div class="differenciate text-start pb-14 w-full">Experience</div>
 				<div class="inner-layer flex lg:flex-row flex-col">
 					<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8">
@@ -441,7 +455,7 @@ const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards
 				</div>
 			</div>
 
-			<div class="lg:px-16 px-8 lg:py-20 pb-20 flex flex-col jusitfy-center items-center bg-white">
+			<div class="lg:px-16 px-8 lg:py-20 py-16 flex flex-col jusitfy-center items-center bg-white">
                 <div class="spl-text text-center pb-14 w-full">SPI Special Services & <span class="text-[#006B9E]">APPIAN</span> Advantages</div>
 				<div class="inner-layer grid lg:grid-cols-3 lg:w-[95%]">
 					{
@@ -450,7 +464,7 @@ const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards
 								<img src={ data.image } width="80px" height="132px" alt="Improve Customer / Employee Experience" />
 								<div class="spc-description pt-8">
 									<div>
-										Improve Customer / Employee Experience
+										{ data.text }
 									</div>
 								</div>
 							</div>
@@ -459,34 +473,33 @@ const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards
 				</div>
 			</div>
 
-			<div class="lg:px-16 px-8 lg:py-20 lg:pb-36 pb-20 flex flex-col jusitfy-center items-center bg-black">
+			<!-- awards -->
+			<div class="lg:px-16 px-8 lg:pt-20 lg:pb-36 pb-20 pt-16 flex flex-col jusitfy-center items-center bg-black">
                 <div class="spl-text text-center pb-14 w-full text-white">Awards</div>
-				<div class="inner-layer grid lg:grid-cols-4 w-full">
+				<div class="inner-layer lg:grid lg:grid-cols-4 w-full bg-white items-center">
 					{
 						awards.map((data, index) => (
-							<div>
+							<div class="flex items-center">
 								<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-6 bg-white">
-									<img src={ data } width="180.06px" height="88.06px" alt="Improve Customer / Employee Experience" />
+									<img src={ data.image } width={ data.width } height="88.06px" alt="Improve Customer / Employee Experience" />
 								</div>
-								<div class="w-[2px]"></div>
+								<div class={ (index == 3) ? "" : "w-[2px] h-[40px] bg-[#00000033] flex-none" }></div>
 							</div>
 						))
 					}
 				</div>
 			</div>
 
-			<div class="lg:px-16 px-8 lg:py-20 lg:pb-36 pb-20 flex flex-col jusitfy-center items-center bg-white">
-                <div class="spl-text text-center pb-14 w-full">Certifications</div>
-				<div class="inner-layer grid lg:grid-cols-3 lg:w-[95%]">
+			<div class="lg:px-16 px-8 lg:pb-36 pb-20 lg:pt-0 pt-16 flex flex-col jusitfy-center items-center bg-black">
+                <div class="spl-text text-center pb-14 w-full text-white">Certifications</div>
+				<div class="inner-layer lg:grid lg:grid-cols-3 lg:w-[76%] bg-white items-center">
 					{
-						special_services.map((data, index) => (
-							<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-12">
-								<img src={ data.image } width="88.06px" height="88.06px" alt="Improve Customer / Employee Experience" />
-								<div class="spc-description pt-8">
-									<div>
-										Improve Customer / Employee Experience
-									</div>
+						certifications.map((data, index) => (
+							<div class="flex items-center">
+								<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-6 bg-white">
+									<img src={ data.image } width={ data.width } height="88.06px" alt="Improve Customer / Employee Experience" />
 								</div>
+								<div class={ (index == 2) ? "" : "w-[2px] h-[40px] bg-[#00000033] flex-none" }></div>
 							</div>
 						))
 					}
