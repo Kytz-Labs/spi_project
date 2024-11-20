@@ -7,8 +7,8 @@ const menuList = [
 		{ name : "Services", url : "https://spi-project.pages.dev/services", ariaLabel : "services page"}, 
 		{ name : "Public Sector", url : "public-sector", ariaLabel : "public sector page"},
 		{ name : "Products", url : "https://spi-project.pages.dev/products", ariaLabel : "products"},
-		{ name : "About", url : "about-us", ariaLabel : "about us" },
-		{ name : "Careers", url : "careers", ariaLabel : "careers" } 
+		{ name : "About", url : "#", ariaLabel : "about us" },
+		{ name : "Careers", url : "#", ariaLabel : "careers" } 
 ];
 ---
 
@@ -20,12 +20,17 @@ const menuList = [
 			</a>
 		</div>
 		<div class="internal-links ps-5 lg:block hidden">
-			<div class="inline-block px-4 border-s-2 leading-[10px]"><HeaderLink href={menuList[0]["url"]} aria-label={menuList[0]["ariaLabel"]}>{menuList[0]["name"]}</HeaderLink></div>
+			{
+				menuList.map((data, index) => (
+					<div class={ (index == 0) ? "inline-block px-4 border-s-2 leading-[10px]" : "inline-block px-4 leading-[10px]" }><HeaderLink href={data.url} aria-label={data.ariaLabel}>{data.name}</HeaderLink></div>
+				))
+			}
+			<!-- <div class="inline-block px-4 border-s-2 leading-[10px]"><HeaderLink href={menuList[0]["url"]} aria-label={menuList[0]["ariaLabel"]}>{menuList[0]["name"]}</HeaderLink></div>
 			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[1]["url"]} aria-label={menuList[1]["ariaLabel"]}>{menuList[1]["name"]}</HeaderLink></div>
 			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[2]["url"]} aria-label={menuList[2]["ariaLabel"]}>{menuList[2]["name"]}</HeaderLink></div>
 			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[3]["url"]} aria-label={menuList[3]["ariaLabel"]}>{menuList[3]["name"]}</HeaderLink></div>
 			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[4]["url"]} aria-label={menuList[4]["ariaLabel"]}>{menuList[4]["name"]}</HeaderLink></div>
-			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[5]["url"]} aria-label={menuList[5]["ariaLabel"]}>{menuList[5]["name"]}</HeaderLink></div>
+			<div class="inline-block px-4 leading-[10px]"><HeaderLink href={menuList[5]["url"]} aria-label={menuList[5]["ariaLabel"]}>{menuList[5]["name"]}</HeaderLink></div> -->
 		</div>
 	</div>
 	<div class="social-links lg:block hidden">
@@ -56,7 +61,6 @@ const menuList = [
 	nav a {
 		/* padding: 1em 0.5em; */
 		color: var(--black);
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
 		font-family: Instrument Sans;
 	}
@@ -115,5 +119,30 @@ const menuList = [
 		}
 	}
 </style>
-
-  
+<script client:visible>
+	window.onscroll = () => {
+		
+		// nav menu functionality
+		console.log("navigation");
+		var nav = document.querySelector("nav");
+		if(window.scrollY > 600){
+			console.log("working");
+				nav.style.width="100%";
+				nav.style.left=0;
+				nav.style.position="fixed";
+				nav.style.zIndex="100";
+				nav.style.left=0;
+		}
+		if(window.scrollY < 500){
+			if(window.innerWidth > 600) {
+					nav.style.width="100%";
+					nav.style.position="static";
+					nav.style.zIndex="0";
+			}else {
+					nav.style.width="100%";
+					nav.style.position="static";
+					nav.style.zIndex="0"; 
+			}
+		}
+	}
+</script>

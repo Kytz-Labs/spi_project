@@ -772,6 +772,30 @@ const blogs = [
     var second_number= Number(inner_layer.toFixed());
 
 	window.onscroll = () => {
+		
+		// nav menu functionality
+		console.log("navigation");
+		var nav = document.querySelector("nav");
+		if(window.scrollY > 600){
+			console.log("working");
+				nav.style.width="100%";
+				nav.style.left=0;
+				nav.style.position="fixed";
+				nav.style.zIndex="100";
+				nav.style.left=0;
+		}
+		if(window.scrollY < 500){
+			if(window.innerWidth > 600) {
+					nav.style.width="100%";
+					nav.style.position="static";
+					nav.style.zIndex="0";
+			}else {
+					nav.style.width="100%";
+					nav.style.position="static";
+					nav.style.zIndex="0"; 
+			}
+		}
+
         var page_position = window.pageYOffset;
         var page_cutoff = Number(page_position.toFixed());   
 
