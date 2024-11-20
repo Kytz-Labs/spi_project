@@ -4,7 +4,7 @@ import TransBtn from "./button/TransBtn.astro";
 
 const menuList = [
 		{ name : "Home", url : "/", ariaLabel: "home page" },
-		{ name : "Services", url : "https://spi-project.pages.dev/services", ariaLabel : "services page"}, 
+		{ name : "Services", url : "services", ariaLabel : "services page"}, 
 		{ name : "Public Sector", url : "public-sector", ariaLabel : "public sector page"},
 		{ name : "Products", url : "https://spi-project.pages.dev/products", ariaLabel : "products"},
 		{ name : "About", url : "#", ariaLabel : "about us" },
@@ -45,28 +45,35 @@ const menuList = [
 		<input type="checkbox" id="sideopen_D" />
 		<div class="sidebox_D" id="sidebar_D">
 			<div class="sidebar_dropdown">
-				{
-					menuList.map((nav, navIndex) => (
-						<div class="navlistItem mblist">
-							<a href={nav.url} aria-label={nav.ariaLabel}>{nav.name}</a>
-						</div>
-					))
-				}
+				{menuList.map((data, index) => (
+					<div class={(index == 0) ? "inline-block px-4 border-s-2 leading-[10px]" : "inline-block px-4 leading-[10px]"}>
+					  <HeaderLink 
+						href={data.url} 
+						aria-label={data.ariaLabel} 
+						class={Astro.url.pathname === data.url ? "active" : ""}
+					  >
+						{data.name}
+					  </HeaderLink>
+					</div>
+				  ))}
 			</div>
 		</div>
 	</div>
 </nav>
 <style>
-	
-	nav a {
-		/* padding: 1em 0.5em; */
-		color: var(--black);
-		text-decoration: none;
+	a {
 		font-family: Instrument Sans;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 19.52px;
+		text-align: left;
+		text-underline-position: from-font;
+		text-decoration-skip-ink: none;
+		color: #444444;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	a.active {
+		font-weight: bolder;
+		color: #006B9E;
 	}
 	.social-links,
 	.social-links a {

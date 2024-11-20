@@ -4,6 +4,7 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../form.css"
+import Web3Form from "@components/Forms/Web3Forms.astro"
 const currentUrl=Astro.request.url
 
 const services_data = [
@@ -17,7 +18,7 @@ const services_data2 = [
 { title: "Transportation<br> Capabilities", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our technical expertise in the transportation vertical includes AI, Safety, Data, and Digital Services. We focus on tolling, roadway, trucking, airports, railways, and mobility.</li><br><li>We ensure that your organization keeps people—and the things people rely on moving.</li><br><li>SPI seamlessly integrates People, Processes, and Technology to deliver innovative results.</li></ul>", url: "/services/services_image7.webp", link : "services/transportation-capabilities"},
 { title: "Digital<br> Transformation", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>We at SPI can help you in your digitization journey and ensure that your organization embraces all the technology-enabled changes.</li><br><li>We unlock productivity gains, and put your business at the forefront of the digital disruption for a competitive advantage.</li></ul>", url: "/services/services_image5.webp", link : "services/digital-transformation"},	
 { title: "Enterprise<br> Infrastructure", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our IT infrastructure consultants offer swift response, maximum efficiency, and assured accuracy.</li><br><br><li>As a project begins, we integrate processes with our clients to simplify efforts.</li></ul>", url: "/services/services_image2.webp", link : "services/enterprise-infrastructure"},
-{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Digitizing MWBE forms</li><br><li>Data Migration, Integration and Visualization a Cloud Solution</li><br><li>Employee Performance tracking  and Claims management System</li><li>Weather Monitoring and Reporting</li><br><li>GIS - Engineering Asset management and Change Management plan</li><br><li>Server Consolidation</li><br><li>Functional specifications documentation for migration to new technology</li></ul>", url: "/services/services_image6.webp", link : "#" },
+{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Digitizing MWBE forms, Data Migration, Integration and Visualization a Cloud Solution</li><br><li>Employee Performance tracking  and Claims management System</li><br><li>Weather Monitoring and Reporting, GIS - Engineering Asset management and Change Management plan</li><br><li>Server Consolidation, Functional specifications documentation for migration to new technology</li></ul>", url: "/services/services_image6.webp", link : "#" },
 ]
 
 const social_feeds = [
@@ -189,12 +190,14 @@ const blogs = [
 		/* products */
 		.product-title{
 			font-family: Instrument Sans;
-			font-size: 24px;
+			font-size: 20px;
 			font-weight: 700;
 			line-height: 28.8px;
 			letter-spacing: 0.1em;
 			text-align: left;
-			color: white;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FDFDFD;
 		}
 		.product_section{
 			height: 680px;
@@ -374,6 +377,9 @@ const blogs = [
 				background-color: #292d6b;
 				color: white;
 			}
+			.product_section{
+				height: 500px;
+			}
 		}
 	</style>
 	<header class="">
@@ -388,13 +394,13 @@ const blogs = [
 						Software Professionals, Inc. is an IT services and custom software development firm specializing in transforming business processes using AI and data analytics to drive business value.
 					</h6>
 					<div class="flex flex-1 lg:justify-end lg:mt-0 mt-6">
-						<a class="header_buttons pr-3 border-r border-[#B5DB00]" href="products">Explore Products</a>
-						<a class="header_buttons ps-3" href="services">Explore Services</a>
+						<a class="header_buttons pr-3 border-r border-[#B5DB00]" href="#products">Explore Products</a>
+						<a class="header_buttons ps-3" href="#services">Explore Services</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<section>
+		<section class="relative">
 			<!-- we are a service -->
 			<div class="lg:px-12 lg:py-24 py-20 px-8 bg-[#202020]">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col">
@@ -431,7 +437,7 @@ const blogs = [
 				</div>
 			</div>
 			<!-- services -->
-			<div class="lg:pl-12 pl-8 pr-8 lg:pb-28 lg:pr-40">
+			<div class="lg:pl-12 pl-8 pr-8 lg:pb-28 lg:pr-40" id="services">
 				<div class="inner-layer flex lg:flex-row flex-col lg:pb-0 pb-8 gap-12">
 					<div class="recent-blog-title flex-none lg:sticky lg:h-screen top-0 lg:w-[22%] flex-none lg:pt-28 pt-20">
 						<div class="services">Services</div>
@@ -442,9 +448,9 @@ const blogs = [
 								services_data.map((data, dataIndex) => (
 									<div>
 										<a href={ data.link }>
-											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden">
+											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden lg:min-h-[500px]">
 												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-												<div class="services-title z-[20] z-[20] lg:group-hover:text-white lg:text-black text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
+												<div class="services-title z-[20] z-[20] lg:group-hover:text-white lg:text-black text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
 												<div class="services-description z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
 												</div>
 												<div class="absolute inset-x-0 w-full z-[10] h-[100%] lg:translate-y-[98%] lg:group-hover:translate-y-0 translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
@@ -460,9 +466,9 @@ const blogs = [
 								services_data2.map((data, dataIndex) => (
 									<div>
 										<a href={ data.link }>
-											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden">
+											<div class="border-[1.2px] px-8 py-12 flex flex-col justify-between relative group mb-5 overflow-hidden lg:min-h-[520px]">
 												{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-												<div class="services-title z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300 pb-16" set:html={data.title}></div>
+												<div class="services-title z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300" set:html={data.title}></div>
 												<div class="services-description z-[20] z-[20] lg:text-black lg:group-hover:text-white text-white transition ease-in-out delay-150 duration-300" set:html={data.description}>
 												</div>
 												<div class="absolute inset-x-0 w-full z-[10] h-[100%] lg:translate-y-[98%] lg:group-hover:translate-y-0 translate-y-0 transition ease-in-out delay-150 duration-300 bottom-0" style={ `background-image: url(${data.url}); width: 100%; background-size: cover;` }> 
@@ -510,30 +516,31 @@ const blogs = [
 				</div>
 			</div>
 			<!-- empowering bussiness -->
-			<div class="lg:pt-24 pb-0 pt-20 lg:px-0 px-8 bg-[#141414]">
+			<div class="lg:pt-24 pb-0 pt-20 lg:px-0 px-8 bg-[#141414]" id="products">
 				<div class="inner-layer">
 					<div class="lg:px-12">
 						<div class="empower-title">Empowering Businesses with <span class="text-[#B5DB00]">Smart, Reliable Solutions</span> for a Safer Environment Friendly Tomorrow</div>
 					</div>
-					<div class="flex lg:flex-row flex-col bg-white mt-16">
+					<div class="lg:flex lg:flex-row flex-col bg-white mt-16 lg:pb-0 pb-10">
 						<div class="flex-1 product_section relative border-r-[1.5px] border-black">
-							<div class="product-title p-12">Products</div>
+							<div class="product-title p-12">PRODUCTS</div>
 							<div class="absolute bottom-20 check left-12">
 								<a href="products" class="underline">Check all Products</a>
 							</div>
 						</div>
-						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 transition duration-300 delay-150 lg:hover:mb-0 border-r-[1.5px] border-black lg:mb-4 mb-16">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo" >
+								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="lg:scale-100 lg:group-hover:scale-50 scale-75 transition delay-150 duration-300" alt="product logo" >
 							</div>
-							<div class="product_description lg:text-[#00000099] lg:group-hover:text-white text-white relative my-4 z-[10]">
+							<div class="product_description text-[#00000099] lg:group-hover:text-white text-[#00000099] relative my-4 z-[10]">
 								A safety app that engages employees to improve safety practices, aiming for zero incidents.
 							</div>
-							<div class="font-[700] relative text-[16px] lg:text-[#00000099] lg:group-hover:text-white text-white leading-[19.2px] pb-2 z-[10]">
+							<div class="font-[700] relative text-[16px] lg:text-[#00000099] lg:group-hover:text-white text-[#00000099] leading-[19.2px] pb-2 z-[10]">
 								Modules
 							</div>
 							<div class="z-[10] relative">
-								<ol class="list-decimal lg:text-[#00000099] lg:group-hover:text-white text-white pl-5 modules">
+								<ol class="list-decimal lg:text-[#00000099] lg:group-hover:text-white text-[#00000099] pl-5 modules">
 									<li>Observation and Intervention (O&I)</li>
 									<li>Job Safety Analysis (JSA)</li>
 									<li>Risk Assessment</li>
@@ -545,16 +552,16 @@ const blogs = [
 							<div class="mt-5 relative z-[10] lg:opacity-0 lg:group-hover:opacity-[1] opacity-100 transition duration-500 delay-50 ease-in-out">
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 							</div>
-							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/mobile.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300"  alt="mobile"/>
+							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] lg:group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out lg:bg-[transparent] bg-[#006B9E]" >
+								<img src="/mobile.webp" class="lg:group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] lg:group-hover:-translate-y-[8%] duration-300"  alt="mobile"/>
 							</div>
-							<div class="absolute bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
+							<div class="lg:absolute lg:block hidden bottom-4 inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 lg:rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
 							</div>
 						</div>
-						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 lg:mb-4 mb-16 transition duration-300 delay-150 lg:hover:mb-0 border-r-[1.5px] border-black lg:mb-0 mb-16">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo">
+								<img src="/product_logo/product_logo2.webp" width="150px" height="73px" class="scale-100 lg:group-hover:scale-50 scale-100 transition delay-150 duration-300" alt="product logo">
 							</div>
 							<div class="product_description text-[#00000099] relative my-4 z-[10]">
 								A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.
@@ -572,28 +579,28 @@ const blogs = [
 									<li>Supports sustainable growth</li>
 								</ol>
 							</div>
-							<div class="mt-5 relative z-[10] opacity-0 group-hover:opacity-[1] transition duration-500 delay-50 ease-in-out">
+							<div class="mt-5 relative z-[10] lg:opacity-0 opacity-[1] lg:group-hover:opacity-[1] transition duration-500 delay-50 ease-in-out">
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
 							</div>
-							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/laptop.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" alt="laptop"/>
+							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] lg:group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out lg:bg-[transparent] bg-[#B5DB00]" >
+								<img src="/laptop.webp" class="lg:group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] lg:group-hover:-translate-y-[8%] duration-300" alt="laptop"/>
 							</div>
-							<div class="absolute bottom-4 inset-0 inset-x-4 translate-y-3/4 group-hover:translate-y-0 group-hover:inset-x-0 group-hover:rounded-[0] group-hover:bottom-0 rounded-lg bg-[#B5DB00] transition duration-500 delay-50 ease-in-out">
+							<div class="lg:absolute lg:block hidden bottom-4 lg:inset-0 lg:inset-x-4 lg:translate-y-3/4 lg:group-hover:translate-y-0 translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 rounded-lg bg-[#B5DB00] transition duration-500 delay-50 ease-in-out">
 								
 							</div>
 						</div>
-						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 mb-4 transition duration-300 delay-150 hover:mb-0 border-r-[1.5px] border-black">
+						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 transition duration-300 delay-150 lg:hover:mb-0 border-r-[1.5px] border-black">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
-								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" class="scale-100 group-hover:scale-50 transition delay-150 duration-300" alt="product logo" >
+								<img src="/product_logo/product_logo3.webp" width="150px" height="73px" class="lg:scale-100 lg:group-hover:scale-50 scale-100 transition delay-150 duration-300" alt="product logo" >
 							</div>
-							<div class="product_description text-[#00000099] group-hover:text-white relative my-4 z-[10]">
+							<div class="product_description text-[#00000099] lg:group-hover:text-white relative my-4 z-[10]">
 								A software for managing the entire permit process, from application to occupancy. 
 							</div>
-							<div class="font-[700] relative text-[16px] text-[#00000099] group-hover:text-white leading-[19.2px] pb-2 z-[10]">
+							<div class="font-[700] relative text-[16px] text-[#00000099] lg:group-hover:text-white leading-[19.2px] pb-2 z-[10]">
 								FEATURES
 							</div>
 							<div class="z-[10] relative">
-								<ol class="list-decimal text-[#00000099] group-hover:text-white pl-5 modules">
+								<ol class="list-decimal text-[#00000099] lg:group-hover:text-white pl-5 modules">
 									<li>Permit management</li>
 									<li>Compliance tracking</li>
 									<li>Plant management</li>
@@ -604,13 +611,13 @@ const blogs = [
 									<li>Time saver</li>
 								</ol>
 							</div>
-							<div class="mt-5 relative z-[10] opacity-0 group-hover:opacity-[1] transition duration-500 delay-50 ease-in-out">
+							<div class="mt-5 relative z-[10] lg:opacity-0 opacity-[1] lg:group-hover:opacity-[1] transition duration-500 delay-50 ease-in-out">
 								<Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 							</div>
-							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] group-hover:bottom-0 absolute z-[10] transition duration-500 delay-50 ease-in-out" >
-								<img src="/laptop2.webp" class="group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] group-hover:-translate-y-[8%] duration-300" alt="laptop" />
+							<div class="mt-8 overflow-hidden h-[180px] bottom-0 text-[#00000099] lg:group-hover:bottom-0 lg:absolute z-[10] transition duration-500 delay-50 ease-in-out lg:bg-[transparent] bg-[#006B9E]" >
+								<img src="/laptop2.webp" class="lg:group-hover:scale-90 scale-75 transition delay-150 -translate-y-[4%] lg:group-hover:-translate-y-[8%] duration-300" alt="laptop" />
 							</div>
-							<div class="absolute bottom-4 inset-0 inset-x-4 translate-y-3/4 group-hover:translate-y-0 group-hover:inset-x-0 group-hover:rounded-[0] group-hover:bottom-0 rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
+							<div class="lg:absolute lg:block hidden bottom-4 inset-0 inset-x-4 translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
 							</div>
 						</div>
@@ -618,11 +625,15 @@ const blogs = [
 				</div>
 			</div>
 			<!-- current openings -->
-			<div class="lg:px-16 px-8 lg:py-12 bg-[#141414] py-20">
-				<div class="inner-layer lg:px-8 py-16 lg:items-center">
-					<div class="clients-feedback border-b-[1.5px] pb-3 border-[#FFFFFF1F] w-full">
+			<div class="lg:px-16 px-8 lg:pt-12 bg-[#141414] pt-20">
+				<div class="inner-layer pt-16 lg:items-center">
+					<div class="clients-feedback border-b-[1.5px] pb-3 lg:pr-16 pr-8 border-[#FFFFFF1F] w-full">
 						CLIENT’S  FEEDBACK
 					</div>
+				</div>
+			</div>
+			<div class="lg:pl-16 pl-8 lg:pb-12 bg-[#141414] pb-20">
+				<div>
 					<div class="flex flex-row flex-1 overflow-hidden">
 						{
 							(blogs && blogs.map((blogCon) => (
@@ -668,7 +679,7 @@ const blogs = [
 						<div class="card-description mt-6">SPI experience staffing for a variety of roles, including Contract, permanent, Contract to hire positions.</div>
 					</div>
 					<div class="flex-1 flex lg:justify-end justify-start lg:mt-0 mt-8">
-						<Cbtn colorbtnText="Explore openeings" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+						<Cbtn colorbtnText="Explore all openings" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 					</div>
 				</div>
 			</div>
@@ -715,7 +726,7 @@ const blogs = [
 							<div class="contact_heading pb-6 text-center border-b-[1.5px] border-[#FFFFFF0A] mb-12">Get in touch with us</div>
 							<form id="w3form" method="POST">
 								<!-- Replace with your Access Key --> 
-								<input type="hidden" name="access_key" value="37b9a42b-8539-41df-8a36-67e1e37c274c">
+								<input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
 								<!-- <input type="hidden" name="replyto" value="shelton@venzotechnologies.com" /> -->
 								<input type="hidden" name="from_name" value="Kytz Enquiry">
 
@@ -729,12 +740,12 @@ const blogs = [
 										<span class="error" id="username_err"> </span>
 									</div>
 									<div class="line flex-none w-[48%]">
-										<input type="email" class="line_field" id="Kcompany" maxlength="40" name="company name" placeholder="Enter bussiness email*">
-										<span class="error" id="username_err"> </span>
+										<input type="email" class="line_field" id="Kemail" maxlength="40" name="Email" placeholder="Enter bussiness email*">
+										<span class="error" id="email_err"> </span>
 									</div>
 									<div class="line flex-1">
-										<input type="text" maxlength="255" name="Email" class="line_field" id="Kemail" placeholder="Enter organization name*" required>
-										<span class="error" id="email_err"> </span>
+										<input type="text" maxlength="255" name="companyname" class="line_field" id="kcompanyname" placeholder="Enter organization name*" required>
+										<span class="error" id="usercompany_err"> </span>
 									</div>
 									<div class="line flex-1">
 										<input type="text" name="phone" maxlength="18" id="Knumber" class="line_field" placeholder="Enter phone number*" required>
@@ -744,14 +755,26 @@ const blogs = [
 										<textarea class="line_field" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about you need in detail"></textarea>
 										<span class="error" id="message_err"> </span>
 									</div>
-									<div class=""><button class="apply_now mt-2 px-12 py-2" id="submitbtn">Submit</button></div>
+									<div class=""><button class="apply_now mt-2 px-12 py-2" type="button" id="submitbtn">Submit</button></div>
 								</div>
-								<div id="message"></div>
+								<div id="message" class="text-red-500 pt-4"></div>
 								<div class="terms_condition hidden">
 									By clicking send, you accept our <a href="">privacy policy</a> Prefer email? <a href="mailto:hello@kytz.in">hello@kytz.in</a>
 								</div>
 							</form>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- thank messaage -->
+			<div class="enquire_thnkmss text-center fixed inset-0 h-screen backdrop-blur-2xl overflow-y-auto w-full justify-center items-center">
+				<div class="bg-white lg:max-w-[50%] p-10">
+					<h3 class="text-2xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
+					<div class="mt-2 px-7 py-3">
+						<p class="text-md text-gray-500">
+							Looking forward to connecting with you soon.  
+						</p>
 					</div>
 				</div>
 			</div>
@@ -773,10 +796,8 @@ const blogs = [
 	window.onscroll = () => {
 
 		// nav menu functionality
-		console.log("navigation");
 		var nav = document.querySelector("nav");
 		if(window.scrollY > 600){
-			console.log("working");
 				nav.style.width="100%";
 				nav.style.left=0;
 				nav.style.position="fixed";
@@ -799,16 +820,15 @@ const blogs = [
         var page_cutoff = Number(page_position.toFixed());   
 
 		if(page_cutoff > (first_number - 200)) {
-			console.log("entered");
 			innovator.forEach((inn, innIndex) => {
 				inn.style.transition="all 1s";
 				inn.style.transform="translateY(0)";
 			})
         }else{
-			innovator.forEach((inn, innIndex) => {
-				inn.style.transition="all 1s";
-				inn.style.transform="translateY(100%)";
-			})
+			// innovator.forEach((inn, innIndex) => {
+			// 	inn.style.transition="all 1s";
+			// 	inn.style.transform="translateY(100%)";
+			// })
         }
         
         if(page_cutoff > (second_number - 160)) {
@@ -819,12 +839,12 @@ const blogs = [
 			document.querySelector(".logos").style.transition="all 1.5s";
 			document.querySelector(".logos").style.transform="translateY(0)";
         }else{
-			document.querySelector(".award-title").style.transition="all 1s";
-			document.querySelector(".award-title").style.transform="translateY(100%)";
-			document.querySelector(".award-content-section").style.transition="all 1s";
-			document.querySelector(".award-content-section").style.transform="translateY(100%)";
-			document.querySelector(".logos").style.transition="all 1.5s";
-			document.querySelector(".logos").style.transform="translateY(100%)";
+			// document.querySelector(".award-title").style.transition="all 1s";
+			// document.querySelector(".award-title").style.transform="translateY(100%)";
+			// document.querySelector(".award-content-section").style.transition="all 1s";
+			// document.querySelector(".award-content-section").style.transform="translateY(100%)";
+			// document.querySelector(".logos").style.transition="all 1.5s";
+			// document.querySelector(".logos").style.transform="translateY(100%)";
         }
      }
 	document.addEventListener("DOMContentLoaded", () => {
@@ -836,7 +856,6 @@ const blogs = [
 		var hoverF = document.querySelector(".post-forward-buttons");
 		var hoverB = document.querySelector(".post-back-buttons");
 		var present_count = 0;
-		console.log(posts);
 		var cut_off = (posts / 1) - 1;
 		var cut_offmb = posts - 1;
 
@@ -850,9 +869,9 @@ const blogs = [
 				if (present_count > 0) {
 					present_count--;
 
-					hoverB.style.border="1px solid grey";
-					hoverB.style.borderRadius="5px";
-					hoverF.style.border="none";
+					// hoverB.style.border="1px solid grey";
+					// hoverB.style.borderRadius="5px";
+					// hoverF.style.border="none";
 
 					allposts.forEach((single, singleI) => {
 						single.classList.remove("pre-post");
@@ -875,9 +894,9 @@ const blogs = [
 
 					allposts[present_count].classList.add("pre-post");
 
-					hoverF.style.border="1px solid grey";
-					hoverF.style.borderRadius="5px";
-					hoverB.style.border="none";
+					// hoverF.style.border="1px solid grey";
+					// hoverF.style.borderRadius="5px";
+					// hoverB.style.border="none";
 
 
 					// Adjust the marginLeft using the post width
@@ -889,9 +908,9 @@ const blogs = [
 				if (present_count > 0) {
 					present_count--;
 
-					hoverB.style.border="1px solid grey";
-					hoverB.style.borderRadius="5px";
-					hoverF.style.border="none";
+					// hoverB.style.border="1px solid grey";
+					// hoverB.style.borderRadius="5px";
+					// hoverF.style.border="none";
 
 					// Adjust the marginLeft using the post width
 					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
@@ -902,9 +921,9 @@ const blogs = [
 				if (present_count < cut_offmb) {
 					present_count++;
 
-					hoverF.style.border="1px solid grey";
-					hoverF.style.borderRadius="5px";
-					hoverB.style.border="none";
+					// hoverF.style.border="1px solid grey";
+					// hoverF.style.borderRadius="5px";
+					// hoverB.style.border="none";
 
 					// Adjust the marginLeft using the post width
 					first.style.marginLeft = "-" + (getPostWidth() * present_count) + "px";
@@ -912,4 +931,119 @@ const blogs = [
 			};
 		}
 	})
+
+	var com_form = document.querySelector(".enquire_thnkmss"),
+    sidebox_D = document.querySelector(".sidebox_D"),
+    kytz_label = document.querySelector(".kytz-label"),
+    w3form = document.getElementById("w3form");
+	(brand_btn = document.querySelectorAll(".brand-button")), (form_close = document.querySelector(".kytz_form_close")), (myform = document.querySelector("#enquire_main_form"));
+	var emailerr = document.querySelector("#email_err"),
+    usererror = document.querySelector("#username_err"),
+    mobilerror = document.querySelector("#mobile_err"),
+    messageerror = document.querySelector("#message_err");
+
+	function enquire_form() {
+		var e = document.getElementById("Kname"),
+			r = document.getElementById("Kemail"),
+			n = document.getElementById("Knumber"),
+			t = document.getElementById("Kmessage"),
+			cn = document.getElementById("kcompanyname"),
+			l = document.getElementById("submitbtn"),
+			i = document.getElementById("message");
+		function o() {
+			var r = document.querySelector("#username_err"),
+				n = e.value,
+				t = /^[a-zA-Z\s]+$/.test(n);
+			return e.value ? (e.value.length < 4 ? ((r.innerHTML = "username length is too short"), !1) : t ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "username should be a-z ,A-Z only"), !1)) : ((r.innerHTML = "field required"), !1);
+		}
+		function cnf() {
+			var r = document.querySelector("#usercompany_err"),
+				n = e.value,
+				t = /^[a-zA-Z\s]+$/.test(n);
+			return e.value ? (e.value.length < 4 ? ((r.innerHTML = "username length is too short"), !1) : t ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "username should be a-z ,A-Z only"), !1)) : ((r.innerHTML = "field required"), !1);
+		}
+		function s() {
+			var e = document.querySelector("#email_err"),
+				n = r.value,
+				t = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(n);
+			return "" == n ? ((e.innerHTML = "required field"), !1) : t ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "invalid email"), !1);
+		}
+		function a() {
+			var e,
+				r = document.querySelector("#mobile_err");
+			return n.value ? (!isNaN(parseFloat((e = n.value))) && isFinite(e) ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "only number is allowed"), !1)) : ((r.innerHTML = "field required"), !1);
+		}
+		function m() {
+			var e = document.querySelector("#message_err");
+			return t.value ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "field required"), !1);
+		}
+
+		e.addEventListener("input", () => {
+			o();
+		}),
+		cn.addEventListener("input", () => {
+			cnf();
+		}),
+			r.addEventListener("input", () => {
+				s();
+			}),
+			n.addEventListener("input", () => {
+				a();
+			}),
+			t.addEventListener("input", () => {
+				m();
+			}),
+
+			(l.onclick = (e) => {
+				console.log("clicked");
+				if ((e.preventDefault(), o() || cnf() || s() || a() || m())) {
+					if (o() && cnf() && s() && a() && m()) {
+						i.innerHTML = "";
+						let r = document.querySelector(".enquire_contact_form"),
+							n = document.getElementById("enquire_form"),
+							t = document.getElementById("w3form"),
+							u = document.querySelector(".enquire_thnkmss");
+						l.innerHTML = "<div class='animate-pulse'>processing...</div>";
+						let d = new FormData(t),
+							c = {};
+						d.forEach((e, r) => {
+							c[r] ? (Array.isArray(c[r]) ? c[r].push(e) : (c[r] = [c[r], e])) : (c[r] = e);
+						});
+						let y = JSON.stringify(c);
+						console.log(y),
+							fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: y })
+								.then(async (e) => {
+									let n = await e.json();
+									200 == e.status ? ((l.innerHTML = "submit"), (u.style.display = "flex")) : (console.log(e), (l.innerHTML = n.message));
+								})
+								.catch((e) => {
+									console.log(e), (l.innerHTML = "Something went wrong!");
+								})
+								.then(function () {
+									t.reset(),
+										setTimeout(() => {
+											(u.style.display = "none"), (r.style.display = "block");
+										}, 5e3);
+								});
+					} else i.innerHTML = '<div class="alert alert-warning">Please fill all required field</div>';
+				} else i.innerHTML = '<div class="alert alert-warning">Please fill all required field</div>';
+			});
+	}
+
+	document.addEventListener("DOMContentLoaded", function () {
+		w3form.reset(), "scrollRestoration" in history && (history.scrollRestoration = "manual");
+	}),
+    brand_btn.forEach((e, r) => {
+        e.onclick = () => {
+            (com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+        };
+    }),
+    // (form_close.onclick = () => {
+    //     (com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+    // }),
+    (window.onclick = (e) => {
+        e.target === com_form && ((com_form.style.display = "none"), w3form.reset()), e.target === sidebox_D && (sidebox_D.style.display = "none"), e.target === kytz_label && (sidebox_D.style.display = "flex");
+    }),
+    enquire_form();
 </script>
+

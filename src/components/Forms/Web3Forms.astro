@@ -1,0 +1,83 @@
+---
+import Close from "../../../public/assets/close_btn.svg"
+// import "../../pages/form.css"
+
+interface Props{
+    bgColor: string,
+    textColor: string,
+}
+
+const { bgColor, textColor } = Astro.props;
+
+
+---
+
+<!-- popup form -->
+<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center" id="enquire_form">
+    <!--modal content-->
+    <div class="relative shadow-lg lg:w-3/6 w-11/12 rounded-md">
+        <!-- close button -->
+        <div class="absolute top-4 right-0 m-6 kytz_form_close" style="z-index: 1;">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50" stroke={ textColor }>
+                    <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- contact form -->
+        <div class="enquire_contact_form" id="enquire_popup_form">
+            <div class="form_section" style=`background-color: ${bgColor}`>
+                <div class="contact_heading pb-6" style=`color: ${textColor}`>Share Your Details to Get Started – We're Here to Help!</div>
+                <form id="w3form" method="POST">
+                    <!-- Replace with your Access Key --> 
+                    <input type="hidden" name="access_key" value="f1653f8d-1af6-4ae8-bc68-74a2db905f16">
+                    <!--  -->
+                    <input type="hidden" name="from_name" value="Kytz Enquiry">
+                    
+                    <!-- 
+                        venzo@gmail.com <input type="hidden" name="access_key" value="5a696bab-69df-44a8-8dad-39e7c0e07877"> 
+                        shelton@venzotechnologies.com <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
+                        hello@kytz.com <input type="hidden" name="access_key" value="37b9a42b-8539-41df-8a36-67e1e37c274c">
+
+                        /* REPLY TO */
+                        <input type="hidden" name="replyto" value="shelton@venzotechnologies.com" />
+                    -->
+
+                    <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
+                        <div class="line w-full">
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="line_field" style="color: white;" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
+                            <span class="error" id="username_err"> </span>
+                        </div>
+                        <div class="line w-full">
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="line_field" style="color: white;" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)">
+                            <span class="error" id="username_err"> </span>
+                        </div>
+                        <div class="line flex-1">
+                            <input style=`color: ${textColor}` autocomplete="off" type="email" maxlength="255" name="Email" class="line_field" style="color: white;" id="Kemail" placeholder="E-mail*" required>
+                            <span class="error" id="email_err"> </span>
+                        </div>
+                        <div class="line flex-1">
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" name="phone" maxlength="18" id="Knumber" class="line_field" style="color: white;" placeholder="Phone Number" required>
+                            <span class="error" id="mobile_err"> </span>
+                        </div>
+                        <div class="line w-full">
+                            <textarea style=`color: ${textColor}` autocomplete="off" class="line_field" style="color: white;" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
+                            <span class="error" id="message_err"> </span>
+                        </div>
+                        <div class=""><button class="apply_now mt-2 px-12 py-2" id="submitbtn">Submit</button></div>
+                    </div>
+                    <div id="message"></div>
+                </form>
+            </div>
+        </div>
+        <!-- thank messaage -->
+        <div class="enquire_thnkmss text-center bg-white">
+            <h3 class="text-2xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
+             <div class="mt-2 px-7 py-3">
+                 <p class="text-md text-gray-500">
+                    Looking forward to connecting with you soon.  
+                 </p>
+             </div>
+        </div>
+    </div>
+</div>

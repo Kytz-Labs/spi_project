@@ -53,7 +53,6 @@
           font-family: Instrument Sans;
           line-height: 17.45px;   
           background-color: #C9F001;
-          border-radius: 8px;
           padding: 13px 29px;
           color: #282828;
           font-size: 16px;
@@ -100,6 +99,7 @@
           border-radius: 10px;
           box-shadow: 1px 1px 10px white;
           padding: 2rem;
+          position:fixed;
        }
     
        .thnk_heading{
