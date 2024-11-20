@@ -17,6 +17,17 @@ const list= [
 	"Development & Implementation", "Staff Augmentation", "Skidata – Parking", "Program & Project Management", "Construction Management", "Risk Management", "Document & Content Management", "End-to-end Process Automation", "Records Management", "Records Management", "Business Intelligence", "Business Intelligence", "Enterprise Asset Management", "Enterprise Resource Management"
 ]
 
+const special_services = [
+	{ image: "/spl_services/spc1.webp", text : "Improve Customer / Employee Experience" },
+	{ image: "/spl_services/spc2.webp", text : "Increase Revenue" },
+	{ image: "/spl_services/spc3.webp", text : "Reduce Costs" },
+	{ image: "/spl_services/spc4.webp", text : "Increase Operational Efficiency / Productivity" },
+	{ image: "/spl_services/spc5.webp", text : "Accelerate Time-to-Market" },
+	{ image: "/spl_services/spc6.webp", text : "Improve Governence Risk & Compliance" },
+]
+
+const awards = [ "/awards/awards6.webp", "/awards/awards4.webp", "/awards/awards3.webp", "/awards/awards4.webp" ]
+
 ---
 
 
@@ -120,8 +131,17 @@ const list= [
 			font-weight: 600;
 			line-height: 43.2px;
 			letter-spacing: -0.03em;
-			text-align: left;
 			color: #FFFFFF;
+		}
+
+		.spl-text{
+			font-family: Instrument Sans;
+			font-size: 44px;
+			font-weight: 600;
+			line-height: 53.68px;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
 		}
 
 		.diff-description{
@@ -131,6 +151,17 @@ const list= [
 			line-height: 25.6px;
 			text-align: left;
 			color: #FFFFFFCC;
+		}
+
+		.spc-description{
+			font-family: Instrument Sans;
+			font-size: 25px;
+			font-weight: 400;
+			line-height: 30.5px;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #444444;
 		}
 
 
@@ -409,6 +440,59 @@ const list= [
 					</div>
 				</div>
 			</div>
+
+			<div class="lg:px-16 px-8 lg:py-20 pb-20 flex flex-col jusitfy-center items-center bg-white">
+                <div class="spl-text text-center pb-14 w-full">SPI Special Services & <span class="text-[#006B9E]">APPIAN</span> Advantages</div>
+				<div class="inner-layer grid lg:grid-cols-3 lg:w-[95%]">
+					{
+						special_services.map((data, index) => (
+							<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-12">
+								<img src={ data.image } width="80px" height="132px" alt="Improve Customer / Employee Experience" />
+								<div class="spc-description pt-8">
+									<div>
+										Improve Customer / Employee Experience
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="lg:px-16 px-8 lg:py-20 lg:pb-36 pb-20 flex flex-col jusitfy-center items-center bg-black">
+                <div class="spl-text text-center pb-14 w-full text-white">Awards</div>
+				<div class="inner-layer grid lg:grid-cols-4 w-full">
+					{
+						awards.map((data, index) => (
+							<div>
+								<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-6 bg-white">
+									<img src={ data } width="180.06px" height="88.06px" alt="Improve Customer / Employee Experience" />
+								</div>
+								<div class="w-[2px]"></div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="lg:px-16 px-8 lg:py-20 lg:pb-36 pb-20 flex flex-col jusitfy-center items-center bg-white">
+                <div class="spl-text text-center pb-14 w-full">Certifications</div>
+				<div class="inner-layer grid lg:grid-cols-3 lg:w-[95%]">
+					{
+						special_services.map((data, index) => (
+							<div class="airside flex-1 lg:border-r-[1.2px] border-[#FFFFFF4D] lg:pr-8 flex flex-col items-center justify-center py-12">
+								<img src={ data.image } width="88.06px" height="88.06px" alt="Improve Customer / Employee Experience" />
+								<div class="spc-description pt-8">
+									<div>
+										Improve Customer / Employee Experience
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
 			<Footer />
 		</section>
 	</header>
