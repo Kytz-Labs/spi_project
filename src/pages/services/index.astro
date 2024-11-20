@@ -14,7 +14,7 @@ const services_data = [
 	{ title: "Business<br> Intelligence /<br> Analysis", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Business Intelligence solutions are expected to accelerate business growth by enabling faster, more accurate decisions. It is supposed to reduce time-to-market.</li><br><li>Organizations expect a culture of innovation through access to right information at the right time.</li></ul>", url: "/services/services_image4.webp", link : "/services/business-intelligence"},
 	{ title: "Enterprise<br> Infrastructure", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Our IT infrastructure consultants offer swift response, maximum efficiency, and assured accuracy.</li><br><li>As a project begins, we integrate processes with our clients to simplify efforts.</li></ul> ", url: "/services/services_image2.webp", link : "/services/enterprise-infrastructure"},
 	{ title: "IT<br> Staffing", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>SPI offers a flexible service to meet all your IT staffing requirements. Do you want help in a hurry?</li><br><li>One call to SPI and we come to your aid. With SPI’s Quick Start we supply qualified, certified, experienced resources within 48 hours.</li>", url: "/services/services_image3.webp", link : "/services/it-staffing"},
-	{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Digitizing MWBE forms, Data Migration, Integration and Visualization a Cloud Solution</li><br><li>Employee Performance tracking  and Claims management System</li><li>Weather Monitoring and Reporting</li><br><li>GIS - Engineering Asset management and Change Management plan</li><br><li>Server Consolidation</li><br><li>Functional specifications documentation for migration to new technology</li>", url: "/services/services_image6.webp", link : "#"},
+	{ title: "Professional<br> Services", description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Digitizing MWBE forms, Data Migration, Integration and Visualization a Cloud Solution, Employee Performance tracking  and Claims management System, Weather Monitoring and Reporting</li><br><li>GIS - Engineering Asset management and Change Management plan, Server Consolidation, Functional specifications documentation for migration to new technology</li></ul>", url: "/services/services_image6.webp", link : "#"},
 ]
 
 ---
@@ -129,7 +129,7 @@ const services_data = [
                         {
                             services_data.map((data, dataIndex) => (
 								<a href={ data.link } target="_blank">
-									<div class="px-8 py-12 min-h-[495px] flex flex-col justify-between relative group mb-5 overflow-hidden bg-white">
+									<div class="px-8 py-12 min-h-[505px] flex flex-col justify-between relative group mb-5 overflow-hidden bg-white">
 										{/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
 										<div class="z-[20] flex justify-between items-center pb-5">
 											<div class="services-title lg:group-hover:text-white lg:text-[#000000] text-white transition ease-in-out delay-150 duration-300 flex-1" set:html={data.title}></div>
