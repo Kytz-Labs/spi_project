@@ -46,7 +46,7 @@ const menuList = [
 		<div class="sidebox_D" id="sidebar_D">
 			<div class="sidebar_dropdown">
 				{menuList.map((data, index) => (
-					<div class={(index == 0) ? "lg:inline-block block px-4 lg:pb-0 pb-6 border-s-2 leading-[10px]" : "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]"}>
+					<div class={(index == 0) ? "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]" : "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]"}>
 					  <HeaderLink 
 						href={data.url} 
 						aria-label={data.ariaLabel} 
@@ -137,18 +137,18 @@ const menuList = [
 				nav.style.width="100%";
 				nav.style.left=0;
 				nav.style.position="fixed";
-				nav.style.zIndex="100";
+				nav.style.zIndex="21";
 				nav.style.left=0;
 		}
 		if(window.scrollY < 500){
 			if(window.innerWidth > 600) {
 					nav.style.width="100%";
-					nav.style.position="static";
-					nav.style.zIndex="0";
+					nav.style.position="relative !important";
+					nav.style.zIndex="21";
 			}else {
 					nav.style.width="100%";
-					nav.style.position="static";
-					nav.style.zIndex="0"; 
+					nav.style.position="relative !important";
+					nav.style.zIndex="21"; 
 			}
 		}
 	}
