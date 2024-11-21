@@ -46,7 +46,7 @@ const menuList = [
 		<div class="sidebox_D" id="sidebar_D">
 			<div class="sidebar_dropdown">
 				{menuList.map((data, index) => (
-					<div class={(index == 0) ? "inline-block px-4 border-s-2 leading-[10px]" : "inline-block px-4 leading-[10px]"}>
+					<div class={(index == 0) ? "lg:inline-block block px-4 lg:pb-0 pb-6 border-s-2 leading-[10px]" : "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]"}>
 					  <HeaderLink 
 						href={data.url} 
 						aria-label={data.ariaLabel} 
@@ -96,7 +96,7 @@ const menuList = [
         display: block;
         position: absolute;
         left:0;
-        top: 100px;
+        top: 40px;
         width:100%;
     }
     .sidebar_dropdown{
