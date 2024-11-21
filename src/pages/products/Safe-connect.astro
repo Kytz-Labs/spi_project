@@ -35,13 +35,13 @@ const services_list= [
         }
 		.home_title{
 			font-family: Instrument Sans;
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 57.6px;
-            letter-spacing: -0.03em;
-            text-align: center;
-            text-underline-position: from-font;
-            text-decoration-skip-ink: none;
+			font-size: 57px;
+			font-weight: 600;
+			line-height: 72px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
             color: white;
 		}
 		.site-title-layer {
@@ -115,10 +115,13 @@ const services_list= [
 		}
 		.product_description{
 			font-family: Instrument Sans;
-			font-size: 15px;
+			font-size: 20px;
 			font-weight: 500;
-			line-height: 24px;
+			line-height: 32px;
 			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
 		}
 		.modules > li {
 			font-family: Instrument Sans;
@@ -132,7 +135,29 @@ const services_list= [
 			position: absolute;
 			width:100%;
 			inset:0;
-			top:10%;
+			top:-65%;
+		}
+
+		.safty-title{
+			font-family: Instrument Sans;
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 43.2px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+		.safty-description {
+			font-family: Instrument Sans;
+			font-size: 15.6px;
+			font-weight: 400;
+			line-height: 25.6px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
 		}
 
 		@media (max-width: 600px) {
@@ -162,113 +187,66 @@ const services_list= [
 		}
 	</style>
 	<header class="realtive ">
-		<div class="background-effect overflow-hidden">
-			<svg width="1348" height="899" viewBox="0 0 1348 899" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<g opacity="0.4" filter="url(#filter0_f_344_1138)">
-				<path d="M430 250L250 392.055L272.5 521.66L463.5 587.877L627.5 649L868 440.162L832 285.089L587 376.774L430 250Z" fill="#B5DB00"/>
-				<path d="M660 250L480 392.055L502.5 521.66L693.5 587.877L857.5 649L1098 440.162L1062 285.089L817 376.774L660 250Z" fill="#006B9E"/>
-				</g>
-				<defs>
-				<filter id="filter0_f_344_1138" x="0" y="0" width="1348" height="899" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-				<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-				<feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_344_1138"/>
-				</filter>
-				</defs>
-			</svg>
-		</div>
 		<Nav />
-		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start relative z-20" >
-			<div class="header flex lg:flex-row flex-col">
+		<div class="px-8 lg:px-12 pt-32 pb-28 site-title-layer overflow-hidden relative flex items-start relative z-20" >
+			<div class="header flex lg:flex-row flex-col overflow-hidden gap-16">
 				<div>
-					<img src="/product-logo/product_logo.webp" width="125px" height="61.45px" />
-					<h1 class="home_title text-start">
+					<div class="inline-block bg-white px-2 rounded-[3px] py-1">
+						<img src="/product_logo/product_logo1.webp" alt="product logo" width="100px" height="61.45px" />
+					</div>
+					<h1 class="home_title text-start mt-8 mb-4">
 						Welcome to Safe Connect
 					</h1>
-					<div class="product_description">
+					<div class="product_description mb-14">
 						Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
 					</div>
+					<div class="flex lg:flex-row flex-col gap-5">
+						<img src="/appstore/googleplay.webp" width="142.04px" height="47.36px">
+						<img src="/appstore/googleplay2.webp" width="142.04px" height="47.36px">
+						<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+					</div>
 				</div>
-				<div>
-					<h1 class="home_title text-start">
-						<span class="lg:block inline">Empowering Businesses with </span><span class="text-[#B5DB00]">Smart, Reliable Solutions for a Safer</span> Environment Friendly Tomorrow
-					</h1>
+				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[35%] rounded-[6px] relative">
+					<img src="/mobile.webp" width="90%" height="100%" class="absolute top-12 inset-x-0 left-6" />
 				</div>
 			</div>
 		</div>
 		<section class="z-[1] relative">
 			<!-- we are a service -->
-			<div class="lg:px-12 px-8 pb-28 lg:pt-0 pt-12">
-				<div class="inner-layer-innovator grid lg:grid-cols-5 bg-white">
-                    {
-                        services_data.map((data, dataIndex) => (
-                            <div class="px-8 my-8 flex flex-row justify-between relative group overflow-hidden items-center">
-                                {/* <div class="services-title z-[20] z-[20]">Application<br> Management</div> */}
-                                <img src={ data } alt="services logo" width="80%" height="100%" />
-                                {
-                                    (dataIndex == 4) ? "" : <div class="h-[28px]"></div>
-                                }
-                            </div>
-                        ))
-                    }
-				</div>
-			</div>
-
-            <!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
-				<div class="inner-layer-innovator">
-                    {
-                        services_list.map((data, dataIndex) => (
-                            <div class="pl-2 flex lg:flex-row flex-col relative group items-strech bg-white mb-10 overflow-hidden group items-stretch lg:h-[350px]">
-                               <div class="flex-none lg:w-[60%] h-full lg:order-first order-last">
-                                    <div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 pt-4 transition duration-300 delay-150 hover:mb-0">
-                                        <div class="border-b-[1.6px] relative pb-3 z-[10]">
-                                            <img src={ data.logo } alt="services logo" width="20%" height="73px" class="transition-width delay-150 duration-500 lg:w-[20%] lg:group-hover:w-[10%] w-[50%]" />
-                                        </div>
-                                        <div class="product_description lg:text-[#00000099] relative my-4 z-[10]">
-                                             { data.description }
-                                        </div>
-                                        <div class="font-[700] relative text-[16px] lg:text-black leading-[19.2px] pb-2 z-[10]">
-                                            { data.modules}
-                                        </div>
-                                        <div class="z-[10] relative flex lg:flex-row flex-col gap-12">
-                                            <ul class="list-decimal lg:text-[#00000099] pl-5 modules">
-												{
-													data.value1.map((value, valIndex) => (
-														<li>{ value }</li>
-													))
-												}
-                                            </ul>
-											<ul class="list-decimal lg:text-[#00000099] pl-5 modules">
-												{
-													data.value2.map((val, index) => (
-														<li>{ val }</li>
-													))
-												}
-                                            </ul>
-                                        </div>
-                                        <div class="my-5 relative z-[10] lg:opacity-0 lg:translate-y-16 lg:group-hover:opacity-[1] lg:group-hover:translate-y-0 opacity-100 transition duration-500 delay-50 ease-in-out">
-                                            <Cbtn colorbtnText="Learn more" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-                                        </div>
-                                    </div>
-                               </div>
-                               <div class="flex-1 relative overflow-hidden scale-[.86] group-hover:scale-[1] transition-width duration-100 delay-150 ease-in-out">
-                                    <div class="overflow-hidden bottom-0 text-[#00000099] lg:absolute relative z-[10] transition duration-500 delay-150 ease-in-out overflow-hidden" >
-                                        <img src={data.product_image} alt="products" width={ data.width }
-										class= { (dataIndex == 0) ? "lg:translate-y-64 lg:group-hover:translate-y-52 translate-y-0 transition duration-500 delay-150" :
-											(dataIndex == 1 ) ? "lg:translate-y-64 lg:group-hover:translate-y-44 translate-y-0 transition duration-500 delay-150" :
-											(dataIndex == 2 ) ? "lg:translate-y-64 lg:group-hover:translate-y-44 translate-y-0 transition duration-500 delay-150" :
-											(dataIndex == 3 ) ? "lg:translate-y-24 lg:group-hover:translate-y-12 translate-y-0 transition duration-500 delay-150" :
-											"lg:translate-y-56 lg:group-hover:translate-y-32 translate-y-0 transition duration-500 delay-150"
-										}
-										 /> 
-                                    </div>
-									<div class="absolute inset-0 group-hover:scale-[1] transition-width duration-100 delay-150 ease-in-out" style=`background-color: ${data.bgcolor}`>
-									</div>
-                               </div>   
-                            </div>
-                        ))
-                    }
+			<div class="lg:px-12 px-8 pb-28 lg:pt-0 pt-12 relative flex justify-center">
+				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
+					<div class="background-effect overflow-hidden">
+						<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g opacity="0.4" filter="url(#filter0_f_2491_913)">
+							<path d="M406.705 250L250.094 493.167L269.67 715.021L435.852 828.37L578.543 933L787.793 575.515L756.471 310.065L543.305 467.01L406.705 250Z" fill="#B5DB00"/>
+							<path d="M606.818 250L450.207 493.167L469.783 715.021L635.966 828.37L778.656 933L987.906 575.515L956.584 310.065L743.418 467.01L606.818 250Z" fill="#006B9E"/>
+							</g>
+							<defs>
+							<filter id="filter0_f_2491_913" x="0.09375" y="0" width="1237.81" height="1183" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+							<feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_2491_913"/>
+							</filter>
+							</defs>
+						</svg>	
+					</div>
+					<div class="flex-1 self-center">
+						<div class="lg:w-[70%]">
+							<div class="safty-title pb-4">Behavior-Based Safety</div>
+							<div class="safty-description">
+								From a young age, we are taught that safety is a learned behavior.  Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+							</div>
+						</div>
+					</div>
+					<img class="absolute pb-28 ml-28" src="/floating_laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
+					<div class="flex-1 self-start flex justify-end">
+						<div class="lg:w-[70%]">
+							<div class="safty-title pb-4">Safety is paramount</div>
+							<div class="safty-description">
+								From office environment to construction to manufacturing, many industries are making strides to put safety as their #1 priority.  In fact, the success of your organization depends on it.
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			

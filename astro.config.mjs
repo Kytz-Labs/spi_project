@@ -9,6 +9,5 @@ export default defineConfig({
 
   // Cloudflare Workers adapter
   adapter: cloudflare(),
-
   integrations: [tailwind()]
 });
