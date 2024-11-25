@@ -130,13 +130,17 @@ const menuList = [
 	window.onscroll = () => {
 		
 		// nav menu functionality
-		console.log("navigation");
 		var nav = document.querySelector("nav");
 		if(window.scrollY > 600){
-			console.log("working");
 				nav.style.width="100%";
 				nav.style.left=0;
 				nav.style.position="fixed";
+				nav.style.zIndex="21";
+				nav.style.left=0;
+		}else{
+			nav.style.width="100%";
+				nav.style.left=0;
+				nav.style.position="relative";
 				nav.style.zIndex="21";
 				nav.style.left=0;
 		}
