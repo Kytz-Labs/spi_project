@@ -1,6 +1,6 @@
 ---
 import Close from "../../../public/assets/close_btn.svg"
-// import "../../pages/form.css"
+import "../form.css"
 
 interface Props{
     bgColor: string,
@@ -8,7 +8,6 @@ interface Props{
 }
 
 const { bgColor, textColor } = Astro.props;
-
 
 ---
 
@@ -27,10 +26,10 @@ const { bgColor, textColor } = Astro.props;
         <!-- contact form -->
         <div class="enquire_contact_form" id="enquire_popup_form">
             <div class="form_section" style=`background-color: ${bgColor}`>
-                <div class="contact_heading pb-6" style=`color: ${textColor}`>Share Your Details to Get Started – We're Here to Help!</div>
+                <div class="contact_heading pb-6" style=`color: ${textColor}`>Book a call for demo</div>
                 <form id="w3form" method="POST">
                     <!-- Replace with your Access Key --> 
-                    <input type="hidden" name="access_key" value="f1653f8d-1af6-4ae8-bc68-74a2db905f16">
+                    <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
                     <!--  -->
                     <input type="hidden" name="from_name" value="Kytz Enquiry">
                     
@@ -64,9 +63,9 @@ const { bgColor, textColor } = Astro.props;
                             <textarea style=`color: ${textColor}` autocomplete="off" class="line_field" style="color: white;" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
                             <span class="error" id="message_err"> </span>
                         </div>
-                        <div class=""><button class="apply_now mt-2 px-12 py-2" id="submitbtn">Submit</button></div>
+                        <div class="text-red"><button class="apply_now mt-2 px-12 py-2 text-red-500" id="submitbtn">Submit</button></div>
                     </div>
-                    <div id="message"></div>
+                    <div id="message" class="text-red-500"></div>
                 </form>
             </div>
         </div>

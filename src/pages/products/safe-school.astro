@@ -46,7 +46,7 @@ const services_list2= [
         }
 		.home_title{
 			font-family: Instrument Sans;
-			font-size: 55.2px;
+			font-size: 57px;
 			font-weight: 600;
 			line-height: 72px;
 			letter-spacing: -0.03em;
@@ -69,7 +69,7 @@ const services_list2= [
 		}
 		.contract{
 			font-family: Instrument Sans;
-			font-size: 15px;
+			font-size: 18px;
 			font-weight: 500;
 			line-height: 20px;
 			text-align: left;
@@ -158,16 +158,6 @@ const services_list2= [
 			left:10%
 		}
 
-		.background-effect3{
-			content: "";
-			position: absolute;
-			width:100%;
-			inset:-2%;
-			top:-34%;
-			/* left:10% */
-			filter: blur(4px);
-		}
-
 		.safty-title{
 			font-family: Instrument Sans;
 			font-size: 32px;
@@ -228,6 +218,7 @@ const services_list2= [
 			font-weight: 600;
 			line-height: 43.2px;
 			letter-spacing: -0.03em;
+			text-align: left;
 			text-underline-position: from-font;
 			text-decoration-skip-ink: none;
 			color: #FFFFFF;
@@ -320,13 +311,11 @@ const services_list2= [
 
 		.bottom-message{
 			font-family: Instrument Sans;
-			font-size: 40px;
-			font-weight: 600;
-			line-height: 48px;
-			letter-spacing: -0.03em;
-			text-align: left;
-			text-underline-position: from-font;
-			text-decoration-skip-ink: none;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 43.92px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
 			color: #050505;
 		}
 
@@ -341,10 +330,21 @@ const services_list2= [
 		.color-box{
 			max-width: 95%;
 		}
-		.bgImage{
-			/* background-image: linear-gradient(45deg, #ffffff, transparent); */
-			filter: blur(4px);
-		}
+        .small_message{
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #000000E5;
+        }
+
+        .fancy-lap{
+            width: 90%;
+        }
+
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -397,21 +397,24 @@ const services_list2= [
 				font-size:35px;
 				line-height: 46.6px;
 			}
+            .fancy-lap{
+            width: 100%;
+        }
 		}
 	</style>
 	<header class="realtive ">
 		<Nav />
 		<div class="px-8 lg:px-12 pt-32 lg:pb-32 pb-12 site-title-layer overflow-hidden relative flex items-start relative z-20" >
-			<div class="header flex lg:flex-row flex-col overflow-hidden gap-4">
+			<div class="header flex lg:flex-row flex-col overflow-hidden gap-16">
 				<div>
-					<div class="inline-block bg-white px-2 rounded-[3px] py-1">
-						<img src="/product_logo/product_logo2.webp" alt="product logo" width="100px" height="61.45px" />
+					<div class="inline-block bg-white px-4 rounded-[3px] py-1">
+						<img src="/product_logo/product_logo4.webp" alt="product logo" width="120px" height="61.45px" />
 					</div>
 					<h1 class="home_title text-start mt-8 mb-4">
-						Welcome to Enviro Connect
+						Welcome to Safe School
 					</h1>
 					<div class="product_description mb-14">
-						EnviroConnect is a comprehensive solution for handling  environmental data and generating reports. With our  innovative software, you can manage data, maps, photos,  and more.
+                        Safe School is designed to meet the urgent need to implement a technology solution that addresses the issue of school violence and other suspicious activities on school campuses.
 					</div>
 					<div class="flex lg:flex-row flex-col gap-5">
 						<img src="/appstore/googleplay.webp" width="142.04px" height="47.36px">
@@ -419,16 +422,16 @@ const services_list2= [
 						<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 					</div>
 				</div>
-				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[38%] rounded-[6px] relative">
-					<img src="/product_sub/enviro_connect.webp" width="96%" height="100%" class="absolute top-12 inset-x-0" />
+				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[35%] rounded-[6px] relative">
+					<img src="/safe-school/mobile.webp" width="50%" height="100%" class="absolute top-12" style="left: 20%;" />
 				</div>
 			</div>
 		</div>
 		<section class="relative">
-			<Web3Forms textColor="black" bgColor="white">
+			<Web3Forms textColor="black" bgColor="white" />
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
-				<div class="inner-layer-innovator flex lg:flex-row flex-col items-center justify-center w-[92%]">
+				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
 					<div class="background-effect overflow-hidden">
 						<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g opacity="0.4" filter="url(#filter0_f_2491_913)">
@@ -446,170 +449,109 @@ const services_list2= [
 					</div>
 					<div class="flex-1 self-center">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Behavior-Based Safety</div>
-							<div class="safty-description">
-								From a young age, we are taught that safety is a learned behavior.  Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+							<div class="safty-title pb-4">SPI has your solution</div>
+							<div class="safty-description lg:pb-0 pb-12">
+                                Safe School is designed to implement a technology solution to address the issue of school violence and other suspicious activities in schools. We understand that students desire a safe learning environment and a way to be involved in maintaining that status. Our app will allow students a secure way to inform faculty and law enforcement with real time notifications.
 							</div>
 						</div>
 					</div>
-					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-28" src="/floating_laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
-					<div class="flex-1 self-start flex flex-col items-end justify-between">
+					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-28" src="/safe-school/laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
+					<div class="flex-1 self-start flex justify-end">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Safety is paramount</div>
+							<div class="safty-title pb-4">Proactive Approach</div>
 							<div class="safty-description">
-								From office environment to construction to manufacturing, many industries are making strides to put safety as their #1 priority.  In fact, the success of your organization depends on it.
-							</div>
-						</div>
-						<div class="lg:w-[70%] lg:mt-48 mt-12">
-							<div class="safty-title pb-4">Assessments</div>
-							<div class="safty-description">
-								Assessments: Our LMS platform is equipped with quizzes and assessments built-in. Advanced solutions will include highly configurable assessment features such as randomized question banks, time limits, open-ended responses, and more.
+                                Addressing the need for the use of digital technology to prevent attacks is what will empower students and staff to be proactive in their environment.
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- triangle chart -->
-			<div class="lg:px-12 px-8 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20">
+            
+			<!-- green card -->
+			<div class="lg:pt-0 lg:px-20 pb-12 px-8 pt-20 relative flex justify-center bg-[tranparent]">
+				<div class="inner-layer flex w-full lg:flex-row flex-col lg:px-0 lg:pl-16 px-10 lg:gap-20 lg:py-6 py-12 items-center bg-[#B5DB00]">
+					<div>
+                        <div class="small_message lg:pb-2 pb-12">A Technology Solution for Reporting Suspicious Activity on Campus</div>
+						<div class="bottom-message lg:mb-3 mb-0 text-center">
+							"All Accidents are Preventable"
+						</div>
+					</div>
+					<div class="flex-1 flex lg:justify-end lg:px-20 lg:order-last order-first">
+						<img src="/product_logo/product_logo4.webp" alt="product logo" width="100%" height="61.45px" />
+					</div>
+				</div>
+			</div>
+
+            <!-- triangle chart -->
+			<div class="lg:px-12 px-8 lg:pt-0 pt-16 relative lg:my-24 flex justify-center">
+				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20 rounded-[4px]">
 					<div class="flex-1">
-						<h1 class="safety-modules text-start mt-8 mb-10">
-							Safety Modules
+						<h1 class="safety-modules text-start mb-10">
+							Key Features
 						</h1>
 						<div class="diff-description">
                             <ul>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Always available from  anywhere</div>
+                                    <div>Real Time Notification</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>No 3rd-party software  required</div>
+                                    <div> Location-based Services</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Alerts of potential issues</div>
+                                    <div>Picture & Video Uploading</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Preformatted and custom  reports</div>
+                                    <div> User Friendly</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Risk Assessment</div>
+                                    <div>Customizable</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Safety Walkthrough</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Personal Safety Plan (PSP)</div>
+                                    <div>Instant Admin Reports</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Incident Notification</div>
+                                    <div>Ease of use</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management and Reporting</div>
+                                    <div> Increased awareness of school safety expectations</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management of Change</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Toolbox Safety Meeting</div>
+                                    <div> Gives students and faculty a proactive approach to keeping school safe</div>
                                 </li>
                             </ul>
                         </div>
 					</div>
 					<div class="flex-1 flex flex-col items-end lg:order-last order-first">
-						<div>
-							<h1 class="safety-modules text-start w-full lg:mt-8 mb-10">
-								Incident Types
-							</h1>
-							<img src="/product_sub/enviro_connect_pic.webp" width="80%" height="100%" class="" />
+						<div class="lg:mb-0 mb-12">
+							<img src="/safe-school/fancy_laptop.webp" width="90%" height="100%" class="fancy-lap" />
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:gap-8 items-center">
-					<div class="flex-1 flex flex-col items-end">
-						<div>
-							<img src="/product_sub/product_sub_laptop.webp" width="100%" height="100%" class="" />
+			<!-- green card -->
+			<div class="lg:pt-0 lg:px-20 pb-32 px-8 pt-20 relative lg:mt-24 flex justify-center">
+				<div class="inner-layer flex w-full lg:flex-row flex-col lg:px-0 lg:pl-16 px-10 lg:gap-20 lg:py-6 py-12 items-center bg-[#B5DB00]">
+					<div>
+						<div class="bottom-message mb-3 lg:mt-0 mt-12">
+							Scan the code to see the app<br> in action
 						</div>
 					</div>
-					<div class="flex-1">
-						<h1 class="safety-modules text-start mb-10 lg:mt-0 mt-10">
-							SPI Has the Answers to Your Questions
-						</h1>
-						<div class="diff-description">
-                            <ul>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Is environmental compliance a  high priority in your  organization?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Could you benefit from  standardizing and streamlining  your processes?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Do you struggle with tracking  incidents, violations, and  compliance issues?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Are you spending too much time  and money managing your data?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Do you feel like you have control  over your environmental data?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Is your company proactive or  reactive?</div>
-                                </li>
-                            </ul>
-                        </div>
+					<div class="flex-1 flex lg:justify-end lg:px-20 lg:order-last order-first">
+						<img src="/code.webp" alt="product logo" width="50%" height="61.45px" />
 					</div>
 				</div>
 			</div>
-
-			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:my-24 my-10 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:gap-8 items-center relative overflow-hidden py-20">
-				  <div class="background-effect3 overflow-hidden relative z-10">
-					<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
-					  <g opacity="0.4" filter="url(#filter0_f_2491_913)">
-						<path d="M406.705 250L250.094 493.167L269.67 715.021L435.852 828.37L578.543 933L787.793 575.515L756.471 310.065L543.305 467.01L406.705 250Z" fill="#B5DB00"/>
-						<path d="M606.818 250L450.207 493.167L469.783 715.021L635.966 828.37L778.656 933L987.906 575.515L956.584 310.065L743.418 467.01L606.818 250Z" fill="#006B9E"/>
-					  </g>
-					  <defs>
-						<filter id="filter0_f_2491_913" x="0.09375" y="0" width="1237.81" height="1183" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						  <feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_2491_913"/>
-						</filter>
-					  </defs>
-					</svg>
-				  </div>
-				  <div class="absolute inset-0 z-20 absolute inset-0 bg-white/30 backdrop-blur-[8px]"></div>
-				  <div class="flex-1 relative z-30">
-					<h1 class="safety-modules text-center mb-10">Data Analysis</h1>
-					<div class="flex flex-col items-center">
-					  <img src="/product_sub/table_chat.webp" width="60%" height="" />
-					  <img src="/product_sub/table_chat2.webp" width="60%" height="" class="mt-10" />
-					</div>
-				  </div>
-				</div>
-			</div>
-			  
 			
 			<Footer />
 		</section>

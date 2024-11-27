@@ -8,7 +8,7 @@
        }
        .contact_heading{
             font-family: Instrument Sans;
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 600;
             line-height: 48px;
             letter-spacing: -0.03em;
@@ -30,13 +30,13 @@
             line-height: 28.8px;
             text-align: left;
             color: #FFFFFF;   
-            opacity: .7;     
+            opacity: 1;     
             display: block;
             width: 100%;
             outline:none;
             border:0;
-            padding: 14px 0px 20px 0px;
-            border-bottom: 1px solid #FFFFFF1F;
+            padding: 8px 0px 8px 0px;
+            border-bottom: 1px solid gray;
             background: transparent;
        }
        .choose{

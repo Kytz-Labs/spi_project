@@ -4,7 +4,7 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
-import Web3Forms from "@components/Forms/Web3Forms.astro";
+import Web3Forms from "@components/Forms/Web3Forms.astro"
 const currentUrl=Astro.request.url;
 
 const services_data = [ "/product_logo/product_logo1.webp", "/product_logo/product_logo2.webp", "/product_logo/product_logo3.webp", "/product_logo/product_logo6.webp", "/product_logo/product_logo4.webp"];
@@ -405,13 +405,13 @@ const services_list2= [
 			<div class="header flex lg:flex-row flex-col overflow-hidden gap-4">
 				<div>
 					<div class="inline-block bg-white px-2 rounded-[3px] py-1">
-						<img src="/product_logo/product_logo2.webp" alt="product logo" width="100px" height="61.45px" />
+						<img src="/product_logo/product_logo4.webp" alt="product logo" width="100px" height="61.45px" />
 					</div>
 					<h1 class="home_title text-start mt-8 mb-4">
-						Welcome to Enviro Connect
+						Welcome to LMS E-Connect
 					</h1>
 					<div class="product_description mb-14">
-						EnviroConnect is a comprehensive solution for handling  environmental data and generating reports. With our  innovative software, you can manage data, maps, photos,  and more.
+						EnviroConnect is a comprehensive solution for handling environmental data and generating reports. With this innovative software tool, you can manage the data and much more.
 					</div>
 					<div class="flex lg:flex-row flex-col gap-5">
 						<img src="/appstore/googleplay.webp" width="142.04px" height="47.36px">
@@ -419,15 +419,15 @@ const services_list2= [
 						<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 					</div>
 				</div>
-				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[38%] rounded-[6px] relative">
-					<img src="/product_sub/enviro_connect.webp" width="96%" height="100%" class="absolute top-12 inset-x-0" />
+				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[38%] rounded-[6px] relative lg:mt-0 mt-12">
+					<img src="/inner_lms/inner_lms.webp" width="96%" height="100%" class="absolute top-12 inset-x-0" />
 				</div>
 			</div>
 		</div>
 		<section class="relative">
-			<Web3Forms textColor="black" bgColor="white">
+			<Web3Forms textColor="black" bgColor="white" />
 			<!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
+			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center pb-20">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col items-center justify-center w-[92%]">
 					<div class="background-effect overflow-hidden">
 						<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -445,19 +445,19 @@ const services_list2= [
 						</svg>	
 					</div>
 					<div class="flex-1 self-center">
-						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Behavior-Based Safety</div>
+						<div class="lg:w-[70%] lg:mb-0 mb-12">
+							<div class="safty-title pb-4">Certificates and compliance</div>
 							<div class="safty-description">
-								From a young age, we are taught that safety is a learned behavior.  Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+								Certificates and compliance: A certificate is generated and issued to the trainee based on course completion and a passing quiz score.
 							</div>
 						</div>
 					</div>
-					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-28" src="/floating_laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
+					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-12" src="/floating_laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
 					<div class="flex-1 self-start flex flex-col items-end justify-between">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Safety is paramount</div>
+							<div class="safty-title pb-4">Course Authoring</div>
 							<div class="safty-description">
-								From office environment to construction to manufacturing, many industries are making strides to put safety as their #1 priority.  In fact, the success of your organization depends on it.
+								With built-in course authoring tools, clients can simply upload videos, presentations, or PDFs, and assemble them into courses entirely within the platform. Develop your own training or purchase customized training materials.
 							</div>
 						</div>
 						<div class="lg:w-[70%] lg:mt-48 mt-12">
@@ -470,9 +470,29 @@ const services_list2= [
 				</div>
 			</div>
 
+			<div class="lg:px-12 px-8 lg:pt-0 pt-8 lg:pb-0 pb-8 relative">
+				<div class="inner-layer flex lg:flex-row flex-col bg-white lg:px-0 px-8 lg:pl-16">
+					<div>
+						<h1 class="spi-title text-start mt-12 mb-4">
+							Centralized Dashboard
+						</h1>
+						<div class="spi-description mb-8">
+							Centralized Dashboard: LMS e-Connect features reporting and analytics tools that also allow you to pinpoint areas of your training courses that may be lacking, as well as where it excels. For example, you can assess the training content and make modifications if necessary. Measure, track, and report completion rates, certifications, overall course participation, and test scores, as well as other metrics.
+						</div>
+						<div class="mb-12">
+							<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+						</div>
+					</div>
+					<div class="bg-white lg:min-h-[350px] overflow-hidden flex-none lg:w-[50%] rounded-[6px] relative lg:order-last order-first">
+						<img src="/inner_lms/laptop.webp" width="95%" height="100%" class="lg:absolute -top-2 inset-x-0 left-0 lg:mt- mt-12" />
+					</div>
+				</div>
+			</div>
+
+
 			<!-- triangle chart -->
-			<div class="lg:px-12 px-8 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20">
+			<div class="lg:px-12 px-8 relative lg:mt-24 mt-20 flex justify-center">
+				<div class="inner-layer flex lg:flex-row flex-col lg:items-center lg:pl-16 lg:w-[90%] lg:gap-20">
 					<div class="flex-1">
 						<h1 class="safety-modules text-start mt-8 mb-10">
 							Safety Modules
@@ -481,108 +501,41 @@ const services_list2= [
                             <ul>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Always available from  anywhere</div>
+                                    <div>Cut Costs</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>No 3rd-party software  required</div>
+                                    <div>Monitor & Access Progress</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Alerts of potential issues</div>
+                                    <div>Flexibility</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Preformatted and custom  reports</div>
+                                    <div>Reduce learning time</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Risk Assessment</div>
+                                    <div>accessible training content</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Safety Walkthrough</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Personal Safety Plan (PSP)</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Incident Notification</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management and Reporting</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management of Change</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Toolbox Safety Meeting</div>
+                                    <div>up - To - Date Compliance</div>
                                 </li>
                             </ul>
                         </div>
 					</div>
 					<div class="flex-1 flex flex-col items-end lg:order-last order-first">
 						<div>
-							<h1 class="safety-modules text-start w-full lg:mt-8 mb-10">
-								Incident Types
-							</h1>
-							<img src="/product_sub/enviro_connect_pic.webp" width="80%" height="100%" class="" />
+							<img src="/inner_lms/patients.webp" width="80%" height="100%" class="w-full" />
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:gap-8 items-center">
-					<div class="flex-1 flex flex-col items-end">
-						<div>
-							<img src="/product_sub/product_sub_laptop.webp" width="100%" height="100%" class="" />
-						</div>
-					</div>
-					<div class="flex-1">
-						<h1 class="safety-modules text-start mb-10 lg:mt-0 mt-10">
-							SPI Has the Answers to Your Questions
-						</h1>
-						<div class="diff-description">
-                            <ul>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Is environmental compliance a  high priority in your  organization?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Could you benefit from  standardizing and streamlining  your processes?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Do you struggle with tracking  incidents, violations, and  compliance issues?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Are you spending too much time  and money managing your data?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Do you feel like you have control  over your environmental data?</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Is your company proactive or  reactive?</div>
-                                </li>
-                            </ul>
-                        </div>
-					</div>
-				</div>
-			</div>
-
-			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:my-24 my-10 flex justify-center">
+			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:my-24 my-10 flex justify-center z-[0]">
 				<div class="inner-layer flex lg:flex-row flex-col lg:gap-8 items-center relative overflow-hidden py-20">
 				  <div class="background-effect3 overflow-hidden relative z-10">
 					<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -601,10 +554,11 @@ const services_list2= [
 				  </div>
 				  <div class="absolute inset-0 z-20 absolute inset-0 bg-white/30 backdrop-blur-[8px]"></div>
 				  <div class="flex-1 relative z-30">
-					<h1 class="safety-modules text-center mb-10">Data Analysis</h1>
-					<div class="flex flex-col items-center">
-					  <img src="/product_sub/table_chat.webp" width="60%" height="" />
-					  <img src="/product_sub/table_chat2.webp" width="60%" height="" class="mt-10" />
+					<h1 class="safety-modules text-center mb-10 justify-center items-center">Data Analysis</h1>
+					<div class="flex lg:flex-row flex-col flex-wrap justify-center px-12">
+					  <img class="lg:w-[50%] lg:pr-4 lg:pb-0 pb-12" src="/inner_lms/pic1.webp" width="100%" height="271.5px" />
+					  <img class="lg:w-[50%] lg:pl-4" src="/inner_lms/pic2.webp" width="100%" height="271.5px" class="mt-10" />
+					  <img class="lg:w-[50%] pt-12" src="/inner_lms/pic3.webp" width="100%" height="271.5px" class="mt-10" />
 					</div>
 				  </div>
 				</div>

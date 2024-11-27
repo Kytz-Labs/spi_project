@@ -4,6 +4,7 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
+import Web3form from "@components/Forms/Web3Forms.astro"
 const currentUrl=Astro.request.url;
 
 const services_data = [ "/product_logo/product_logo1.webp", "/product_logo/product_logo2.webp", "/product_logo/product_logo3.webp", "/product_logo/product_logo6.webp", "/product_logo/product_logo4.webp"];
@@ -387,7 +388,7 @@ const services_list2= [
 	</style>
 	<header class="realtive ">
 		<Nav />
-		<div class="px-8 lg:px-12 pt-32 lg:pb-32 pb-12 site-title-layer overflow-hidden relative flex items-start relative z-20" >
+		<div class="px-8 lg:px-12 pt-32 lg:pb-32 pb-12 site-title-layer overflow-hidden relative flex items-start relative z-10" >
 			<div class="header flex lg:flex-row flex-col overflow-hidden gap-16">
 				<div>
 					<div class="inline-block bg-white px-2 rounded-[3px] py-1">
@@ -410,7 +411,8 @@ const services_list2= [
 				</div>
 			</div>
 		</div>
-		<section class="z-[1] relative">
+		<section class="relative">
+			<Web3form bgColor="white" textColor="black"/>
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
@@ -764,4 +766,111 @@ const services_list2= [
 
 	</main>
 </Header>
+<script client:visible>
+    var com_form = document.querySelector("#enquire_form"),
+		sidebox_D = document.querySelector(".sidebox_D"),
+        kytz_label = document.querySelector(".kytz-label"),
+        w3form = document.getElementById("w3form");
+        brand_btn = document.querySelectorAll(".brand-button"),
+        form_close = document.querySelector(".kytz_form_close"),
+        myform = document.querySelector("#enquire_main_form");
+    var emailerr = document.querySelector("#email_err"),
+        usererror = document.querySelector("#username_err"),
+        mobilerror = document.querySelector("#mobile_err"),
+        messageerror = document.querySelector("#message_err");
+    function enquire_form() {
+        var e = document.getElementById("Kname"),
+            r = document.getElementById("Kemail"),
+            n = document.getElementById("Knumber"),
+            t = document.getElementById("Kmessage"),
+            i = document.getElementById("submitbtn"),
+            l = document.getElementById("message");
+        function o() {
+            var r = document.querySelector("#username_err"),
+                n = e.value,
+                t = /^[a-zA-Z\s]+$/.test(n);
+            return e.value ? (e.value.length < 4 ? ((r.innerHTML = "username length is too short"), !1) : t ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "username should be a-z ,A-Z only"), !1)) : ((r.innerHTML = "field required"), !1);
+        }
+        function s() {
+            var e = document.querySelector("#email_err"),
+                n = r.value,
+                t = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(n);
+            return "" == n ? ((e.innerHTML = "required field"), !1) : t ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "invalid email"), !1);
+        }
+        function a() {
+            var e,
+                r = document.querySelector("#mobile_err");
+            return n.value ? (!isNaN(parseFloat((e = n.value))) && isFinite(e) ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "only number is allowed"), !1)) : ((r.innerHTML = "field required"), !1);
+        }
+        function m() {
+            var e = document.querySelector("#message_err");
+            return t.value ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "field required"), !1);
+        }
+        e.addEventListener("input", () => {
+            o();
+        }),
+            r.addEventListener("input", () => {
+                s();
+            }),
+            n.addEventListener("input", () => {
+                a();
+            }),
+            t.addEventListener("input", () => {
+                m();
+            }),
+            (i.onclick = (e) => {
+                if ((e.preventDefault(), o() || s() || a() || m())) {
+                    if (o() && s() && a() && m()) {
+                        l.innerHTML = "";
+                        let r = document.querySelector(".enquire_contact_form"),
+                            n = document.getElementById("enquire_form"),
+                            t = document.getElementById("w3form"),
+                            u = document.querySelector(".enquire_thnkmss");
+                        i.innerHTML = "<div class='animate-pulse'>processing...</div>";
+                        let c = new FormData(t),
+                            d = {};
+                        c.forEach((e, r) => {
+                            d[r] ? (Array.isArray(d[r]) ? d[r].push(e) : (d[r] = [d[r], e])) : (d[r] = e);
+                        });
+                        let y = JSON.stringify(d);
+                        console.log(y),
+                            fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: y })
+                                .then(async (e) => {
+                                    let n = await e.json();
+                                    200 == e.status ? ((i.innerHTML = "submit"), (r.style.display = "none"), (u.style.display = "block")) : (console.log(e), (i.innerHTML = n.message));
+                                })
+                                .catch((e) => {
+                                    console.log(e), (i.innerHTML = "Something went wrong!");
+                                })
+                                .then(function () {
+                                    t.reset(),
+                                        setTimeout(() => {
+                                            (u.style.display = "none"), (r.style.display = "block"), (n.style.display = "none");
+                                        }, 5e3);
+                                });
+                    } else l.innerHTML = '<div class="alert alert-warning">Please fill all required field</div>';
+                } else l.innerHTML = '<div class="alert alert-warning">Please fill all required field</div>';
+            });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        w3form.reset(), "scrollRestoration" in history && (history.scrollRestoration = "manual");
+    }),
+	brand_btn.forEach((e, r) => {
+		e.onclick = () => {
+			(com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+		};
+	}),
+	(form_close.onclick = () => {
+		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+	}),
+	(window.onclick = (e) => { 
+		e.target === com_form && ((com_form.style.display = "none"), w3form.reset());
+		e.target === sidebox_D && ((sidebox_D.style.display = "none"));
+		e.target === kytz_label && ((sidebox_D.style.display = "flex"));
+	})
+	enquire_form();
+</script>
+
+
+
 
