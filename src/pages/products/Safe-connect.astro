@@ -6,15 +6,6 @@ import Footer from "@components/Footer.astro"
 import "../../form.css"
 const currentUrl=Astro.request.url;
 
-const services_data = [ "/product_logo/product_logo1.webp", "/product_logo/product_logo2.webp", "/product_logo/product_logo3.webp", "/product_logo/product_logo6.webp", "/product_logo/product_logo4.webp"];
-const services_list= [
-    { logo: "/product_logo/product_logo1.webp", width : "85%", bgcolor: "#006B9E",  product_image: "/mobile.webp", description : "A safety app that engages employees to improve safety practices, aiming for zero incidents.", modules : "MODULES", value1 : ["Observation and Intervention (O&I)", "Job Safety Analysis (JSA)", "Risk Assessment"], value2 : ["Safety Walkthrough", "Personal Safety Plan (PSP)", "Incident Notification"] },
-    { logo: "/product_logo/product_logo2.webp", width : "100%", bgcolor: "#B5DB00", product_image: "/laptop.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations.", modules : "BENEFITS", value1 : ["A Useful and Accessible Asset", "Field Tested and Approved"], value2 : [] },
-    { logo: "/product_logo/product_logo3.webp", width : "100%", bgcolor: "#006B9E", product_image: "/laptop2.webp", description : "A software for managing the entire permit process, from application to occupancy. ", modules : "BENEFITS", value1 : ["Permit management", "Compliance tracking", "Plant management", "Easy to navigate"], value2 : ["Inspection tracking", "GIS tracking", "Digital data", "Time saver"] },
-    { logo: "/product_logo/product_logo6.webp", width : "100%", bgcolor: "#B5DB00", product_image: "/laptop3.webp", description : " LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs.", modules : "BENEFITS", value1 : ["Cuts Cost", "Accessible Training Content", "Monitor & Assess Progress"], value2 : ["Reduce Learning Time", "Up-to- Date Compliance", " Flexibility"] },
-    { logo: "/product_logo/product_logo4.webp", width : "90%", bgcolor: "#006B9E", product_image: "/laptop4.webp", description : "Safe School is designed to implement a technology solution to address the issue of school violence and other suspicious activities in schools.", modules : "BENEFITS", value1 : ["Proactive Approach to School Safety", "Increased Student Awareness of Safety Expectations", "Instant Notifications"], value2 : ["Media Uploading", "Real-time Admin Reports", "Anonymous Reporting to Users"] },
-]
-
 const services_list2= [
     { img: "/safe_connect/valuable1.webp", title: "Improved Safety Metrics", },
     { img: "/safe_connect/valuable2.webp", title: "Employee Engagement", },
@@ -411,7 +402,6 @@ const services_list2= [
 			</div>
 		</div>
 		<section class="relative">
-			<!-- <Web3form bgColor="white" textColor="black"/> -->
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
