@@ -45,7 +45,7 @@ const services_list2= [
         }
 		.home_title{
 			font-family: Instrument Sans;
-			font-size: 57px;
+			font-size: 55.2px;
 			font-weight: 600;
 			line-height: 72px;
 			letter-spacing: -0.03em;
@@ -68,7 +68,7 @@ const services_list2= [
 		}
 		.contract{
 			font-family: Instrument Sans;
-			font-size: 18px;
+			font-size: 15px;
 			font-weight: 500;
 			line-height: 20px;
 			text-align: left;
@@ -157,6 +157,16 @@ const services_list2= [
 			left:10%
 		}
 
+		.background-effect3{
+			content: "";
+			position: absolute;
+			width:100%;
+			inset:-2%;
+			top:-24%;
+			/* left:10% */
+			filter: blur(4px);
+		}
+
 		.safty-title{
 			font-family: Instrument Sans;
 			font-size: 32px;
@@ -208,7 +218,6 @@ const services_list2= [
 			font-weight: 500;
 			line-height: 25.6px;
 			text-align: left;
-			color: #FFFFFFCC;
 		}
 
 		.safety-modules{
@@ -217,10 +226,8 @@ const services_list2= [
 			font-weight: 600;
 			line-height: 43.2px;
 			letter-spacing: -0.03em;
-			text-align: left;
 			text-underline-position: from-font;
 			text-decoration-skip-ink: none;
-			color: #FFFFFF;
 		}
 
 		.message{
@@ -331,6 +338,16 @@ const services_list2= [
 		.color-box{
 			max-width: 95%;
 		}
+		.bgImage{
+			/* background-image: linear-gradient(45deg, #ffffff, transparent); */
+			filter: blur(4px);
+		}
+        .chart1{
+            width: 602px;
+        }
+        .chart2{
+            width: 483.27px;
+        }
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -383,21 +400,31 @@ const services_list2= [
 				font-size:35px;
 				line-height: 46.6px;
 			}
+            .chart1{
+                width: 100%;
+            }
+            .chart2{
+                width: 100%;
+            }
+            .background-effect3{
+                left:-78%;
+                top:0
+            }
 		}
 	</style>
 	<header class="realtive ">
 		<Nav />
 		<div class="px-8 lg:px-12 pt-32 lg:pb-32 pb-12 site-title-layer overflow-hidden relative flex items-start relative z-20" >
-			<div class="header flex lg:flex-row flex-col overflow-hidden gap-16">
+			<div class="header flex lg:flex-row flex-col overflow-hidden lg:gap-4 gap-12">
 				<div>
 					<div class="inline-block bg-white px-2 rounded-[3px] py-1">
-						<img src="/product_logo/product_logo1.webp" alt="product logo" width="100px" height="61.45px" />
+						<img src="/product_logo/product_logo3.webp" alt="product logo" width="100px" height="61.45px" />
 					</div>
 					<h1 class="home_title text-start mt-8 mb-4">
-						Welcome to Safe Connect
+						Welcome to Permit Connect
 					</h1>
 					<div class="product_description mb-14">
-						Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+                        PermitConnect is an easy-to-use, cloud-based software developed to manage permits for your organization. 
 					</div>
 					<div class="flex lg:flex-row flex-col gap-5">
 						<img src="/appstore/googleplay.webp" width="142.04px" height="47.36px">
@@ -405,14 +432,14 @@ const services_list2= [
 						<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 					</div>
 				</div>
-				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[35%] rounded-[6px] relative">
-					<img src="/mobile.webp" width="90%" height="100%" class="absolute top-12 inset-x-0 left-6" />
+				<div class="bg-white min-h-[400px] overflow-hidden flex-none lg:w-[38%] rounded-[6px] relative">
+					<img src="/product_sub/permit_connect.webp" width="96%" height="100%" class="absolute top-12 inset-x-0" />
 				</div>
 			</div>
 		</div>
 		<section class="z-[1] relative">
 			<!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
+			<div class="lg:px-12 px-8 lg:pt-0 pt-12 lg:pb-0 pb-20 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
 					<div class="background-effect overflow-hidden">
 						<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -431,170 +458,109 @@ const services_list2= [
 					</div>
 					<div class="flex-1 self-center">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Behavior-Based Safety</div>
+							<div class="safty-title pb-4">SPI has your solution</div>
 							<div class="safty-description">
-								From a young age, we are taught that safety is a learned behavior.  Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+								Software Professionals, Inc. has taken the importance of safety and applied that to a business solution product that fits into your organization’s permit needs. PermitConnect is a web based application that is designed to improve company performance and track all aspects of the permitting process.
 							</div>
 						</div>
 					</div>
-					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-28" src="/floating_laptop.webp" alt="floating laptop" width="426.35px" height="423.75px" />
+					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-24" src="/permit_connect/laptop.webp" alt="floating laptop" width="350.35px" height="423.75px" />
 					<div class="flex-1 self-start flex justify-end">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Safety is paramount</div>
+							<div class="safty-title pb-4">Manage Permits Easily</div>
 							<div class="safty-description">
-								From office environment to construction to manufacturing, many industries are making strides to put safety as their #1 priority.  In fact, the success of your organization depends on it.
-							</div>
+                                The application monitors and tracks permit compliance and permit management, including notification of actions required: permit reviews, expiration date, and permit approvals. The application has a map feature to view and review facility satellite VALUABLE BENEFITS maps. PermitConnect can do it all!							
+                            </div>
 						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="lg:px-12 px-8 lg:pt-0 pt-6 relative">
-				<div class="inner-layer flex lg:flex-row flex-col bg-white lg:px-0 px-8 lg:pl-16">
-					<div>
-						<h1 class="spi-title text-start mt-12 mb-4">
-							SPI has your solution
-						</h1>
-						<div class="spi-description mb-8">
-							Software Professionals, Inc. has taken the importance of safety and applied that to a business solution product that fits into your organization’s safety culture.  SafeConnect is a web-based and mobile device application that is designed to improve safety performance and drive towards zero incidents.
-						</div>
-						<div class="mb-12">
-							<Cbtn colorbtnText="Book a call for demo" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-						</div>
-					</div>
-					<div class="bg-white min-h-[350px] overflow-hidden flex-none lg:w-[50%] rounded-[6px] relative">
-						<img src="/spi_connection.webp" width="95%" height="100%" class="absolute -top-2 inset-x-0 left-0" />
 					</div>
 				</div>
 			</div>
 
 			<!-- triangle chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-16 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20">
+			<div class="lg:px-12 px-8 relative lg:mt-24 lg:pb-0 flex justify-center bg-white">
+				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20 py-20">
 					<div class="flex-1">
-						<h1 class="safety-modules text-start mt-8 mb-10">
+						<h1 class="safety-modules text-start mt-8 mb-10 text-black">
 							Safety Modules
 						</h1>
-						<div class="diff-description">
+						<div class="diff-description text-black">
                             <ul>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Observation and Intervention (O&I)</div>
+                                    <div>Permit management</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Master Data Management</div>
+                                    <div>Compliance  Tracking</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Human Performance</div>
+                                    <div>Plant  Management</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Job Safety Analysis (JSA)</div>
+                                    <div>Easy  To  Navigate</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Risk Assessment</div>
+                                    <div>Inspection  Tracking</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Safety Walkthrough</div>
+                                    <div>GIS  Tracking</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Personal Safety Plan (PSP)</div>
+                                    <div>Digital  Data</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Incident Notification</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management and Reporting</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management of Change</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Toolbox Safety Meeting</div>
+                                    <div>Time  Saver</div>
                                 </li>
                             </ul>
                         </div>
 					</div>
 					<div class="flex-1 flex flex-col items-end lg:order-last order-first">
 						<div>
-							<h1 class="safety-modules text-start w-full mt-8 mb-10">
-								Incident Types
-							</h1>
-							<img src="/triangle.webp" width="80%" height="100%" class="" />
+							<img src="/permit_connect/permit_connect_pic.webp" width="100%" height="100%" class="" />
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20">
+			<div class="lg:px-12 px-8 lg:py-24 py-20 relative flex justify-center bg-white">
+				<div class="inner-layer flex lg:flex-row flex-col lg:gap-8 items-center">
 					<div class="flex-1 flex flex-col items-end">
 						<div>
-							<h1 class="safety-modules text-start w-full mt-8 mb-10">
-								Types Of Observations
-							</h1>
-							<img src="/donut_chart.webp" width="80%" height="100%" class="" />
+							<img src="/permit_connect/laptop_connect.webp" width="100%" height="100%" class="" />
 						</div>
 					</div>
 					<div class="flex-1">
-						<h1 class="safety-modules text-start mt-8 mb-10">
-							Software Features
+						<h1 class="safety-modules text-start mb-10 lg:mt-0 mt-10 text-black">
+							SPI Has the Answers to Your Questions
 						</h1>
-						<div class="diff-description">
+						<div class="diff-description text-black">
                             <ul>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Data Analytics – Dashboard</div>
+                                    <div>Is permit management a high priority in  your organization?</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Language translation</div>
+                                    <div>Do you struggle with tracking incidents,  violations, and compliance issues?</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Picture and video uploading</div>
+                                    <div>Could you benefit from standardizing and  streamlining your processes?</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Offline capabilities</div>
+                                    <div>Are you spending too much time and  money managing your permits?</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Customizable Forms</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Instant Notifications</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Links to regulatory information</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Weather Alerts – Location based</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Consistency in Reporting</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>User friendly experience</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Location-based services</div>
+                                    <div>Is your company proactive or reactive?</div>
                                 </li>
                             </ul>
                         </div>
@@ -602,160 +568,44 @@ const services_list2= [
 				</div>
 			</div>
 
-			<!-- green card -->
-			<div class="lg:pt-0 pt-20 lg:pb-0 pb-20 relative lg:mt-24 flex justify-center lg:px-20">
-				<div class="inner-layer flex lg:flex-row flex-col lg:px-0 lg:pl-16 px-10 lg:gap-20 gap-6 lg:py-12 py-8 items-center justify-center message-card">
-					<div>
-						<div class="message mb-4">
-							“It is paramount for ALL  employees to be safety  champions at their  organization in an effort to  keep themselves and everyone  around them safe and sound  before going home.”
-						</div> 
-						<div class="author mb-3">
-							-Reena Batra, CEO
-						</div>
-					</div>
-					<div class="flex-none lg:w-[30%] lg:order-last order-first">
-						<img src="/product_logo/product_logo1.webp" alt="product logo" class="saft_connect-logo" height="61.45px" />
-					</div>
-				</div>
-			</div>
-
 			<!-- donut chart -->
-			<div class="lg:px-12 px-8 lg:py-20 pb-20 relative flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:gap-20 gap-28">
-					<div class="flex-1 flex flex-col items-end">
-						<div>
-							<img src="/safe_connect/safe-connect.webp" width="95%" height="100%" class="" />
-						</div>
-					</div>
-					<div class="flex-1">
-						<div>
-							<img src="/safe_connect/triangle_chart_safe.webp" width="100%" height="100%" class="" />
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:py-20 py-20 bg-[#000000] lg:pb-0 pb-12 bg-white">
-				<div class="text-center valuable-title pb-4 text-[#000000]">Valuable Benefits</div>
-				<div class="valuable-description mb-10">
-					SafeConnect features allow the user to make an impact to achieve safety culture excellence by  engaging them with our easy-to-use, flexible safety management modules that will set up your  organization for success.
-				</div>
-				<div class="inner-layer-innovator grid lg:grid-cols-4">
-                    {
-                        services_list2.map((data, dataIndex) => (
-                            <div class="pl-2">
-                               <div class="">
-                                    <div class="px-6 lg:py-12 py-10 flex flex-col justify-cneter items-center">
-										<img src={data.img} width="66px" height="100px" alt="valuable benefits" />
-										<div class="pt-5">
-											<div class="browchurs_title mb-5">{data.title}</div>
-										</div>
-                                    </div>
-                               </div> 
-                            </div>
-                        ))
-                    }
-				</div>
-			</div>
-
-			<!-- donut chart -->
-			<div class="px-8 lg:pt-36 pt-20 relative overflow-hidden">
-				<div class="background-effect2 overflow-hidden hidden">
+			<div class="lg:px-12 px-8 lg:py-0 py-20 relative lg:py-24 flex justify-center">
+				<div class="inner-layer relative lg:pt-20">
+				  <div class="background-effect3 lg:overflow-hidden relative">
 					<svg width="1238" height="1183" viewBox="0 0 1238 1183" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g opacity="0.4" filter="url(#filter0_f_2491_913)">
+					  <g opacity="0.4" filter="url(#filter0_f_2491_913)">
 						<path d="M406.705 250L250.094 493.167L269.67 715.021L435.852 828.37L578.543 933L787.793 575.515L756.471 310.065L543.305 467.01L406.705 250Z" fill="#B5DB00"/>
 						<path d="M606.818 250L450.207 493.167L469.783 715.021L635.966 828.37L778.656 933L987.906 575.515L956.584 310.065L743.418 467.01L606.818 250Z" fill="#006B9E"/>
-						</g>
-						<defs>
+					  </g>
+					  <defs>
 						<filter id="filter0_f_2491_913" x="0.09375" y="0" width="1237.81" height="1183" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-						<feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_2491_913"/>
+						  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+						  <feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_2491_913"/>
 						</filter>
-						</defs>
-					</svg>	
-				</div>
-				<div class="text-center valuable-title pb-4 text-white">Data Analysis</div>
-				<div class="inner-layer flex lg:flex-row flex-col w-full lg:mt-12 mt-12 lg:gap=-0 gap-20 items-center">
-					<div class="flex-none lg:w-[55%] flex flex-col items-end">
-						<div>
-							<img src="/safe_connect/data_analysis.webp" width="100%" height="100%" class="" />
-						</div>
-						<h1 class="safety-text text-center w-full lg:mb-16 mb-6 lg:hidden block mt-5">
-							Types Of Observations
-						</h1>
+					  </defs>
+					</svg>
+				  </div>
+				  <div class="relative">
+					<h1 class="safety-modules text-center mb-16 text-white">Data Analysis</h1>
+					<div class="flex lg:flex-row flex-wrap flex-col lg:gap-0 gap-12 justify-between">
+                        <div class="lg:w-[50%]">
+					        <img src="/permit_connect/data1.webp" width="602px" class="chart1" height="359px" />
+                        </div>
+                        <div class="lg:w-[50%] lg:flex justify-end">
+					        <img src="/permit_connect/data2.webp" width="483.27px" class="chart2" height="359px" />
+                        </div>
+                        <div class="lg:w-[50%] lg:pt-16">
+					        <img src="/permit_connect/data3.webp" width="483.27px" class="chart2" height="359px" />
+                        </div>
+                        <div class="lg:w-[50%] lg:pt-16">
+					        <img src="/permit_connect/data4.webp" width="602px" class="chart1" height="359px" />
+                        </div>
 					</div>
-					<div class="flex-1 flex-col items-end">
-						<div>
-							<img src="/safe_connect/data_analysis2.webp" class="map" height="100%" class="" />
-						</div>
-						<h1 class="safety-text text-center w-full mb-16 lg:hidden block mt-10">
-							Observations Influence
-						</h1>
-					</div>
-				</div>
-				<div class="inner-layer flex lg:flex-row flex-col w-full mt-12 items-center lg:block hidden">
-					<div class="flex-none w-[55%] flex flex-col items-end">
-						<h1 class="safety-text text-center w-full mb-16">
-							Types Of Observations
-						</h1>
-					</div>
-					<div class="flex-1 flex-col items-end">
-						<h1 class="safety-text text-center w-full mb-16">
-							Observations Influence
-						</h1>
-					</div>
-				</div>
-				<div class="lg:w-[80%] mx-auto inner-layer flex lg:flex-row flex-col w-full mt-12 items-center lg:gap-16 gap-10 justify-center">
-					<div class="flex-1 flex flex-col justify-end items-end">
-						<div class="min-h-300px flex flex-col justify-end items-end lg:w-[75%]">
-							<img src="/safe_connect/color-box.webp" height="100%" class="color-box" />
-							<h1 class="safety-text text-center w-full mt-8 mb-10">
-								Risk Severity Categories
-							</h1>
-						</div>
-					</div>
-					<div class="flex-1 lg:flex flex-col justify-center items-center">
-						<div class="diff-safe inline mt-10">
-                            <ul class="inline-flex flex-col justify-center">
-                                <li class="pb-6">
-                                    (A) Frequent
-                                </li>
-                                <li class="pb-6">
-									(B) Probable
-                                </li>
-                                <li class="pb-6">
-									(C) Occasional                                
-								</li>
-                                <li class="pb-6">
-									(D) Remote
-                                </li>
-								<li class="pb-2">
-									(E) Improbable
-                                </li>
-							</ul>
-						</div>
-						<h1 class="safety-text text-center w-full mt-8 mb-10">
-							Probability of Occurence
-						</h1>
-					</div>
+				  </div>
 				</div>
 			</div>
-
-			<!-- green card -->
-			<div class="lg:pt-0 lg:px-20 pb-32 px-8 pt-20 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex w-full lg:flex-row flex-col lg:px-0 lg:pl-16 px-10 lg:gap-20 lg:py-6 py-12 items-center bg-[#B5DB00]">
-					<div>
-						<div class="bottom-message mb-3 lg:mt-0 mt-12">
-							Scan the code to see the app<br> in action
-						</div>
-					</div>
-					<div class="flex-1 flex lg:justify-end lg:px-20 lg:order-last order-first">
-						<img src="/safe_connect/qrcode.webp" alt="product logo" width="50%" height="61.45px" />
-					</div>
-				</div>
-			</div>
+			  
 			
 			<Footer />
 		</section>
