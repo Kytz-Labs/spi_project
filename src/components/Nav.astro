@@ -22,7 +22,27 @@ const menuList = [
 		<div class="internal-links ps-5 lg:block hidden">
 			{
 				menuList.map((data, index) => (
-					<div class={ (index == 0) ? "inline-block px-4 border-s-2 leading-[10px]" : "inline-block px-4 leading-[10px]" }><HeaderLink href={data.url} aria-label={data.ariaLabel}>{data.name}</HeaderLink></div>
+					<div class={ (index == 0) ? "inline-block px-4 border-s-2 leading-[10px] group" : "inline-block px-4 leading-[10px] group" }>
+						<HeaderLink href={data.url} aria-label={data.ariaLabel}>
+							{data.name}
+						</HeaderLink>
+						{(index == 1) ? <div class="downarrow absolute group-hover:block group-hover:pt-8 hidden">
+                        <div class="subnavlistItem p-4 bg-white"><a href="/services/airport-capabilities">Airport Capabilities</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/transportation-capabilities">Transportation Capabilities</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/application-management">Application Management</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/services/digital-transformations">Digital Transformation</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/business-intelligence">Business Intelligence/Analytics</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/it-staffing">Enterprise Infrastructure</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/it-staffing">IT Staffing</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services">All Services</a></div>
+                    </div> : ""}
+					{(index == 3) ? <div class="downarrow absolute group-hover:block group-hover:pt-8 hidden">
+                        <div class="subnavlistItem p-4 bg-white"><a href="/products/safe-connect">SafeConnect</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/products/safe-school">SafeSchool</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/products/enviro-connect">EnviroConnect</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/products/permit-connect">PermitConnect</a></div>
+                    </div> : ""}
+					</div>
 				))
 			}
 			<!-- <div class="inline-block px-4 border-s-2 leading-[10px]"><HeaderLink href={menuList[0]["url"]} aria-label={menuList[0]["ariaLabel"]}>{menuList[0]["name"]}</HeaderLink></div>
