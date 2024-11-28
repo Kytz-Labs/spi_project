@@ -11,6 +11,27 @@ const { bgColor, textColor } = Astro.props;
 
 ---
 
+<style>
+    .web3{
+        font-family: Instrument Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28.8px;
+        text-align: left;
+        color: #FFFFFF;   
+        opacity: 1;     
+        display: block;
+        width: 100%;
+        outline:none;
+        border:0;
+        padding: 6px 0px 6px 0px;
+        border: 1px solid gray;
+        background: transparent;
+        text-indent: 12px;
+       }
+
+</style>
+
 <!-- popup form -->
 <div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center" id="enquire_form">
     <!--modal content-->
@@ -44,26 +65,31 @@ const { bgColor, textColor } = Astro.props;
 
                     <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
                         <div class="line w-full">
-                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="line_field" style="color: white;" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
+                            <label class="new_label pb-3">Full Name<span class="required text-red-500">*</span></label>
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="web3" style="color: white;" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
                             <span class="error" id="username_err"> </span>
                         </div>
                         <div class="line w-full">
-                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="line_field" style="color: white;" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)">
+                            <label class="new_label pb-3">Company Name<span class="required text-red-500">*</span></label>
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" class="web3" style="color: white;" id="Kcompany" maxlength="40" name="company name" placeholder="Company name (optional)">
                             <span class="error" id="username_err"> </span>
                         </div>
                         <div class="line flex-1">
-                            <input style=`color: ${textColor}` autocomplete="off" type="email" maxlength="255" name="Email" class="line_field" style="color: white;" id="Kemail" placeholder="E-mail*" required>
+                            <label class="new_label pb-3">Email Address<span class="required text-red-500">*</span></label>
+                            <input style=`color: ${textColor}` autocomplete="off" type="email" maxlength="255" name="Email" class="web3" style="color: white;" id="Kemail" placeholder="E-mail*" required>
                             <span class="error" id="email_err"> </span>
                         </div>
                         <div class="line flex-1">
-                            <input style=`color: ${textColor}` autocomplete="off" type="text" name="phone" maxlength="18" id="Knumber" class="line_field" style="color: white;" placeholder="Phone Number" required>
+                            <label class="new_label pb-3">Phone Number<span class="required text-red-500">*</span></label>
+                            <input style=`color: ${textColor}` autocomplete="off" type="text" name="phone" maxlength="18" id="Knumber" class="web3" style="color: white;" placeholder="Phone Number" required>
                             <span class="error" id="mobile_err"> </span>
                         </div>
                         <div class="line w-full">
-                            <textarea style=`color: ${textColor}` autocomplete="off" class="line_field" style="color: white;" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
-                            <span class="error" id="message_err"> </span>
+                            <label class="new_label pb-3">Message</label>
+                            <textarea style=`color: ${textColor}` autocomplete="off" class="web3" style="color: white;" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
+                            <!-- <span class="error" id="message_err"> </span> -->
                         </div>
-                        <div class="text-red"><button class="apply_now mt-2 px-12 py-2 text-red-500" id="submitbtn">Submit</button></div>
+                        <div class="text-red mt-5"><button class="apply_now mt-2 px-12 py-2 text-red-500" id="submitbtn">Submit</button></div>
                     </div>
                     <div id="message" class="text-red-500"></div>
                 </form>
