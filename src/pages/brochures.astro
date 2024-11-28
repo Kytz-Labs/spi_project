@@ -6,15 +6,15 @@ import Footer from "@components/Footer.astro"
 const currentUrl=Astro.request.url;
 
 const services_list= [
-    { title: "SPI Capabilities", description : "Our powerful combination of consulting and product expertise provides clients with end to end technology", },
-    { title: "Services Offerings", description : "Over the last few decades, advancements in computer and software technologies have reached an impressive level" },
-    { title: "SPI Airport Capabilities", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience." },
+    { title: "SPI Capabilities", link: "", description : "Our powerful combination of consulting and product expertise provides clients with end to end technology", },
+    { title: "Services Offerings", link: "", description : "Over the last few decades, advancements in computer and software technologies have reached an impressive level" },
+    { title: "SPI Airport Capabilities", link: "", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience." },
     { title: "SPI Transportation Industry Capabilities", description : "The transportation sector consists of several industries including air freight and logistics, airlines, marine, road, rail, and transportation infrastructure." },
-	{ title: "SafeConnect", description : "Software Professionals, Inc. has developed a software tool for that is designed to incorporate an organization’s sustainable safety program " },
-    { title: "EnviroConnect", description : "EnviroConnect is a comprehensive solution for handling environmental data and generating reports." },
-    { title: "ELMS", description : "LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs." },
-    { title: "PermitConnect", description : "PermitConnect is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
-    { title: "SafeSchool", description : "SafeSchool is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
+	{ title: "SafeConnect", link: "/brochures/SafeConnect.pdf", description : "Software Professionals, Inc. has developed a software tool for that is designed to incorporate an organization’s sustainable safety program " },
+    { title: "EnviroConnect", link: "/brochures/EnviroConnect.pdf", description : "EnviroConnect is a comprehensive solution for handling environmental data and generating reports." },
+    { title: "ELMS", link: "", description : "LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs." },
+    { title: "PermitConnect", link: "/brochures/PermitConnect.pdf", description : "PermitConnect is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
+    { title: "SafeSchool", link: "/brochures/SafeSchool-One-Pager.pdf", description : "SafeSchool is a comprehensive solution for handling environmental data and generating reports. With our innovative software, you can manage data, historical documents, maps, photos, and more." },
 ]
 ---
 
@@ -201,7 +201,7 @@ const services_list= [
 											</div>
 										</div>
 										<div>
-											<Cbtn colorbtnText="Download brochure" classname="" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" />
+											<a href={ data.link } target="_blank"><Cbtn colorbtnText="Download brochure" classname="" bgcolor="#006B9E" textColor="white" cursor="pointer" display="block" /></a>
 										</div>
                                     </div>
                                </div> 
