@@ -29,10 +29,10 @@ const social_feeds = [
 
 const blogs = [
 	{ 
-        title : "",
+        title : "Gratitude to SPI for Exceptional EMS Software Development and Support",
         description : "I want to thank Software Professionals, Inc. (SPI) for the development and implementation of Environmental Maintenance System (EMS) software application. SPI continues to provide exceptional support for upgrades and application hosting on the cloud. EMS inspection and maintenance reporting application continues to exceed our expectations. The key factors for choosing to work with SPI was their flexibility, in-depth technical knowledge, dedication and innovative software application solutions.",
 		name : "Jen",
-		position: ""
+		position: "Environmental Manager"
     },
     { 
         title : "The Difference SafeConnect Made for Us!",
@@ -734,7 +734,7 @@ const blogs = [
 			</div>
 			<!-- contact form -->
 			<div class="bg-black lg:px-16 lg:py-24">
-				<div class="contact-form-section flex-1 lg:py-8 py-20 lg:px-24 bg-[#141414]">
+				<div class="contact-form-section flex-1 lg:py-8 py-20 lg:px-24 bg-[#232323]">
 					<!-- contact form -->
 					<div class="enquire_contact_form" id="enquire_popup_form">
 						<div class="form_section">
@@ -751,22 +751,27 @@ const blogs = [
 								<!-- <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0"> -->
 								<div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
 									<div class="line flex-none w-[48%]">
+										<label class="new_label pb-3">Full Name<span class="required text-red-500">*</span></label>
 										<input type="text" class="line_field" id="Kname" name="name" maxlength="255" placeholder="Enter full name*" required>
 										<span class="error" id="username_err"> </span>
 									</div>
 									<div class="line flex-none w-[48%]">
+										<label class="new_label pb-3">Email Address<span class="required text-red-500">*</span></label>
 										<input type="email" class="line_field" id="Kemail" maxlength="40" name="Email" placeholder="Enter bussiness email*">
 										<span class="error" id="email_err"> </span>
 									</div>
 									<div class="line flex-1">
+										<label class="new_label pb-3">organization name<span class="required text-red-500">*</span></label>
 										<input type="text" maxlength="255" name="companyname" class="line_field" id="kcompanyname" placeholder="Enter organization name*" required>
 										<span class="error" id="usercompany_err"> </span>
 									</div>
 									<div class="line flex-1">
+										<label class="new_label pb-3">Phone Number<span class="required text-red-500">*</span></label>
 										<input type="text" name="phone" maxlength="18" id="Knumber" class="line_field" placeholder="Enter phone number*" required>
 										<span class="error" id="mobile_err"> </span>
 									</div>
 									<div class="line w-full">
+										<label class="new_label pb-3">Message</label>
 										<textarea class="line_field" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about you need in detail"></textarea>
 										<span class="error" id="message_err"> </span>
 									</div>

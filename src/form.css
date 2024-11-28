@@ -29,15 +29,17 @@
             font-weight: 400;
             line-height: 28.8px;
             text-align: left;
-            color: #FFFFFF;   
-            opacity: .7;     
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFF;      
             display: block;
             width: 100%;
             outline:none;
             border:0;
             padding: 14px 0px 20px 0px;
-            border-bottom: 1px solid #FFFFFF1F;
+            border: 1px solid #FFFFFF1F;
             background: transparent;
+            text-indent: 20px;
        }
        .choose{
          font-family: Instrument Sans;
@@ -156,6 +158,18 @@
           background-color: #C9F001;
           color: #282828;
        }
+
+       .new_label{
+         font-family: Instrument Sans;
+         font-size: 18px;
+         font-weight: 600;
+         line-height: 28.8px;
+         text-align: justified;
+         text-underline-position: from-font;
+         text-decoration-skip-ink: none;
+         color: rgba(255, 255, 255, 1);
+         display: block;
+       } 
     
        @media (max-width: 600px){
           .line{
