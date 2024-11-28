@@ -1,0 +1,219 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+import { array } from "astro:schema";
+const currentUrl=Astro.request.url;
+
+const security = [
+	{ title: "Airside / Landside Systems", description: ""},
+	{ title: "Safety & Security Systems", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image2.webp"},
+	{ title: "Facilities Management Implementation", description: "SPI provides outsourced solutions to optimize performance of critical applications.<br><br>SPI offers trained, certified, experienced consultants to manage the entire application life cycle.", url: "/services/services_image3.webp"},
+]
+
+const list= [
+	"Capital Request Valuation", "Program & Project Management – Sciforma", "Property Management (PropWorks) – property billing & invoicing", "Unifier – Construction Management", "Primavera P6 – Design Engineering Construction Scheduling", "Unifier – Construction Management", "Origami Risk – Accident Reporting", "Enterprise Content Management – Document & Content", "Oracle eBusiness – Financials", "Appian – Business Process Automation", "Appian – Business Process Automation", "Business Intelligence – MicroStrategy, Tableau, Power BI Integration – MuleSoft", "Infor – Enterprise Asset Management"
+];
+
+---
+
+
+<Header title="Digital Transformation" canonical={ currentUrl }>
+	<style>
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 28.8px;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+            font-size: 75px;
+            font-weight: 600;
+            line-height: 96px;
+            letter-spacing: -0.03em;
+            text-align: left;
+			color: white;
+		}
+		.site-title-layer {
+			background-size: cover;
+			background-color: #000000;
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		/* image section */
+		.list_element{
+			font-family: Instrument Sans;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 32px;
+			text-align: left;
+			color: #000000;
+		}
+		.capabilities{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #006B9E;
+		}
+
+		/* services scroll section */
+		.h2{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 43.2px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #FFFFFF;
+		}
+
+		.diff-description{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 25.6px;
+			text-align: left;
+			color: #FFFFFFCC;
+		}
+
+
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 44px;
+                line-height:60.8px;
+            }
+		}
+	</style>
+	<header class="">
+		<Nav />
+		<div class="px-8 lg:px-12 py-12 site-title-layer overflow-hidden relative flex items-start" >
+			<div class="header flex flex-col items-start justify-start border-[#FFFFFF33]">
+                <h6 class="service_shrt text-start mb-5">
+                    SERVICES
+                </h6>
+				<h1 class="home_title text-start">
+					Digital Transformation
+				</h1>
+			</div>
+		</div>
+		<section>
+			<div class="relative pb-16 bg-black">
+                <img src="/new_services/services5.webp" width="100%" height="500px" alt="airline" />
+            </div>
+
+			<!-- services -->
+			<div class="lg:pl-12 pl-8 pr-8 lg:pb-28 lg:pr-40 bg-black">
+				<div class="inner-layer lg:pb-0 pb-8 lg:gap-24">
+					<div class="">
+                        <div class="">
+                            <div class="diff-description pb-8">People, things, businesses, and technology are all getting interconnected. It is a time when each person/business is profoundly impacted by everything digital.</div>
+                            <div class="diff-description pb-8">Digital Transformation is not a choice anymore, everyone is getting digitally disrupted and needs to expand their Artificial Intelligence, Internet of Things, Mobile, Machine Learning, Big Data, Cyber Security and Cloud Computing capabilities.</div>
+                            <div class="diff-description pb-8">We at SPI can help you in your digitization journey and ensure that your organization embraces all the technology-enabled changes, unlock productivity gains, and put your business at the forefront of the digital disruption for a competitive advantage.</div>
+                            <div class="diff-description pb-8">We can help you with the Digital Technology Enablement in the areas of</div>
+                        </div>
+					</div>
+                    <div class="mb-12">
+                        <!-- <div class="h2 pb-10">Our Application Management services include:</div> -->
+                        <div class="diff-description">
+                            <ul>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Artificial Intelligence</div>
+                                </li>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Machine Learning</div>
+                                </li>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Mobile</div>
+                                </li>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Big Data</div>
+                                </li>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Internet of Things (IoT)</div>
+                                </li>
+                                <li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Cloud Computing</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
