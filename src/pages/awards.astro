@@ -6,6 +6,7 @@ import Footer from "@components/Footer.astro"
 const currentUrl=Astro.request.url;
 
 const services_list= [
+	{ logo: "/awards_page/award11.webp", width : "44%", description : "DFW Airport - Champions of diversity award 2023" },
     { logo: "/awards_page/award1.webp", width : "100%", description : "USPAAC – Women in Leadership Legacy Award", },
     { logo: "/awards_page/award2.webp", width : "100%", description : "USPAAC  –  Fast 50 Asian American Business Excellence Award" },
     { logo: "/awards_page/award3.webp", width : "100%", description : "USPAAC – Regional TOP-10 Business Growth Award." },
@@ -16,7 +17,6 @@ const services_list= [
     { logo: "/awards_page/award8.webp", width : "44%", description : "Annual ranking of the fastest growing technology companies in the Dallas/Fort Worth region, over a 3-year period" },
     { logo: "/awards_page/award9.webp", width : "44%", description : "Top 50 ranking of fastest growing Indo-American owned companies" },
     { logo: "/awards_page/award10.webp", width : "44%", description : "Ranked 8th largest Indo-American woman-owned company in the U.S." },
-    { logo: "/awards_page/award11.webp", width : "44%", description : "DFW Airport - Champions of diversity award 2023" },
 ]
 ---
 
@@ -183,15 +183,18 @@ const services_list= [
 				<div class="inner-layer-innovator grid lg:grid-cols-4 gap-5">
                     {
                         services_list.map((data, dataIndex) => (
-                            <div class="pl-2">
+                            <div class="pl-2 group overflow-hidden">
                                <div class="lg:h-[290px] bg-white">
-                                    <div class="px-6 py-12">
+                                    <div class= { (dataIndex == 0) ? "px-6 py-8" : "px-6 py-12"}>
                                         <div class="pb-3 min-h-[100px] flex justify-center items-center flex-col">
                                             <img src={ data.logo} width={ data.width } height="111px" alt="USPAACC" />
                                         </div>
-                                        <div class="product_description lg:text-[#00000099] text-center my-4">
+                                        <div class="product_description lg:text-[#00000099] text-center my-3">
                                              { data.description }
                                         </div>
+										{ 
+											(dataIndex == 0) ? <div class="flex justify-center items-center translate-y-24 group-hover:translate-y-0 transition duration-300 delay-150"><Cbtn colorbtnText="Learn more" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" /></div> : ""
+										}
                                     </div>
                                </div> 
                             </div>
