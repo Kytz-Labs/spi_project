@@ -4,8 +4,8 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
-import W3form from "@components/Forms/Web3Forms.astro"
-const currentUrl=Astro.request.url;
+import Web3Forms from "@components/Forms/Web3Forms.astro"
+const currentUrl=Astro.request.url
 
 const services_list2= [
     { img: "/safe_connect/valuable1.webp", title: "Improved Safety Metrics", },
@@ -403,7 +403,7 @@ const services_list2= [
 			</div>
 		</div>
 		<section class="relative">
-			<W3form textColor="white" bgColor="#232323" />
+			<Web3Forms textColor="white" bgColor="#232323" />
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
@@ -758,8 +758,6 @@ const services_list2= [
 <script>
     var brand_btn = document.querySelectorAll(".brand-button");
 	var form_close = document.querySelector(".kytz_form_close");
-	var myform = document.querySelector("#enquire_main_form");
-
 	var com_form = document.querySelector("#enquire_form"),
 		sidebox_D = document.querySelector(".sidebox_D"),
         kytz_label = document.querySelector(".kytz-label"),
