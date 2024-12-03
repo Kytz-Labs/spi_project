@@ -4,17 +4,16 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 
-
-const services_list= [
-    { logo: "/awards_page/award1.webp", width : "100%", description : "Quality & Flexibility", },
-    { logo: "/awards_page/award2.webp", width : "100%", description : "Customer Experience" },
-    { logo: "/awards_page/award3.webp", width : "100%", description : "Interview with SPI CEO" },
-    { logo: "/awards_page/award5.webp", width : "44%", description : "Safe Connect" },
-    { logo: "/awards_page/award6.webp", width : "44%", description : "Transportation Industry" },
-    { logo: "/awards_page/award7.webp", width : "44%", description : "SPI celebrated 30 years in business at Circle R Ranch with colleagues and friends" },
-    { logo: "/awards_page/award9.webp", width : "44%", description : "SPI FUN!" },
-    { logo: "/awards_page/award10.webp", width : "44%", description : "SPI Promo" },
+const videos = [
+	{ title : "SPI FUN!", description : "", link : "https://www.youtube.com/embed/YXJU3QOK3oA?rel=0&modestbranding=1&showinfo=0" },
+	{ title : "Interview with SPI CEO", description : "", link : "https://www.youtube.com/embed/u8WoKuVKEh4?rel=0&modestbranding=1&showinfo=0" },
+	{ title : "SPI Promo", description : "", link : "https://player.vimeo.com/video/208191299?h=2bdb0076f6" },
+	{ title : "Transportation Industry", description : "", link : "https://player.vimeo.com/video/206317013?h=2c7d07216f" },
+	{ title : "Quality & Flexibility", description : "", link : "https://player.vimeo.com/video/206316932?h=c3cfe7621d" },
+	{ title : "Customer Experience", description : "", link : "https://www.youtube.com/embed/7C-_NFoYEt8?rel=0&modestbranding=1&showinfo=0" },
+	{ title : "SafeConnect", description : "", link : "https://www.youtube.com/embed/PQOPLkkL4OA?rel=0&modestbranding=1&showinfo=0" },
 ]
+
 ---
 
 
@@ -179,23 +178,25 @@ const services_list= [
 
             <!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
-				<div class="inner-layer-innovator grid lg:grid-cols-3">
+				<div class="inner-layer-innovator grid lg:grid-cols-3 gap-10">
                     {
-                        services_list.map((data, dataIndex) => (
-                            <div class="pl-2">
-                               <div class="lg:h-[290px]">
-                                    <div class="px-2 py-12">
-                                        <video controls="" class="bg-black w-full firstv">
-                                            <source src="./assets/videos/secure_your_home.mp4" type="video/mp4">
-                                        </video>
-                                        <div class="product_description lg:text-[#00000099] text-center my-4">
-                                             { data.description }
-                                        </div>
-                                    </div>
-                               </div> 
-                            </div>
-                        ))
-                    }
+						videos.map((data, dataIndex) => (
+							<div class="w-full mb-4">
+								<div class="video-container rounded-lg">
+									<iframe loading="lazy" width="100%" 
+											class="lg:h-[150.59px] h-[100%]" 
+											style="border-radius: 15px;" 
+											src={data.link}
+											title="YouTube video player"
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+											referrerpolicy="strict-origin-when-cross-origin" 
+											allowfullscreen>
+									</iframe>
+								</div>
+							</div>
+						))
+					}
 				</div>
 			</div>
 			
