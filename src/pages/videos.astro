@@ -3,6 +3,7 @@ import Header from "@layouts/Layout.astro";
 import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
+const currentUrl=Astro.request.url;
 
 const videos = [
 	{ title : "SPI FUN!", description : "", link : "https://www.youtube.com/embed/YXJU3QOK3oA?rel=0&modestbranding=1&showinfo=0" },
@@ -17,7 +18,7 @@ const videos = [
 ---
 
 
-<Header title="home page">
+<Header title="home page" canonical="currentUrl">
 	<style>
         .service_shrt {
             font-family: Instrument Sans;
@@ -139,6 +140,10 @@ const videos = [
 			text-align: left;
 		}
 
+		.enquire_thnkmss{
+			display: none;
+		}
+
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -176,15 +181,18 @@ const videos = [
 		</div>
 		<section>
 
-            <!-- we are a service -->
-			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12">
+			<!-- we are a service -->
+			<div class="lg:px-12 px-8 lg:pb-28 bg-[#000000] lg:pb-0 pb-12 lg:pt-0 pt-16">
 				<div class="inner-layer-innovator grid lg:grid-cols-3 gap-10">
-                    {
+					{
 						videos.map((data, dataIndex) => (
 							<div class="w-full mb-4">
-								<div class="video-container rounded-lg">
+								<div class="video-container rounded-lg relative">
+									<div class="absolute inset-0 top-0 videos">
+
+									</div>
 									<iframe loading="lazy" width="100%" 
-											class="lg:h-[150.59px] h-[100%]" 
+											class="lg:h-[150.59px] h-[100%] framescale" 
 											style="border-radius: 15px;" 
 											src={data.link}
 											title="YouTube video player"
@@ -199,6 +207,22 @@ const videos = [
 					}
 				</div>
 			</div>
+
+			<!-- thank messaage -->
+            <div class="enquire_thnkmss text-center fixed inset-0 h-screen backdrop-blur-2xl overflow-y-auto w-full justify-center items-center">
+                <div class="w-full lg:max-w-[60%] lg:h-[60%]">
+					<iframe loading="lazy" width="100%" 
+							class="lg:h-[100%] openframe" 
+							style="border-radius: 15px;" 
+							src=""
+							title="YouTube video player"
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							referrerpolicy="strict-origin-when-cross-origin" 
+							allowfullscreen>
+					</iframe>
+                </div>
+            </div>
 			
 			<Footer />
 		</section>
@@ -207,4 +231,29 @@ const videos = [
 
 	</main>
 </Header>
+<script client:visible>
+	 var com_form = document.querySelector(".enquire_thnkmss");
+	 var iframe = document.querySelector(".openframe");
+	 var frame = document.querySelectorAll(".framescale");
+	 var framedata;
+	 console.log(frame);
+
+	var videos = document.querySelectorAll(".videos");
+	var enquire_thnkmss = document.querySelector(".enquire_thnkmss");
+
+	videos.forEach((data, dataIndex) => {
+		data.onclick = () => {
+			enquire_thnkmss.style.display="flex";
+			framedata = frame[dataIndex].getAttribute("src");
+			console.log(framedata);
+			iframe.setAttribute("src", framedata );
+		}
+	})
+
+	window.onclick = (e) => {
+        e.target === com_form && ((com_form.style.display = "none"));
+    }
+</script>
+
+
 

@@ -6,14 +6,21 @@ interface Props {
 const { btnText } = Astro.props;
 ---
 
-<button class="branding-stroke-button py-2 px-5 inline-flex items-center" style="font-size: 15px; color: #001D64; cursor: context-menu;">
+<button class="branding-stroke-button py-2 px-5 inline-flex items-center border border-[#090808] rounded-full" style="font-size: 15px; color: #001D64; cursor: context-menu;">
 	{ btnText }
-	<svg class="ms-4" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- <svg class="ms-4" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M8.5 12L3.5 7L4.9 5.55L7.5 8.15V0H9.5V8.15L12.1 5.55L13.5 7L8.5 12ZM2.5 16C1.95 16 1.47917 15.8042 1.0875 15.4125C0.695833 15.0208 0.5 14.55 0.5 14V11H2.5V14H14.5V11H16.5V14C16.5 14.55 16.3042 15.0208 15.9125 15.4125C15.5208 15.8042 15.05 16 14.5 16H2.5Z" fill="#2A437D"/>
-	</svg>	
+	</svg>	 -->
 </button>
 <style>
 	.branding-stroke-button{
-		font-family: Atkinson Hyperlegible;font-size: 16px;font-weight: 500;line-height: 19.84px;text-align: left;color: #2A437D;
+		font-family: Instrument Sans;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 17.08px;
+		text-align: left;
+		text-underline-position: from-font;
+		text-decoration-skip-ink: none;
+		color: #090808;
 	}
 </style>

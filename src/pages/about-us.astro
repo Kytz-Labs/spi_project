@@ -55,10 +55,7 @@ const videos = [
 	{ title : "SPI FUN!", description : "Lorem Ipsum is simply dummy text ", link : "https://www.youtube.com/embed/YXJU3QOK3oA?rel=0&modestbranding=1&showinfo=0" },
 	{ title : "Interview with SPI CEO", description : "2017 Software Professionals, Inc Reena Batra CEO", link : "https://www.youtube.com/embed/u8WoKuVKEh4?rel=modestbranding=1&showinfo=0" },
 	{ title : "SPI Promo", description : "Software Professionals, Inc. 60-second spot", link : "https://player.vimeo.com/video/208191299?h=2bdb0076f6" },
-	// { title : "Transportation Industry", description : "", link : "https://player.vimeo.com/video/206317013?h=2c7d07216f" },
-	// { title : "Quality & Flexibility", description : "", link : "https://player.vimeo.com/video/206316932?h=c3cfe7621d" },
-	// { title : "Customer Experience", description : "", link : "https://www.youtube.com/embed/7C-_NFoYEt8?rel=0&modestbranding=1&showinfo=0" },
-	// { title : "SafeConnect", description : "", link : "https://www.youtube.com/embed/PQOPLkkL4OA?rel=0&modestbranding=1&showinfo=0" },
+
 ]
 ---
 
@@ -344,9 +341,9 @@ const videos = [
 
 		.video-subtitle{
 			font-family: Instrument Sans;
-			font-size: 25px;
+			font-size: 22px;
 			font-weight: 500;
-			line-height: 32.5px;
+			line-height: 28.5px;
 			text-align: left;
 			text-underline-position: from-font;
 			text-decoration-skip-ink: none;
@@ -711,7 +708,7 @@ const videos = [
 						</div>
 					</div>
 				</div>
-				<div class="flex flex-row flex-wrap gap-2 text-white">
+				<!-- <div class="flex flex-row flex-wrap gap-2 text-white">
 					{
 						brochures.map((data, dataIndex) => (
 							<div class="bg-[#006B9E] px-3 rounded-full">
@@ -719,7 +716,7 @@ const videos = [
 							</div>
 						))
 					}
-				</div>
+				</div> -->
 
 				<!-- brochures -->
 				<div class="mt-10">
@@ -769,12 +766,31 @@ const videos = [
 				<!-- we are a service -->
 				<div class="">
 					<div class="inner-layer-innovator flex lg:flex-row flex-col gap-12 items-start">
+						<div class="flex-none lg:w-[55%] h-[60vh]">
+							<div class="flex-1 gap-8 mb-4 h-full">
+								<div class="video-container rounded-lg h-full">
+									<iframe loading="lazy" width="100%" 
+											class="h-full" 
+											style="border-radius: 15px;" 
+											src="https://www.youtube.com/embed/YXJU3QOK3oA?rel=0&modestbranding=1&showinfo=0"
+											title="YouTube video player"
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+											referrerpolicy="strict-origin-when-cross-origin" 
+											allowfullscreen>
+									</iframe>
+								</div>
+								<div class="mt-6">
+									<div class="video-subtitle mb-6">SPI celebrated 30 years in business at Circle R Ranch with colleagues and friends</div>
+								</div>
+							</div>
+						</div>
 						<div class="flex-1">
-							<div class="inner-video-testimonials grid lg:grid-cols-3 lg:flex-row flex-col gap-10">
+							<div class="inner-video-testimonials gap-10">
 								{
 									videos.map((data, dataIndex) => (
-										<div class="flex-1 gap-8 mb-4">
-											<div class="video-container rounded-lg">
+										<div class="flex-1 flex lg:flex-row flex-col gap-8 mb-4">
+											<div class="video-container rounded-lg flex-none lg:w-[40%]">
 												<iframe loading="lazy" width="100%" 
 														class="lg:h-[150.59px] h-[100%]" 
 														style="border-radius: 15px;" 
@@ -786,7 +802,7 @@ const videos = [
 														allowfullscreen>
 												</iframe>
 											</div>
-											<div class="mt-6">
+											<div class="mt-6 flex-1">
 												<div class="video-subtitle mb-6">{data.title}</div>
 												<div class="video-description">{data.description}</div>
 											</div>
@@ -794,11 +810,13 @@ const videos = [
 									))
 								}
 							</div>
-							<div class="w-full text-center mt-10">
-								<Cbtn colorbtnText="View More" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-							</div>
 						</div>
 					</div>
+					<a href="/videos">
+						<div class="w-full text-center mt-10">
+							<Cbtn colorbtnText="View More" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+						</div>
+					</a>
 				</div>
 			</div>
 
