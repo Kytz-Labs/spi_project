@@ -11,7 +11,7 @@ interface Props {
 const { colorbtnText, bgcolor, textColor, cursor, display, classname } = Astro.props;
 ---
 
-<button class=`branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] ${classname}` style=`background-color: ${bgcolor}; color: ${textColor}; cursor: ${cursor};`>
+<button class=`branding-stroke-button inline-flex gap-3 items-center text-center self-start fotnt-[Atkinson Hyperlegible] ${classname}` style=`display: ${display}; background-color: ${bgcolor}; color: ${textColor}; cursor: ${cursor};`>
     { colorbtnText }
 </button>
 
@@ -21,7 +21,6 @@ const { colorbtnText, bgcolor, textColor, cursor, display, classname } = Astro.p
         font-size: 15px;
         font-weight: 600;
         line-height: 18.52px;
-        text-align: left;
         padding: 12px 20px 12px 20px;
     }
 </style>

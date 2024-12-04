@@ -1,0 +1,55 @@
+/* File Upload Container */
+.file-upload {
+    border: 2px solid #555;
+    border-radius: 8px;
+    background-color: #333;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Upload Label */
+.upload-label {
+    display: block;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.upload-label:hover {
+    color: #fff;
+}
+
+/* Upload Text */
+.upload-text {
+    font-family: Instrument Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}	
+
+/* Accepted Files Text */
+.accepted-files {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Hidden File Input */
+.file-input {
+    display: none;
+}
+
+.post-date{
+    font-family: Instrument Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: justified;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFFCC;
+}

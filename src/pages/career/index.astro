@@ -7,37 +7,40 @@ import { array } from "astro:schema"
 const currentUrl=Astro.request.url
 import Cbtn from "@components/button/Cbtn.astro"
 import TransparentBtn from "@components/button/TransparentBtn.astro"
+import CareerPop from "@components/Forms/CareerPop"
+
+const roles = ['Full-Stack-Java-EE-Developer', 'designer', 'manager'];
 
 const career = [
-	{ title:"Technical Engineer", tag: ["US", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Senior Software Engineer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Technical Engineer", link : "/career/technical-engineer", tag: ["US", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Senior Software Engineer", link : "/career/senior-software-engineer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 ]
 
 const career1 = [
-	{ title:"Full Stack Java EE Developer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Software  Developer (GIS)", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Lead Software Developers", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Software Developers (Job Code 001)", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Software Developers", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Software Developer – II", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Software Developer – I", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Full Stack Java EE Developer", link: "/career/Full-Stack-Java-EE-Developer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Software Developer (GIS)", link : "/career/software-developer-GIS", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Lead Software Developers", link : "/career/lead-software-developers", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Software Developers (Job Code 001)", link : "/career/software-developers-Job-Code-001", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Software Developers", link : "/career/software-developers", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Software Developer – II", link : "/career/software-developers-II", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Software Developer – I", link : "/career/software-developers-I", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 ]
 
 const career2 = [
-	{ title:"MDM Quality Analyst – 20200502", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Computer Systems Analyst I", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Computer Systems Analyst II", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Computer Systems Analyst", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."}
+	{ title:"MDM Quality Analyst – 20200502", link : "/career/MDM-Quality-Analyst–20200502", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Computer Systems Analyst I", link : "/career/Computer-Systems-Analyst-I", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Computer Systems Analyst II", link : "/career/Computer-Systems-Analyst-II", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Computer Systems Analyst", link : "/career/Computer-Systems-Analyst", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."}
 ]
 
 const career3 = [
-	{ title:"IT Recruiter/Account Manager", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"IT Recruiter", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"IT Recruiter/Account Manager", link : "/career/IT-Recruiter-Account-Manager", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"IT Recruiter", link : "/career/IT-Recruiter", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 ]
 
 const career4 = [
-	{ title:"JAVA with Groovy", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
-	{ title:"Business Development Manager", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"JAVA with Groovy", link: "/career/JAVA-with-Groovy", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
+	{ title:"Business Development Manager", link: "/career/Business-Development-Manager",  tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 ]
 
 const videos = [
@@ -100,6 +103,13 @@ const videos = [
 			text-underline-position: from-font;
 			text-decoration-skip-ink: none;
 			color: #FFFFFF;
+		}
+
+		.career_list > li:nth-child(1) {
+			background-color: white;
+			color: black;
+			padding-left: 10px;
+			padding-right:10px;
 		}
 
 		.career_title{
@@ -205,32 +215,34 @@ const videos = [
 		<Nav />
 		<div class="px-8 lg:px-12 py-12 site-title-layer overflow-hidden relative flex items-start" >
 			<div class="header flex lg:flex-row flex-col items-center justify-between border-[#FFFFFF33] w-full">
-				<h1 class="home_title text-start">
+				<h1 class="home_title text-start lg:mb-0 mb-10">
 					Make an Impact,<br> Make It Here
 				</h1>
 				<div>
-					<Cbtn colorbtnText="Join our Team" classname="" 	bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+					<Cbtn colorbtnText="Join our Team" classname="brand-button" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
 				</div>
 			</div>
 		</div>
 		<section>
+			<CareerPop />
+
 			<div class="relative pb-16 bg-black">
                 <img src="/career_banner.webp" width="100%" height="500px" alt="airline" />
             </div>
 
 			<!-- services -->
-			<div class="lg:px-16 lg:pb-28 bg-black">
+			<div class="lg:px-16 px-8 lg:pb-28 bg-black">
 				<div class="inner-layer lg:pb-0 pb-8 flex lg:flex-row flex-col gap-12">
-					<div class="flex-none lg:w-[28%] lg:h-screen sticky top-0">
-						<ul class="career_list">
-							<li class="py-5">Engineer (2)</li>
-							<li class="py-5">Developer (7)</li>
-							<li class="py-5">Analyst (4)</li>
-							<li class="py-5">IT Recruiter (2)</li>
-							<li class="py-5">Other positions(2)</li>
+					<div class="flex-none lg:w-[28%] lg:h-screen lg:sticky top-0">
+						<ul class="career_list lg:block flex flex-wrap gap-6">
+							<li class="lg:py-5 pb-2">Engineer (2)</li>
+							<li class="lg:py-5 pb-2">Developer (7)</li>
+							<li class="lg:py-5 pb-2">Analyst (4)</li>
+							<li class="lg:py-5 pb-2">IT Recruiter (2)</li>
+							<li class="lg:py-5 pb-2">Other positions(2)</li>
 						</ul>
-						<div class="list_desc">Didn’t find your role? Share your Resume and contact info—we’ll reach out!</div>
-						<button class=" border border-white py-2 px-5 inline-flex items-center mt-10" style="font-size: 15px; color: white; cursor: context-menu;">
+						<div class="list_desc mt-5">Didn’t find your role? Share your Resume and contact info—we’ll reach out!</div>
+						<button class="border border-white py-2 px-5 inline-flex items-center mt-10 brand-button cursor-pointer" style="font-size: 15px; color: white; cursor: context-menu;">
 							Upload Your Resume
 						</button>
 					</div>
@@ -247,9 +259,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<div class="mt-5 text-end">
-											<Cbtn colorbtnText="Apply Now" classname="Brand-btn" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-										</div>
+										<a href={ data.link }>
+											<div class="mt-5 text-end">
+												<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -266,9 +280,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<div class="mt-5 text-end">
-											<Cbtn colorbtnText="Apply Now" classname="Brand-btn" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-										</div>
+										<a href={ data.link }>
+											<div class="mt-5 text-end">
+												<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -285,9 +301,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<div class="mt-5 text-end">
-											<Cbtn colorbtnText="Apply Now" classname="Brand-btn" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-										</div>
+										<a href={ data.link }>
+											<div class="mt-5 text-end">
+												<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -304,9 +322,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<div class="mt-5 text-end">
-											<Cbtn colorbtnText="Apply Now" classname="Brand-btn" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-										</div>
+										<a href={ data.link }>
+											<div class="mt-5 text-end">
+												<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -323,9 +343,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<div class="mt-5 text-end">
-											<Cbtn colorbtnText="Apply Now" classname="Brand-btn" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-										</div>
+										<a href={ data.link }>
+											<div class="mt-5 text-end">
+												<Cbtn colorbtnText="Apply Now" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+											</div>
+										</a>
 									</div>
 								))
 							}
@@ -353,7 +375,7 @@ const videos = [
 				</div>
 			</div>
 
-			<div class="lg:px-16 lg:pb-28 bg-black">
+			<div class="lg:px-16 px-8 lg:pb-28 lg:pt-0 pt-20 bg-black">
 				<div class="inner-layer lg:pb-0 pb-8">
 					<div class="career_tie text-white mb-8">
 						What makes <span class="text-[#B5DB00]">SPI a great place</span> to work?
@@ -361,7 +383,7 @@ const videos = [
 					<div class="lg:grid grid-cols-4 flex-col gap-4">
 						{
 							videos.map((data, dataIndex) => (
-								<div class="p-4 bg-[#FFFFFF14]">
+								<div class="p-4 bg-[#FFFFFF14] lg:mb-0 mb-12">
 									<div>
 										<img src={data.url} width="100%" />
 									</div>
@@ -381,9 +403,6 @@ const videos = [
 			<Footer />
 		</section>
 	</header>
-	<main>
-
-	</main>
 </Header>
 <script>
 	var position=document.querySelectorAll(".position");
@@ -394,9 +413,40 @@ const videos = [
 		data.onclick = () => {
 			position.forEach((line, lineIndex) => {
 				line.classList.remove("active_position");
+				career_list[lineIndex].style.backgroundColor="black";
+				career_list[lineIndex].style.paddingLeft="0";
+				career_list[lineIndex].style.paddingRight="0";
+				career_list[lineIndex].style.color="white";
 			})
 			position[dataIndex].classList.add("active_position");
+			data.style.backgroundColor="white";
+			data.style.paddingLeft="12px";
+			data.style.paddingRight="12px";
+			data.style.color="black";
 		}
 	})
+
+	var brand_btn = document.querySelectorAll(".brand-button");
+    var form_close = document.querySelector(".kytz_form_close");
+    var com_form=document.querySelector("#enquire_form")
+
+    brand_btn.forEach((e, n) => {
+        e.onclick = () => {
+            (com_form.style.display = "flex");
+        };
+    }),
+    (form_close.onclick = () => {
+        (com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+    }),
+    (window.onclick = (e) => {
+        e.target === com_form && ((com_form.style.display = "none"), w3form.reset());
+    });
+
+    close_card.forEach((clos, closeIndex) => {
+        clos.onclick=() => {
+            card_inner[closeIndex].style.transform="rotateY(0deg)";
+            close_card[closeIndex].style.display="none";
+        }
+    })
 </script>
 

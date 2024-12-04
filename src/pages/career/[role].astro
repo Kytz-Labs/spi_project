@@ -1,0 +1,465 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../form.css"
+const currentUrl=Astro.request.url;
+import TransparentBtn from "@components/button/TransparentBtn.astro"
+import CareerSub from "@components/Forms/CareerSub.jsx"
+
+const jobRoles = {
+	"Full-Stack-Java-EE-Developer": {
+		title:"technical-engineer",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"senior-software-engineer" : {
+		title:"Senior Software Engineer",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"Full-Stack-Java-EE-Developer": {
+		title:"Full Stack Java EE Developer",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"software-developer-GIS" : {
+		title:"Software Developer (GIS)",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"lead-software-developers" : {
+		title:"Lead Software Developers",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"software-developers-Job-Code-001" : {
+		 title:"Software Developers (Job Code 001)",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"software-developers" : {
+		title:"Software Developers",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"software-developers-II" : {
+		title:"Software Developer – II",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"software-developers-I" : {
+		title:"Software Developer – I",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"MDM-Quality-Analyst–20200502" : {
+		title:"MDM Quality Analyst – 20200502",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"Computer-Systems-Analyst-I" : {
+		title:"Computer Systems Analyst I",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"Computer-Systems-Analyst-II" : {
+		title:"Computer Systems Analyst II",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"Computer-Systems-Analyst" : {
+		title:"Computer Systems Analyst",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"IT Recruiter/Account Manager" : {
+		title:"IT-Recruiter-Account-Manager",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"IT Recruiter" : {
+		title:"MDM Quality Analyst – 20200502",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	},
+	"JAVA with Groovy" : {
+		title:"JAVA-with-Groovy",
+		requirements: ["Flower Mound, TX", "Full-Time"],
+	}
+}
+
+const { role } = Astro.params;
+const job = jobRoles[role] || { title: 'Role Not Found', description: '', requirements: [] };
+
+---
+
+
+<Header title="products" canonical={currentUrl}>
+	<style>
+		.branding-stroke-button{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 18.52px;
+			padding: 12px 20px 12px 20px;
+		}
+		body{
+			background-color: black;
+		}
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22.4px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+			font-size: 80px;
+			font-weight: 600;
+			line-height: 96px;
+			letter-spacing: -0.03em;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+		.site-title-layer {
+			background-size: cover;
+			/* background-color: #000000; */
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+        /* products */
+		.product-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 28.8px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: white;
+		}
+		.product_section{
+			height: 680px;
+			background-image: url("/products.webp");
+			background-size: cover;
+		}
+		.check{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.product_description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+		.modules > li {
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+		.background-effect{
+			content: "";
+			position: absolute;
+			width:100%;
+			inset:0;
+			top:10%;
+		}
+
+        .career_description {
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+
+		.job-title{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 43.2px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #B5DB00;
+		}
+
+		.post-date{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28.8px;
+			text-align: justified;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFFCC;
+		}
+
+		.shrt_content{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 19.52px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
+		h4{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 46.8px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
+		/* File Upload Container */
+		.file-upload {
+			border: 2px solid #555;
+			border-radius: 8px;
+			background-color: #333;
+			padding: 20px;
+			width: 400px;
+			text-align: center;
+			position: relative;
+		}
+
+		/* Upload Label */
+		.upload-label {
+			display: block;
+			cursor: pointer;
+			color: #ddd;
+		}
+
+		.upload-label:hover {
+			color: #fff;
+		}
+
+		/* Upload Text */
+		.upload-text {
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 28.8px;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+		}	
+
+		/* Accepted Files Text */
+		.accepted-files {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #aaa;
+		}
+
+		/* Hidden File Input */
+		.file-input {
+			display: none;
+		}
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 40px;
+                line-height:50.8px;
+            }
+			.background-effect{
+				display:none;
+			}
+		}
+	</style>
+	<header class="realtive ">
+		<div class="background-effect overflow-hidden">
+			<svg width="1348" height="899" viewBox="0 0 1348 899" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g opacity="0.4" filter="url(#filter0_f_344_1138)">
+				<path d="M430 250L250 392.055L272.5 521.66L463.5 587.877L627.5 649L868 440.162L832 285.089L587 376.774L430 250Z" fill="#B5DB00"/>
+				<path d="M660 250L480 392.055L502.5 521.66L693.5 587.877L857.5 649L1098 440.162L1062 285.089L817 376.774L660 250Z" fill="#006B9E"/>
+				</g>
+				<defs>
+				<filter id="filter0_f_344_1138" x="0" y="0" width="1348" height="899" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+				<feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_344_1138"/>
+				</filter>
+				</defs>
+			</svg>
+		</div>
+		<Nav />
+		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start relative z-20" >
+			<div class="header flex flex-col items-center justify-center w-full lg:pb-16">
+                <h6 class="service_shrt mb-5 text-center w-full block">
+					<a href="/career">
+						<div class="inline-flex items-center justify-center gap-4 text-[#B5DB00]">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.3633 9C14.9156 9 15.3633 8.55228 15.3633 8C15.3633 7.44772 14.9156 7 14.3633 7V9ZM0.928252 7.29289C0.537728 7.68342 0.537728 8.31658 0.928252 8.70711L7.29221 15.0711C7.68274 15.4616 8.3159 15.4616 8.70643 15.0711C9.09695 14.6805 9.09695 14.0474 8.70643 13.6569L3.04957 8L8.70643 2.34315C9.09695 1.95262 9.09695 1.31946 8.70643 0.928932C8.3159 0.538408 7.68274 0.538408 7.29221 0.928932L0.928252 7.29289ZM14.3633 7L1.63536 7V9H14.3633V7Z" fill="#B5DB00"/>
+							</svg>
+							See all jobs
+						</div>
+					</a>
+                </h6>
+				<h1 class="home_title text-center">
+					<span class="lg:block inline">{ job.title }
+				</h1>
+                <div class="career_description lg:w-[50%] mx-auto">
+                    If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.
+                </div>
+				<div class="mt-10">
+					<a href="#form_side">
+						<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<section class="z-[1] relative">
+			<!-- we are a service -->
+			<div class="lg:px-12 px-8 pb-28 lg:pt-0 pt-12">
+				<div class="inner-layer-innovator bg-[#141414] p-12">
+                    <div>
+						<div class="flex justify-between border-b border-[#FFFFFF33] pb-8">
+							<div class="job-title">Job Description</div>
+							<div class="post-date">Posted on 06 Nov 2024</div>
+						</div>
+						<div class="flex justify-between items-start pb-6 pt-12 gap-10">
+							<div class="job-title lg:w-[64%]">
+								<div class="post-date pb-10">
+									The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.
+								</div>
+								<div class="post-date pb-10">
+									The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.
+								</div>
+								<div class="post-date pb-10">
+									If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.
+								</div>
+								<div class="post-date pb-10">
+									Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.
+								</div>
+								<div class="post-date">
+									I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.
+								</div>
+								<div class="h4 mt-10 mb-4 text-white">Basic Qualification</div>
+								<div>
+									<ul class="list-disc pl-6">
+										<li class="post-date">Experience programming with at least one software programming language</li>
+										<li class="post-date">3+ years of non-internship professional software development experience</li>
+									</ul>
+								</div>
+							</div>
+							<div class="post-date bg-[#262626] flex-1">
+								<div class="px-4 pt-10 w-full">
+									<a href="#form_side">
+										<button class=`branding-stroke-button inline-flex gap-3 items-center text-center self-start fotnt-[Atkinson Hyperlegible] w-full` style="display: block; background-color: #B5DB00; color: black; cursor: pointer;">
+											Apply for this Role
+										</button>
+									</a>
+								</div>
+								<div class="px-4 pb-10">
+									<button class="border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
+										Share Job
+									</button>
+								</div>
+								<div class="px-4">
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.904 6.01339H16.4107V5.31473C16.4107 4.75884 16.1899 4.22572 15.7968 3.83265C15.4037 3.43958 14.8706 3.21875 14.3147 3.21875H10.1228C9.56688 3.21875 9.03376 3.43958 8.64068 3.83265C8.24761 4.22572 8.02679 4.75884 8.02679 5.31473V6.01339H4.53348C3.97759 6.01339 3.44447 6.23422 3.0514 6.62729C2.65833 7.02036 2.4375 7.55349 2.4375 8.10938V11.966C2.4381 12.2602 2.50061 12.5509 2.62098 12.8194C2.74136 13.0878 2.91689 13.3279 3.13616 13.524V20.6853C3.13616 21.2412 3.35699 21.7743 3.75006 22.1674C4.14313 22.5604 4.67625 22.7812 5.23214 22.7812H19.2054C19.7612 22.7812 20.2944 22.5604 20.6874 22.1674C21.0805 21.7743 21.3013 21.2412 21.3013 20.6853V13.524C21.5206 13.3279 21.6961 13.0878 21.8165 12.8194C21.9369 12.5509 21.9994 12.2602 22 11.966V8.10938C22 7.55349 21.7792 7.02036 21.3861 6.62729C20.993 6.23422 20.4599 6.01339 19.904 6.01339ZM9.42411 5.31473C9.42411 5.12944 9.49772 4.95173 9.62874 4.8207C9.75976 4.68968 9.93747 4.61607 10.1228 4.61607H14.3147C14.5 4.61607 14.6777 4.68968 14.8088 4.8207C14.9398 4.95173 15.0134 5.12944 15.0134 5.31473V6.01339H9.42411V5.31473ZM3.83482 8.10938C3.83482 7.92408 3.90843 7.74637 4.03945 7.61535C4.17048 7.48432 4.34819 7.41071 4.53348 7.41071H19.904C20.0893 7.41071 20.267 7.48432 20.398 7.61535C20.5291 7.74637 20.6027 7.92408 20.6027 8.10938V11.966C20.6093 12.121 20.5641 12.2738 20.4743 12.4003C20.3845 12.5268 20.2551 12.6198 20.1066 12.6646L14.3147 14.3973V13.6987C14.3147 13.5134 14.2411 13.3357 14.1101 13.2046C13.9791 13.0736 13.8014 13 13.6161 13H10.8214C10.6361 13 10.4584 13.0736 10.3274 13.2046C10.1964 13.3357 10.1228 13.5134 10.1228 13.6987V14.3973L4.33087 12.6367C4.18235 12.5918 4.05298 12.4988 3.96317 12.3723C3.87335 12.2458 3.8282 12.093 3.83482 11.938V8.10938ZM12.9174 14.3973V16.4933C12.9174 16.6786 12.8438 16.8563 12.7128 16.9873C12.5818 17.1184 12.404 17.192 12.2188 17.192C12.0335 17.192 11.8557 17.1184 11.7247 16.9873C11.5937 16.8563 11.5201 16.6786 11.5201 16.4933V14.3973H12.9174ZM19.2054 21.3839H5.23214C5.04685 21.3839 4.86914 21.3103 4.73812 21.1793C4.60709 21.0483 4.53348 20.8706 4.53348 20.6853V14.1598L10.1228 15.8785V16.4933C10.1228 17.0492 10.3436 17.5823 10.7367 17.9754C11.1297 18.3685 11.6629 18.5893 12.2188 18.5893C12.7746 18.5893 13.3078 18.3685 13.7008 17.9754C14.0939 17.5823 14.3147 17.0492 14.3147 16.4933V15.8785L19.904 14.1598V20.6853C19.904 20.8706 19.8304 21.0483 19.6994 21.1793C19.5684 21.3103 19.3907 21.3839 19.2054 21.3839Z" fill="white"/>
+										</svg>
+										<div class="shrt_content">02+ Years Experience</div>
+									</div>
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M13.6728 14.5357C16.0139 10.8622 15.7196 11.3205 15.787 11.2247C16.6394 10.0225 17.0898 8.60759 17.0898 7.13281C17.0898 3.2218 13.9161 0 10 0C6.09663 0 2.91016 3.21544 2.91016 7.13281C2.91016 8.60664 3.37009 10.0586 4.25035 11.277L6.32712 14.5357C4.10671 14.8769 0.332031 15.8938 0.332031 18.1328C0.332031 18.949 0.864758 20.1122 3.40266 21.0186C5.17478 21.6514 7.51774 22 10 22C14.6417 22 19.668 20.6907 19.668 18.1328C19.668 15.8934 15.8977 14.8776 13.6728 14.5357ZM5.32711 10.5679C5.32002 10.5569 5.31262 10.546 5.30489 10.5354C4.5724 9.52768 4.19922 8.3334 4.19922 7.13281C4.19922 3.90938 6.79479 1.28906 10 1.28906C13.1986 1.28906 15.8008 3.91054 15.8008 7.13281C15.8008 8.33534 15.4346 9.48909 14.7418 10.4702C14.6797 10.5521 15.0036 10.0489 10 17.9003L5.32711 10.5679ZM10 20.7109C4.92994 20.7109 1.62109 19.2207 1.62109 18.1328C1.62109 17.4017 3.32128 16.1994 7.08878 15.7308L9.45645 19.446C9.57478 19.6317 9.77974 19.7441 9.99996 19.7441C10.2202 19.7441 10.4252 19.6317 10.5435 19.446L12.9111 15.7308C16.6787 16.1994 18.3789 17.4017 18.3789 18.1328C18.3789 19.2114 15.0998 20.7109 10 20.7109Z" fill="white"/>
+										</svg>
+										<div class="shrt_content">Flower Mound, TX - (Full Time)</div>
+									</div>
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M17.0703 10.4747H15.1126C14.8461 10.4747 14.5882 10.5111 14.3427 10.5781C13.8584 9.62606 12.8696 8.97192 11.7303 8.97192H8.26973C7.13039 8.97192 6.14164 9.62606 5.65734 10.5781C5.41184 10.5111 5.15387 10.4747 4.88742 10.4747H2.92969C1.31426 10.4747 0 11.789 0 13.4044V16.534C0 17.5033 0.788555 18.2918 1.75781 18.2918H18.2422C19.2114 18.2918 20 17.5033 20 16.534V13.4044C20 11.789 18.6857 10.4747 17.0703 10.4747ZM5.34004 11.9017V17.12H1.75781C1.43473 17.12 1.17188 16.8572 1.17188 16.5341V13.4045C1.17188 12.4352 1.96043 11.6467 2.92969 11.6467H4.88742C5.04648 11.6467 5.20051 11.6683 5.34715 11.7081C5.34293 11.7722 5.34004 11.8366 5.34004 11.9017ZM13.4881 17.12H6.51191V11.9017C6.51191 10.9324 7.30047 10.1438 8.26973 10.1438H11.7303C12.6995 10.1438 13.4881 10.9324 13.4881 11.9017V17.12ZM18.8281 16.5341C18.8281 16.8572 18.5653 17.12 18.2422 17.12H14.66V11.9017C14.66 11.8365 14.6571 11.7721 14.6529 11.708C14.7995 11.6683 14.9535 11.6466 15.1126 11.6466H17.0703C18.0396 11.6466 18.8281 12.4352 18.8281 13.4044V16.5341Z" fill="white"/>
+											<path d="M3.90805 4.94153C2.47254 4.94153 1.30469 6.10938 1.30469 7.54489C1.30465 8.9804 2.47254 10.1482 3.90805 10.1482C5.34352 10.1482 6.51141 8.9804 6.51141 7.54489C6.51141 6.10938 5.34355 4.94153 3.90805 4.94153ZM3.90801 8.97637C3.11867 8.97637 2.47652 8.33422 2.47652 7.54489C2.47652 6.75555 3.11867 6.1134 3.90801 6.1134C4.69734 6.1134 5.33949 6.75555 5.33949 7.54489C5.33949 8.33422 4.69734 8.97637 3.90801 8.97637Z" fill="white"/>
+											<path d="M10.0015 1.70813C8.08367 1.70813 6.52344 3.26836 6.52344 5.18618C6.52344 7.10399 8.08367 8.66422 10.0015 8.66422C11.9193 8.66422 13.4795 7.10399 13.4795 5.18618C13.4795 3.2684 11.9193 1.70813 10.0015 1.70813ZM10.0015 7.49235C8.72984 7.49235 7.69531 6.45782 7.69531 5.18618C7.69531 3.91458 8.72984 2.88 10.0015 2.88C11.2731 2.88 12.3077 3.91454 12.3077 5.18618C12.3077 6.45782 11.2731 7.49235 10.0015 7.49235Z" fill="white"/>
+											<path d="M16.0916 4.94153C14.6562 4.94153 13.4883 6.10938 13.4883 7.54489C13.4883 8.9804 14.6562 10.1482 16.0916 10.1482C17.5271 10.1482 18.695 8.9804 18.695 7.54489C18.695 6.10938 17.5271 4.94153 16.0916 4.94153ZM16.0916 8.97637C15.3023 8.97637 14.6602 8.33422 14.6602 7.54489C14.6602 6.75555 15.3023 6.1134 16.0916 6.1134C16.881 6.1134 17.5231 6.75555 17.5231 7.54489C17.5231 8.33422 16.881 8.97637 16.0916 8.97637Z" fill="white"/>
+										</svg>											
+										<div class="shrt_content">Software Development</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- contact form -->
+						<div class="bg-black px-8 bg-[#D9D9D914] my-14" id="form_side">
+							<CareerSub />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<Footer />
+		</section>
+	</header>
+	<main>
+
+	</main>
+</Header>
+
