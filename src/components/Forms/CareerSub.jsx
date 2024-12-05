@@ -22,7 +22,7 @@ export default function CareerSub({position}) {
 
     const sendEmail =async(event)=>{
         event.preventDefault();
-        console.log("hello");
+        console.log(event);
         if (submit) return;
         setSubmit(true)
         setContactform(true);

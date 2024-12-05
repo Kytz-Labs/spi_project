@@ -5,6 +5,9 @@ import React, { useState, useEffect } from 'react'
 import { v4 } from "uuid"
 import { storage } from '../../firebase/firebase'
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { EmailAuthCredential } from "firebase/auth/web-extension"
+import axios from "axios"
+
 
 export default function Career() {
     const [submit, setSubmit] = useState(false);
@@ -26,10 +29,10 @@ export default function Career() {
 
     const sendEmail =async(event)=>{
         event.preventDefault();
-        console.log("hello");
-        if (submit) return;
+        // if (submit) return;
         setSubmit(true)
         setContactform(true);
+        // console.log(setEmailInput);
 
         const body = {
           to: "lourdushelton@gmail.com",
@@ -37,7 +40,8 @@ export default function Career() {
           message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
           subject: "SPI Career Form",
         }
-        const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run", body);
+        console.log(body, "body")
+        const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
             setEmailInput(
             { name: "",
             email: "",
@@ -45,6 +49,7 @@ export default function Career() {
             message: ""}
         )
         document.getElementById("submitbtn").innerHTML="<div className='animate-pulse'>Processing</div>";
+        console.log(emailResponse);
         try {
             // If the email sending is successful, setSubmitSuccess to true
             setSubmitSuccess(true);
@@ -111,17 +116,17 @@ export default function Career() {
                                         <form onSubmit={sendEmail} id="w3form" method="POST" className="w-full" >
                                             <div className="flex lg:flex-row flex-wrap flex-col gap-4">
                                                 <div className="upload lg:w-[30%]">
-                                                    <input type="text" className="upload_field" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
+                                                    <input type="text" name="name" className="upload_field" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" />
                                                 </div>
                                                 <div className="upload lg:w-[30%]">
-                                                    <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
+                                                    <input type="email"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" required />
                                                 </div>
                                                 <div className="lg:w-[30%]">
                                                     <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
                                                 </div>
                                                 <div className="upload lg:w-[60%]">
-                                                    <input type="text" className="upload_field" name="uploadMessage" id="uploadMessage" placeholder="Enter Job Title" />
-                                                    <span className="uploaderror" id="message_upload_err"> </span>
+                                                    <input type="text" className="upload_field" name="message" value={emailInput["message"]} id="message" placeholder="Enter Job Title" onChange={handleChange} />
+                                                    {/* <span className="uploaderror" id="message_upload_err"> </span> */}
                                                 </div>
                                                 <div className="upload lg:w-[35%]">
                                                     <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
@@ -129,11 +134,11 @@ export default function Career() {
                                                 </div>
                                             </div>
                                             <div>
-                                                <button id="submitbtn" type="submit" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
-                                                    Submit
+                                                <button id="submitbtn" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
+                                                    submit
                                                 </button>
                                             </div>
-                                        </form>
+                                        </form> 
                                         <div id="message" className="text-white pt-4"></div>
                                     </div>
                                 </div>
