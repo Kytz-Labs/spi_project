@@ -377,14 +377,14 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 		</div>
 		<section class="z-[1] relative">
 			<!-- we are a service -->
-			<div class="lg:px-12 px-8 pb-28 lg:pt-0 pt-12">
+			<div class="lg:px-12 pb-28 lg:pt-0 pt-12">
 				<div class="inner-layer-innovator bg-[#141414] p-12">
                     <div>
-						<div class="flex justify-between border-b border-[#FFFFFF33] pb-8">
-							<div class="job-title">Job Description</div>
+						<div class="flex justify-between lg:flex-row flex-col border-b border-[#FFFFFF33] pb-8">
+							<div class="job-title lg:pn-0 pb-4">Job Description</div>
 							<div class="post-date">Posted on 06 Nov 2024</div>
 						</div>
-						<div class="flex justify-between items-start pb-6 pt-12 gap-10">
+						<div class="flex justify-between lg:flex-row flex-col items-start pb-6 pt-12 gap-10">
 							<div class="job-title lg:w-[64%]">
 								<div class="post-date pb-10">
 									The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.
@@ -418,7 +418,7 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 									</a>
 								</div>
 								<div class="px-4 pb-10">
-									<button class="border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
+									<button id="shareJobBtn" class="border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
 										Share Job
 									</button>
 								</div>
@@ -458,9 +458,20 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 			<Footer />
 		</section>
 	</header>
-	<main>
-
-	</main>
 </Header>
+<script>
+	 // Replace this with the link you want to copy
+	 const jobLink = "https://example.com/job-id";
+
+document.getElementById('shareJobBtn').addEventListener('click', () => {
+	navigator.clipboard.writeText(jobLink)
+		.then(() => {
+			alert("Link copied to clipboard!");
+		})
+		.catch(err => {
+			console.error("Failed to copy: ", err);
+		});
+});
+</script>
 
 

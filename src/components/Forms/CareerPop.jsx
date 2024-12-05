@@ -2,7 +2,9 @@
 import "../newform.css"
 import "../form.css"
 import React, { useState, useEffect } from 'react'
-import axios from "axios";
+import { v4 } from "uuid"
+import { storage } from '../../firebase/firebase'
+import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 
 export default function Career() {
     const [submit, setSubmit] = useState(false);
@@ -22,8 +24,9 @@ export default function Career() {
         setEmailInput({ ...emailInput, [e.target.name]: e.target.value });
     }
 
-    const sendEmail =async (event)=>{
+    const sendEmail =async(event)=>{
         event.preventDefault();
+        console.log("hello");
         if (submit) return;
         setSubmit(true)
         setContactform(true);
@@ -34,7 +37,7 @@ export default function Career() {
           message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
           subject: "SPI Career Form",
         }
-        const emailResponse = await axios.post("https://xxx.app", body);
+        const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run", body);
             setEmailInput(
             { name: "",
             email: "",
@@ -105,7 +108,26 @@ export default function Career() {
                                 { /* <!-- contact form --> */ }
                                 <div className="self-center contact_form" id="upload_form">
                                     <div className="form_section">
-                                        <form onSubmit={sendEmail} id="w3form" method="POST" class="w-full" >
+                                        <form onSubmit={sendEmail} id="w3form" method="POST" className="w-full" >
+                                            <div className="flex lg:flex-row flex-wrap flex-col gap-4">
+                                                <div className="upload lg:w-[30%]">
+                                                    <input type="text" className="upload_field" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
+                                                </div>
+                                                <div className="upload lg:w-[30%]">
+                                                    <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
+                                                </div>
+                                                <div className="lg:w-[30%]">
+                                                    <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
+                                                </div>
+                                                <div className="upload lg:w-[60%]">
+                                                    <input type="text" className="upload_field" name="uploadMessage" id="uploadMessage" placeholder="Enter Job Title" />
+                                                    <span className="uploaderror" id="message_upload_err"> </span>
+                                                </div>
+                                                <div className="upload lg:w-[35%]">
+                                                    <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
+                                                    <span className="uploaderror" id="file_upload_err"> </span>
+                                                </div>
+                                            </div>
                                             <div>
                                                 <button id="submitbtn" type="submit" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
                                                     Submit
