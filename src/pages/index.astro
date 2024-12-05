@@ -22,9 +22,9 @@ const services_data2 = [
 ]
 
 const social_feeds = [
-	{ title: "Software Professionals1, Inc.", url: "/social/social_feed1.webp"},
-	{ title: "Software Professionals2, Inc2.", url: "/social/social_feed2.webp"},
-	{ title: "Software Professionals3, Inc3.", url: "/social/social_feed3.webp"},
+	{ title: "Software Professionals1, Inc.", url: "/social/social_feed1.webp", link : '<iframe loading="lazy" style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSoftwareProfessionalsInc%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="340" height="500" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>'},
+	{ title: "Software Professionals2, Inc2.", url: "/social/social_feed2.webp", link : '<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="Twitter Timeline" src="https://syndication.twitter.com/srv/timeline-profile/screen-name/SPI_US?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=en&amp;origin=https%3A%2F%2Fwww.spius.net%2F&amp;sessionId=07b9c802d5ec01cdd47580490c5faa36bce7ab62&amp;showHeader=true&amp;showReplies=false&amp;transparent=false&amp;widgetsVersion=2615f7e52b7e0%3A1702314776716" style="position: static; visibility: visible; width: 347px; height: 414px; display: block; flex-grow: 1;"></iframe>'},
+	{ title: "Software Professionals3, Inc3.", url: "/social/social_feed3.webp", link : '<iframe loading="lazy" title="Embedded post" src="https://www.linkedin.com/embed/feed/update/urn:li:share:7190801620815745025" width="100%" height="550" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'},
 ]
 
 const blogs = [
@@ -701,25 +701,23 @@ const blogs = [
 					<div class="flex lg:flex-row flex-col gap-6 mt-8">
 						{
 							social_feeds.map((data, index) => (
-								<div class="flex-1 p-4 border-[1.5px] rounded-lg">
+								<div class="flex-1 p-4 border-[1.5px] rounded-lg lg:min-h-[400px]">
 									<div class="flex items-center mb-4">
 										<img src="/logos/small_logo.webp" class="mr-4" width="45px" height="45px" alt="spi logo" />
 										<div class="social_feed_title">{data.title}</div>
 									</div>
-									<div>
-										<img src={ data.url } width="100%" alt="spi post thumbnail" />
-									</div>
-									<div class="py-2 border-b-[1.5px] border-[#64676B]">
+									<div set:html={data.link}></div>
+									{/* <div class="py-2">
 										<img src="/like_share.webp" width="33" height="16.5" alt="like" />
-									</div>
-									<div class="flex justify-around like_share mt-2">
+									</div> */}
+									{/* <div class="flex justify-around like_share mt-2">
 										<div>
 											like
 										</div>
 										<div>
 											Comment
 										</div>
-									</div>
+									</div> */}
 								</div>
 							))
 						}

@@ -9,8 +9,6 @@ import Cbtn from "@components/button/Cbtn.astro"
 import TransparentBtn from "@components/button/TransparentBtn.astro"
 import CareerPop from "@components/Forms/CareerPop"
 
-const roles = ['Full-Stack-Java-EE-Developer', 'designer', 'manager'];
-
 const career = [
 	{ title:"Technical Engineer", link : "/career/technical-engineer", tag: ["US", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 	{ title:"Senior Software Engineer", link : "/career/senior-software-engineer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
@@ -259,11 +257,11 @@ const videos = [
 										<div class="career-description pt-10">
 											{data.description}
 										</div>
-										<a href={ data.link }>
-											<div class="mt-5 text-end">
+										<div class="mt-5 text-end">
+											<a href={ data.link }>
 												<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
-											</div>
-										</a>
+											</a>
+										</div>
 									</div>
 								))
 							}
@@ -352,7 +350,7 @@ const videos = [
 								))
 							}
 						</div>
-						<div class="flex justify-between items-center items-center">
+						<!-- <div class="flex justify-between items-center items-center">
 							<div class="inline-flex text-white items-center gap-2">
 								Next page
 								<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,7 +368,7 @@ const videos = [
 									<path d="M13 9L20 16.5L13 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>	
 							</div>
-						</div>
+						</div> -->
 					</div>	
 				</div>
 			</div>

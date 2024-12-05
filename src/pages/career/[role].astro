@@ -9,8 +9,8 @@ import TransparentBtn from "@components/button/TransparentBtn.astro"
 import CareerSub from "@components/Forms/CareerSub.jsx"
 
 const jobRoles = {
-	"Full-Stack-Java-EE-Developer": {
-		title:"technical-engineer",
+	"technical-engineer": {
+		title:"Technical Engineer",
 		requirements: ["Flower Mound, TX", "Full-Time"],
 	},
 	"senior-software-engineer" : {
@@ -448,7 +448,7 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 							</div>
 						</div>
 						<!-- contact form -->
-						<div class="bg-black px-8 bg-[#D9D9D914] my-14" id="form_side">
+						<div class="bg-black bg-[#D9D9D914] my-14" id="form_side">
 							<CareerSub />
 						</div>
 					</div>
@@ -462,4 +462,5 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 
 	</main>
 </Header>
+
 
