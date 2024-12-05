@@ -7,11 +7,11 @@ import { array } from "astro:schema";
 const currentUrl=Astro.request.url;
 
 const members = [
-	{ name : "Reena Batra", position: "CEO", image : "/members/member1.webp" },
-	{ name : "Suresh Batra", position: "Director", image :  "/members/member2.webp" },
-	{ name : "Pavan Kumar Dayyala",  position: "Director of Resourcing", image :  "/members/member3.webp" },
-	{ name : "Sundaram Natarajan",  position: "General Manager", image :  "/members/member4.webp" },
-	{ name : "Madhuri",  position: "Program Manager", image :  "/members/member5.webp" },
+	{ name : "Reena Batra", position: "CEO", image : "/members/member1.webp", link : "https://www.linkedin.com/in/reenabatra/" },
+	{ name : "Suresh Batra", position: "Director", image :  "/members/member2.webp", link : "https://www.linkedin.com/in/suresh-batra-4a874337/" },
+	{ name : "Pavan Kumar Dayyala",  position: "Director of Resourcing", image :  "/members/member3.webp", link : "#" },
+	{ name : "Sundaram Natarajan",  position: "General Manager", image :  "/members/member4.webp", link : "https://www.linkedin.com/in/sundaram-natarajan-2027907b/" },
+	{ name : "Madhuri",  position: "Program Manager", image :  "/members/member5.webp", link : "#" },
 ]
 
 const services_list= [
@@ -376,6 +376,14 @@ const videos = [
 			background-color: black !important;
 		}
 
+		.branding-stroke-button{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 18.52px;
+			padding: 12px 20px 12px 20px;
+		}
+
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -512,7 +520,7 @@ const videos = [
 									<div class="position">{ data.position }</div>
 									<div class="overflow-hidden relative flex justify-center">
 										<div class="z-[20] absolute bottom-0 right-0 m-4 lg:opacity-0 opacity-100 transition delay-150 duration-300 ease-in-out group-hover:opacity-100 linked">
-											<a href="#" target="_blank">
+											<a href={ data.link } target="_blank">
 												<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M19.1406 0H5.85938C2.62333 0 0 2.62333 0 5.85938V19.1406C0 22.3767 2.62333 25 5.85938 25H19.1406C22.3767 25 25 22.3767 25 19.1406V5.85938C25 2.62333 22.3767 0 19.1406 0Z" fill="white"/>
 													<path d="M19.1406 0H5.85938C2.62333 0 0 2.62333 0 5.85938V19.1406C0 22.3767 2.62333 25 5.85938 25H19.1406C22.3767 25 25 22.3767 25 19.1406V5.85938C25 2.62333 22.3767 0 19.1406 0Z" fill="#0A66C2"/>
@@ -645,7 +653,13 @@ const videos = [
 					<div class="flex justify-center items-center transition mt-12 duration-300 delay-150 w-full">
 						<a href="awards">
 							<div class="">
-								<Cbtn colorbtnText="See all" classname="" 	bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+									<button class=`branding-stroke-button flex gap-3 items-center text-center self-start fotnt-[Atkinson Hyperlegible]` style="background-color: #B5DB00; color: black; cursor: pointer;">
+										<div>See All</div>
+										<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M13.3536 4.85355C13.5488 4.65829 13.5488 4.34171 13.3536 4.14645L10.1716 0.964467C9.97631 0.769205 9.65973 0.769205 9.46447 0.964467C9.2692 1.15973 9.2692 1.47631 9.46447 1.67157L12.2929 4.5L9.46447 7.32843C9.2692 7.52369 9.2692 7.84027 9.46447 8.03553C9.65973 8.2308 9.97631 8.2308 10.1716 8.03553L13.3536 4.85355ZM-4.37114e-08 5L13 5L13 4L4.37114e-08 4L-4.37114e-08 5Z" fill="#050505"/>
+										</svg>
+									</button>
+									
 							</div>
 						</a>
 					</div>

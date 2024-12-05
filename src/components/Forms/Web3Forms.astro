@@ -33,7 +33,7 @@ const { bgColor, textColor } = Astro.props;
 </style>
 
 <!-- popup form -->
-<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center" id="enquire_form">
+<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center px-10" id="enquire_form">
     <!--modal content-->
     <div class="relative shadow-lg lg:w-3/6 w-11/12 rounded-md">
         <!-- close button -->
@@ -46,8 +46,8 @@ const { bgColor, textColor } = Astro.props;
         </div>
         <!-- contact form -->
         <div class="enquire_contact_form" id="enquire_popup_form">
-            <div class="form_section" style=`background-color: ${bgColor}`>
-                <div class="contact_heading pb-6" style=`color: ${textColor}`>Book a call for demo </div>
+            <div class="form_section px-12" style=`background-color: ${bgColor}`>
+                <div class="contact_heading pb-6 lg:px-12 px-8" style=`color: ${textColor}`>Book a call for demo </div>
                 <form id="w3form" method="POST">
                     <!-- Replace with your Access Key --> 
                     <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
@@ -62,7 +62,7 @@ const { bgColor, textColor } = Astro.props;
                         <input type="hidden" name="replyto" value="shelton@venzotechnologies.com" />
                     -->
 
-                    <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
+                    <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas lg:px-12 px-8">
                         <div class="line w-full">
                             <label class="new_label pb-3">Full Name<span class="required text-red-500">*</span></label>
                             <input style=`color: ${textColor}` autocomplete="off" type="text" class="web3" style="color: white;" id="Kname" name="name" maxlength="255" placeholder="Name*" required>
