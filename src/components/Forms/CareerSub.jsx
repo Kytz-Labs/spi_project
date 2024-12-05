@@ -2,7 +2,7 @@ import React from 'react'
 import "./formsub.css"
 import { useState, useEffect } from 'react'
 
-export default function CareerSub() {
+export default function CareerSub({position}) {
     const [submit, setSubmit] = useState(false);
     const [imagelist, setImagelist] = useState('');
     const [imageUpload, setImageUpload] = useState(null);
@@ -81,7 +81,7 @@ export default function CareerSub() {
         {/* <!-- contact form --> */}
         <div class="enquire_contact_form" id="enquire_popup_form">
             <div class="form_section">
-                <div class="contact_heading pb-4 text-center">Full Stack Developer</div>
+                <div class="contact_heading pb-4 text-center">{position}</div>
                 <div class="post-date pb-6 text-start mb-12">Please complete the form below to apply for this position</div>
                 <form id="w3form" method="POST">
                     <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0" />

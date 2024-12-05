@@ -449,7 +449,7 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 						</div>
 						<!-- contact form -->
 						<div class="bg-black bg-[#D9D9D914] my-14" id="form_side">
-							<CareerSub />
+							<CareerSub position={job.title} />
 						</div>
 					</div>
 				</div>
@@ -461,7 +461,7 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 </Header>
 <script>
 	 // Replace this with the link you want to copy
-	 const jobLink = "https://example.com/job-id";
+	 const jobLink =  window.location.href;
 
 document.getElementById('shareJobBtn').addEventListener('click', () => {
 	navigator.clipboard.writeText(jobLink)

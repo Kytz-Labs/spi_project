@@ -23,6 +23,36 @@ export default function Career() {
 
     const sendEmail =async(event)=>{
         event.preventDefault();
+        console.log("hello");
+        if (submit) return;
+        setSubmit(true)
+        setContactform(true);
+
+        const body = {
+          to: "lourdushelton@gmail.com",
+          cc: "sathishkumar@venzotechnologies.com",
+          message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
+          subject: "SPI Career Form",
+        }
+        const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
+            setEmailInput(
+            { name: "",
+            email: "",
+            mobile: "",
+            message: ""}
+        )
+        document.getElementById("submitbtn").innerHTML="<div className='animate-pulse'>Processing</div>";
+        try {
+            // If the email sending is successful, setSubmitSuccess to true
+            setSubmitSuccess(true);
+        } catch (error) {
+            console.error("Error sending email:", error);
+            // Handle the error if needed
+        }
+        finally {
+            setSubmit(false); // Reset submit state of success or failure
+            document.getElementById("submitbtn").innerHTML="Submit";
+        }
     }
 
     const sendFile =(e)=>{
@@ -75,32 +105,33 @@ export default function Career() {
                                 { /* <!-- contact form --> */ }
                                 <div className="self-center contact_form" id="upload_form">
                                     <div className="form_section">
-                                    <form
-                                        onSubmit={async (event) => {
-                                            event.preventDefault(); // Prevent page reload
-                                            await sendEmail(event); // Call your sendEmail function
-                                        }}
-                                        id="w3form"
-                                        className="w-full"
-                                        encType="multipart/form-data"
-                                        >
-                                        <div>
-                                            <button
-                                            id="submitbtn"
-                                            type="submit"
-                                            className="branding-stroke-button inline-flex gap-3 items-center self-start font-[Atkinson Hyperlegible] px-20"
-                                            style={{
-                                                backgroundColor: "#B5DB00",
-                                                color: "black", // Corrected `Color` to `color`
-                                                cursor: "pointer",
-                                            }}
-                                            >
-                                            Submit
-                                            </button>
-                                        </div>
+                                        <form onSubmit={sendEmail} id="w3form" method="POST" className="w-full" enctype="multipart/form-data" >
+                                            <div className="flex lg:flex-row flex-wrap flex-col gap-4">
+                                                <div className="upload lg:w-[30%]">
+                                                    <input type="text" className="upload_field" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
+                                                </div>
+                                                <div className="upload lg:w-[30%]">
+                                                    <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
+                                                </div>
+                                                <div className="lg:w-[30%]">
+                                                    <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
+                                                </div>
+                                                <div className="upload lg:w-[60%]">
+                                                    <input type="text" className="upload_field" name="uploadMessage" id="uploadMessage" placeholder="Enter Job Title" />
+                                                    <span className="uploaderror" id="message_upload_err"> </span>
+                                                </div>
+                                                <div className="upload lg:w-[35%]">
+                                                    <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
+                                                    <span className="uploaderror" id="file_upload_err"> </span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button id="submitbtn" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
+                                                    Submit
+                                                </button>
+                                            </div>
                                         </form>
                                         <div id="message" className="text-white pt-4"></div>
-
                                     </div>
                                 </div>
                             </div>
