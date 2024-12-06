@@ -1,3 +1,15 @@
+.enquire_thnkmss{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new_cover{
+ border-radius: 10px;
+ box-shadow: 1px 1px 10px white;
+ padding: 2rem;
+ position:fixed;
+}
 
 .form_title{
     font-family: Instrument Sans;

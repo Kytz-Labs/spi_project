@@ -79,12 +79,18 @@
      }
   
      .enquire_thnkmss{
-        display:none;
-        border-radius: 10px;
-        box-shadow: 1px 1px 10px white;
-        padding: 2rem;
-        position:fixed;
-     }
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+
+      .new_cover{
+         border-radius: 10px;
+         box-shadow: 1px 1px 10px white;
+         padding: 2rem;
+         position:fixed;
+      }
   
      .thnk_heading{
         font-size: 70px;

@@ -49,7 +49,7 @@ export default function Career() {
             )
             document.getElementById("submitbtn").innerHTML="Submit";
             document.getElementById("enquire_popup_form").style.display="none";
-            document.querySelector(".enquire_thnkmss").style.display="block";
+            document.querySelector(".enquire_thnkmss").style.display="flex";
             setSubmitSuccess(true);
         }, 4000);
         
@@ -154,20 +154,22 @@ export default function Career() {
                     </div>
                 </div>
                 {/* <!-- thank messaage --> */}
-                <div class="enquire_thnkmss text-center bg-white lg:max-w-[60%] mx-auto">
-                    { /* <!-- close button --> */ }
-                    <div className="absolute top-4 right-0 m-6 kytz_form_close lg:max-w-[60%]" style={{ zIndex: "1" }}>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50" stroke="white">
-                                <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <h3 class="text-2xl leading-6 font-medium text-gray-900" style={{ lineHeight:"2rem"}}>Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
-                    <div class="mt-2 px-7 py-3">
-                        <p class="text-md text-gray-500">
-                            Looking forward to connecting with you soon.  
-                        </p>
+                <div class="enquire_thnkmss text-center">
+                    <div class="new_cover mx-auto lg:max-w-[60%] bg-white">
+                        { /* <!-- close button --> */ }
+                        <div className="absolute top-4 right-0 m-6 kytz_form_close" style={{ zIndex: "1" }}>
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50" stroke="white">
+                                    <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <h3 class="text-2xl leading-6 font-medium text-gray-900" style={{ lineHeight:"2rem"}}>Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
+                        <div class="mt-2 px-7 py-3">
+                            <p class="text-md text-gray-500">
+                                Looking forward to connecting with you soon.  
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
