@@ -48,9 +48,10 @@ export default function Career() {
                 mobile: ""}
             )
             document.querySelector(".enquire_thnkmss").style.display="flex";
+            setSubmit(false); 
             setSubmitSuccess(true);
         }, 8000);
-        document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
+        // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
         try {
             // If the email sending is successful, setSubmitSuccess to true
             // setSubmitSuccess(true);
@@ -59,8 +60,8 @@ export default function Career() {
             // Handle the error if needed
         }
         finally {
-            setSubmit(false); // Reset submit state of success or failure
-            document.getElementById("submitbtn").innerHTML="Submit";
+            // setSubmit(false); // Reset submit state of success or failure
+            // document.getElementById("submitbtn").innerHTML="Submit";
         }
     }
 
@@ -124,7 +125,7 @@ export default function Career() {
                             </div>
                             <div>
                                 <button id="submitbtn" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
-                                    Submit
+                                    { submit ? <div class='animate-pulse'>Processing</div> : "submit"}
                                 </button>
                             </div>
                         </form>

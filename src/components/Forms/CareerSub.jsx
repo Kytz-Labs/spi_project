@@ -22,6 +22,7 @@ export default function CareerSub({position}) {
 
     const handleChange = (e) => {
         setEmailInput({ ...emailInput, [e.target.name]: e.target.value });
+        console.log();
     }
 
     const sendEmail =async(event)=>{
@@ -46,18 +47,22 @@ export default function CareerSub({position}) {
             )
             document.querySelector(".enquire_thnkmss").style.display="flex";
             setSubmitSuccess(true);
-        }, 4000);
-        document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
+            setSubmit(false);
+        }, 6000);
+
+        // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
+
         try {
             // If the email sending is successful, setSubmitSuccess to true
             // setSubmitSuccess(true);
+        
         } catch (error) {
             console.error("Error sending email:", error);
             // Handle the error if needed
         }
         finally {
-            setSubmit(false); // Reset submit state of success or failure
-            document.getElementById("submitbtn").innerHTML="Submit";
+            // setSubmit(false); // Reset submit state of success or failure
+            // document.getElementById("submitbtn").innerHTML="Submit";
         }
     }
 
@@ -114,7 +119,9 @@ export default function CareerSub({position}) {
                             </label>
                         </div>
                         <div class="flex justify-center w-full">
-                            <button class="apply_now mt-10 px-12 py-2" id="submitbtn">Submit</button>
+                            <button class="apply_now mt-10 px-12 py-2" id="submitbtn">
+                                { submit ? <div class='animate-pulse'>Processing</div> : "submit"}
+                            </button>
                         </div>
                     </div>
                     <div id="message" class="text-red-500 pt-4"></div>
