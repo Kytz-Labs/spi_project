@@ -111,7 +111,7 @@ export default function CareerSub({position}) {
                                 <span class="upload-text">Upload a file</span> or Drag and drop here
                                 <div class="opacity-50 text-center">Accepted files: pdf, doc, docx, jpeg, and png up to 10MB</div>
                             </label>
-                            <input type="file" id="file-input" class="file-input" onChange={sendFile} />
+                            <input type="file" id="file-input" class="file-input" accept='.pdf , .doc , .docx' onChange={sendFile} />
                         </div>
                         <div class="flex justify-center w-full">
                             <button class="apply_now mt-10 px-12 py-2" id="submitbtn">Submit</button>

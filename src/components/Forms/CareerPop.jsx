@@ -53,7 +53,7 @@ export default function Career() {
             setSubmitSuccess(true);
         }, 4000);
         
-        document.getElementById("submitbtn").innerHTML="<div className='animate-pulse'>Processing</div>";
+        document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
         try {
             // If the email sending is successful, setSubmitSuccess to true
             
