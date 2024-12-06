@@ -34,8 +34,8 @@ export default function Career() {
         setContactform(true);
 
         const body = {
-          to: "sathishkumar@venzotechnologies.com",
-          cc: "sathishkumar@venzotechnologies.com",
+            to: "sathishkumar@venzotechnologies.com",
+            cc: "venzotechnologies@gmail.com",
           message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
           subject: "SPI Career Form",
         }
