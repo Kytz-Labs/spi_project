@@ -1,15 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import TransBtn from "./button/TransBtn.astro";
-const currentPath = Astro.url.pathname;
 
 const menuList = [
-		{ name : "Home", url : "https://spi-project.pages.dev", ariaLabel: "home page" },
-		{ name : "Services", url : "https://spi-project.pages.dev/services", ariaLabel : "services page"}, 
-		{ name : "Public Sector", url : "https://spi-project.pages.dev/public-sector", ariaLabel : "public sector page"},
-		{ name : "Products", url : "https://spi-project.pages.dev/products", ariaLabel : "products"},
-		{ name : "About", url : "https://spi-project.pages.dev/about-us", ariaLabel : "about us" },
-		{ name : "Careers", url : "https://spi-project.pages.dev/career", ariaLabel : "careers" } 
+		{ name : "Home", url : "/spi-project.pages.dev", ariaLabel: "home page" },
+		{ name : "Services", url : "/spi-project.pages.dev/services", ariaLabel : "services page"}, 
+		{ name : "Public Sector", url : "/spi-project.pages.dev/public-sector", ariaLabel : "public sector page"},
+		{ name : "Products", url : "/spi-project.pages.dev/products", ariaLabel : "products"},
+		{ name : "About", url : "/spi-project.pages.dev/about-us", ariaLabel : "about us" },
+		{ name : "Careers", url : "/spi-project.pages.dev/career", ariaLabel : "careers" } 
 ];
 ---
 
@@ -24,11 +23,7 @@ const menuList = [
 			{
 				menuList.map((data, index) => (
 					<div class={ (index == 0) ? "inline-block px-4 border-s-2 leading-[10px] group" : "inline-block px-4 leading-[10px] group" }>
-						<HeaderLink
-							href={data.url}
-							aria-label={data.ariaLabel}
-							class={currentPath === data.url ? 'text-gray-500' : 'text-indigo-500'}
-						>
+						<HeaderLink href={data.url} aria-label={data.ariaLabel}>
 							{data.name}
 						</HeaderLink>
 						{(index == 1) ? <div class="downarrow absolute group-hover:block group-hover:pt-8 hidden">
@@ -86,20 +81,7 @@ const menuList = [
 	</div>
 </nav>
 <style>
-	a {
-		font-family: Instrument Sans;
-		font-size: 16px;
-		font-weight: 500;
-		line-height: 19.52px;
-		text-align: left;
-		text-underline-position: from-font;
-		text-decoration-skip-ink: none;
-		/* color: #444444; */
-	}
-	a.active {
-		font-weight: bolder;
-		/* color: #006B9E; */
-	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
