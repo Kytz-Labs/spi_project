@@ -46,7 +46,7 @@ export default function CareerSub({position}) {
             )
             document.querySelector(".enquire_thnkmss").style.display="flex";
             setSubmitSuccess(true);
-        }, 8000);
+        }, 4000);
         document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
         try {
             // If the email sending is successful, setSubmitSuccess to true
@@ -78,7 +78,7 @@ export default function CareerSub({position}) {
             const timeoutId = setTimeout(() => {
                 setContactform(false);
                 setSubmitSuccess(false);
-                document.getElementById("enquire_form").style.display="none";
+                document.querySelector(".enquire_thnkmss").style.display="none";
             }, 5000);
             return () => clearTimeout(timeoutId);
         }
