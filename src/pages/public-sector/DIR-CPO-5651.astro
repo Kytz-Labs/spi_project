@@ -200,6 +200,10 @@ const currentUrl=Astro.request.url;
             color: black;
         }   
 
+        .enquire_thnkmss{
+            display:none;
+        }
+
         @media (max-width: 600px) {
             h1{
                 font-size: 36px;
@@ -626,7 +630,28 @@ governments, assistance organizations, and out-of-state customers.
                 </div>
             </div>
 
-            <CareerForm />
+            <CareerForm client:load />
+
+            <!-- thank messaage -->
+			<div class="enquire_thnkmss text-center fixed inset-0 h-screen backdrop-blur-2xl overflow-y-auto w-full justify-center items-center">
+				<div class="bg-white lg:max-w-[50%] p-10 relative">
+                    { /* <!-- close button --> */ }
+                    <div class="absolute top-4 right-0 m-6 kytz_form_close lg:max-w-[60%]" style="z-index:1">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50" stroke="white">
+                                <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+					<h3 class="text-2xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
+					<div class="mt-2 px-7 py-3">
+						<p class="text-md text-gray-500">
+							Looking forward to connecting with you soon.  
+						</p>
+					</div>
+				</div>
+			</div>
+
 
             <Footer />
             
@@ -658,4 +683,20 @@ console.log('data');
     }
 
     tabsection();
+
+    var brand_btn = document.querySelectorAll(".brand-button");
+    var form_close = document.querySelector(".kytz_form_close");
+    var com_form=document.querySelector(".enquire_thnkmss")
+
+    brand_btn.forEach((e, n) => {
+        e.onclick = () => {
+            (com_form.style.display = "flex");
+        };
+    }),
+    (form_close.onclick = () => {
+            (com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+    }),
+    (window.onclick = (e) => {
+        e.target === com_form && ((com_form.style.display = "none"), w3form.reset());
+    });
 </script>

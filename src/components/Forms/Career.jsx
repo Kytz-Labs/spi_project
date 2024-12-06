@@ -3,6 +3,11 @@
 {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> */}
 import "../newform.css"
 import React, { useState, useEffect } from 'react'
+import { v4 } from "uuid"
+import { storage } from '../../firebase/firebase'
+import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { EmailAuthCredential } from "firebase/auth/web-extension"
+import axios from "axios"
 
 export default function Career() {
     const [submit, setSubmit] = useState(false);
@@ -24,7 +29,7 @@ export default function Career() {
 
     const sendEmail =async(event)=>{
         event.preventDefault();
-        console.log("hello");
+
         if (submit) return;
         setSubmit(true)
         setContactform(true);
@@ -33,19 +38,22 @@ export default function Career() {
           to: "lourdushelton@gmail.com",
           cc: "sathishkumar@venzotechnologies.com",
           message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
-          subject: "Venzo Careers Form",
+          subject: "SPI Pulic Sector Form",
         }
-        const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
-            setEmailInput(
-            { name: "",
-            email: "",
-            mobile: "",
-            message: ""}
-        )
+        const apicall = setTimeout(async () => {
+            const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
+                setEmailInput(
+                { name: "",
+                email: "",
+                mobile: ""}
+            )
+            document.querySelector(".enquire_thnkmss").style.display="flex";
+            setSubmitSuccess(true);
+        }, 8000);
         document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
         try {
             // If the email sending is successful, setSubmitSuccess to true
-            setSubmitSuccess(true);
+            // setSubmitSuccess(true);
         } catch (error) {
             console.error("Error sending email:", error);
             // Handle the error if needed
@@ -71,10 +79,10 @@ export default function Career() {
         if (submitSuccess) {
             
             const timeoutId = setTimeout(() => {
-            setContactform(false);
-            setSubmitSuccess(false);
+                setContactform(false);
+                setSubmitSuccess(false);
+                document.querySelector(".enquire_thnkmss").style.display="none";
             }, 5000);
-
             return () => clearTimeout(timeoutId);
         }
     }, [submitSuccess]);
@@ -97,7 +105,7 @@ export default function Career() {
                         <form onSubmit={sendEmail} id="w3form" method="POST" class="w-full" enctype="multipart/form-data" >
                             <div className="flex lg:flex-row flex-wrap flex-col gap-4">
                                 <div className="upload lg:w-[30%]">
-                                    <input type="text" className="upload_field" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
+                                    <input type="text" className="upload_field" name="name" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
                                 </div>
                                 <div className="upload lg:w-[30%]">
                                     <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
@@ -106,7 +114,7 @@ export default function Career() {
                                     <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
                                 </div>
                                 <div className="upload lg:w-[60%]">
-                                    <input type="text" className="upload_field" name="uploadMessage" id="uploadMessage" placeholder="Enter Job Title" />
+                                    <input type="text" autoComplete="off" className="upload_field" id="uploadMessage" value={emailInput["message"]} onChange={handleChange} name="message" placeholder="Enter Job Title" />
                                     <span className="uploaderror" id="message_upload_err"> </span>
                                 </div>
                                 <div className="upload lg:w-[35%]">
