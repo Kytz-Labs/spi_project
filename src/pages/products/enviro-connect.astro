@@ -425,7 +425,7 @@ const services_list2= [
 			</div>
 		</div>
 		<section class="relative">
-			<W3form textColor="white" bgColor="#232323" />
+			<W3form client:load textColor="white" bgColor="#232323" />
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col items-center justify-center w-[92%]">
@@ -446,24 +446,24 @@ const services_list2= [
 					</div>
 					<div class="flex-1 self-center">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Behavior-Based Safety</div>
+							<div class="safty-title pb-4">A Useful and Accessible Asset</div>
 							<div class="safty-description">
-								From a young age, we are taught that safety is a learned behavior.  Our SafeConnect application uses Observation and Intervention to highlight good practices and risks leading to a hazard free workplace when safety practice becomes a habit.
+								Your organization generates reams of useful  environmental information in many formats and systems,  including spreadsheets, electronic files, and hardcopy  reports. EnviroConnect is the means for consolidating  disparate data into one repository, making it more  accessible and far more useful.
 							</div>
 						</div>
 					</div>
 					<img class="lg:absolute lg:pb-28 pb-10 lg:ml-28" src="/laptop.webp" alt="floating laptop" width="500.35px" height="423.75px" />
 					<div class="flex-1 self-start flex flex-col items-end justify-between">
 						<div class="lg:w-[70%]">
-							<div class="safty-title pb-4">Safety is paramount</div>
+							<div class="safty-title pb-4">Environmental Management System</div>
 							<div class="safty-description">
-								From office environment to construction to manufacturing, many industries are making strides to put safety as their #1 priority.  In fact, the success of your organization depends on it.
+								We work collaboratively with our clients  nationwide providing an environmental management  information system that reduces cost and improves  regulatory government and environmental compliance  with measurable metrics and compliance.
 							</div>
 						</div>
 						<div class="lg:w-[70%] lg:mt-56 mt-12 lg:mb-16">
-							<div class="safty-title pb-4">Assessments</div>
+							<div class="safty-title pb-4">Field Tested and Approved</div>
 							<div class="safty-description">
-								Assessments: Our LMS platform is equipped with quizzes and assessments built-in. Advanced solutions will include highly configurable assessment features such as randomized question banks, time limits, open-ended responses, and more.
+								Software Professionals, Inc. has implemented EnviroConnect for a multinational company that  produces and markets cement and ready mix concrete.
 							</div>
 						</div>
 					</div>
@@ -472,10 +472,10 @@ const services_list2= [
 
 			<!-- triangle chart -->
 			<div class="lg:px-12 px-8 relative lg:mt-24 flex justify-center">
-				<div class="inner-layer flex lg:flex-row flex-col lg:pl-16 lg:w-[90%] lg:gap-20">
+				<div class="inner-layer flex lg:flex-row flex-col items-center lg:pl-16 lg:w-[90%] lg:gap-20">
 					<div class="flex-1">
 						<h1 class="safety-modules text-start mt-8 mb-10">
-							Safety Modules
+							What Our Clients are Saying
 						</h1>
 						<div class="diff-description">
                             <ul>
@@ -497,41 +497,34 @@ const services_list2= [
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Risk Assessment</div>
+                                    <div>Storage of virtually any type  of data</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Safety Walkthrough</div>
+                                    <div>Email to/from the system</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Personal Safety Plan (PSP)</div>
+                                    <div>Easy imports and exports</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Incident Notification</div>
+                                    <div>Automatic routing of reports</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management and Reporting</div>
+                                    <div>Monthly fees versus a large  upfront purchase</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Management of Change</div>
-                                </li>
-								<li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Toolbox Safety Meeting</div>
+                                    <div>Data verification</div>
                                 </li>
                             </ul>
                         </div>
 					</div>
 					<div class="flex-1 flex flex-col items-end lg:order-last order-first">
 						<div>
-							<h1 class="safety-modules text-start w-full lg:mt-8 mb-10">
-								Incident Types
-							</h1>
-							<img src="/product_sub/enviro_connect_pic.webp" width="80%" height="100%" class="" />
+							<img src="/product_sub/enviro_connect_pic.webp" width="80%" height="100%" class="100%" />
 						</div>
 					</div>
 				</div>
@@ -615,7 +608,7 @@ const services_list2= [
 	</header>
 
 </Header>
-<script>
+<script client:load>
     var brand_btn = document.querySelectorAll(".brand-button");
 	var form_close = document.querySelector(".kytz_form_close");
 	var myform = document.querySelector("#enquire_main_form");
@@ -626,8 +619,7 @@ const services_list2= [
         w3form = document.getElementById("w3form");
     var emailerr = document.querySelector("#email_err"),
         usererror = document.querySelector("#username_err"),
-        mobilerror = document.querySelector("#mobile_err"),
-        messageerror = document.querySelector("#message_err");
+        mobilerror = document.querySelector("#mobile_err");
     function enquire_form() {
         var e = document.getElementById("Kname"),
             r = document.getElementById("Kemail"),
@@ -652,10 +644,6 @@ const services_list2= [
                 r = document.querySelector("#mobile_err");
             return n.value ? (!isNaN(parseFloat((e = n.value))) && isFinite(e) ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "only number is allowed"), !1)) : ((r.innerHTML = "field required"), !1);
         }
-        function m() {
-            var e = document.querySelector("#message_err");
-            return t.value ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "field required"), !1);
-        }
         e.addEventListener("input", () => {
             o();
         }),
@@ -665,12 +653,9 @@ const services_list2= [
             n.addEventListener("input", () => {
                 a();
             }),
-            t.addEventListener("input", () => {
-                m();
-            }),
             (i.onclick = (e) => {
-                if ((e.preventDefault(), o() || s() || a() || m())) {
-                    if (o() && s() && a() && m()) {
+                if ((e.preventDefault(), o() || s() || a())) {
+                    if (o() && s() && a()) {
                         l.innerHTML = "";
                         let r = document.querySelector(".enquire_contact_form"),
                             n = document.getElementById("enquire_form"),
@@ -707,11 +692,11 @@ const services_list2= [
     }),
 	brand_btn.forEach((e, r) => {
 		e.onclick = () => {
-			(com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+			(com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = "");
 		};
 	}),
 	(form_close.onclick = () => {
-		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = "");
 	}),
 	(window.onclick = (e) => { 
 		e.target === com_form && ((com_form.style.display = "none"), w3form.reset());

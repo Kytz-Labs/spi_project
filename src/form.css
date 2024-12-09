@@ -3,9 +3,9 @@
     #enquire_form{
         z-index: 100;
        }
-       .form_section{
+       /* .form_section{
           padding: 2rem 3rem;
-       }
+       } */
        .contact_heading{
             font-family: Instrument Sans;
             font-size: 40px;
@@ -111,7 +111,8 @@
           border-radius: 10px;
           box-shadow: 1px 1px 10px white;
           padding: 2rem;
-          position:fixed;
+          /* position:fixed; */
+          width:100%;
        }
     
        .thnk_heading{
@@ -204,7 +205,7 @@
              font-size: 12px;
           }
           .form_section{
-             padding: 1.2rem;
+             padding: 1.2rem 0;
           }
        }
     

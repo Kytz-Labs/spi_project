@@ -403,7 +403,7 @@ const services_list2= [
 			</div>
 		</div>
 		<section class="relative">
-			<Web3Forms textColor="white" bgColor="#232323" />
+			<Web3Forms textColor="white" bgColor="#232323" client:load />
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
@@ -764,8 +764,8 @@ const services_list2= [
         w3form = document.getElementById("w3form");
     var emailerr = document.querySelector("#email_err"),
         usererror = document.querySelector("#username_err"),
-        mobilerror = document.querySelector("#mobile_err"),
-        messageerror = document.querySelector("#message_err");
+        mobilerror = document.querySelector("#mobile_err");
+        // messageerror = document.querySelector("#message_err");
     function enquire_form() {
         var e = document.getElementById("Kname"),
             r = document.getElementById("Kemail"),
@@ -790,10 +790,6 @@ const services_list2= [
                 r = document.querySelector("#mobile_err");
             return n.value ? (!isNaN(parseFloat((e = n.value))) && isFinite(e) ? ((r.innerHTML = ""), !0) : ((r.innerHTML = "only number is allowed"), !1)) : ((r.innerHTML = "field required"), !1);
         }
-        function m() {
-            var e = document.querySelector("#message_err");
-            return t.value ? ((e.innerHTML = ""), !0) : ((e.innerHTML = "field required"), !1);
-        }
         e.addEventListener("input", () => {
             o();
         }),
@@ -803,12 +799,9 @@ const services_list2= [
             n.addEventListener("input", () => {
                 a();
             }),
-            t.addEventListener("input", () => {
-                m();
-            }),
             (i.onclick = (e) => {
-                if ((e.preventDefault(), o() || s() || a() || m())) {
-                    if (o() && s() && a() && m()) {
+                if ((e.preventDefault(), o() || s() || a())) {
+                    if (o() && s() && a()) {
                         l.innerHTML = "";
                         let r = document.querySelector(".enquire_contact_form"),
                             n = document.getElementById("enquire_form"),
@@ -820,6 +813,7 @@ const services_list2= [
                         c.forEach((e, r) => {
                             d[r] ? (Array.isArray(d[r]) ? d[r].push(e) : (d[r] = [d[r], e])) : (d[r] = e);
                         });
+						console.log("sample");
                         let y = JSON.stringify(d);
                         console.log(y),
                             fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: y })
@@ -845,11 +839,11 @@ const services_list2= [
     }),
 	brand_btn.forEach((e, r) => {
 		e.onclick = () => {
-			(com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+			(com_form.style.display = "flex"), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = "");
 		};
 	}),
 	(form_close.onclick = () => {
-		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = "");
 	}),
 	(window.onclick = (e) => { 
 		e.target === com_form && ((com_form.style.display = "none"), w3form.reset());

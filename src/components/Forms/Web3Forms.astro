@@ -1,6 +1,6 @@
 ---
 import Close from "../../../public/assets/close_btn.svg"
-import "../form.css"
+// import "../form.css"
 
 interface Props{
     bgColor: string,
@@ -33,7 +33,7 @@ const { bgColor, textColor } = Astro.props;
 </style>
 
 <!-- popup form -->
-<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center px-10" id="enquire_form">
+<div class="fixed hidden inset-0 backdrop-blur-2xl overflow-y-auto h-full w-full justify-center items-center lg:px-10 px-8" id="enquire_form">
     <!--modal content-->
     <div class="relative shadow-lg lg:w-3/6 w-11/12 rounded-md">
         <!-- close button -->
@@ -46,7 +46,7 @@ const { bgColor, textColor } = Astro.props;
         </div>
         <!-- contact form -->
         <div class="enquire_contact_form" id="enquire_popup_form">
-            <div class="form_section px-12" style=`background-color: ${bgColor}`>
+            <div class="form_section" style=`background-color: ${bgColor}`>
                 <div class="contact_heading pb-6 lg:px-12 px-8" style=`color: ${textColor}`>Book a call for demo </div>
                 <form id="w3form" method="POST">
                     <!-- Replace with your Access Key --> 
@@ -95,13 +95,13 @@ const { bgColor, textColor } = Astro.props;
             </div>
         </div>
         <!-- thank messaage -->
-        <div class="enquire_thnkmss text-center bg-white">
+        <div class="enquire_thnkmss text-center bg-white left-0">
             <h3 class="text-2xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thank you for reaching out to us! We have received your enquiry and are thrilled to learn more about your interest. </h3>
-             <div class="mt-2 px-7 py-3">
-                 <p class="text-md text-gray-500">
+            <div class="mt-2 px-7 py-3">
+                <p class="text-md text-gray-500">
                     Looking forward to connecting with you soon.  
-                 </p>
-             </div>
+                </p>
+            </div>
         </div>
     </div>
 </div>
