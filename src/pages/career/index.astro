@@ -13,8 +13,19 @@ const career = [
 	{ title:"Technical Engineer", link : "/career/technical-engineer", tag: ["US", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 	{ title:"Senior Software Engineer", link : "/career/senior-software-engineer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 ]
+// <ul style='list-style-type:disc; padding-left: 1rem;'><li>Overall 10+ years of IT Experience.</li><br><br> <li>3+ years of Experience with Appian Analyst and Appian Designer Level certified;</li><li>Ability to lead a team of distributed engineers</li>", url: "/services/services_image1.webp", link : "services/airport-capabilities"
+// Overall 10+ years of IT Experience.
+// 3+ years of Experience with Appian Analyst and Appian Designer Level certified;
+// Ability to lead a team of distributed engineers;
+// Knowledge of at least one major programming language;
+// Knowledge of Sites, complex SAIL Forms;
+// Should have done multiple integrations with external systems;
+// Ability to scope Appian Projects;
+// Bachelor’s Degree in Computer Science.
 
 const career1 = [
+	{ title:"Appian Developer (INDIA)", link : "/career/appian-developer-India", tag: ["Chennai G.P.O., Tamil Nadu", "Full-Time"], description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Overall 10+ years of IT Experience.</li><li>3+ years of Experience with Appian Analyst and Appian Designer Level certified;</li><li>Ability to lead a team of distributed engineers</li>", url: "/services/services_image1.webp"},
+	{ title:"Appian Developer (US)", link : "/career/appian-developer-US", tag: ["Flower Mound, Texas", "Full-Time"], description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>5+ years of Experience with Appian Analyst and Appian Designer Level certified</li><li>Ability to lead a team of distributed engineers; Knowledge of at least one major programming language</li><li>Knowledge of Sites, complex SAIL Forms</li></ul>"},
 	{ title:"Full Stack Java EE Developer", link: "/career/Full-Stack-Java-EE-Developer", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 	{ title:"Software Developer (GIS)", link : "/career/software-developer-GIS", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
 	{ title:"Lead Software Developers", link : "/career/lead-software-developers", tag: ["Flower Mound, TX", "Full-Time"], description: "The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in."},
@@ -275,8 +286,8 @@ const videos = [
 											<TransparentBtn btnText={data["tag"][0]} />
 											<TransparentBtn btnText={data["tag"][1]} />
 										</div>
-										<div class="career-description pt-10">
-											{data.description}
+										<div class="career-description pt-10" set:html={data.description}>
+											
 										</div>
 										<a href={ data.link }>
 											<div class="mt-5 text-end">

@@ -92,7 +92,7 @@ export default function CareerSub({position}) {
     <div class="contact-form-section flex-1 lg:py-8 bg-[#232323]">
         {/* <!-- contact form --> */}
         <div class="enquire_contact_form" id="enquire_popup_form">
-            <div class="form_section">
+            <div class="form_section lg:px-16">
                 <div class="contact_heading pb-4 text-center">{position}</div>
                 <div class="post-date pb-6 text-start mb-12">Please complete the form below to apply for this position</div>
                 <form onSubmit={sendEmail} id="w3form" method="POST" >

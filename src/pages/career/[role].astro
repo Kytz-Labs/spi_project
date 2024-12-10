@@ -9,74 +9,118 @@ import TransparentBtn from "@components/button/TransparentBtn.astro"
 import CareerSub from "@components/Forms/CareerSub.jsx"
 
 const jobRoles = {
+	"appian-developer-India": {
+		title:"Appian Developer",
+		requirements: ["Chennai G.P.O.", "&nbsp(Tamil Nadu)"],
+		description : "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Overall 10+ years of IT Experience.</li><li>3+ years of Experience with Appian Analyst and Appian Designer Level certified</li><li>Ability to lead a team of distributed engineers</li><li>Knowledge of at least one major programming language</li><li>Knowledge of Sites, complex SAIL Forms</li><li>Should have done multiple integrations with external systems</li><li>Ability to scope Appian Projects</li><li>Bachelor’s Degree in Computer Science.</li>",
+		experience : "10+ Years Experience in IT",
+	},
+	"appian-developer-US": {
+		title:"Appian Developer",
+		requirements: ["Flower Mound, Texas", "&nbsp(Full-Time)"],
+		description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>5+ years of Experience with Appian Analyst and Appian Designer Level certified</li><li>Ability to lead a team of distributed engineers; Knowledge of at least one major programming language</li><li>Knowledge of Sites, complex SAIL Forms</li><li>Should have done multiple projects on Business Process Flow development</li></ul>",
+		experience : "5+ Years Experience in IT",
+	},
 	"technical-engineer": {
 		title:"Technical Engineer",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"senior-software-engineer" : {
 		title:"Senior Software Engineer",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"Full-Stack-Java-EE-Developer": {
 		title:"Full Stack Java EE Developer",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"software-developer-GIS" : {
 		title:"Software Developer (GIS)",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"lead-software-developers" : {
 		title:"Lead Software Developers",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"software-developers-Job-Code-001" : {
 		 title:"Software Developers (Job Code 001)",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"software-developers" : {
 		title:"Software Developers",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"software-developers-II" : {
 		title:"Software Developer – II",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"software-developers-I" : {
 		title:"Software Developer – I",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"MDM-Quality-Analyst–20200502" : {
 		title:"MDM Quality Analyst – 20200502",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"Computer-Systems-Analyst-I" : {
 		title:"Computer Systems Analyst I",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"Computer-Systems-Analyst-II" : {
 		title:"Computer Systems Analyst II",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"Computer-Systems-Analyst" : {
 		title:"Computer Systems Analyst",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"IT-Recruiter-Account-Manager" : {
 		title:"IT-Recruiter-Account-Manager",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"IT Recruiter" : {
 		title:"MDM Quality Analyst – 20200502",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	},
 	"JAVA with Groovy" : {
 		title:"JAVA-with-Groovy",
-		requirements: ["Flower Mound, TX", "Full-Time"],
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience"
 	}
 }
 
 const { role } = Astro.params;
-const job = jobRoles[role] || { title: 'Role Not Found', description: '', requirements: [] };
+const job = jobRoles[role] || { title: 'Role Not Found', description: '', requirements: [], experience : '' };
 
 ---
 
@@ -307,6 +351,17 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 			display: none;
 		}
 
+		.job-description{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28.8px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
 		@media (max-width: 600px) {
 			.post{
 				width: 100%;
@@ -402,11 +457,8 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 									I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.
 								</div>
 								<div class="h4 mt-10 mb-4 text-white">Basic Qualification</div>
-								<div>
-									<ul class="list-disc pl-6">
-										<li class="post-date">Experience programming with at least one software programming language</li>
-										<li class="post-date">3+ years of non-internship professional software development experience</li>
-									</ul>
+								<div class="job-description">
+									<div set:html={ job.description }></div>
 								</div>
 							</div>
 							<div class="post-date bg-[#262626] flex-1">
@@ -418,7 +470,7 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 									</a>
 								</div>
 								<div class="px-4 pb-10">
-									<button id="shareJobBtn" class="border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
+									<button id="shareJobBtn" class="cursor-pointer border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
 										Share Job
 									</button>
 								</div>
@@ -427,13 +479,13 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M19.904 6.01339H16.4107V5.31473C16.4107 4.75884 16.1899 4.22572 15.7968 3.83265C15.4037 3.43958 14.8706 3.21875 14.3147 3.21875H10.1228C9.56688 3.21875 9.03376 3.43958 8.64068 3.83265C8.24761 4.22572 8.02679 4.75884 8.02679 5.31473V6.01339H4.53348C3.97759 6.01339 3.44447 6.23422 3.0514 6.62729C2.65833 7.02036 2.4375 7.55349 2.4375 8.10938V11.966C2.4381 12.2602 2.50061 12.5509 2.62098 12.8194C2.74136 13.0878 2.91689 13.3279 3.13616 13.524V20.6853C3.13616 21.2412 3.35699 21.7743 3.75006 22.1674C4.14313 22.5604 4.67625 22.7812 5.23214 22.7812H19.2054C19.7612 22.7812 20.2944 22.5604 20.6874 22.1674C21.0805 21.7743 21.3013 21.2412 21.3013 20.6853V13.524C21.5206 13.3279 21.6961 13.0878 21.8165 12.8194C21.9369 12.5509 21.9994 12.2602 22 11.966V8.10938C22 7.55349 21.7792 7.02036 21.3861 6.62729C20.993 6.23422 20.4599 6.01339 19.904 6.01339ZM9.42411 5.31473C9.42411 5.12944 9.49772 4.95173 9.62874 4.8207C9.75976 4.68968 9.93747 4.61607 10.1228 4.61607H14.3147C14.5 4.61607 14.6777 4.68968 14.8088 4.8207C14.9398 4.95173 15.0134 5.12944 15.0134 5.31473V6.01339H9.42411V5.31473ZM3.83482 8.10938C3.83482 7.92408 3.90843 7.74637 4.03945 7.61535C4.17048 7.48432 4.34819 7.41071 4.53348 7.41071H19.904C20.0893 7.41071 20.267 7.48432 20.398 7.61535C20.5291 7.74637 20.6027 7.92408 20.6027 8.10938V11.966C20.6093 12.121 20.5641 12.2738 20.4743 12.4003C20.3845 12.5268 20.2551 12.6198 20.1066 12.6646L14.3147 14.3973V13.6987C14.3147 13.5134 14.2411 13.3357 14.1101 13.2046C13.9791 13.0736 13.8014 13 13.6161 13H10.8214C10.6361 13 10.4584 13.0736 10.3274 13.2046C10.1964 13.3357 10.1228 13.5134 10.1228 13.6987V14.3973L4.33087 12.6367C4.18235 12.5918 4.05298 12.4988 3.96317 12.3723C3.87335 12.2458 3.8282 12.093 3.83482 11.938V8.10938ZM12.9174 14.3973V16.4933C12.9174 16.6786 12.8438 16.8563 12.7128 16.9873C12.5818 17.1184 12.404 17.192 12.2188 17.192C12.0335 17.192 11.8557 17.1184 11.7247 16.9873C11.5937 16.8563 11.5201 16.6786 11.5201 16.4933V14.3973H12.9174ZM19.2054 21.3839H5.23214C5.04685 21.3839 4.86914 21.3103 4.73812 21.1793C4.60709 21.0483 4.53348 20.8706 4.53348 20.6853V14.1598L10.1228 15.8785V16.4933C10.1228 17.0492 10.3436 17.5823 10.7367 17.9754C11.1297 18.3685 11.6629 18.5893 12.2188 18.5893C12.7746 18.5893 13.3078 18.3685 13.7008 17.9754C14.0939 17.5823 14.3147 17.0492 14.3147 16.4933V15.8785L19.904 14.1598V20.6853C19.904 20.8706 19.8304 21.0483 19.6994 21.1793C19.5684 21.3103 19.3907 21.3839 19.2054 21.3839Z" fill="white"/>
 										</svg>
-										<div class="shrt_content">02+ Years Experience</div>
+										<div class="shrt_content" set:html={ job.experience }></div>
 									</div>
 									<div class="flex items-center pb-5 gap-4">
 										<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M13.6728 14.5357C16.0139 10.8622 15.7196 11.3205 15.787 11.2247C16.6394 10.0225 17.0898 8.60759 17.0898 7.13281C17.0898 3.2218 13.9161 0 10 0C6.09663 0 2.91016 3.21544 2.91016 7.13281C2.91016 8.60664 3.37009 10.0586 4.25035 11.277L6.32712 14.5357C4.10671 14.8769 0.332031 15.8938 0.332031 18.1328C0.332031 18.949 0.864758 20.1122 3.40266 21.0186C5.17478 21.6514 7.51774 22 10 22C14.6417 22 19.668 20.6907 19.668 18.1328C19.668 15.8934 15.8977 14.8776 13.6728 14.5357ZM5.32711 10.5679C5.32002 10.5569 5.31262 10.546 5.30489 10.5354C4.5724 9.52768 4.19922 8.3334 4.19922 7.13281C4.19922 3.90938 6.79479 1.28906 10 1.28906C13.1986 1.28906 15.8008 3.91054 15.8008 7.13281C15.8008 8.33534 15.4346 9.48909 14.7418 10.4702C14.6797 10.5521 15.0036 10.0489 10 17.9003L5.32711 10.5679ZM10 20.7109C4.92994 20.7109 1.62109 19.2207 1.62109 18.1328C1.62109 17.4017 3.32128 16.1994 7.08878 15.7308L9.45645 19.446C9.57478 19.6317 9.77974 19.7441 9.99996 19.7441C10.2202 19.7441 10.4252 19.6317 10.5435 19.446L12.9111 15.7308C16.6787 16.1994 18.3789 17.4017 18.3789 18.1328C18.3789 19.2114 15.0998 20.7109 10 20.7109Z" fill="white"/>
 										</svg>
-										<div class="shrt_content">Flower Mound, TX - (Full Time)</div>
+										<div class="shrt_content" set:html={ job.requirements }></div>
 									</div>
 									<div class="flex items-center pb-5 gap-4">
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
