@@ -93,9 +93,9 @@ export default function CareerSub({position}) {
         {/* <!-- contact form --> */}
         <div class="enquire_contact_form" id="enquire_popup_form">
             <div class="form_section lg:px-16">
-                <div class="contact_heading pb-4 text-center">{position}</div>
-                <div class="post-date pb-6 text-start mb-12">Please complete the form below to apply for this position</div>
-                <form onSubmit={sendEmail} id="w3form" method="POST" >
+                <div class="contact_heading pb-4 text-center lg:px-0 px-8">{position}</div>
+                <div class="post-date pb-6 text-start mb-12 lg:px-0 px-8">Please complete the form below to apply for this position</div>
+                <form onSubmit={sendEmail} id="w3form" method="POST" class="lg:px-0 px-8" >
                     <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0" />
                     <input type="hidden" name="from_name" value="Kytz Enquiry" />
                     <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
@@ -114,8 +114,8 @@ export default function CareerSub({position}) {
                         <div class="line w-full flex items-center justify-center border border-[#FFFFFF1F] p-10">
                             <label for="file-input" class="upload-label text-center">
                                 <span class="upload-text">Upload a file</span> or Drag and drop here
-                                <div class="opacity-50 text-center">Accepted files: pdf, doc, docx, jpeg, and png up to 10MB</div>
-                                <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
+                                <div class="opacity-50 text-center lg:block hidden">Accepted files: pdf, doc, docx, jpeg, and png up to 10MB</div>
+                                <input type="file" className="upload_field lg:w-full w-[50%]" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
                             </label>
                         </div>
                         <div class="flex justify-center w-full">
