@@ -4,7 +4,7 @@ import Nav from "@components/Nav.astro";
 import Cbtn from "@components/button/Cbtn.astro"
 import Footer from "@components/Footer.astro"
 import "../../form.css"
-import Web3Forms from "@components/Forms/Web3Forms.astro"
+import Web3Forms from "@components/Forms/Web3Forms.astro";
 const currentUrl=Astro.request.url
 
 const services_list2= [
@@ -403,7 +403,7 @@ const services_list2= [
 			</div>
 		</div>
 		<section class="relative">
-			<Web3Forms textColor="white" bgColor="#232323" client:load />
+			<Web3Forms textColor="white" bgColor="#232323" />
 			<!-- we are a service -->
 			<div class="lg:px-12 px-8 lg:pt-0 pt-12 relative flex justify-center">
 				<div class="inner-layer-innovator flex lg:flex-row flex-col h-screen items-center justify-center w-[92%]">
@@ -480,10 +480,6 @@ const services_list2= [
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
-                                    <div>Master Data Management</div>
-                                </li>
-                                <li class="flex items-start gap-3 pb-2">
-                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
                                     <div>Job Safety Analysis (JSA)</div>
                                 </li>
                                 <li class="flex items-start gap-3 pb-2">
@@ -505,6 +501,10 @@ const services_list2= [
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
                                     <div>Management and Reporting</div>
+                                </li>
+								<li class="flex items-start gap-3 pb-2">
+                                    <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
+                                    <div>Incident Notification</div>
                                 </li>
 								<li class="flex items-start gap-3 pb-2">
                                     <img src="/svg/list.svg" class="pt-[6px]" alt="bullet list" width="12" height="12" />
