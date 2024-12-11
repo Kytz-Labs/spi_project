@@ -11,8 +11,9 @@ const { pathname } = Astro.url;
 
 // Normalize URL paths
 const isActive =
-  href === pathname || // Matches relative URLs
-  href === `https://spi-project.pages.dev${pathname}`; // Matches absolute URLs
+  pathname === href || // Matches exact path
+  pathname.startsWith(`${href}/`) || // Matches subpaths (e.g., /services/application-management)
+  href === `https://spi-project.pages.dev${pathname}`;
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
