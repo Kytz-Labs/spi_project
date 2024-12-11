@@ -190,14 +190,13 @@ const blogs = [
 		/* products */
 		.product-title{
 			font-family: Instrument Sans;
-			font-size: 20px;
-			font-weight: 700;
-			line-height: 28.8px;
-			letter-spacing: 0.1em;
+			font-size: 25px;
+			font-weight: 500;
+			line-height: 30px;
 			text-align: left;
 			text-underline-position: from-font;
 			text-decoration-skip-ink: none;
-			color: #FDFDFD;
+			color: #FFFFFF;
 		}
 		.product_section{
 			height: 680px;
@@ -527,19 +526,12 @@ const blogs = [
 				</div>
 			</div>
 			<!-- empowering bussiness -->
-			<div class="lg:pt-24 pb-0 pt-20 lg:px-0 px-8 bg-[#141414]" id="products">
+			<div class="lg:pt-24 pb-0 pt-20 pb-16 lg:px-0 px-8 bg-[#141414]" id="products">
 				<div class="inner-layer">
 					<div class="lg:px-12">
 						<div class="empower-title">Empowering Businesses with <span class="text-[#B5DB00]">Smart, Reliable Solutions</span> for a Safer Environment Friendly Tomorrow</div>
 					</div>
-					<div class="lg:flex lg:flex-row flex-col bg-white mt-16 lg:pb-0 pb-10">
-						<div class="flex-1 product_section relative border-r-[1.5px] border-black">
-							<div class="product-title p-12">PRODUCTS</div>
-							<div class="absolute bottom-20 check left-12">
-								<a href="products" class="underline">Check all Products</a>
-							</div>
-						</div>
-
+					<div class="flex lg:flex-row flex-col bg-white mt-16 lg:pb-0 pb-10">
 						<div class="flex-1 lg:min-h-[140px] overflow-hidden relative bg-white px-8 group pt-4 transition duration-300 delay-150 lg:hover:mb-0 border-r-[1.5px] border-black lg:mb-4 mb-16">
 							<div class="border-b-[1.6px] relative pb-3 z-[10]">
 								<img src="/product_logo/product_logo1.webp" width="150px" height="73px" class="lg:scale-100 lg:group-hover:scale-50 scale-75 transition delay-150 duration-300" alt="product logo" >
@@ -630,6 +622,12 @@ const blogs = [
 							</div>
 							<div class="lg:absolute lg:block hidden bottom-4 inset-0 inset-x-4 translate-y-3/4 lg:group-hover:translate-y-0 lg:group-hover:inset-x-0 lg:group-hover:rounded-[0] lg:group-hover:bottom-0 rounded-lg bg-[#006B9E] transition duration-500 delay-50 ease-in-out">
 								
+							</div>
+						</div>
+						<div class="flex-1 product_section relative border-r-[1.5px] border-black lg:order-last order-first">
+							<div class="px-5 py-12">
+								<div class="product-title pb-5">Discover our full range of products</div>
+								<a href="products"><Cbtn colorbtnText="Explore all openings" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" /></a>
 							</div>
 						</div>
 					</div>
@@ -780,7 +778,6 @@ const blogs = [
 					</div>
 				</div>
 			</div>
-
 			<!-- thank messaage -->
 			<div class="enquire_thnkmss text-center fixed inset-0 h-screen backdrop-blur-2xl overflow-y-auto w-full justify-center items-center">
 				<div class="bg-white lg:max-w-[50%] p-10">
@@ -860,7 +857,7 @@ const blogs = [
 			// document.querySelector(".logos").style.transition="all 1.5s";
 			// document.querySelector(".logos").style.transform="translateY(100%)";
         }
-     }
+    }
 	document.addEventListener("DOMContentLoaded", () => {
 		window.history.pushState({}, document.title, window.location.pathname);
 
@@ -1009,7 +1006,6 @@ const blogs = [
 			}),
 
 			(l.onclick = (e) => {
-				console.log("clicked");
 				if ((e.preventDefault(), o() || cnf() || s() || a() || m())) {
 					if (o() && cnf() && s() && a() && m()) {
 						i.innerHTML = "";

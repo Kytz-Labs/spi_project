@@ -173,13 +173,59 @@ const menuList = [
 			<div class="sidebar_dropdown">
 				{menuList.map((data, index) => (
 					<div class={(index == 0) ? "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]" : "lg:inline-block block px-4 lg:pb-0 pb-6 leading-[10px]"}>
-					  <HeaderLink 
-						href={data.url} 
-						aria-label={data.ariaLabel} 
-						class={Astro.url.pathname === data.url ? "active" : ""}
-					  >
-						{data.name}
-					  </HeaderLink>
+						<div class="flex lg:flex-row flex-col relative">
+							<div>
+								<HeaderLink 
+									href={data.url} 
+									aria-label={data.ariaLabel} 
+									class={Astro.url.pathname === data.url ? "active" : ""}
+								>
+									{data.name}
+								</HeaderLink>	
+							</div>
+							{(index == 1) ? <div class="absolute right-0 top-[50%] arrow_nav">
+									<svg class="block cursor-pointer" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8536 4.85355C14.0488 4.65829 14.0488 4.34171 13.8536 4.14645L10.6716 0.964467C10.4763 0.769205 10.1597 0.769205 9.96447 0.964467C9.7692 1.15973 9.7692 1.47631 9.96447 1.67157L12.7929 4.5L9.96447 7.32843C9.7692 7.52369 9.7692 7.84027 9.96447 8.03553C10.1597 8.2308 10.4763 8.2308 10.6716 8.03553L13.8536 4.85355ZM0.5 5L13.5 5L13.5 4L0.5 4L0.5 5Z" fill="#050505"/>
+									</svg>
+								</div> : "" }
+								{(index == 3) ? <div class="absolute right-0 top-[50%] arrow_product">
+									<svg class="block cursor-pointer" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8536 4.85355C14.0488 4.65829 14.0488 4.34171 13.8536 4.14645L10.6716 0.964467C10.4763 0.769205 10.1597 0.769205 9.96447 0.964467C9.7692 1.15973 9.7692 1.47631 9.96447 1.67157L12.7929 4.5L9.96447 7.32843C9.7692 7.52369 9.7692 7.84027 9.96447 8.03553C10.1597 8.2308 10.4763 8.2308 10.6716 8.03553L13.8536 4.85355ZM0.5 5L13.5 5L13.5 4L0.5 4L0.5 5Z" fill="#050505"/>
+									</svg>
+								</div> : "" }
+								{(index == 4) ? <div class="absolute right-0 top-[50%] arrow_about">
+									<svg class="block cursor-pointer" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8536 4.85355C14.0488 4.65829 14.0488 4.34171 13.8536 4.14645L10.6716 0.964467C10.4763 0.769205 10.1597 0.769205 9.96447 0.964467C9.7692 1.15973 9.7692 1.47631 9.96447 1.67157L12.7929 4.5L9.96447 7.32843C9.7692 7.52369 9.7692 7.84027 9.96447 8.03553C10.1597 8.2308 10.4763 8.2308 10.6716 8.03553L13.8536 4.85355ZM0.5 5L13.5 5L13.5 4L0.5 4L0.5 5Z" fill="#050505"/>
+									</svg>
+								</div> : "" }
+						</div>
+					  {(index == 1) ? <div class="mobilearrow group-hover:pt-8 relative">
+                        <div class="subnavlistItem p-4 bg-white"><a href="/services/airport-capabilities">Airport Capabilities</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/transportation-capabilities">Transportation Capabilities</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/application-management">Application Management</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/services/digital-transformation">Digital Transformation</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/business-intelligence">Business Intelligence/Analytics</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/it-staffing">Enterprise Infrastructure</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/it-staffing">IT Staffing</a></div>
+						<div class="subnavlistItem p-4 pt-3 bg-white"><a href="/about-us#partnerships">Appian Partnership</a></div>
+						<div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services/professionals-it-services">Professional IT Services</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/services">All Services</a></div>
+                      </div> : ""}
+					  {(index == 3) ? <div class="prouctarrow group-hover:pt-8">
+                        <div class="subnavlistItem p-4 bg-white"><a href="/products/safe-connect">SafeConnect</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/products/safe-school">SafeSchool</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/products/enviro-connect">EnviroConnect</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/products/inner-LMS">E-LMS</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/products/permit-connect">PermitConnect</a></div>
+                    </div> : ""}
+					{(index == 4) ? <div class="aboutarrow group-hover:pt-8">
+                        <div class="subnavlistItem p-4 bg-white"><a href="/about-us#partnerships">Partnership</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/awards">Awards</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/about-us#leadership">Leadership</a></div>
+                        <div class="subnavlistItem p-4 pt-3 bg-white"><a href="/certifications">Certifications</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/brochures">Brochures</a></div>
+                        <div class="subnavlistItem p-4 pt-3 pt-0 bg-white"><a href="/videos">Videos</a></div>
+                    </div> : ""}
 					</div>
 				  ))}
 			</div>
@@ -187,7 +233,26 @@ const menuList = [
 	</div>
 </nav>
 <style>
+	.aboutarrow{
+		display:none;
+	}
+	.activeAbout{
+		display:block;
+	}
+	.prouctarrow{
+		display:none;
+	}
 
+	.activeProduct{
+		display:block;
+	}
+
+	.mobilearrow{
+		display: none;
+	}
+	.activeClass{
+		display:block;
+	}
 	.downarrow a:hover,
 	a.active {
 	font-weight: bolder;
@@ -296,5 +361,25 @@ const menuList = [
 					nav.style.zIndex="21"; 
 			}
 		}
+	}
+
+	var arrow = document.querySelector(".arrow_nav");
+	var downarrow = document.querySelector(".mobilearrow");
+	var arrow_product = document.querySelector(".arrow_product");
+	var prodduct_arrow = document.querySelector(".prouctarrow");
+	var arrow_about = document.querySelector(".arrow_about");
+	var newarrow = document.querySelector(".aboutarrow");
+	
+	arrow.onclick=() => {
+		downarrow.classList.toggle("activeClass");
+	}
+
+	arrow_product.onclick = () => {
+		prodduct_arrow.classList.toggle("activeProduct");
+	}
+
+	arrow_about.onclick = () => {
+		console.log(newarrow);
+		newarrow.classList.toggle("activeAbout");
 	}
 </script>
