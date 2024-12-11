@@ -113,7 +113,7 @@ export default function CareerSub({position}) {
                         </div>
                         <div class="line w-full flex items-center justify-center border border-[#FFFFFF1F] p-10">
                             <label for="file-input" class="upload-label text-center">
-                                <span class="upload-text">Upload a file</span> or Drag and drop here
+                                {/* <span class="upload-text">Upload a file</span> or Drag and drop here */}
                                 <div class="opacity-50 text-center lg:block hidden">Accepted files: pdf, doc, docx, jpeg, and png up to 10MB</div>
                                 <input type="file" className="upload_field lg:w-full w-[50%]" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
                             </label>
