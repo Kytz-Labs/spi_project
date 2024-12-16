@@ -262,8 +262,12 @@ const videos = [
 									<div class="bg-white py-6 px-8 mb-12">
 										<div class="career_title pb-4">{data.title}</div>
 										<div class="tags">
-											<TransparentBtn btnText={data["tag"][0]} />
-											<TransparentBtn btnText={data["tag"][1]} />
+											<div class="lg:mb-0 mb-2">
+												<TransparentBtn btnText={data["tag"][0]} />
+											</div>
+											<div>
+												<TransparentBtn btnText={data["tag"][1]} />
+											</div>
 										</div>
 										<div class="career-description pt-10">
 											{data.description}
