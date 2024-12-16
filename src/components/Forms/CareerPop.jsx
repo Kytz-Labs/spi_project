@@ -51,7 +51,7 @@ export default function Career() {
             document.getElementById("enquire_popup_form").style.display="none";
             document.querySelector(".enquire_thnkmss").style.display="flex";
             setSubmitSuccess(true);
-        }, 4000);
+        }, 12000);
         
         document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
         try {

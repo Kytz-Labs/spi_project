@@ -33,11 +33,18 @@ export default function CareerSub({position}) {
         setContactform(true);
 
         const body = {
-            to: "sathishkumar@venzotechnologies.com",
+            to: "shelton@venzotechnologies.com",
             cc: "venzotechnologies@gmail.com",
-          message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
-          subject: "Venzo Careers Form",
+          message: `
+    Name: ${emailInput.name} <br> 
+    Email: ${emailInput.email} <br> 
+    Mobile No: ${emailInput.mobile} <br> 
+    Resume: <a href="${imagelist}" target="_blank">${imagelist}</a>
+`,
+          subject: "SPI Careers Form",
         }
+        console.log(imagelist);
+
         const apicall = setTimeout(async () => {
             const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
                 setEmailInput(
@@ -48,7 +55,7 @@ export default function CareerSub({position}) {
             document.querySelector(".enquire_thnkmss").style.display="flex";
             setSubmitSuccess(true);
             setSubmit(false);
-        }, 6000);
+        }, 25000);
 
         // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
 
@@ -125,9 +132,6 @@ export default function CareerSub({position}) {
                         </div>
                     </div>
                     <div id="message" class="text-red-500 pt-4"></div>
-                    <div class="terms_condition hidden">
-                        By clicking send, you accept our <a href="">privacy policy</a> Prefer email? <a href="mailto:hello@kytz.in">hello@kytz.in</a>
-                    </div>
                 </form>
             </div>
         </div>
