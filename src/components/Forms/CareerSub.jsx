@@ -33,7 +33,7 @@ export default function CareerSub({position}) {
         setContactform(true);
 
         const body = {
-            to: "shelton@venzotechnologies.com",
+            to: "sathish@venzotechnologies.com",
             cc: "venzotechnologies@gmail.com",
           message: `
     Name: ${emailInput.name} <br> 
