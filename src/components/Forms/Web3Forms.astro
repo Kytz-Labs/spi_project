@@ -9,6 +9,8 @@ interface Props{
 
 const { bgColor, textColor } = Astro.props;
 
+const currentUrl=Astro.request.url;
+
 ---
 
 <style>
@@ -52,7 +54,8 @@ const { bgColor, textColor } = Astro.props;
                     <!-- Replace with your Access Key --> 
                     <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0" />
                     <input type="hidden" name="from_name" value="SPI Product Demo Enquiry" />
-            
+                    <input type="hidden" name="subject" value="SPI Product Demo Enquiry">
+
                     <!-- 
                         venzo@gmail.com <input type="hidden" name="access_key" value="5a696bab-69df-44a8-8dad-39e7c0e07877"> 
                         shelton@venzotechnologies.com <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0">
@@ -88,6 +91,7 @@ const { bgColor, textColor } = Astro.props;
                             <textarea style=`color: ${textColor}` autocomplete="off" class="web3" style="color: white;" name="Message" id="Kmessage" maxlength="500" placeholder="Tell us about your project*"></textarea>
                             <!-- <span class="error" id="message_err"> </span> -->
                         </div>
+                        <input type="hidden" name="PageUrl" value={currentUrl} />
                         <div class="text-red mt-5"><button class="apply_now mt-2 px-12 py-2 text-red-500" id="submitbtn">Submit</button></div>
                     </div>
                     <div id="message" class="text-red-500"></div>
