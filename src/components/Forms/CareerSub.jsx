@@ -19,15 +19,15 @@ export default function CareerSub({position}) {
     });
 
     const [submitSuccess, setSubmitSuccess] = useState(false);
+    const [uploading, setUploading] = useState(false); // State to manage file upload loader
 
     const handleChange = (e) => {
         setEmailInput({ ...emailInput, [e.target.name]: e.target.value });
-        console.log();
     }
 
     const sendEmail =async(event)=>{
         event.preventDefault();
-        console.log(event);
+        if (submit || uploading) return; 
         if (submit) return;
         setSubmit(true)
         setContactform(true);
@@ -39,33 +39,28 @@ export default function CareerSub({position}) {
     Name: ${emailInput.name} <br> 
     Email: ${emailInput.email} <br> 
     Mobile No: ${emailInput.mobile} <br> 
-    Resume: <a href="${imagelist}" target="_blank">${imagelist}</a>
+    Resume: <a href="${imagelist}" target="_blank">${imagelist}</a><br>
+    pageUrl: ${window.location.href} 
 `,
           subject: "SPI Careers Form",
         }
-        console.log(imagelist);
-
-        const apicall = setTimeout(async () => {
-            const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
-                setEmailInput(
-                { name: "",
-                email: "",
-                mobile: ""}
-            )
-            document.querySelector(".enquire_thnkmss").style.display="flex";
-            setSubmitSuccess(true);
-            setSubmit(false);
-        }, 25000);
-
+    
         // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
 
         try {
-            // If the email sending is successful, setSubmitSuccess to true
-            // setSubmitSuccess(true);
-        
+            const emailResponse = await axios.post(
+                "https://sendmailsgen-ramjyh2hea-uc.a.run.app",
+                body
+              );
+              setEmailInput({
+                name: "",
+                email: "",
+                mobile: "",
+              });
+              document.querySelector(".enquire_thnkmss").style.display = "flex";
+              setSubmitSuccess(true);
         } catch (error) {
             console.error("Error sending email:", error);
-            // Handle the error if needed
         }
         finally {
             // setSubmit(false); // Reset submit state of success or failure
@@ -74,27 +69,39 @@ export default function CareerSub({position}) {
     }
 
     const sendFile =(e)=>{
+        setUploading(true);
         setImageUpload(e.target.files[0])
         const imageRef = ref(storage, `venzofile/${e.target.files[0].name + v4()}`)
     
         uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
           getDownloadURL(snapshot.ref).then((url) => {
             setImagelist(url);
+            setUploading(false);;
           })
         })
+        .catch((error) => {
+            console.error("File upload error:", error);
+            setUploading(false); // Ensure uploading state is reset on error
+        });
     }
 
     useEffect(() => {
+        if (imagelist) {
+            console.log("Updated imagelist:", imagelist);
+        }
+        
         if (submitSuccess) {
             
             const timeoutId = setTimeout(() => {
                 setContactform(false);
                 setSubmitSuccess(false);
+                console.log(submit);
                 document.querySelector(".enquire_thnkmss").style.display="none";
             }, 5000);
             return () => clearTimeout(timeoutId);
         }
-    }, [submitSuccess]);
+    }, [submitSuccess, imagelist]);
+
   return (
     <div class="contact-form-section flex-1 lg:py-8 bg-[#232323]">
         {/* <!-- contact form --> */}
@@ -127,10 +134,15 @@ export default function CareerSub({position}) {
                                     <input type="file" className="upload_field lg:w-full w-[50%]" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
                                 </label>
                             </div>
+                            {uploading && (
+                                <div className="text-center font-[500] text-white mt-2 animate-pulse">
+                                    Uploading file...
+                                </div>
+                            )}
                         </div>
                         <div class="flex justify-center w-full">
                             <button class="apply_now mt-10 px-12 py-2" id="submitbtn">
-                                { submit ? <div class='animate-pulse'>Processing</div> : "submit"}
+                                { submitSuccess ? <div class='animate-pulse'>Processing</div> : "submit"}
                             </button>
                         </div>
                     </div>
