@@ -42,7 +42,7 @@ export default function CareerSub({position}) {
     Resume: <a href="${imagelist}" target="_blank">${imagelist}</a><br>
     pageUrl: ${window.location.href} 
 `,
-          subject: "SPI Careers Form",
+          subject: "SPI - Careers Enquiry",
         }
     
         // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";

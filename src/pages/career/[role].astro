@@ -34,7 +34,7 @@ const jobRoles = {
 	"senior-software-engineer" : {
 		title:"Senior Software Engineer",
 		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
-		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li><li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems.</li> <li class='post-date'>is proactive, seeks out and applies best practices; Debugging/coding skills.</li><li class='post-date'>Problem solving skills; Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills; and Teamwork skills.</li></ul>",
 		experience : "3+ Years Experience",
 		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
 
@@ -50,9 +50,8 @@ const jobRoles = {
 		title:"Software Developer (GIS)",
 		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
 		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
-		experience : "3+ Years Experience",
+		experience : "3+ Years Experience", 
 		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
-
 	},
 	"lead-software-developers" : {
 		title:"Lead Software Developers",
@@ -475,10 +474,28 @@ const job = jobRoles[role] || { title: 'Role Not Found', description: '', requir
 						<div class="flex justify-between lg:flex-row flex-col items-start pb-6 pt-12 gap-10">
 							<div class="job-title lg:w-[64%]">
 								<!-- <div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div> -->
-								<div set:html={job.content}></div>
+								<div>
+									<div class="post-date pb-10">
+										This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. 
+									</div>
+									<div class="post-date pb-10">
+										Duties and Responsibilities: Work collaboratively to write high quality, testable code that meets the Definition of Done; Strive to meet team sprint commitments; Adopt a Test-First approach to software development, where possible in which the test is developed before the code; Participate in design and code reviews with other engineers;
+									</div>
+									<div class="post-date pb-10">
+										May develop and utilize automated test scripts to perform duties; Participate in test plan reviews; 
+									</div>
+									<div class="post-date pb-10">
+										Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task; Work with product management to scope and estimate product enhancements; Design, implement, unit test software, and test software following defined processes;
+									</div>
+									<div class="post-date">
+										Fix software defects (internal or customer reported) following defined process; Scope of work is typically at the product component/feature level; Other duties as requested and/or determined; Maintain compliance with Client's policies, procedures and mission statement; Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position; and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.
+									</div>
+								</div>
 								<div class="h4 mt-10 mb-4 text-white">Basic Qualification</div>
 								<div class="job-description">
-									<div set:html={ job.description }></div>
+									<div>
+										<ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li><li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems.</li> <li class='post-date'>is proactive, seeks out and applies best practices; Debugging/coding skills.</li><li class='post-date'>Problem solving skills; Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills; and Teamwork skills.</li></ul>
+									</div>
 								</div>
 							</div>
 							<div class="post-date bg-[#262626] flex-1 w-full">
