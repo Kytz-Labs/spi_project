@@ -10,6 +10,19 @@ const menuList = [
 		{ name : "About", url : "/about-us", ariaLabel : "about us" },
 		{ name : "Career", url : "/career", ariaLabel : "careers" } 
 ];
+
+const servicesmenu = [
+	{ link:"/services/airport-capabilities", name : "Airport<br> Capabilities", url : "/servicesmenu/servicesmenu1.webp", ariaLabel: "home page", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience. " },
+	{ link:"/services/transportation-capabilities", name : "Transportation<br> Capabilities", url : "/servicesmenu/servicesmenu2.webp", ariaLabel : "services page", description : "We offer a variety of services including Modernization, Optimization and Digital Transformation with emphasis on continuous improvement."}, 
+	{ link:"/services/application-management", name : "Application<br> Management", url : "/servicesmenu/servicesmenu3.webp", ariaLabel : "public sector page", description : "We integrate our processes with our clients to streamline efforts and meet project parameters"},
+	{ link:"/services/digital-transformation", name : "Digital<br> Transformation", url : "/servicesmenu/servicesmenu4.webp", ariaLabel : "products", description : "People, things, businesses, and technology are all getting interconnected. It is a time when each person/business is profoundly impacted by everything digital."},
+	{ link:"/services/business-intelligence", name : "Business<br> Intelligence / Analytics", url : "/servicesmenu/servicesmenu5.webp", ariaLabel : "about us", description : "Business Intelligence solutions are expected to accelerate business growth by enabling faster, more accurate decisions." },
+	{ link:"/services/enterprise-infrastructure", name : "Enterprise<br> Infrastructure", url : "/servicesmenu/servicesmenu6.webp", ariaLabel : "careers", description : "Businesses face the challenges of building and maintaining agile, reliable IT infrastructures that are cost-effective. " }, 
+	{ link:"/services/it-staffing", name : "IT<br> Staffing", url : "/servicesmenu/servicesmenu7.webp", ariaLabel : "careers", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience. " }, 
+	{ link:"/about-us#partnerships", name : "Appian<br> Partnership", url : "/servicesmenu/servicesmenu8.webp", ariaLabel : "careers", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience. " }, 
+	{ link:"/services/professionals-it-services", name : "Professional<br> IT Services", url : "/servicesmenu/servicesmenu9.webp", ariaLabel : "careers", description : "Today’s airports manage their operations in a technology-driven environment to bring innovative solutions that advance the Customer Experience. " }, 
+	{ link:"/services", name : "All<br> Services", url : "/servicesmenu/servicesmenu10.webp", ariaLabel : "careers", description : "Explore all the services we provide" } 
+]
 ---
 
 <nav class="lg:px-12 px-8 flex flex-row items-center justify-between bg-white z-[50] relative border border-b-[1.5px]">
@@ -26,17 +39,29 @@ const menuList = [
 						<HeaderLink href={data.url} aria-label={data.ariaLabel}>
 							{data.name}
 						</HeaderLink>
-						{(index == 1) ? <div class="downarrow absolute group-hover:block group-hover:pt-8 hidden">
-                        	<a href="/services/airport-capabilities"><div class="subnavlistItem p-4 bg-white">Airport Capabilities</div></a>
-                        	<a href="/services/transportation-capabilities"><div class="subnavlistItem p-4 pt-3 bg-white">Transportation Capabilities</div></a>
-                        	<a href="/services/application-management"><div class="subnavlistItem p-4 pt-3 bg-white">Application Management</div></a>
-                        	<a href="/services/digital-transformation"><div class="subnavlistItem p-4 pt-3 pt-0 bg-white">Digital Transformation</div></a>
-                        	<a href="/services/business-intelligence"><div class="subnavlistItem p-4 pt-3 bg-white">Business Intelligence/Analytics</div></a>
-                        	<a href="/services/enterprise-infrastructure"><div class="subnavlistItem p-4 pt-3 bg-white">Enterprise Infrastructure</div></a>
-                        	<a href="/services/it-staffing"><div class="subnavlistItem p-4 pt-3 bg-white">IT Staffing</div></a>
-							<a href="/about-us#partnerships"><div class="subnavlistItem p-4 pt-3 bg-white">Appian Partnership</div></a>
-							<a href="/services/professionals-it-services"><div class="subnavlistItem p-4 pt-3 bg-white">Professional IT Services</div></a>
-                        	<a href="/services"><div class="subnavlistItem p-4 pt-3 bg-white">All Services</div></a>
+						{(index == 1) ? <div class="downarrow absolute group-hover:grid lg:grid-cols-5 bg-white group-hover:pt-8 h-[100%] w-full left-0 hidden" style="height: 120vh;">
+                        	{/* <a href="/services/airport-capabilities"><div class="subnavlistItem min-h-[50%] flex items-center p-4 bg-white">Airport Capabilities</div></a>
+                        	<a href="/services/transportation-capabilities"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Transportation Capabilities</div></a>
+                        	<a href="/services/application-management"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Application Management</div></a>
+                        	<a href="/services/digital-transformation"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 pt-0 bg-white">Digital Transformation</div></a>
+                        	<a href="/services/business-intelligence"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Business Intelligence/Analytics</div></a>
+                        	<a href="/services/enterprise-infrastructure"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Enterprise Infrastructure</div></a>
+                        	<a href="/services/it-staffing"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">IT Staffing</div></a>
+							<a href="/about-us#partnerships"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Appian Partnership</div></a>
+							<a href="/services/professionals-it-services"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">Professional IT Services</div></a>
+                        	<a href="/services"><div class="subnavlistItem min-h-[50%] flex items-center p-4 pt-3 bg-white">All Services</div></a> */}
+							{
+								servicesmenu.map((data, dataIndex) => (
+									<a href={data.link}>
+										<div class="min-h-[50%] h-full px-8 border border-black py-10">
+											<img src={data.url} height="50px" width="50px" />
+											<div class="subnavlistItem flex items-center py-4 bg-white" set:html={data.name}></div>
+											<div class="subhover" set:html={data.description}>
+											</div>
+										</div>
+									</a> 
+								))
+							}
                     </div> : ""}
 					{(index == 3) ? <div class="downarrow absolute group-hover:block group-hover:pt-8 hidden">
                         <a href="/products/safe-connect"><div class="subnavlistItem p-4 bg-white">SafeConnect</div></a>
@@ -46,7 +71,7 @@ const menuList = [
                         <a href="/products/permit-connect"><div class="subnavlistItem p-4 pt-3 pt-0 bg-white">PermitConnect</div></a>
                     </div> : ""}
 					{(index == 4) ? <div class="downarrow absolute group-hover:block hidden w-full left-0">
-                        <div class="lg:grid grid-cols-5 hidden group-hover:mt-6 bg-white ">
+                        <div class="lg:grid grid-cols-5 hidden group-hover:mt-6 bg-white">
 							<a href="/about-us">
 								<div class="flex-1 border border-black p-4 h-full">
 									<div class="who pb-4">Who we are</div>
@@ -233,6 +258,26 @@ const menuList = [
 	</div>
 </nav>
 <style>
+	.subhover{
+		font-family: Instrument Sans;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 21px;
+		text-align: left;
+		text-underline-position: from-font;
+		text-decoration-skip-ink: none;
+		color: #000000;
+	}
+	.subnavlistItem{
+		font-family: Instrument Sans;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 24.4px;
+		text-align: left;
+		text-underline-position: from-font;
+		text-decoration-skip-ink: none;
+		color: #000000;
+	}
 	.aboutarrow{
 		display:none;
 	}
@@ -354,11 +399,11 @@ const menuList = [
 			if(window.innerWidth > 600) {
 					nav.style.width="100%";
 					nav.style.position="relative !important";
-					nav.style.zIndex="21";
+					nav.style.zIndex="100";
 			}else {
 					nav.style.width="100%";
 					nav.style.position="relative !important";
-					nav.style.zIndex="21"; 
+					nav.style.zIndex="100"; 
 			}
 		}
 	}
