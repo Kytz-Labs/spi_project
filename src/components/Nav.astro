@@ -12,11 +12,11 @@ const menuList = [
 ];
 
 const productList = [
-		{ name : "Safe Connect", url : "/product_logo/product_logo1.webp", description: "A safety app that engages employees to improve safety practices, aiming for zero incidents." },
-		{ name : "Enviro Connect", url : "/product_logo/product_logo2.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations."}, 
-		{ name : "Permit Connect", url : "/product_logo/product_logo3.webp", description : "A software for managing the entire permit process, from application to Permit approval and management."},
-		{ name : "LMS e-Connect", url : "/product_logo/product_logo6.webp", description : "LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs."},
-		{ name : "Saf School", url : "/product_logo/product_logo4.webp", description : "Safe School is designed to implement a technology solution to address the issue of school violence and other suspicious activities in schools." },
+		{ link: "/products/safe-connect", name : "Safe Connect", url : "/product_logo/product_logo1.webp", description: "A safety app that engages employees to improve safety practices, aiming for zero incidents." },
+		{ link: "/products/enviro-connect", name : "Enviro Connect", url : "/product_logo/product_logo2.webp", description : "A solution for managing environmental data and reports. It helps reduce costs and ensures compliance with environmental regulations."}, 
+		{ link: "/products/permit-connect", name : "Permit Connect", url : "/product_logo/product_logo3.webp", description : "A software for managing the entire permit process, from application to Permit approval and management."},
+		{ link: "/products/E-LMS", name : "LMS e-Connect", url : "/product_logo/product_logo6.webp", description : "LMS e-Connect is a platform that powers eLearning and is used to deliver training courses and educational programs to meet your company’s specific training needs."},
+		{ link: "/products/safe-school", name : "Safe School", url : "/product_logo/product_logo4.webp", description : "Safe School is designed to implement a technology solution to address the issue of school violence and other suspicious activities in schools." },
 ];
 
 const servicesmenu = [
@@ -64,7 +64,7 @@ const servicesmenu = [
 					{(index == 3) ? <div class="downarrow absolute group-hover:grid lg:grid-cols-5 group-hover:pt-8 h-[100%] w-full left-0 hidden bg-white" style="height: 95vh;">
 						{
 							productList.map((data, dataIndex) => (
-								<a href="/products/safe-connect">
+								<a href={ data.link }>
 									<div class="border border-black h-full flex flex-col justify-between">
 										<div class="mt-10">
 											<div class="subnavlistItem p-4 bg-white">
