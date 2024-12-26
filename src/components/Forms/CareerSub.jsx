@@ -21,6 +21,9 @@ export default function CareerSub({position}) {
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [uploading, setUploading] = useState(false); // State to manage file upload loader
 
+    const [ subColor, setColor ] = useState("#141414");
+    const [ bgColor, setBg ] = useState("#B5DB00");
+
     const handleChange = (e) => {
         setEmailInput({ ...emailInput, [e.target.name]: e.target.value });
     }
@@ -29,11 +32,13 @@ export default function CareerSub({position}) {
         event.preventDefault();
         if (submit || uploading) return; 
         if (submit) return;
-        setSubmit(true)
+        setSubmitSuccess(true)
         setContactform(true);
+        setColor("white"); 
+        setBg("#006B9E"); 
 
         const body = {
-            to: "sathish@venzotechnologies.com",
+            to: "sathishkumar@venzotechnologies.com",
             cc: "venzotechnologies@gmail.com",
           message: `
     Name: ${emailInput.name} <br> 
@@ -58,6 +63,10 @@ export default function CareerSub({position}) {
                 mobile: "",
               });
               document.querySelector(".enquire_thnkmss").style.display = "flex";
+              const fileInput = document.getElementById('fileInput');
+              fileInput.value = '';
+              document.getElementById('file_upload_err').textContent = '';
+              document.querySelector(".enquire_thnkmss").style.display="flex";
               setSubmitSuccess(true);
         } catch (error) {
             console.error("Error sending email:", error);
@@ -76,7 +85,7 @@ export default function CareerSub({position}) {
         uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
           getDownloadURL(snapshot.ref).then((url) => {
             setImagelist(url);
-            setUploading(false);;
+            setUploading(false);
           })
         })
         .catch((error) => {
@@ -95,7 +104,8 @@ export default function CareerSub({position}) {
             const timeoutId = setTimeout(() => {
                 setContactform(false);
                 setSubmitSuccess(false);
-                console.log(submit);
+                setColor("white"); 
+                setBg("#006B9E"); 
                 document.querySelector(".enquire_thnkmss").style.display="none";
             }, 5000);
             return () => clearTimeout(timeoutId);
@@ -131,7 +141,7 @@ export default function CareerSub({position}) {
                                 <label for="file-input" class="upload-label text-center">
                                     {/* <span class="upload-text">Upload a file</span> or Drag and drop here */}
                                     <div class="opacity-50 text-center lg:block hidden">Accepted files: pdf, doc, docx, jpeg, and png up to 10MB</div>
-                                    <input type="file" className="upload_field lg:w-full w-[50%]" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
+                                    <input type="file" className="upload_field lg:w-full w-[50%]" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' id="fileInput" onChange={sendFile} required />
                                 </label>
                             </div>
                             {uploading && (
@@ -141,7 +151,7 @@ export default function CareerSub({position}) {
                             )}
                         </div>
                         <div class="flex justify-center w-full">
-                            <button class="apply_now mt-10 px-12 py-2" id="submitbtn">
+                            <button class={`apply_now mt-10 px-12 py-2 hover:bg-[#006B9E] hover:text-white bg-[${bgColor}] text-[${subColor}]`} style={{ Cursor: "pointer" }} id="submitbtn">
                                 { submitSuccess ? <div class='animate-pulse'>Processing</div> : "submit"}
                             </button>
                         </div>

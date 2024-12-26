@@ -20,8 +20,11 @@ export default function Career() {
       mobile: "",
       message: "",
     });
+    const [ subColor, setColor ] = useState("#141414");
+    const [ bgColor, setBg ] = useState("#B5DB00");
 
     const [submitSuccess, setSubmitSuccess] = useState(false);
+    const [uploading, setUploading] = useState(false); // State to manage file upload loader
 
     const handleChange = (e) => {
         setEmailInput({ ...emailInput, [e.target.name]: e.target.value });
@@ -29,32 +32,41 @@ export default function Career() {
 
     const sendEmail =async(event)=>{
         event.preventDefault();
-
+        if (submit || uploading) return; 
         if (submit) return;
-        setSubmit(true)
+        setSubmitSuccess(true)
         setContactform(true);
+        setColor("white"); 
+        setBg("#006B9E"); 
 
         const body = {
           to: "sathishkumar@venzotechnologies.com",
           cc: "venzotechnologies@gmail.com",
-          message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
-          subject: "SPI Pulic Sector Form",
+          message: `
+                Name: ${emailInput.name} <br> 
+                Email: ${emailInput.email} <br> 
+                Mobile No: ${emailInput.mobile} <br> 
+                Resume: <a href="${imagelist}" target="_blank">${imagelist}</a><br>
+                pageUrl: ${window.location.href} 
+            `,
+            subject: "SPI Pulic Sector Form",
         }
-        const apicall = setTimeout(async () => {
-            const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
-                setEmailInput(
-                { name: "",
-                email: "",
-                mobile: ""}
-            )
-            document.querySelector(".enquire_thnkmss").style.display="flex";
-            setSubmit(false); 
-            setSubmitSuccess(true);
-        }, 8000);
-        // document.getElementById("submitbtn").innerHTML="<div class='animate-pulse'>Processing</div>";
+
         try {
-            // If the email sending is successful, setSubmitSuccess to true
-            // setSubmitSuccess(true);
+                const emailResponse = await axios.post("https://sendmailsgen-ramjyh2hea-uc.a.run.app", body);
+                    setEmailInput(
+                    { name: "",
+                    email: "",
+                    mobile: "",
+                    message: ""}
+                )
+                const fileInput = document.getElementById('fileInput');
+                fileInput.value = '';
+                document.getElementById('file_upload_err').textContent = '';
+                document.querySelector(".enquire_thnkmss").style.display="flex";
+                setSubmit(false);
+                setSubmitSuccess(true);
+
         } catch (error) {
             console.error("Error sending email:", error);
             // Handle the error if needed
@@ -66,27 +78,39 @@ export default function Career() {
     }
 
     const sendFile =(e)=>{
+        setUploading(true);
         setImageUpload(e.target.files[0])
         const imageRef = ref(storage, `venzofile/${e.target.files[0].name + v4()}`)
     
         uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
           getDownloadURL(snapshot.ref).then((url) => {
             setImagelist(url);
+            setUploading(false);
           })
         })
+        .catch((error) => {
+            console.error("File upload error:", error);
+            setUploading(false); // Ensure uploading state is reset on error
+        });
     }
 
     useEffect(() => {
+        if (imagelist) {
+            console.log("Updated imagelist:", imagelist);
+        }
+
         if (submitSuccess) {
             
             const timeoutId = setTimeout(() => {
                 setContactform(false);
                 setSubmitSuccess(false);
                 document.querySelector(".enquire_thnkmss").style.display="none";
-            }, 5000);
+                setColor("#141414"); 
+                setBg("#B5DB00");
+                }, 5000);
             return () => clearTimeout(timeoutId);
         }
-    }, [submitSuccess]);
+    }, [submitSuccess, imagelist]);
 
   return (
     <div className="lg:px-16 px-8 pb-20 bg-black lg:pt-0 pt-12">
@@ -106,7 +130,7 @@ export default function Career() {
                         <form onSubmit={sendEmail} id="w3form" method="POST" class="w-full" enctype="multipart/form-data" >
                             <div className="flex lg:flex-row flex-wrap flex-col gap-4">
                                 <div className="upload lg:w-[30%]">
-                                    <input type="text" className="upload_field" name="name" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
+                                    <input type="text" autoComplete="off" className="upload_field" name="name" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
                                 </div>
                                 <div className="upload lg:w-[30%]">
                                     <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
@@ -115,17 +139,22 @@ export default function Career() {
                                     <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
                                 </div>
                                 <div className="upload lg:w-[60%]">
-                                    <input type="text" autoComplete="off" className="upload_field" id="uploadMessage" value={emailInput["message"]} onChange={handleChange} name="message" placeholder="Enter Job Title" />
+                                    <input type="text" autoComplete="off" className="upload_field" id="uploadMessage" value={emailInput["message"]} onChange={handleChange} name="message" placeholder="Enter Job Title" required />
                                     <span className="uploaderror" id="message_upload_err"> </span>
                                 </div>
                                 <div className="upload lg:w-[35%]">
-                                    <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' onChange={sendFile} required />
+                                    <input type="file" className="upload_field" autoComplete="off" style={{ color: "white"}} accept='.pdf , .doc , .docx' placeholder='choose file' id="fileInput" onChange={sendFile} required />
                                     <span className="uploaderror" id="file_upload_err"> </span>
                                 </div>
+                                {uploading && (
+                                    <div className="text-center font-[500] text-white animate-pulse pb-2">
+                                        Uploading file...
+                                    </div>
+                                )}
                             </div>
                             <div>
-                                <button id="submitbtn" className="branding-stroke-button inline-flex gap-3 items-center self-start fotnt-[Atkinson Hyperlegible] px-20" style={{ backgroundColor : "#B5DB00", Color : "black", Cursor: "pointer" }}>
-                                    { submit ? <div class='animate-pulse'>Processing</div> : "submit"}
+                                <button id="submitbtn" className={`branding-stroke-button inline-flex gap-3 items-center self-start font-[Atkinson Hyperlegible] px-20 hover:bg-[#006B9E] hover:text-white bg-[${bgColor}] text-[${subColor}]`} style={{ Cursor: "pointer" }}>
+                                    { submitSuccess ? <div class='animate-pulse'>Processing</div> : "Submit"}
                                 </button>
                             </div>
                         </form>
