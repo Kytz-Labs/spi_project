@@ -133,13 +133,13 @@ export default function Career() {
                                     <input type="text" autoComplete="off" className="upload_field" name="name" value={emailInput["name"]} onChange={handleChange} maxLength="255" placeholder="Enter Name*" required/>
                                 </div>
                                 <div className="upload lg:w-[30%]">
-                                    <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email" />
+                                    <input type="text"  autoComplete="off" maxLength="255" name="email" value={emailInput["email"]} onChange={handleChange} className="upload_field" style={{Color: "white"}} id="Kemail" placeholder="Enter Email*" />
                                 </div>
                                 <div className="lg:w-[30%]">
-                                    <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number" required />
+                                    <input type="text" autoComplete="off" name="mobile" value={emailInput["mobile"]} onChange={handleChange} maxLength="18" id="Knumber" className="upload_field" style={{color: "white"}} placeholder="Phone Number*" required />
                                 </div>
                                 <div className="upload lg:w-[60%]">
-                                    <input type="text" autoComplete="off" className="upload_field" id="uploadMessage" value={emailInput["message"]} onChange={handleChange} name="message" placeholder="Enter Job Title" required />
+                                    <input type="text" autoComplete="off" className="upload_field" id="uploadMessage" value={emailInput["message"]} onChange={handleChange} name="message" placeholder="Enter Job Title" />
                                     <span className="uploaderror" id="message_upload_err"> </span>
                                 </div>
                                 <div className="upload lg:w-[35%]">
