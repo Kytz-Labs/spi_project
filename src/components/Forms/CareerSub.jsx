@@ -152,7 +152,7 @@ export default function CareerSub({position}) {
                         </div>
                         <div class="flex justify-center w-full">
                             <button class={`apply_now mt-10 px-12 py-2 hover:bg-[#006B9E] hover:text-white bg-[${bgColor}] text-[${subColor}]`} style={{ Cursor: "pointer" }} id="submitbtn">
-                                { submitSuccess ? <div class='animate-pulse'>Processing</div> : "submit"}
+                                { submitSuccess ? <div class='animate-pulse'>Processing</div> : "Submit"}
                             </button>
                         </div>
                     </div>
