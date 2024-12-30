@@ -38,7 +38,7 @@ export default function CareerSub({position}) {
         setBg("#006B9E"); 
 
         const body = {
-            to: "sathishkumar@venzotechnologies.com",
+            to: "shelton@venzotechnologies.com",
             cc: "venzotechnologies@gmail.com",
           message: `
     Name: ${emailInput.name} <br> 
