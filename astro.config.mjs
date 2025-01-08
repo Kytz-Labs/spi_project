@@ -17,7 +17,7 @@ import react from '@astrojs/react';
  
 export default defineConfig({
   output: 'server',
-  // adapter: cloudflare(),
+  adapter: cloudflare(),
   integrations: [
     tailwind({
       config: './tailwind.config.js', // Path to your Tailwind config file
