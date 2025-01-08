@@ -51,9 +51,9 @@ const servicesmenu = [
 							{
 								servicesmenu.map((data, dataIndex) => (
 									<a href={data.link}>
-										<div class="min-h-[50%] h-full px-8 border border-black py-10">
+										<div class="min-h-[50%] h-full px-8 border border-black py-10 hover:bg-[#B5DB00]">
 											<img src={data.url} height="50px" width="50px" />
-											<div class="subnavlistItem flex items-center py-4 bg-white" set:html={data.name}></div>
+											<div class="subnavlistItem flex items-center py-4 " set:html={data.name}></div>
 											<div class="subhover" set:html={data.description}>
 											</div>
 										</div>
@@ -65,9 +65,9 @@ const servicesmenu = [
 						{
 							productList.map((data, dataIndex) => (
 								<a href={ data.link }>
-									<div class="border border-black h-full flex flex-col justify-between">
+									<div class="border border-black h-full flex flex-col justify-between hover:bg-[#B5DB00]">
 										<div class="mt-10">
-											<div class="subnavlistItem p-4 bg-white">
+											<div class="subnavlistItem p-4">
 												{data.name}
 											</div>
 											<div set:html={ data.description } class="product_description px-4"></div>
@@ -88,7 +88,7 @@ const servicesmenu = [
 					{(index == 4) ? <div class="downarrow absolute group-hover:block hidden w-full left-0">
                         <div class="lg:grid grid-cols-4 hidden group-hover:mt-6 h-[100%] w-full left-0 hidden bg-white" style="height: 90vh;">
 							<a href="/about-us">
-								<div class="flex-1 border border-black p-8 h-full flex flex-col justify-between">
+								<div class="hover:bg-[#B5DB00] flex-1 border border-black p-8 h-full flex flex-col justify-between">
 									<div>
 										<img src="/aboutmenu/aboutmenu7.webp" height="50px" width="50px" />
 									</div>
@@ -100,18 +100,18 @@ const servicesmenu = [
 							</a>
 							<div class="flex-1 border border-black h-full">
 								<a href="/about-us#partnerships">
-									<div class="h-[50%] p-8">
+									<div class="h-[50%] hover:bg-[#B5DB00] p-8 hover:bg-[#B5DB00]">
 										<img src="/aboutmenu/aboutmenu1.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Partnership</div>
+										<div class="subnavlistItem flex items-center py-4 ">Partnership</div>
 										<div class="who-description mt-1">
 											Appian is a software company that automates business processes.
 										</div>
 									</div>
 								</a>
 								<a href="/brochures" target="_blank">
-									<div class="h-[50%] border-t-[1.5px] border-black p-8">
+									<div class="h-[50%] hover:bg-[#B5DB00] border-t-[1.5px] border-black p-8">
 										<img src="/aboutmenu/aboutmenu4.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Brochures</div>
+										<div class="subnavlistItem flex items-center py-4 ">Brochures</div>
 										<div class="who-description mt-1">
 											Explore our range of brochures to learn how SPI delivers value-driven digital solutions.
 										</div>
@@ -120,18 +120,18 @@ const servicesmenu = [
 							</div>
 							<div class="flex-1 border border-black h-full">
 								<a href="/about-us#leadership">
-									<div class="h-[50%] p-8">
+									<div class="h-[50%] p-8 hover:bg-[#B5DB00]">
 										<img src="/aboutmenu/aboutmenu2.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Leadership Team</div>
+										<div class="subnavlistItem flex items-center py-4">Leadership Team</div>
 										<div class="who-description mt-1">
 											Meet our leadership team.
 										</div>
 									</div>
 								</a>
 								<a href="/certifications" target="_blank">
-									<div class="h-[50%] border-t-[1.5px] border-black p-8">
+									<div class="h-[50%] border-t-[1.5px] hover:bg-[#B5DB00] border-black p-8">
 										<img src="/aboutmenu/aboutmenu5.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Certifications</div>
+										<div class="subnavlistItem flex items-center py-4">Certifications</div>
 										<div class="who-description mt-1">
 											Our commitment to diversity, compliance, and excellence.
 										</div>
@@ -140,18 +140,18 @@ const servicesmenu = [
 							</div>
 							<div class="flex-1 border border-black h-full">
 								<a href="/awards">
-									<div class="h-[50%] p-8">
+									<div class="h-[50%] hover:bg-[#B5DB00] p-8">
 										<img src="/aboutmenu/aboutmenu2.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Awards</div>
+										<div class="subnavlistItem flex items-center py-4">Awards</div>
 										<div class="who-description mt-1">
 											SPI has won a number of regional and national awards for rapid-growth and quality.
 										</div>
 									</div>
 								</a>
 								<a href="/videos" target="_blank">
-									<div class="h-[50%] border-t-[1.5px] border-black p-8">
+									<div class="h-[50%] hover:bg-[#B5DB00] border-t-[1.5px] border-black p-8">
 										<img src="/aboutmenu/aboutmenu5.webp" height="50px" width="50px" />
-										<div class="subnavlistItem flex items-center py-4 bg-white">Videos</div>
+										<div class="subnavlistItem flex items-center py-4">Videos</div>
 										<div class="who-description mt-1">
 											Explore our video collection to see innovation and digital transformation in action.
 										</div>
