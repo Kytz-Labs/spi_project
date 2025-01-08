@@ -40,7 +40,7 @@ export default function Career() {
         setBg("#006B9E"); 
 
         const body = {
-          to: "sathishkumar@venzotechnologies.com",
+          to: "sales@spius.net",
           cc: "venzotechnologies@gmail.com",
           message: `
           			<table style='max-width: 80%; margin: 0 auto; padding: 4rem 3rem' width="100%" cellspacing="0" cellpadding="0"><tr><td style="border-top:6px solid #B5DB00; padding: 20px;"><div><p>Hey Team,<br><br>We noticed a new job submission on your website. Details Below.<br><br>Name<br><span style="color: #006B9E;">${emailInput.name}</span><br><br>Email ID<br><span style="color: #006B9E;">${emailInput.email}</span><br><br>Phone Number<br><span style="color: #006B9E;">${emailInput.mobile}</span><br><br>Resume<br><span style="color: #006B9E;"><a href='${imagelist}' target='_blank'>${imagelist}</a></span><br><br>Page Url<br><span style="color: #006B9E;">${window.location.href}</span></p></div></td></tr></table>  
