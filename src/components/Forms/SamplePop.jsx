@@ -31,7 +31,7 @@ export default function CareerForm() {
         setContactform(true);
 
         const body = {
-          to: "lourdushelton@gmail.com",
+          to: "sales@spius.net",
           cc: "sathishkumar@venzotechnologies.com",
           message: " Name:" + " " + emailInput["name"] + " " + " <br> Email:" + " " + emailInput["email"] + " " + " <br> Mobile No:" + " " + emailInput["mobile"] + " " + " <br> Resume:" + " " + imagelist,
           subject: "Venzo Careers Form",

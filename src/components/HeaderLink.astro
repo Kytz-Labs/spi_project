@@ -13,7 +13,7 @@ const { pathname } = Astro.url;
 const isActive =
   pathname === href || // Matches exact path
   pathname.startsWith(`${href}/`) || // Matches subpaths (e.g., /services/application-management)
-  href === `https://spi-project.pages.dev${pathname}`;
+  href === `https://spius.net${pathname}`;
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
