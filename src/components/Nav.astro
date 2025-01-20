@@ -37,7 +37,7 @@ const servicesmenu = [
 	<div class="flex-1 flex items-center ">
 		<div class="pr-5">
 			<a href="/">
-				<img src="/logos/spi.webp" width="96px" height="42.98px" />
+				<img src="/logos/spi.webp" alt="spi logo" width="96px" height="42.98px" />
 			</a>
 		</div>
 		<div class="internal-links ps-5 lg:block hidden">
@@ -52,7 +52,7 @@ const servicesmenu = [
 								servicesmenu.map((data, dataIndex) => (
 									<a href={data.link}>
 										<div class="min-h-[50%] h-full px-8 border border-black py-10 hover:bg-[#B5DB00]">
-											<img src={data.url} height="50px" width="50px" />
+											<img src={data.url} alt="menu" height="50px" width="50px" />
 											<div class="subnavlistItem flex items-center py-4 " set:html={data.name}></div>
 											<div class="subhover" set:html={data.description}>
 											</div>
@@ -73,7 +73,7 @@ const servicesmenu = [
 											<div set:html={ data.description } class="product_description px-4"></div>
 										</div>
 										<div class="mb-10">
-											<img src={ data.url } width="50%" height="100%" class="ml-4" />
+											<img src={ data.url } alt="products" width="50%" height="100%" class="ml-4" />
 										</div>
 									</div>
 								</a>
@@ -90,7 +90,7 @@ const servicesmenu = [
 							<a href="/about-us">
 								<div class="hover:bg-[#B5DB00] flex-1 border border-black p-8 h-full flex flex-col justify-between">
 									<div>
-										<img src="/aboutmenu/aboutmenu7.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu7.webp" alt="about menu" height="50px" width="50px" />
 									</div>
 									<div>
 										<div class="who pb-4">Who we are</div>
@@ -101,7 +101,7 @@ const servicesmenu = [
 							<div class="flex-1 border border-black h-full">
 								<a href="/about-us#partnerships">
 									<div class="h-[50%] hover:bg-[#B5DB00] p-8 hover:bg-[#B5DB00]">
-										<img src="/aboutmenu/aboutmenu1.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu1.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4 ">Partnership</div>
 										<div class="who-description mt-1">
 											Appian is a software company that automates business processes.
@@ -110,7 +110,7 @@ const servicesmenu = [
 								</a>
 								<a href="/brochures" target="_blank">
 									<div class="h-[50%] hover:bg-[#B5DB00] border-t-[1.5px] border-black p-8">
-										<img src="/aboutmenu/aboutmenu4.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu4.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4 ">Brochures</div>
 										<div class="who-description mt-1">
 											Explore our range of brochures to learn how SPI delivers value-driven digital solutions.
@@ -121,7 +121,7 @@ const servicesmenu = [
 							<div class="flex-1 border border-black h-full">
 								<a href="/about-us#leadership">
 									<div class="h-[50%] p-8 hover:bg-[#B5DB00]">
-										<img src="/aboutmenu/aboutmenu2.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu2.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4">Leadership Team</div>
 										<div class="who-description mt-1">
 											Meet our leadership team.
@@ -130,7 +130,7 @@ const servicesmenu = [
 								</a>
 								<a href="/certifications" target="_blank">
 									<div class="h-[50%] border-t-[1.5px] hover:bg-[#B5DB00] border-black p-8">
-										<img src="/aboutmenu/aboutmenu5.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu5.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4">Certifications</div>
 										<div class="who-description mt-1">
 											Our commitment to diversity, compliance, and excellence.
@@ -141,7 +141,7 @@ const servicesmenu = [
 							<div class="flex-1 border border-black h-full">
 								<a href="/awards">
 									<div class="h-[50%] hover:bg-[#B5DB00] p-8">
-										<img src="/aboutmenu/aboutmenu2.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu2.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4">Awards</div>
 										<div class="who-description mt-1">
 											SPI has won a number of regional and national awards for rapid-growth and quality.
@@ -150,7 +150,7 @@ const servicesmenu = [
 								</a>
 								<a href="/videos" target="_blank">
 									<div class="h-[50%] hover:bg-[#B5DB00] border-t-[1.5px] border-black p-8">
-										<img src="/aboutmenu/aboutmenu5.webp" height="50px" width="50px" />
+										<img src="/aboutmenu/aboutmenu5.webp" alt="about menu" height="50px" width="50px" />
 										<div class="subnavlistItem flex items-center py-4">Videos</div>
 										<div class="who-description mt-1">
 											Explore our video collection to see innovation and digital transformation in action.
