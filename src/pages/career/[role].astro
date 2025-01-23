@@ -207,6 +207,36 @@ const jobRoles = {
 const { role } = Astro.params;
 const job = jobRoles[role] || { title: 'Role Not Found', description: '', requirements: [], experience : '', content : '' };
 
+export async function getStaticPaths() {
+  return [
+	"C++ Developer",
+	"Appian Developer (INDIA)",
+	"Appian Developer (US)",
+	"Full Stack Java EE Developer",
+	"Software Developer (GIS)",
+	"Lead Software Developers",
+	"Software Developers (Job Code 001)",
+	"Software Developers",
+	"Software Developer – II",
+	"Software Developer – I",
+	"Sr .Net Developer",
+	"MDM Quality Analyst – 20200502",
+	"Computer Systems Analyst I",
+	"Computer Systems Analyst II",
+	"Computer Systems Analyst",
+	"Senior Technical IT Recruiter (DFW based)",
+	"IT Recruiter Account Manager",
+	"IT Recruiter",
+	"JAVA with Groovy",
+	"Business Development Manager",
+	"Manual Tester",
+	"SAP BASIS Consultant",
+	"Business Development Manager"
+].map(jr => {
+	return { params: { role: jr }}
+  })
+}
+
 ---
 
 
