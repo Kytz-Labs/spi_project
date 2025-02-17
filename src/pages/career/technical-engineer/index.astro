@@ -1,0 +1,664 @@
+---
+import Header from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Cbtn from "@components/button/Cbtn.astro"
+import Footer from "@components/Footer.astro"
+import "../../../form.css"
+const currentUrl=Astro.request.url;
+import TransparentBtn from "@components/button/TransparentBtn.astro"
+import CareerItem from "@components/Forms/CareerItem.jsx"
+
+const jobRoles = {
+	"appian-developer-India": {
+		title:"Appian Developer",
+		requirements: ["Chennai G.P.O.", "&nbsp(Tamil Nadu)"],
+		description : "<ul style='list-style-type:disc; padding-left: 1rem;'><li>Overall 10+ years of IT Experience.</li><li>3+ years of Experience with Appian Analyst and Appian Designer Level certified</li><li>Ability to lead a team of distributed engineers</li><li>Knowledge of at least one major programming language</li><li>Knowledge of Sites, complex SAIL Forms</li><li>Should have done multiple integrations with external systems</li><li>Ability to scope Appian Projects</li><li>Bachelor’s Degree in Computer Science.</li>",
+		experience : "10+ Years Experience in IT",
+		content: ""
+	},
+	"appian-developer-US": {
+		title:"Appian Developer",
+		requirements: ["Flower Mound, Texas", "&nbsp(Full-Time)"],
+		description: "<ul style='list-style-type:disc; padding-left: 1rem;'><li>5+ years of Experience with Appian Analyst and Appian Designer Level certified</li><li>Ability to lead a team of distributed engineers; Knowledge of at least one major programming language</li><li>Knowledge of Sites, complex SAIL Forms</li><li>Should have done multiple projects on Business Process Flow development</li></ul>",
+		experience : "5+ Years Experience in IT",
+		content: ""
+	},
+
+	"senior-software-engineer" : {
+		title:"Senior Software Engineer",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience"
+	},
+	"C++-Developer" : {
+		title:"C++ Developer",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='h4 text-[36px] font-[600] mt-10 mb-4 text-white'>Basic Qualification</div><ul class='list-disc pl-6'><li class='post-date'>Good knowledge of C++ development in Linux environment.</li><li class='post-date'>Good Knowledge of Boost C++ Library.</li> <li class='post-date'>Good knowledge of Object Oriented Programming.</li> <li class='post-date'>Good knowledge of Design Patterns.</li> <li>Good communication and team working skills </li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"Full-Stack-Java-EE-Developer": {
+		title:"Full Stack Java EE Developer",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Develop and maintain on-premise web applications and services using Java/SpringBoot, React, NPM, Jenkins CI/CD, and SQL Server.</li><li class='post-date'>Implement front-end features using React.</li><li class='post-date'>Write clean, maintainable, and testable code using SOLID principles and design patterns.</li> <li class='post-date'>Perform unit testing, participate in code reviews, and support integration testing with other teams. <li class='post-date'>Debug and troubleshoot issues using tools such as IntelliJ (or other IDE of choice), Fiddler, Postman, and Jenkins DevOps. <li class='post-date'>Document and communicate technical specifications and requirements using tools such as Visio, Word, and Excel.</li></ul><div class='h4 text-[36px] font-[600] mt-10 mb-4 text-white'>Basic Qualification</div><ul class='list-disc pl-6'><li class='post-date'>Bachelor's degree in Computer Science, Engineering, or related field, or equivalent work experience.</li><li class='post-date'>At least 7 years of professional experience in full-stack Java development.</li> <li class='post-date'>Strong knowledge of Java, SpringBoot, React, and SQL Server.</li> <li class='post-date'>Proficient in HTML, CSS, JavaScript.</li> <li>Familiar with RESTful APIs, JSON, XML, SOAP.</li> <li>Experience with unit testing, integration testing, and code quality tools.</li> <li class='post-date'>Experience with agile methodologies, source control, and CI/CD tools. </li><li class='post-date'>Excellent communication, problem-solving, and analytical skills. </li><li>Ability to work independently and as part of a team. </li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"software-developer-GIS" : {
+		title:"Software Developer (GIS)",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience", 
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"lead-software-developers" : {
+		title:"Lead Software Developers",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"software-developers-Job-Code-001" : {
+		title:"Software Developers (Job Code 001)",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"software-developers" : {
+		title:"Software Developers",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"software-developers-II" : {
+		title:"Software Developer – II",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"software-developers-I" : {
+		title:"Software Developer – I",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>This Software Engineer is responsible for creating, testing, ensuring the quality of and maintaining a product or product line. The Software Engineer will perform moderately complex code modification, testing and debugging tasks as well as perform analysis related to software design and development under the minimally guided supervision of senior team members and management. </div><div class='h4 text-[34px] mt-10 mb-4 text-white font-[600]'>Duties and Responsibilities</div><div class='post-date pb-10'>Work collaboratively to write high quality, testable code that meets the Definition of Done.Strive to meet team sprint commitments. Adopt a Test-First approach to software development, where possible in which the test is developed before the code. Participate in design and code reviews with other engineers. May develop and utilize automated test scripts to perform duties. Participate in test plan reviews.</div><div class='post-date pb-10'>Actively support and contribute to end of iteration demos; Responsible for assigned integration, testing and deployment task. Work with product management to scope and estimate product enhancements. Design, implement, unit test software, and test software following defined processes.</div><div class='post-date'>Fix software defects (internal or customer reported) following defined process. Scope of work is typically at the product component/feature level. Other duties as requested and/or determined. Maintain compliance with Client's policies, procedures and mission statement. Adhere to all confidentiality and HIPAA requirements as outlined within Client's Operating Policies and Procedures in all ways and at all times with respect to any aspect of the data handled or services rendered in the undertaking of the position. and Fulfill those responsibilities and/or duties that may be reasonably provided by Client for the purpose of achieving operational and financial success of the Employer.</div></div><div class='h4 mt-10 mb-4 text-white'>Basic Qualification</div><div><ul class='list-disc pl-6'><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Demonstrates high personal integrity and ability to earn trust from others.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development</li> <li class='post-date'>Participates in self-directed learning activities aimed at developing expertise within technical domain, including reading relevant publications, participating in domain forums or groups etc.</li> <li class='post-date'>Innovation- anticipates and looks for creative ways to solve problems. <li class='post-date'>Debugging/coding skills.</li><li class='post-date'>Problem solving skills.</li><li class='post-date'>Problem solving skills. Builds Secure applications and adheres to security standards.</li><li class='post-date'>Builds Secure applications and adheres to security standards.</li><li class='post-date'>Communication and organization skills and Teamwork skills.</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"MDM-Quality-Analyst–20200502" : {
+		title:"MDM Quality Analyst – 20200502",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"Computer-Systems-Analyst-I" : {
+		title:"Computer Systems Analyst I",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"Computer-Systems-Analyst-II" : {
+		title:"Computer Systems Analyst II",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"Computer-Systems-Analyst" : {
+		title:"Computer Systems Analyst",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"IT-Recruiter-Account-Manager" : {
+		title:"IT Recruiter Account-Manager",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"IT-Recruiter" : {
+		title:"MDM Quality Analyst – 20200502",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+
+	},
+	"JAVA-with-Groovy" : {
+		title:"JAVA with Groovy",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"Manual-Tester" : {
+		title:"Manual Tester",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>Manual testing the web project skills and create test case and validation additionally validate the backend SQL query plus testing the API using Postman.</div>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"Sr-Net-Developer" : {
+		title:"Sr .Net Developer",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<ul class='list-disc pl-6'><li class='post-date'>Sr .NET developer to design, develop, implement, and support new and enhanced solutions for our Train Control safety-critical systems such as Positive Train Control.</li><li class='post-date'>We are looking for a person that has excellent technical hands-on experience with .Net framework, C#, SQL Server, Message Brokers (RabbitMQ, ActivMQ, WebsphereMQ), Rest API, Web API, JSON, Socket level communications and Event-driven services.</li><li class='post-date'>In this this role, the resource will interact with other developers, technical leads, solution architects, and business analysts and will be able to identify key milestones and communications points to achieve quality and timely deliverables.</li><li class='post-date'>Demonstrates a growth mindset, seeks feedback often and is effective in continuous personal and professional development.</li><li class='post-date'>Our focus is to ensure our systems have excellent hygiene, performance, and evergreen processes to maintain high availability that supports the safety of our resources as well as velocity measurements.  </li></ul><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Basic Qualification</div><div class=''><ul class='list-disc pl-6'><li class='post-date'>8+ years of Object-Oriented Development experience.</li><li class='post-date'>C#.</li><li class='post-date'>.Net Framework 4.7 or greater; .Net Core 3.1; .NET 5 Message Brokers.(RabbitMQ, ActiveMQ, WebSphereMQ).</li><li class='post-date'>REST API.</li><li class='post-date'>SOA, Event-driven Services, Microservices.</li> <li class='post-date'>SQL Server.</li><li class='post-date'>Multithreading.</li><li class='post-date'>Unit testing framework.</li><li class='post-date'>Proven ability to work on multiple deliverables simultaneously, adhere to tight deadlines and adapt to changing priorities.</li><li class='post-date'>Excellent Drive for Results and Planning skills.</li><li class='post-date'>Creative thought processes.</li><li class='post-date'>Strong analytical and problem-solving skills.</li><li class='post-date'>Exceptional collaborative oral and written communications.</li></ul></div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Preferred Qualifications </div><div class=''><ul class='list-disc pl-6'><li class='post-date'>Experience in safety critical product development (e.g., railroad, medical, aerospace…).</li><li class='post-date'>Experience with distributed cache, no SQL.</li><li class='post-date'>Experience with Windows based Container Development.</li><li class='post-date'>Experience with Excel, Visio, SharePoint, Microsoft Teams.</li><li class='post-date'>SOA, Event-driven Services, Microservices.</li></ul></div>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"Sr-Recruiter" : {
+		title:"Senior Technical IT Recruiter (DFW based) ",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>Senior Technical IT Recruiter (DFW based). Software Professional Inc. (SPI) is looking for an experience IT lead recruiter for US IT positions to join our team in Flower Mound (DFW), Texas.</div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Basic Qualification</div><div class=''><ul class='list-disc pl-6'><li class='post-date'>3 to 5 years in Vendor staffing in the US IT arena. Should understand technologies. Including .NET, Java, UI, Cloud development (AWS, Azure, etc.), Devops, infrastructure, Database, Network, Security Administration, etc. Should be conversant with US Immigration WORK classifications and contracting procedures.</li><li class='post-date'>Looking for a hard-working resource that is dependable, performance driven with excellent communication skills.</li></ul></div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>What you will be doing </div><div class=''><ul class='list-disc pl-6'><li class='post-date'>Understanding requirement from Direct Client - account managers/portals/clients.</li><li class='post-date'>Sourcing candidates via Job boards, referrals, internet searches, etc.</li><li class='post-date'>Interviewing prospect candidates regarding skills, availability, preferences and negotiating salary/rate. </li><li class='post-date'>Verifying accuracy of resume and ensuring fake resumes are not being submitted.</li><li class='post-date'>Following up with candidates on status and updates to onboarding/hiring.</li></ul></div>",
+		experience : "3+ Years Experience",
+		content : '<div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"SAP-BASIS-Consultant" : {
+		title:"SAP BASIS Consultant",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>SAP Basis Administrator with over 10 years of experience managing SAP on premise and cloud SAP OS/DB migrations, preferably to Azure. The successful candidate should have strong analytical and problem-solving skills and substantial experience in a wide range of SAP systems for both technical and application related aspects of SAP systems environments.</div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Responsibilities</div><div class=''><ul class='list-disc pl-6'><li class='post-date'>Troubleshoot performance and scalability issues.</li><li class='post-date'>Monitor and maintain system/application resources and hardware. </li><li class='post-date'>Provide technical guidance and support on SAP systems.</li><li class='post-date'>Participate in development and implementation of system and application strategies.</li><li class='post-date'>Design, install, configure, test, and implement SAP systems.</li><li class='post-date'>Manage SAP OS/DB migration to cloud platforms, preferably Azure. </li><li class='post-date'>Assist in the development and validation of Disaster Recovery processes. </li><li class='post-date'>Provide quality assurance reviews of system implementations.</li><li class='post-date'>Troubleshoot application, database, system and system/application interface issues.</li><li class='post-date'>Recommend system design and implementation improvements.</li><li class='post-date'>Participate in the development of system and application architecture.</li><li class='post-date'>Administer SAP system security and control access to the system.</li><li class='post-date'>Collaborate with other personnel to identify and resolve issues.</li><li class='post-date'>Manage and implement solutions to system issues.</li><li class='post-date'>Optimize system performance and respond to system errors.</li><li class='post-date'>Create documents, procedures, technical specifications.</li><li class='post-date'>Plan and coordinate SAP system upgrades. </li><li class='post-date'>Training and mentoring of junior SAP team members.</li></ul></div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Basic Qualifications</div><div class=''><ul class='list-disc pl-6'><li class='post-date'>At least 10+ years working with SAP Systems in production support, development and infrastructure architecture.</li><li class='post-date'>Significant SAP OS/DB migration experience to Cloud (Preferably Azure).</li><li class='post-date'>Excellent knowledge of SAP components and extensions such as BI, BW, CRM, SRM, PI, EP, SCM, GRC, ESS/MSS, Fiori, etc.</li><li class='post-date'>Ability to communicate clearly and concisely, both orally and in writing.</li><li class='post-date'>Knowledge of IT infrastructure, programming languages, network systems, databases and storage subsystems.</li><li class='post-date'>Strong customer service, problem-solving and organizational skills.</li><li class='post-date'>Excellent written/verbal communication and customer service skills.</li><li class='post-date'>Bachelor’s degree (or equivalent) in Information Technology, Computer Science or related field.</li><li class='post-date'>Experience in SAP HANA, Oracle DB, SQL and Sybase database administration and recovery.</li><li class='post-date'>SAP Basis certification is desirable.</li><li class='post-date'>Understanding of Cloud and virtualization technologies (AWS and Azure).</li></ul></div>",
+		experience : "10+ Years Experience",
+		content : '<div class="post-date pb-10">SAP Basis Administrator with over 10 years of experience managing SAP on premise and cloud SAP OS/DB migrations, preferably to Azure. The successful candidate should have strong analytical and problem-solving skills and substantial experience in a wide range of SAP systems for both technical and application related aspects of SAP systems environments.</div>The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+	"Business-Development-Manager" : {
+		title:"Sr. Business Development Manager",
+		requirements: ["Flower Mound, TX", "&nbsp(Full-Time)"],
+		description: "<div class='post-date'>Plan and carry out all sales activities on assigned accounts (cuurent and new) or areas. Builds market position by locating, developing, defining, negotiating, and closing business relationships. Responsible for ensuring customer satisfaction and managing quality of staffing services. </div><div class='h4 mt-10 mb-4 text-white text-[36px] font-[600]'>Responsibilities</div><div class=''><ul class='list-disc pl-6'><li class='post-date'>Generate and qualify leads.</li><li class='post-date'>Engage with current clients to develop SOW proposals and coordinate delivery. Require strong technical skills and knowledge.</li><li class='post-date'> Source and develop client referrals.</li><li class='post-date'>Prepare sales action plans and strategies.</li><li class='post-date'>Schedule sales activity.</li><li class='post-date'>Develop and maintain a customer database. </li><li class='post-date'>Make face to face sales calls to new and existing clients.</li><li class='post-date'>Develop and make presentations of company services to current and potential clients.</li><li class='post-date'>Negotiate with clients.</li><li class='post-date'>Visit and meet with billable resources at client site.</li><li class='post-date'>Assist in develop of sales proposals.</li></ul></div>",
+		experience : "10+ Years Experience",
+		content : '<div class="post-date pb-10">SAP Basis Administrator with over 10 years of experience managing SAP on premise and cloud SAP OS/DB migrations, preferably to Azure. The successful candidate should have strong analytical and problem-solving skills and substantial experience in a wide range of SAP systems for both technical and application related aspects of SAP systems environments.</div>The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div>'
+	},
+}
+
+// Basics Qualifications:  
+
+// 8+ years of Object-Oriented Development experience 
+
+//     C# 
+
+//     .Net Framework 4.7 or greater; .Net Core 3.1; .NET 5 
+
+//     Message Brokers (RabbitMQ, ActiveMQ, WebSphereMQ)  
+
+//     REST API  
+
+//     SOA, Event-driven Services, Microservices   
+
+//     SQL Server 
+
+//     Multithreading 
+
+//     Unit testing framework 
+
+const { role } = Astro.params;
+const job = jobRoles[role] || { title: 'Role Not Found', description: '', requirements: [], experience : '', content : '' };
+
+export async function getStaticPaths() {
+  return [
+	"C++ Developer",
+	"Appian Developer (INDIA)",
+	"Appian Developer (US)",
+	"Full Stack Java EE Developer",
+	"Software Developer (GIS)",
+	"Lead Software Developers",
+	"Software Developers (Job Code 001)",
+	"Software Developers",
+	"Software Developer – II",
+	"Software Developer – I",
+	"Sr .Net Developer",
+	"MDM Quality Analyst – 20200502",
+	"Computer Systems Analyst I",
+	"Computer Systems Analyst II",
+	"Computer Systems Analyst",
+	"Senior Technical IT Recruiter (DFW based)",
+	"IT Recruiter Account Manager",
+	"IT Recruiter",
+	"JAVA with Groovy",
+	"Business Development Manager",
+	"Manual Tester",
+	"SAP BASIS Consultant",
+	"Business Development Manager"
+].map(jr => {
+	return { params: { role: jr }}
+  })
+}
+
+---
+
+
+<Header title={ job.title } description={ job.description} canonical={currentUrl}>
+	<style>
+		.branding-stroke-button{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 18.52px;
+			padding: 12px 20px 12px 20px;
+		}
+		body{
+			background-color: black;
+		}
+        .service_shrt {
+            font-family: Instrument Sans;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22.4px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+		.home_title{
+			font-family: Instrument Sans;
+			font-size: 80px;
+			font-weight: 600;
+			line-height: 96px;
+			letter-spacing: -0.03em;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+		.site-title-layer {
+			background-size: cover;
+			/* background-color: #000000; */
+		}
+		.home_description{
+			font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+			color: #FFFFFFCC;
+		}
+		.contract{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			text-align: left;
+			color: #000000CC;
+		}
+
+        /* services */
+        .services{
+			font-family: Instrument Sans;
+			font-size: 40px;
+			font-weight: 600;
+			line-height: 48px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #000000;
+		}
+		.services-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 38.4px;
+			text-align: left;
+		}
+		.services-description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+
+        /* products */
+		.product-title{
+			font-family: Instrument Sans;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 28.8px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			color: white;
+		}
+		.product_section{
+			height: 680px;
+			background-image: url("/products.webp");
+			background-size: cover;
+		}
+		.check{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19.52px;
+			text-align: left;
+			color: #FFFFFF;
+		}
+		.product_description{
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+		.modules > li {
+			font-family: Instrument Sans;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			text-align: left;
+		}
+		.background-effect{
+			content: "";
+			position: absolute;
+			width:100%;
+			inset:0;
+			top:10%;
+		}
+
+        .career_description {
+            font-family: Instrument Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFFFFFCC;
+        }
+
+		.job-title{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 43.2px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #B5DB00;
+		}
+
+		.post-date{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28.8px;
+			text-align: justified;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFFCC;
+		}
+
+		.shrt_content{
+			font-family: Instrument Sans;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 19.52px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
+		h4{
+			font-family: Instrument Sans;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 46.8px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
+		/* File Upload Container */
+		.file-upload {
+			border: 2px solid #555;
+			border-radius: 8px;
+			background-color: #333;
+			padding: 20px;
+			width: 400px;
+			text-align: center;
+			position: relative;
+		}
+
+		/* Upload Label */
+		.upload-label {
+			display: block;
+			cursor: pointer;
+			color: #ddd;
+		}
+
+		.upload-label:hover {
+			color: #fff;
+		}
+
+		/* Upload Text */
+		.upload-text {
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 28.8px;
+			text-align: center;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+		}	
+
+		/* Accepted Files Text */
+		.accepted-files {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #aaa;
+		}
+
+		/* Hidden File Input */
+		.file-input {
+			display: none;
+		}
+
+		.job-description{
+			font-family: Instrument Sans;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28.8px;
+			text-align: left;
+			text-underline-position: from-font;
+			text-decoration-skip-ink: none;
+			color: #FFFFFF;
+		}
+
+		@media (max-width: 600px) {
+			.post{
+				width: 100%;
+			}
+			.post_title{
+				font-size: 24px;
+			}
+			.blogs-title{
+				font-size: 32px;
+			}
+			.blogMain{
+				background-color: #292d6b;
+				color: white;
+			}
+			.site-title-layer::before{
+				height: 435px;
+			}
+            .home_title{
+                font-size: 40px;
+                line-height:50.8px;
+            }
+			.background-effect{
+				display:none;
+			}
+		}
+	</style>
+	<header class="realtive ">
+		<div class="background-effect overflow-hidden">
+			<svg width="1348" height="899" viewBox="0 0 1348 899" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g opacity="0.4" filter="url(#filter0_f_344_1138)">
+				<path d="M430 250L250 392.055L272.5 521.66L463.5 587.877L627.5 649L868 440.162L832 285.089L587 376.774L430 250Z" fill="#B5DB00"/>
+				<path d="M660 250L480 392.055L502.5 521.66L693.5 587.877L857.5 649L1098 440.162L1062 285.089L817 376.774L660 250Z" fill="#006B9E"/>
+				</g>
+				<defs>
+				<filter id="filter0_f_344_1138" x="0" y="0" width="1348" height="899" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+				<feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_344_1138"/>
+				</filter>
+				</defs>
+			</svg>
+		</div>
+		
+		<Nav />
+		<div class="px-8 lg:px-12 pt-20 lg:pb-0 pb-20 site-title-layer overflow-hidden relative flex items-start relative z-20" >
+			<div class="header flex flex-col items-center justify-center w-full lg:pb-16">
+                <h6 class="service_shrt mb-5 text-center w-full block">
+					<a href="/career">
+						<div class="inline-flex items-center justify-center gap-4 text-[#B5DB00]">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.3633 9C14.9156 9 15.3633 8.55228 15.3633 8C15.3633 7.44772 14.9156 7 14.3633 7V9ZM0.928252 7.29289C0.537728 7.68342 0.537728 8.31658 0.928252 8.70711L7.29221 15.0711C7.68274 15.4616 8.3159 15.4616 8.70643 15.0711C9.09695 14.6805 9.09695 14.0474 8.70643 13.6569L3.04957 8L8.70643 2.34315C9.09695 1.95262 9.09695 1.31946 8.70643 0.928932C8.3159 0.538408 7.68274 0.538408 7.29221 0.928932L0.928252 7.29289ZM14.3633 7L1.63536 7V9H14.3633V7Z" fill="#B5DB00"/>
+							</svg>
+							See all jobs
+						</div>
+					</a>
+                </h6>
+				<h1 class="home_title text-center">
+					<span class="lg:block inline">Technical Engineer
+				</h1>
+                <div class="career_description lg:w-[50%] mx-auto">
+                    If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.
+                </div>
+				<div class="mt-10">
+					<a href="#form_side">
+						<Cbtn colorbtnText="Apply Now" classname="" bgcolor="#B5DB00" textColor="black" cursor="pointer" display="block" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<section class="z-[1] relative">
+			<!-- we are a service -->
+			<div class="lg:px-12 pb-28 lg:pt-0 pt-12">
+				<div class="inner-layer-innovator bg-[#141414] lg:p-12 px-8 py-8">
+                    <div>
+						<div class="flex justify-between lg:flex-row flex-col border-b border-[#FFFFFF33] pb-8">
+							<div class="job-title lg:pn-0 pb-4">Job Description</div>
+							<div class="post-date">Posted on 06 Nov 2024</div>
+						</div>
+						<div class="flex justify-between lg:flex-row flex-col items-start pb-6 pt-12 gap-10">
+							<div class="job-title lg:w-[64%]">
+								<!-- <div class="post-date pb-10">The company and other persons or employers are released from all liability brought forth by any investigation resulting from my submission of this electronic application and the data contained here in.</div><div class="post-date pb-10">The information in this application is true and complete to the best of my knowledge. Any falsification, misrepresentation, or omission on this application can be cause for denial or termination of employment.</div><div class="post-date pb-10">If hired, my employment is voluntary, meaning that either party can employment at any time for any reason. Upon acceptance of employment if a position is offered, I agree to abide by all existing and future company rules and regulations. The company reserves the right to change any working agreement as deemed necessary.</div><div class="post-date pb-10">Any employment offer is contingent open my providing proof of identity and eligibility to work the country of employ.</div><div class="post-date">I have read and reviewed the information provided in this application and the above statements. By signing this application for employment I certify that I understand all parts of it and have answered all questions completely and fully.</div> -->
+								<div class="job-description">
+									<ul class='list-disc pl-6'><li class='post-date'>Experience programming with at least one software programming language</li><li class='post-date'>3+ years of non-internship professional software development experience</li></ul>
+								</div>
+							</div>
+							<div class="post-date bg-[#262626] flex-1 w-full">
+								<div class="px-4 pt-10 w-full">
+									<a href="#form_side">
+										<button class=`branding-stroke-button inline-flex gap-3 items-center text-center self-start fotnt-[Atkinson Hyperlegible] w-full` style="display: block; background-color: #B5DB00; color: black; cursor: pointer;">
+											Apply for this Role
+										</button>
+									</a>
+								</div>
+								<div class="px-4 pb-10">
+									<button id="shareJobBtn" class="cursor-pointer border w-full border-white text-center py-2 px-5 items-center mt-6" style="font-size: 15px; color: white; cursor: context-menu;">
+										Share Job
+									</button>
+								</div>
+								<div class="px-4">
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.904 6.01339H16.4107V5.31473C16.4107 4.75884 16.1899 4.22572 15.7968 3.83265C15.4037 3.43958 14.8706 3.21875 14.3147 3.21875H10.1228C9.56688 3.21875 9.03376 3.43958 8.64068 3.83265C8.24761 4.22572 8.02679 4.75884 8.02679 5.31473V6.01339H4.53348C3.97759 6.01339 3.44447 6.23422 3.0514 6.62729C2.65833 7.02036 2.4375 7.55349 2.4375 8.10938V11.966C2.4381 12.2602 2.50061 12.5509 2.62098 12.8194C2.74136 13.0878 2.91689 13.3279 3.13616 13.524V20.6853C3.13616 21.2412 3.35699 21.7743 3.75006 22.1674C4.14313 22.5604 4.67625 22.7812 5.23214 22.7812H19.2054C19.7612 22.7812 20.2944 22.5604 20.6874 22.1674C21.0805 21.7743 21.3013 21.2412 21.3013 20.6853V13.524C21.5206 13.3279 21.6961 13.0878 21.8165 12.8194C21.9369 12.5509 21.9994 12.2602 22 11.966V8.10938C22 7.55349 21.7792 7.02036 21.3861 6.62729C20.993 6.23422 20.4599 6.01339 19.904 6.01339ZM9.42411 5.31473C9.42411 5.12944 9.49772 4.95173 9.62874 4.8207C9.75976 4.68968 9.93747 4.61607 10.1228 4.61607H14.3147C14.5 4.61607 14.6777 4.68968 14.8088 4.8207C14.9398 4.95173 15.0134 5.12944 15.0134 5.31473V6.01339H9.42411V5.31473ZM3.83482 8.10938C3.83482 7.92408 3.90843 7.74637 4.03945 7.61535C4.17048 7.48432 4.34819 7.41071 4.53348 7.41071H19.904C20.0893 7.41071 20.267 7.48432 20.398 7.61535C20.5291 7.74637 20.6027 7.92408 20.6027 8.10938V11.966C20.6093 12.121 20.5641 12.2738 20.4743 12.4003C20.3845 12.5268 20.2551 12.6198 20.1066 12.6646L14.3147 14.3973V13.6987C14.3147 13.5134 14.2411 13.3357 14.1101 13.2046C13.9791 13.0736 13.8014 13 13.6161 13H10.8214C10.6361 13 10.4584 13.0736 10.3274 13.2046C10.1964 13.3357 10.1228 13.5134 10.1228 13.6987V14.3973L4.33087 12.6367C4.18235 12.5918 4.05298 12.4988 3.96317 12.3723C3.87335 12.2458 3.8282 12.093 3.83482 11.938V8.10938ZM12.9174 14.3973V16.4933C12.9174 16.6786 12.8438 16.8563 12.7128 16.9873C12.5818 17.1184 12.404 17.192 12.2188 17.192C12.0335 17.192 11.8557 17.1184 11.7247 16.9873C11.5937 16.8563 11.5201 16.6786 11.5201 16.4933V14.3973H12.9174ZM19.2054 21.3839H5.23214C5.04685 21.3839 4.86914 21.3103 4.73812 21.1793C4.60709 21.0483 4.53348 20.8706 4.53348 20.6853V14.1598L10.1228 15.8785V16.4933C10.1228 17.0492 10.3436 17.5823 10.7367 17.9754C11.1297 18.3685 11.6629 18.5893 12.2188 18.5893C12.7746 18.5893 13.3078 18.3685 13.7008 17.9754C14.0939 17.5823 14.3147 17.0492 14.3147 16.4933V15.8785L19.904 14.1598V20.6853C19.904 20.8706 19.8304 21.0483 19.6994 21.1793C19.5684 21.3103 19.3907 21.3839 19.2054 21.3839Z" fill="white"/>
+										</svg>
+										<div class="shrt_content">
+											3+ Years Experience
+										</div>
+									</div>
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M13.6728 14.5357C16.0139 10.8622 15.7196 11.3205 15.787 11.2247C16.6394 10.0225 17.0898 8.60759 17.0898 7.13281C17.0898 3.2218 13.9161 0 10 0C6.09663 0 2.91016 3.21544 2.91016 7.13281C2.91016 8.60664 3.37009 10.0586 4.25035 11.277L6.32712 14.5357C4.10671 14.8769 0.332031 15.8938 0.332031 18.1328C0.332031 18.949 0.864758 20.1122 3.40266 21.0186C5.17478 21.6514 7.51774 22 10 22C14.6417 22 19.668 20.6907 19.668 18.1328C19.668 15.8934 15.8977 14.8776 13.6728 14.5357ZM5.32711 10.5679C5.32002 10.5569 5.31262 10.546 5.30489 10.5354C4.5724 9.52768 4.19922 8.3334 4.19922 7.13281C4.19922 3.90938 6.79479 1.28906 10 1.28906C13.1986 1.28906 15.8008 3.91054 15.8008 7.13281C15.8008 8.33534 15.4346 9.48909 14.7418 10.4702C14.6797 10.5521 15.0036 10.0489 10 17.9003L5.32711 10.5679ZM10 20.7109C4.92994 20.7109 1.62109 19.2207 1.62109 18.1328C1.62109 17.4017 3.32128 16.1994 7.08878 15.7308L9.45645 19.446C9.57478 19.6317 9.77974 19.7441 9.99996 19.7441C10.2202 19.7441 10.4252 19.6317 10.5435 19.446L12.9111 15.7308C16.6787 16.1994 18.3789 17.4017 18.3789 18.1328C18.3789 19.2114 15.0998 20.7109 10 20.7109Z" fill="white"/>
+										</svg>
+										<div class="shrt_content">
+											Flower Mound, TX, (Full-Time)
+										</div>
+									</div>
+									<div class="flex items-center pb-5 gap-4">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M17.0703 10.4747H15.1126C14.8461 10.4747 14.5882 10.5111 14.3427 10.5781C13.8584 9.62606 12.8696 8.97192 11.7303 8.97192H8.26973C7.13039 8.97192 6.14164 9.62606 5.65734 10.5781C5.41184 10.5111 5.15387 10.4747 4.88742 10.4747H2.92969C1.31426 10.4747 0 11.789 0 13.4044V16.534C0 17.5033 0.788555 18.2918 1.75781 18.2918H18.2422C19.2114 18.2918 20 17.5033 20 16.534V13.4044C20 11.789 18.6857 10.4747 17.0703 10.4747ZM5.34004 11.9017V17.12H1.75781C1.43473 17.12 1.17188 16.8572 1.17188 16.5341V13.4045C1.17188 12.4352 1.96043 11.6467 2.92969 11.6467H4.88742C5.04648 11.6467 5.20051 11.6683 5.34715 11.7081C5.34293 11.7722 5.34004 11.8366 5.34004 11.9017ZM13.4881 17.12H6.51191V11.9017C6.51191 10.9324 7.30047 10.1438 8.26973 10.1438H11.7303C12.6995 10.1438 13.4881 10.9324 13.4881 11.9017V17.12ZM18.8281 16.5341C18.8281 16.8572 18.5653 17.12 18.2422 17.12H14.66V11.9017C14.66 11.8365 14.6571 11.7721 14.6529 11.708C14.7995 11.6683 14.9535 11.6466 15.1126 11.6466H17.0703C18.0396 11.6466 18.8281 12.4352 18.8281 13.4044V16.5341Z" fill="white"/>
+											<path d="M3.90805 4.94153C2.47254 4.94153 1.30469 6.10938 1.30469 7.54489C1.30465 8.9804 2.47254 10.1482 3.90805 10.1482C5.34352 10.1482 6.51141 8.9804 6.51141 7.54489C6.51141 6.10938 5.34355 4.94153 3.90805 4.94153ZM3.90801 8.97637C3.11867 8.97637 2.47652 8.33422 2.47652 7.54489C2.47652 6.75555 3.11867 6.1134 3.90801 6.1134C4.69734 6.1134 5.33949 6.75555 5.33949 7.54489C5.33949 8.33422 4.69734 8.97637 3.90801 8.97637Z" fill="white"/>
+											<path d="M10.0015 1.70813C8.08367 1.70813 6.52344 3.26836 6.52344 5.18618C6.52344 7.10399 8.08367 8.66422 10.0015 8.66422C11.9193 8.66422 13.4795 7.10399 13.4795 5.18618C13.4795 3.2684 11.9193 1.70813 10.0015 1.70813ZM10.0015 7.49235C8.72984 7.49235 7.69531 6.45782 7.69531 5.18618C7.69531 3.91458 8.72984 2.88 10.0015 2.88C11.2731 2.88 12.3077 3.91454 12.3077 5.18618C12.3077 6.45782 11.2731 7.49235 10.0015 7.49235Z" fill="white"/>
+											<path d="M16.0916 4.94153C14.6562 4.94153 13.4883 6.10938 13.4883 7.54489C13.4883 8.9804 14.6562 10.1482 16.0916 10.1482C17.5271 10.1482 18.695 8.9804 18.695 7.54489C18.695 6.10938 17.5271 4.94153 16.0916 4.94153ZM16.0916 8.97637C15.3023 8.97637 14.6602 8.33422 14.6602 7.54489C14.6602 6.75555 15.3023 6.1134 16.0916 6.1134C16.881 6.1134 17.5231 6.75555 17.5231 7.54489C17.5231 8.33422 16.881 8.97637 16.0916 8.97637Z" fill="white"/>
+										</svg>											
+										<div class="shrt_content">Software Development</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- contact form -->
+						<div class="bg-black bg-[#D9D9D914] my-14" id="form_side">
+							<CareerItem position="Technical Engineer"  client:visible />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- thank messaage -->
+			<div class="enquire_thnkmss text-center w-full fixed inset-0 h-screen backdrop-blur-2xl overflow-y-auto w-full justify-center items-center">
+				<div class="bg-white lg:max-w-[50%] p-10 relative">
+					{ /* <!-- close button --> */ }
+                    <div class="absolute top-4 right-0 m-6 kytz_form_close lg:max-w-[60%]" style="z-index:1;">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50" stroke="white">
+                                <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+					<h3 class="text-2xl leading-6 font-medium text-gray-900" style="line-height:2rem;">Thank you for submitting your resume! Our team will review your application and reach out if your profile matches our requirements </h3>
+					<div class="mt-2 px-7 py-3">
+						<p class="text-md text-gray-500">
+							Looking forward to connecting with you soon.  
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<Footer />
+		</section>
+	</header>
+</Header>
+<script>
+	 // Replace this with the link you want to copy
+	 const jobLink =  window.location.href;
+
+document.getElementById('shareJobBtn').addEventListener('click', () => {
+	navigator.clipboard.writeText(jobLink)
+		.then(() => {
+			alert("Link copied to clipboard!");
+		})
+		.catch(err => {
+			console.error("Failed to copy: ", err);
+		});
+});
+
+var brand_btn = document.querySelectorAll(".brand-button");
+var form_close = document.querySelector(".kytz_form_close");
+var com_form=document.querySelector(".enquire_thnkmss")
+
+brand_btn.forEach((e, n) => {
+	e.onclick = () => {
+		(com_form.style.display = "flex");
+	};
+}),
+(form_close.onclick = () => {
+		(com_form.style.display = "none"), w3form.reset(), (usererror.innerHTML = ""), (emailerr.innerHTML = ""), (mobilerror.innerHTML = ""), (messageerror.innerHTML = "");
+}),
+(window.onclick = (e) => {
+	e.target === com_form && ((com_form.style.display = "none"), w3form.reset());
+});
+</script>
+
+
