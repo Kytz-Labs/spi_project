@@ -124,8 +124,6 @@ export default function CareerSub({position}) {
                 <div class="contact_heading pb-4 text-center lg:px-0 px-8">{position}</div>
                 <div class="post-date pb-6 text-start mb-12 lg:px-0 px-8">Please complete the form below to apply for this position</div>
                 <form onSubmit={sendEmail} id="w3form" method="POST" class="lg:px-0 px-8" >
-                    <input type="hidden" name="access_key" value="eef15f7d-f8da-4e00-a000-c362e14eb7c0" />
-                    <input type="hidden" name="from_name" value="Kytz Enquiry" />
                     <div class="flex lg:flex-row flex-wrap gap-5 flex-col justify-between form_datas">
                         <div class="line flex-none w-full pb-5">
                             <label class="new_label pb-3">Full Name<span class="required text-red-500">*</span></label>
