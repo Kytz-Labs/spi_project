@@ -5,14 +5,14 @@ import { getStorage } from "firebase/storage";
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC6XJ9TTMi-Q2ea3cAynGr9pG_YZQMheP4",
-    authDomain: "devtraining-2ec83.firebaseapp.com",
-    projectId: "devtraining-2ec83",
-    storageBucket: "devtraining-2ec83.appspot.com",
-    messagingSenderId: "642377465042",
-    appId: "1:642377465042:web:1d406a78a39f30d5a8c10b",
-    measurementId: "G-7W7TK0VXJN"
-};
+    apiKey: "AIzaSyD9An9LiN5LQwFo_1PCnIFdGN1Y_aUHRNA",
+    authDomain: "spius-net.firebaseapp.com",
+    projectId: "spius-net",
+    storageBucket: "spius-net.firebasestorage.app",
+    messagingSenderId: "666035609005",
+    appId: "1:666035609005:web:fe18302b7ecd6743f29524",
+    measurementId: "G-QEPFLPHJH7"
+  };
 
 // Check if Firebase is already initialized
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);

@@ -38,7 +38,7 @@ export default function CareerSub({position}) {
         setBg("#006B9E"); 
 
         const body = {
-            access_key: "eef15f7d-f8da-4e00-a000-c362e14eb7c0", // Make sure this is correct
+            access_key: "1aa1acd7-f60e-4bc9-a9a0-0029b1c66c02", // Make sure this is correct
             subject: "SPI Career Form",
             from_name: "SPI Career Form",
             name : emailInput.name,
@@ -81,22 +81,27 @@ export default function CareerSub({position}) {
         }
     }
 
-    const sendFile =(e)=>{
-        setUploading(true);
-        setImageUpload(e.target.files[0])
-        const imageRef = ref(storage, `venzofile/${e.target.files[0].name + v4()}`)
-    
-        uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
-          getDownloadURL(snapshot.ref).then((url) => {
-            setImagelist(url);
-            setUploading(false);
-          })
-        })
-        .catch((error) => {
-            console.error("File upload error:", error);
-            setUploading(false); // Ensure uploading state is reset on error
-        });
-    }
+   const sendFile = (e) => {
+       if (!e.target.files[0]) return; // Prevent errors if no file is selected
+   
+       setUploading(true);
+       const file = e.target.files[0];
+       
+       const imageRef = ref(storage, `uploads/${file.name}-${v4()}`); 
+   
+       uploadBytes(imageRef, file)
+           .then((snapshot) => 
+               getDownloadURL(snapshot.ref)
+           )
+           .then((url) => {
+               setImagelist(url);
+               setUploading(false);
+           })
+           .catch((error) => {
+               console.error("File upload error:", error);
+               setUploading(false);
+           });
+   };
 
     useEffect(() => {
         if (imagelist) {

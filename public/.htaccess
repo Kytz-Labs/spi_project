@@ -1,0 +1,38 @@
+# IndexIgnore * # prevent directory listing
+
+Order deny,allow
+Allow from *
+
+# ------------------------------------------
+# Rewrite so that php extentions are not shown
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+<IfModule mod_headers.c>
+# WEEK
+<FilesMatch "\.(jpg|jpeg|png|webp|mp4|gif|swf)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+</IfModule>
+
+#Default path for domain
+# DirectoryIndex home.php
+
+ErrorDocument 400 /404.php
+#Bad Request
+
+ErrorDocument 401 /404.php
+#Unauthorized
+
+ErrorDocument 403 /404.php
+#Forbidden
+
+ErrorDocument 404 /404.php
+#Not Found
+
+ErrorDocument 500 /404.php
+#Internal Server Error
