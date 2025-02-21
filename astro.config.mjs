@@ -5,8 +5,8 @@ import react from '@astrojs/react';
 // import vercel from "@astrojs/vercel/serverless";
  
 export default defineConfig({
-  output: 'server',
-  adapter: cloudflare(),
+  output: 'static',
+  // adapter: cloudflare(),
   integrations: [
     tailwind({
       config: './tailwind.config.js', // Path to your Tailwind config file
