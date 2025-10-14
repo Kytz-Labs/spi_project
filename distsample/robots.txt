@@ -1,0 +1,6 @@
+user-agent: *
+Allow: /
+
+Sitemap: https://www.spius.net/sitemap.xml
+
+

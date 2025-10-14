@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.createElement("script");e.src="https://www.googletagmanager.com/gtag/js?id=GTM-TZLQQD32",e.async=!0,document.head.appendChild(e)});document.querySelectorAll(".footer_box");document.querySelectorAll(".quick_list");

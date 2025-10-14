@@ -1,0 +1,26 @@
+<svg width="1265" height="333" viewBox="0 0 1265 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_136_175" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="-102" width="1266" height="435">
+<ellipse cx="632.495" cy="115.5" rx="632.502" ry="217.5" fill="url(#paint0_radial_136_175)" fill-opacity="0.3"/>
+</mask>
+<g mask="url(#mask0_136_175)">
+<path d="M192.719 -174.043L192.719 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M318.414 -174.043L318.414 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M444.105 -174.043L444.105 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M569.801 -174.043L569.801 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M695.496 -174.043L695.496 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M821.191 -174.043L821.191 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M946.887 -174.043L946.887 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M1072.58 -174.043L1072.58 405.045" stroke="white" stroke-width="1.13027"/>
+<path d="M173.461 288.035H1091.84" stroke="white" stroke-width="1.13027"/>
+<path d="M173.461 219.023H1091.84" stroke="white" stroke-width="1.13027"/>
+<path d="M173.461 150.012H1091.84" stroke="white" stroke-width="1.13027"/>
+<path d="M173.461 80.9961H1091.84" stroke="white" stroke-width="1.13027"/>
+<path d="M173.461 11.9805H1091.84" stroke="white" stroke-width="1.13027"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_136_175" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(632.495 115.5) rotate(90) scale(204.733 595.374)">
+<stop stop-color="#737373"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
