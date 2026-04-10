@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 // import vercel from "@astrojs/vercel/serverless";
  
 export default defineConfig({
-  site: "https://spius.net/",
+  site: "https://www.spius.net/",
   output: 'static',
   
   // adapter: cloudflare(),// adapter: cloudflare(),
